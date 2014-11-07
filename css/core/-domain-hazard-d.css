@@ -1,0 +1,135 @@
+
+/*
+ * ==================================================
+ * ==================================================
+ * 
+ * langRef/containers/hazard-d.html
+ * 
+ * General purpose domains are not specific to any type 
+ * of information, such as the hazard statement domain 
+ * that provides elements for describing hazardous 
+ * situations.
+ * 
+ * ==================================================
+ * ==================================================
+ */
+
+
+
+/*
+ * ==================================================
+ * 
+ * <topic>
+ *
+ * The hazardstatement element contains hazard warning 
+ * information. It is based on the regulations of ANSI 
+ * Z535 and ISO 3864. It enables the author to select 
+ * the type of hazard, add information about the specific 
+ * hazard and how to avoid it, and add one or more 
+ * safety symbols.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/note 
+ */
+*[class~="hazard-d/hazardstatement"]{
+/**/
+}
+
+
+/*
+ * ==================================================
+ * 
+ * <consequence>
+ *
+ * The consequence element specifies the consequence 
+ * of failing to avoid a hazard, for example, 
+ * "Contact may cause burn."
+ * 
+ * Inherits styles from parent class:
+ *  
+ *    + topic/li 
+ */
+*[class~="hazard-d/consequence"]{
+/**/
+}
+
+
+/*
+ * ==================================================
+ * 
+ * <hazardsymbol>
+ *
+ * The hazardsymbol element specifies a graphic. The 
+ * graphic might represent a hazard, a hazardous 
+ * situation, a result of not avoiding a hazard, or 
+ * any combination of these messages.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/image  
+ */
+*[class~="hazard-d/hazardsymbol"]:before {
+/**/
+}
+
+
+
+/*
+ * ==================================================
+ * 
+ * <howtoavoid>
+ *
+ * The howtoavoid element contains information about 
+ * how a user can avoid a hazard, for example, "Do not 
+ * use solvents to clean the drum surface."
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/li  
+ */
+*[class~="hazard-d/howtoavoid"]:before {
+/**/
+}
+
+
+
+/*
+ * ==================================================
+ * 
+ * <typeofhazard>
+ *
+ * The typeofhazard element contains a description of 
+ * the type of hazard, for example, "Hot surfaces inside."
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/li  
+ */
+*[class~="hazard-d/typeofhazard"]:before {
+/**/
+}
+
+
+
+/*
+ * ==================================================
+ * 
+ * <messagepanel>
+ *
+ * The messagepanel element contains the textual information 
+ * that is displayed on the hazard statement. This information 
+ * identifies the hazard, specifies how to avoid the hazard, 
+ * and states the probable consequences of failing to avoid 
+ * the hazard.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/ul  
+ */
+*[class~="hazard-d/messagepanel"]:before {
+/**/
+}
+
+
+

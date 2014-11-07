@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Copyright © 2014 by Syncro Soft SRL 
+
+SYNCRO SOFT SRL IS DELIVERING THE SOFTWARE "AS IS," WITH 
+ABSOLUTELY NO WARRANTIES WHATSOEVER, WHETHER EXPRESS OR IMPLIED, AND 
+SYNCRO SOFT SRL DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE AND WARRANTY OF NON-INFRINGEMENT. SYNCRO SOFT SRL SHALL NOT
+BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, COVER, PUNITIVE, EXEMPLARY,
+RELIANCE, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF 
+ANTICIPATED PROFIT), ARISING FROM ANY CAUSE UNDER OR RELATED TO  OR ARISING 
+OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF SYNCRO SOFT SRL
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. 
+
+SYNCRO SOFT SRL and its licensors shall not be liable for any
+damages suffered by any person as a result of using and/or modifying the
+Software or its derivatives. In no event shall SYNCRO SOFT SRL's
+liability for any damages hereunder exceed the amounts received by SYNCRO SOFT 
+SRL as a result of this transaction.
+
+These terms and conditions supersede the terms and conditions in any
+licensing agreement to the extent that such terms and conditions conflict
+with those set forth herein.
+-->
+<project name="com.oxygenxml.pdf.prince" basedir=".">
+  <!-- Path to the Prince Executable -->
+  <property name="princeExecPath">prince</property>
+  
+  <!--
+    
+    Depends on the PDF2 pipe
+    
+   -->
+  <import file="build_pdf2.xml"/>
+
+  <!-- 
+    
+    The main target.
+    
+    1. Merges the map in a file together with metainformation about the TOC and index 
+      (similar to what the "org.dita.pdf2" plugin would do before converting it to FO.)
+    2. Converts the merged map to PDF using Prince.
+    
+  -->
+  <target name="dita2pdf-prince" depends="prince.dita2pdf2, merged2pdf"/>
+
+
+  <target name="merged2pdf" >
+    <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}${file.separator}dummy.file"/>
+    
+    <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1a.xml"/>
+    <property name="dita.map.merged.post.processed" value="${dita.map.merged}.pp"/>
+  	<property name="dita.css" value="${dita.plugin.org.dita.pdf2.dir}/../../../css/print/prince/p-dita.css"/>
+    
+    <!-- Postprocess the merged file -->
+    <xslt in="${dita.map.merged}" 
+          out="${dita.map.merged.post.processed}" 
+          style="${dita.plugin.com.oxygenxml.pdf.prince.dir}/post-process.xsl">
+      
+      <param name="args.input" expression="${args.input}"/> 
+      <param name="dita.map.filename.root" expression="${dita.map.filename.root}"/>      
+    </xslt>
+    
+    <condition property="outputFile" value="${dita.map.output.dir}/${dita.map.filename.root}.pdf">
+      <not><isset property="outputFile"/></not>
+    </condition>
+    
+    <echo>=============================</echo>
+    <echo>Processing with Prince: ${dita.map.merged.post.processed}</echo>
+    <echo>Output file : ${outputFile}</echo>
+    <echo>=============================</echo>
+
+
+    <echo>=============================</echo>        
+    <echo>First phase</echo>
+    <!-- First pass, generates an index-pass2.js, with info relating ids to page numbers -->
+    <exec executable="${princeExecPath}" output="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js" failonerror="true">            
+      <arg value="--style"/>
+      <arg value="${dita.css}"/>
+      <arg value="--style"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/index-pass1.css"/>
+
+      <arg value="--javascript"/>
+      <arg value="--script"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/index-pass1.js"/>
+
+      <arg value="${dita.map.merged.post.processed}"/>      
+      <arg value="-o"/>      
+      <arg value="${outputFile}"/>
+    </exec>          
+
+    <echo>=============================</echo>    
+    <echo>Second phase</echo>
+    <!-- Second pass. -->
+    <exec executable="${princeExecPath}" failonerror="true">
+      <arg value="--style"/>
+      <arg value="${dita.css}"/>
+
+      <arg value="--javascript"/>
+      <arg value="--script"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/index-pass2.js"/>
+      <arg value="--script"/>
+      <arg value="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js"/>
+      
+      <arg value="${dita.map.merged.post.processed}"/>
+      <arg value="-o"/>      
+      <arg value="${outputFile}"/>
+    </exec>
+    
+  </target>
+  
+</project>

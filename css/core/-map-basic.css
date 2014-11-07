@@ -1,0 +1,243 @@
+
+/*
+ * ==================================================
+ * ==================================================
+ * 
+ * Basic map elements.
+ * 
+ * langRef/containers/basic-map-elements.html
+ * 
+ * DITA maps are built from a few core elements that are used for referencing and organizing topics. 
+ * 
+ * ==================================================
+ * ==================================================
+ * 
+ */
+
+
+/* ==================================================
+ *
+ *  <map>
+ * 
+ * The map element describes the relationships among 
+ * a set of resources, such as DITA topics. Maps 
+ * consist of references to topics, maps, and other 
+ * resources organized into hierarchies, groups, and 
+ * tables. Maps express these relationships in a single 
+ * common format that can be used for different outputs. 
+ */ 
+*[class~="map/map"]{
+    display:block;    
+    counter-reset:chapter 1;
+    margin: 0.5em;
+
+}
+@media print {
+  *[class ~= "map/map"] { 
+       margin: 0;
+  }
+}
+*[class~="map/map"]:before{
+    font-weight:bold;
+}
+*[class~="map/map"][title]:before{
+    content: attr(title, string, 'No title attribute specified');
+}
+
+
+
+/* ==================================================
+ *
+ *  <topicref>
+ * 
+ * The topicref element identifies a topic (such as 
+ * a concept, task, or reference) or other resource. 
+ * A topicref can contain other topicref elements, 
+ * allowing you to express navigation or table-of-contents 
+ * hierarchies, as well as implying relationships 
+ * between a containing (parent) topicref and its 
+ * children.
+ */ 
+*[class~="map/topicref"]{
+    -oxy-foldable:true;
+    display:block;
+    margin-left:1em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+*[class~="map/topicref"]:empty{
+    -oxy-foldable:false;
+    padding-left:12px;    
+}
+/* This is the fallback when not having an href or a keyref. */
+*[class~="map/topicref"]:before{
+    content: oxy_capitalize(oxy_local-name());
+}
+*[class~="map/topicref"][href]:before{
+    link: attr(href);
+}
+*[class~="map/topicref"][href]:before,
+*[class~="map/topicref"][keyref]:before {
+    content: url("../../img/topic.png") " " oxy_capitalize(oxy_local-name()) " [" oxy_unescapeURLValue(oxy_attributes()) " ]";
+}
+/* Override the generic rules applying on all elements having [keyref] */
+*[class~="map/topicref"][keyref]:empty {
+    content:"";
+}
+*[class~="map/topicref"][keyref]{
+  text-decoration:none;
+}
+
+
+ 
+
+
+/* ==================================================
+ *
+ *  <anchor>
+ * 
+ * The anchor element provides an integration point 
+ * that another map can reference in order to insert 
+ * its navigation into the current navigation tree.
+ */ 
+*[class~="map/anchor"]{
+    /*TODO - dan - same as topicref.*/
+    display:block;
+    margin-left:1em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+*[class~="map/anchor"]:before{
+    /* This has a required attribute, ID, so always show the attributes.*/
+    content: url("../../img/anchor.png") oxy_capitalize(oxy_local-name()) " [" oxy_unescapeURLValue(oxy_attributes()) " ]";
+}
+
+
+
+/* ==================================================
+ *
+ *  <navref>
+ * 
+ * The navref element represents a pointer to another 
+ * map which should be preserved as a transcluding 
+ * link rather than resolved. Output formats that support 
+ * such linking will integrate the referenced resource 
+ * when displaying the referencing map to an end user.
+ */ 
+*[class~="map/navref"]{
+    display:block;
+    margin-left:1em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+}
+*[class~="map/navref"]:before{
+    /*TODO - dan - same as topicref.*/
+    content: url("../../img/navref.png") " " oxy_capitalize(oxy_local-name()) " [" oxy_unescapeURLValue(oxy_attributes()) " ]";
+}
+*[class~="map/navref"][mapref]:before{
+    link: attr(mapref);
+}
+
+
+
+
+/* ==================================================
+ *
+ *  <reltable>
+ * 
+ * The reltable element is a relationship table that 
+ * specifies relationships between topics, based on the 
+ * familiar table model of rows (relrow), columns 
+ * (relheader), and cells (relcell).
+ */ 
+*[class~="map/reltable"]{
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    
+    display:table;
+    border:1pt solid;   
+    border-collapse:collapse;
+}
+*[class~="map/reltable"] > *[class~="map/topicmeta"]{
+    display:table-caption;
+}
+*[class~="map/relrow"]{
+    display:table-row;
+}
+*[class~="map/relheader"]{
+    display:table-row;
+    font-weight:bold;
+}
+
+*[class~="map/relcell"],
+*[class~="map/relcolspec"]{
+    display:table-cell;
+    border:1pt solid;   
+    padding:5px;
+}
+*[class~="map/relcolspec"][type]:before{
+    content: attr(type);
+}
+
+*[class~="map/relcell"] > *[class~="map/topicref"]{
+    margin-left: 0;
+    -oxy-foldable:false;
+}
+
+/* TODO - dan - de discutat cu Radu, am facut un match exact pe clasa. 
+ Daca sunt subclase ale topicref-ului, se vor aplica ceilalti selectori*/
+*[class~="map/relcell"] > *[class="- map/topicref "]:before{
+    content:none !important;
+}
+*[class~="map/relcell"] > *[class="- map/topicref "]{
+    content: oxy_textfield(edit, "@href", columns, 20) !important;
+}
+
+
+
+
+/* ==================================================
+ *
+ *  <ux-window>
+ * 
+ * Use the ux-window element to provide specifications 
+ * for a window or viewport in which a user assistance 
+ * topic or Web page can be displayed. The window or viewport 
+ * can be referenced by the resourceid element associated with 
+ * a topic or topicref element.
+ */ 
+*[class~="map/ux-window"]{
+  display:inline;
+  -oxy-display-tags:none;
+}
+*[class~="map/ux-window"]:before{
+  /* TODO - dan - make all befores look the same. */
+  content: "UX-Window name " oxy_textfield(edit, "@name", columns, 10);
+}
+*[class~="map/ux-window"][top]     :before{ -oxy-append-content: " top "       oxy_textfield(edit, "@top",       columns, 10); }
+*[class~="map/ux-window"][left]    :before{ -oxy-append-content: " left "      oxy_textfield(edit, "@left",      columns, 10); }
+*[class~="map/ux-window"][height]  :before{ -oxy-append-content: " height "    oxy_textfield(edit, "@height",    columns, 10); }
+*[class~="map/ux-window"][width]   :before{ -oxy-append-content: " width "     oxy_textfield(edit, "@width",     columns, 10); }
+*[class~="map/ux-window"][features]:before{ -oxy-append-content: " features "  oxy_textfield(edit, "@features",  columns, 10); }
+*[class~="map/ux-window"][on-top]  :before{ 
+  -oxy-append-content: " on-top "  
+    oxy_combobox( 
+      edit, "@on-top", 
+      editable, no, 
+      values, "yes, no, -dita-use-conref-target"); 
+}
+*[class~="map/ux-window"][relative]:before{ 
+  -oxy-append-content: " relative "  
+    oxy_combobox( 
+      edit, "@relative", 
+      editable, no, 
+      values, "yes, no, -dita-use-conref-target"); 
+}
+*[class~="map/ux-window"][full-screen]:before{ 
+  -oxy-append-content: " full-screen "  
+    oxy_combobox( 
+      edit, "@full-screen", 
+      editable, no, 
+      values, "yes, no, -dita-use-conref-target"); 
+}
+

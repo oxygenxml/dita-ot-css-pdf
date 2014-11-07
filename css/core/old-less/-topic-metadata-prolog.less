@@ -1,0 +1,671 @@
+
+@import "-common.less";
+
+/*
+ * Properties.
+ */
+@_meta_bg_color: lighten(yellow, 35%);
+@_meta_dk_color: darken(@_meta_bg_color, 40%);
+
+/*
+ * Mixins.
+ */
+/* ==================================================
+ *
+ *  <topicmeta>
+ * 
+ * The topicmeta element defines the metadata that 
+ * applies to a topic when it appears in a map. When 
+ * appropriate, that metadata also applies to the other 
+ * topics in the map that are contained by the same element 
+ * that contains the topicmeta
+ * 
+ * 
+ * The <prolog> element contains information about
+ * the topic as an whole (for example, author information
+ * or subject category) that is either entered by
+ * the author or machine-maintained.
+ * 
+ * Much of the metadata inside the <prolog> will not be 
+ * displayed with the topic on output, but may be used by 
+ * processes that generate search indexes or customize 
+ * navigation.
+ * ====================================================  
+ */
+*[class~="topic/prolog"],
+*[class~="map/topicmeta"] {
+    display:block;
+    font-family:arial, helvetica, sans-serif;
+    font-size: 0.8em;
+    margin-top:0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    
+    border: 1pt solid @_meta_dk_color;
+    background-color: @_meta_bg_color;
+    
+    line-height:1.2em;
+    -oxy-foldable: true;
+}
+
+
+/*
+ * All metainformation is block.
+ * All the metainformation elements are labeled 
+ */
+*[class~="topic/prolog"]  *, 
+*[class~="map/topicmeta"] * {
+    display: block;
+    margin: 0.2em;
+}
+ 
+*[class~="map/topicmeta"] > *:not(:empty) {
+   -oxy-foldable:true;
+} 
+
+*[class~="topic/prolog"]  > *,
+*[class~="map/topicmeta"] > * {
+    margin: 0.1em;        
+    border-top:  1pt solid @_meta_dk_color;    
+    padding-top: 0.3em;
+}
+*[class~="topic/prolog"]  > *:first-child,
+*[class~="map/topicmeta"] > *:first-child {
+    border-top:  none;    
+}
+
+*[class~="topic/prolog"] > * > * ,
+*[class~="map/topicmeta"] > * > * {
+    margin-left: 2em;
+}
+*[class~="topic/prolog"] > * > *  *,
+*[class~="map/topicmeta"] > * > *  *{
+    margin-left: 2em;
+}
+
+
+*[class~="topic/prolog"]  *:before,
+*[class~="map/topicmeta"] *:before {
+    width:6em;
+    display: inline;
+    .before_bold;
+}
+
+
+@media print {
+    /* 
+    
+    	Make invisible the metadata prolog from the topics.
+    	Cannot hide it directly (display:none) because Prince 
+    	would ignore the indexterms from it.
+    	So we are making it transparent, and of 0 size. 
+    	
+    */
+    *[class~="topic/prolog"], 
+    *[class~="map/topicmeta"] {
+        border:none;
+        background-color:transparent;
+        color:transparent;
+        margin:0;
+        padding:0;
+        width:0;
+        height:0;
+    }
+    *[class~="topic/prolog"]   *:before,
+    *[class~="map/topicmeta"]  *:before {
+        content:none !important;
+    }    
+}
+
+
+
+
+/* ==================================================
+ * 
+ * <audience>
+ * 
+ * The audience metadata element indicates, through the value of 
+ * its type attribute, the intended audience for a topic.
+ */
+ *[class~="topic/audience"]:before {
+    content: "Audience: ";
+}
+*[class~="topic/audience"][type]:after {
+    -oxy-append-content: 
+       " type: " oxy_textfield(edit, "@type", columns, 10) 
+}
+*[class~="topic/audience"][job]:after {
+    -oxy-append-content: 
+       " job: "  oxy_textfield(edit, "@job", columns, 10)
+}
+*[class~="topic/audience"][experiencelevel]:after {
+    -oxy-append-content: 
+       " experience: " oxy_textfield(edit, "@experiencelevel", columns, 10)
+}
+*[class~="topic/audience"][name]:after {
+    -oxy-append-content: 
+       " name: " oxy_textfield(edit, "@name", columns, 10)
+}
+
+
+/* ==================================================
+ * 
+ * <author>
+ * 
+ * The author metadata element contains the name of the topic's 
+ * author.
+ * The author is usually the person, organization, or application 
+ * that created the content. This element is equivalent to the 
+ * Creator element in Dublin Core.
+ *  
+ */
+*[class~="topic/author"]:before {
+    content: "Author: ";
+}
+*[class~="topic/author"][type]:after {
+    -oxy-append-content:
+       " " oxy_combobox(edit, "@type", columns, 10) 
+}
+
+
+
+/* ==================================================
+ * 
+ * <brand>
+ * 
+ * The brand element indicates the manufacturer or brand 
+ * associated with the product described by the parent 
+ * prodinfo element.
+ */
+*[class~="topic/brand"]:before {
+    content: "Brand: ";
+}
+
+
+
+/* ==================================================
+ * 
+ * <category>
+ * 
+ * The category element represents any category by which 
+ * a topic might be classified for retrieval or 
+ * navigation. For example, the categories could be used 
+ * to group topics in a generated navigation bar. Topics 
+ * can belong to multiple categories.
+ */
+*[class~="topic/category"]:before {
+    content: "Category: ";
+}
+
+
+
+/* ==================================================
+ * 
+ * <component>
+ * 
+ * The component element describes the component of the 
+ * product that this topic is concerned with.
+ */
+*[class~="topic/component"]:before {
+    content: "Component: ";
+}
+
+
+/* ==================================================
+ * 
+ * <copyright>
+ * 
+ * The copyright element specifies legal ownership of the content.
+ */
+*[class~="topic/copyright"]:before {
+    content: "Copyright ";
+}
+*[class~="topic/copyright"][type]:before {
+    -oxy-append-content: 
+      oxy_combobox(edit, "@type", columns, 10, 
+                   editable, true, 
+                   values, "primary, secondary, " )
+}
+
+
+/* ==================================================
+ * 
+ * <copyryear>
+ * 
+ * The copyryear element contains the copyright 
+ * year as specified by the year attribute.
+ * 
+ * <copyrholder>
+ * 
+ * The copyrholder element names the copyright holder 
+ * that holds legal rights to the material contained 
+ * in the topic.
+ */
+*[class~="topic/copyryear"]:before {
+    content: "Year: ";
+}
+*[class~="topic/copyryear"]:after {
+    -oxy-append-content: 
+            oxy_datePicker(
+            columns, 12, 
+            edit, "@year",
+            format, "yyyy",
+            validateInput, false)  
+
+}
+*[class~="topic/copyrholder"]:before {
+    content: "Holder:  ";
+}
+
+
+
+/* ==================================================
+ * 
+ * <critdates>
+ * 
+ * The critdates element contains the critical dates in 
+ * a document life cycle, such as the creation date 
+ * and multiple revision dates.
+ */
+*[class~="topic/critdates"]{
+    display:block;
+}
+*[class~="topic/critdates"]:before {
+    content: "Critical dates";    
+}
+
+
+
+/* ==================================================
+ * 
+ * <created>
+ * 
+ * The created element specifies the document creation 
+ * date using the date attribute.
+ */
+*[class~="topic/created"]:before {
+    content: "Created: ";
+}
+*[class~="topic/created"]:after {
+    content:
+        oxy_datePicker(
+            columns, 12, 
+            edit, "@date",
+            format, "yyyy-MM-dd",
+            validateInput, false) "     ";
+}            
+*[class~="topic/created"][golive]:after {
+    -oxy-append-content:
+        oxy_label(text, "golive: ")
+        oxy_datePicker(
+            columns, 12, 
+            edit, "@golive",
+            format, "yyyy-MM-dd",
+            validateInput, false)"     "
+}
+*[class~="topic/created"][expiry]:after {
+    -oxy-append-content:
+        oxy_label(text, "expiry: " )
+        oxy_datePicker(
+            columns, 12, 
+            edit, "@expiry",
+            format, "yyyy-MM-dd",
+            validateInput, false)
+}
+
+
+
+/* ==================================================
+ * 
+ * <revised>
+ * 
+ * The revised metadata element is used to maintain 
+ * tracking dates that are important in a topic 
+ * development cycle, such as the last modification date, 
+ * the original availability date, and the expiration date.
+ */
+*[class~="topic/revised"]:before {
+    content: "Revised: ";
+}
+
+*[class~="topic/revised"]:after {
+    content:
+        oxy_datePicker(
+            columns, 12, 
+            edit, "@modified",
+            format, "yyyy-MM-dd",
+            validateInput, false) "     "  
+}
+*[class~="topic/revised"][golive]:after {
+    -oxy-append-content:
+        oxy_label(text, "golive: ")
+        oxy_datePicker(
+            columns, 12, 
+            edit, "@golive",
+            format, "yyyy-MM-dd",
+            validateInput, false)"     "
+}
+*[class~="topic/revised"][expiry]:after {
+    -oxy-append-content:
+        oxy_label(text, "expiry: ")
+        oxy_datePicker(
+            columns, 12, 
+            edit, "@expiry",
+            format, "yyyy-MM-dd",
+            validateInput, false)
+}
+
+
+/* ==================================================
+ * 
+ * <featnum>
+ * 
+ * The featnum element contains the feature number 
+ * of a product in the metadata. 
+ */
+*[class~="topic/featnum"]:before {
+    content: "Feature number: ";
+}
+
+/* ==================================================
+ * 
+ * <keywords>
+ * 
+ * The keywords element contains a list of terms 
+ * from a controlled or uncontrolled subject 
+ * vocabulary that applies to the topic or map. 
+ * The keywords may be used by a search engine. 
+ */
+*[class~="topic/keywords"]:before {
+    content: "Keywords: ";
+}
+*[class~="topic/keywords"] *{
+    display: inline;  
+}
+
+
+
+/* ==================================================
+ * 
+ * <metadata>
+ * 
+ * The metadata section of the prolog contains 
+ * information about a topic such as audience and 
+ * product information.
+ */
+*[class~="topic/metadata"] > * {
+  /* TODO - dan - check this: makes space for the prodinfo border.*/
+  padding-left:4pt;
+}
+*[class~="topic/metadata"]:before {
+    content: "Metadata";
+}
+
+/* ==================================================
+ * 
+ * <metadata>
+ * 
+ * The metadata section of the prolog contains 
+ * information about a topic such as audience and 
+ * product information.
+ */
+*[class~="topic/othermeta"]:before {
+    content: "Othermeta:";
+}
+*[class~="topic/othermeta"]:after {
+    content: 
+      " name: "    oxy_textfield(edit, "@name", columns, 15)
+      " content: " oxy_textfield(edit, "@content", columns, 10)
+}
+
+/* ==================================================
+ * 
+ * <permissions>
+ * 
+ * The permissions element in a topic's metadata 
+ * specifies the level of entitlement needed to access 
+ * the content.
+ */
+*[class~="topic/permissions"]:before {
+    content: "Permissions: ";
+}
+*[class~="topic/permissions"]:after {
+    content: " " oxy_textfield(edit, "@view", columns, 10);
+}
+
+
+
+
+/* ==================================================
+ * 
+ * <platform>
+ * 
+ * The platform metadata element contains a description 
+ * of the operating system and/or hardware related to 
+ * the product being described by the prodinfo element
+ */
+*[class~="topic/platform"]:before {
+    content: "Platform: ";
+}
+
+
+
+
+/* ==================================================
+ * 
+ * <prodinfo>
+ * 
+ * The prodinfo metadata element contains information 
+ * about the product or products that are the subject 
+ * matter of the current topic. 
+ */
+
+*[class~="topic/prodinfo"]:before {
+    content: "Product info ";   
+}
+
+ 
+ 
+ 
+ 
+ /*
+  * TODO - dan - delete this.
+*[class~="topic/prodinfo"] {
+  padding-left: 2pt;
+}
+*[class~="topic/permissions"]:before,
+*[class~="topic/copyright"]:before,
+*[class~="topic/critdates"]:before,
+*[class~="topic/metadata"]:before,
+*[class~="topic/prodinfo"]:before {
+    border: 1pt solid white;
+    color:white;
+    padding-left:0.2em;
+    padding-right:0.2em;
+}
+
+*[class~="topic/permissions"],
+*[class~="topic/copyright"],
+*[class~="topic/critdates"],
+*[class~="topic/metadata"],
+*[class~="topic/prodinfo"] {
+    foldable:true;
+}
+
+*[class~="topic/permissions"]:before{
+    background-color: red;
+    color:white;  
+}
+
+*[class~="topic/copyright"]:before{
+    background-color: yellow;
+    color:black;  
+}
+
+*[class~="topic/critdates"]:before{
+    background-color: navy;
+    color:white;  
+}
+*[class~="topic/metadata"]:before{
+    background-color: green;
+    color:white;  
+}
+*[class~="topic/prodinfo"]:before {
+    background-color: purple;
+    color:white;
+}
+*/
+
+
+/* ==================================================
+ * 
+ * <prodname>
+ * 
+ * The prodname metadata element contains the name 
+ * of the product that is supported by the information 
+ * in this topic. 
+ */
+*[class~="topic/prodname"]:before {
+    content: "Product name: ";
+}
+
+
+
+/* ==================================================
+ *
+ * <prognum>
+ * 
+ * The prognum metadata element identifies the program 
+ * number of the associated product. This is typically 
+ * an order number or a product tracking code that 
+ * could be replaced by an order number when a product 
+ * completes development.
+ */
+*[class~="topic/prognum"]:before {
+    content: "Program number: ";
+}
+
+
+
+/* ==================================================
+ *
+ * <publisher>
+ * 
+ * The publisher metadata element contains the name of 
+ * the person, company, or organization responsible 
+ * for making the content or subject of the topic 
+ * available.
+ */
+*[class~="topic/publisher"]:before {
+    content: "Publisher: ";
+}
+
+
+
+/* ==================================================
+ *
+ * <resourceid>
+ * 
+ * The resourceid element provides an identifier for 
+ * applications that must use their own identifier 
+ * scheme, such as context-sensitive help systems and 
+ * databases.
+ */
+*[class~="topic/resourceid"]:before {
+    content: "Resource Id: ";
+}
+*[class~="topic/resourceid"][id]:after {
+    -oxy-append-content:
+        oxy_textfield(columns, 12, 
+            edit, "@id")
+}
+*[class~="topic/resourceid"][appid]:after {
+    -oxy-append-content:
+        oxy_label(text, " appId: " , width, 5ex)
+        oxy_textfield(columns, 12, 
+            edit, "@appid")
+}
+*[class~="topic/resourceid"][appname]:after {
+    -oxy-append-content:
+        oxy_label(text, " name: " , width, 5ex)
+        oxy_textfield(columns, 12, 
+            edit, "@appname")
+}
+*[class~="topic/resourceid"][ux-contextstring]:after {
+    -oxy-append-content:
+        oxy_label(text, " context-string: " , width, 5ex)
+        oxy_textfield(columns, 12, 
+            edit, "@ux-contextstring")        
+}
+*[class~="topic/resourceid"][ux-windowref]:after {
+    -oxy-append-content:
+        oxy_label(text, " windowref: " , width, 5ex)
+        oxy_textfield(
+            columns, 12, 
+            edit, "@ux-windowref")
+}
+
+
+
+/* ==================================================
+ *
+ * <series>
+ * 
+ * The series metadata element contains information 
+ * about the product series that the topic supports.
+ */
+*[class~="topic/series"]:before {
+    content: "Series: ";
+}
+
+
+
+/* ==================================================
+ *
+ * <source>
+ * 
+ * The source element identifies a resource from 
+ * which the present topic is derived, either 
+ * completely or in part.
+ */
+*[class~="topic/source"]:before {
+    content: "Source: ";
+}
+*[class~="topic/source"][href]:after {
+    /* TODO - dan - make all links look the same.*/
+    link: attr(href);
+    content:  url("../../img/link.png") attr(href);
+    color: navy;
+    text-decoration:underline;
+}
+
+
+/* ==================================================
+ *
+ * <vrmlist>
+ * 
+ * The vrmlist element contains a set of vrm elements 
+ * for logging the version, release, and modification 
+ * information for multiple products or versions of 
+ * products to which the topic applies.
+ */
+*[class~="topic/vrmlist"]:before {
+    content: "Versions: ";
+}
+
+/* ==================================================
+ *
+ * <vrm>
+ * 
+ * The vrm element contains information about a single 
+ * product's version, modification, and release, to 
+ * which the current topic applies.
+ */
+*[class~="topic/vrm"]:after {
+    content: 
+      " version: " oxy_textfield(edit, "@version", columns, 10)
+      " release: " oxy_textfield(edit, "@release", columns, 10) 
+      " modification: " oxy_textfield(edit, "@modification", columns, 10);
+}
+
+

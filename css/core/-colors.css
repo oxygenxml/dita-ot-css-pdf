@@ -1,0 +1,205 @@
+/*
+ * ==================================================
+ * ==================================================
+ * 
+ * Centralizes all the colors used for styling DITA elements
+ * and defines also the high-contrast theme colors.
+ * 
+ * Note: The form control colors are not defined here.
+ * 
+ * ==================================================
+ * ==================================================
+ * 
+ * TODO - dan - i18n.
+ */
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+@media oxygen-high-contrast-black{
+/* ====================================
+     *
+     * built-in oXygen elements
+     * 
+     */
+  oxy|comment{
+    color:#3DB39B !important;
+    background-color:transparent !important;
+  }
+  oxy|reference,
+  oxy|entity{
+    background-color:transparent !important;
+  }
+  /* ====================================
+     *
+     * Reset all the elements colors. 
+     */
+  *:before,
+  *,
+  *:after{
+    color:inherit !important;
+    background-color:inherit !important;
+    border-color:inherit !important;
+  }
+}
+
+
+*[class ~= "pr-d/syntaxdiagram"]{
+  color:maroon;
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "pr-d/syntaxdiagram"]{
+    color:#808080 !important;
+  }
+}
+
+
+*[class ~= "reference/properties"]{
+  border-color:#ff9494;
+}
+*[class ~= "reference/prophead"]{
+  background-color:#ffe0e0;
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "reference/properties"]{
+    border-color:inherit !important;
+  }
+  *[class ~= "reference/prophead"]{
+    background-color:inherit !important;
+  }
+}
+
+/* ====================================
+ *
+ * Tables
+ */
+*[class ~= "topic/table"]{
+  border-color:transparent;
+}
+*[class ~= "topic/thead"]{
+  background-color:#DDEEFF;
+}
+*[class ~= "topic/entry"]{
+  border-color:#EEEEEE;
+}
+
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/thead"]{
+    background-color:blue !important;
+  }
+}
+
+/* ====================================
+ *
+ * Editorial
+ */
+*[class ~= "topic/draft-comment"]{
+  background-color:#99FF99;
+  border-left-color:green;
+  border-right-color:green;
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/draft-comment"]{
+    background-color:green !important;
+  }
+}
+
+*[class ~= "topic/required-cleanup"]{
+  background-color:#FFFF99;
+  border-left-color:red;
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/required-cleanup"]{
+    background-color:red !important;
+  }
+}
+
+
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/pre"]{
+    color:black !important;
+    background-color:yellow !important;
+  }
+}
+
+
+
+*[class ~= "topic/indextermref"]{
+  color:red;
+}
+
+/* ====================================
+ *
+ * Metainfo  
+ */
+@media screen{ /* Not Print */
+  *[class ~= "topic/prolog"],
+  *[class ~= "map/topicmeta"]{
+    border-color:#e5e500;
+    background-color:#ffffb3;
+  }
+  *[class ~= "topic/prolog"] > *,
+  *[class ~= "map/topicmeta"] > *{
+    border-top-color:#e5e500;
+  }
+}
+
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/prolog"],
+  *[class ~= "map/topicmeta"]{
+    color:black !important;
+    background-color:yellow !important;
+  }
+}
+
+
+/* ====================================
+ *
+ * Specialization
+ */
+*[class ~= "topic/boolean"]{
+  color:green;
+}
+*[class ~= "topic/state"]{
+  color:green;
+}
+
+*[class ~= "topic/no-topic-nesting"]:before{
+  color:red;
+}
+
+
+*[class ~= "topic/example"]{
+  border-color:gray;
+}
+
+
+/* ====================================
+ *
+ * Links
+ */
+*[class ~= "topic/link"][role]:before{
+  color:black;
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/link"][role]:before{
+    color:inherit;
+  }
+}
+
+*[class ~= "topic/link"],
+*[class ~= "topic/xref"],
+*[class ~= "topic/longquoteref"][href]:before,
+*[class ~= "topic/source"][href]:after{
+  /* -link-color >>> */
+  color:navy;
+  /* <<< */
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/link"],
+  *[class ~= "topic/xref"],
+  *[class ~= "topic/longquoteref"][href]:before,
+  *[class ~= "topic/source"][href]:after{
+    /* -link-color >>> */
+    color:blue !important;
+    /* <<< */
+  }
+}

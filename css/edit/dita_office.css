@@ -1,0 +1,57 @@
+@import "dita.css";
+
+
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+oxy|comment {
+ display:none !important;
+}
+
+
+/* @media oxygen (os:windows) {  */
+*[class ~= "topic/topic"]{
+  font-family:Calibri, Verdana, sans-serif;  
+  background-color:white;
+}
+  
+*[class ~= "topic/topic"] > *[class ~= "topic/title"]{
+  font-family:"Trebuchet MS", Verdana, sans-serif;
+  margin-bottom:1em;
+  margin-top:1em;
+}
+/*}*/
+
+
+@media (min-width:10in){
+
+    oxy|document {
+      background-color:gray;
+      /*background-color:#fbfbfb;*/
+    }
+    
+    *[class ~= "topic/topic"]{
+      border: 1px solid #c6c6c6;
+      
+      margin-left: auto;
+      margin-right: auto;
+      width: 7in; 
+      min-height:7in;
+      
+      padding: 1em 1em 1em 2em;
+    }
+    
+    *[class ~= "topic/topic"] *[class ~= "topic/topic"]{
+      min-height:0;  
+    }
+}
+
+
+    
+*[class ~= "topic/body"]{
+  margin-left:2em;
+  margin-bottom:2em;
+  margin-top:1em;
+  margin-right:1em;
+}
+
+

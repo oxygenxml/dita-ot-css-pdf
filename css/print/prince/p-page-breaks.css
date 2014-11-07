@@ -1,0 +1,11 @@
+/*
+ * =====================================================
+ *
+ * The page breaks occur after each topic marked as a 
+ * chapter from the XSL.
+ *  
+ * =====================================================
+ */ 
+ *[class ~= "topic/topic"][is-chapter = "true"]{
+    page-break-before:always;
+}

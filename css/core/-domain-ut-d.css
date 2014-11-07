@@ -1,0 +1,145 @@
+
+/*
+ * ==================================================
+ * ==================================================
+ * 
+ * langRef/containers/ut-d.html
+ * 
+ * The utilities domain elements represent common 
+ * features of a language that may not necessarily be 
+ * semantic, such as image maps.
+ * 
+ * ==================================================
+ * ==================================================
+ */
+
+
+
+/*
+ * ==================================================
+ * 
+ * <sort-as>
+ *
+ * For elements that are sorted, the sort-as element 
+ * provides text that is combined with the base sort phrase 
+ * to construct the effective sort phrase.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/data 
+ */
+*[class~="ut-d/sort-as"]{    
+    display:inline;
+}
+@media print {
+  *[class~="ut-d/sort-as"]{    
+      display:none;
+  }
+}
+
+
+
+
+/*
+ * ==================================================
+ * 
+ * <imagemap>
+ *
+ * The imagemap element supports the basic functionality 
+ * of the HTML "client-side" image map markup. imagemap 
+ * allows you to designate a linkable area or region 
+ * over an image, allowing a link in that region to 
+ * display another topic.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/fig 
+ */
+*[class~="ut-d/imagemap"]{
+    display:table;
+    border:1pt solid;    
+    padding:0.5em;
+}
+@media print {
+  *[class~="ut-d/imagemap"]{
+    border:none;
+    padding:0;
+  }
+}
+
+
+
+/*
+ * ==================================================
+ * 
+ * <area>
+ *
+ * The area element describes a linkable area within an 
+ * imagemap. It allows the author to specify a shape 
+ * within the image, the coordinates of that shape, 
+ * and a link target for the area.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/figgroup 
+ */
+*[class~="ut-d/area"]{
+  display:table-row;
+}
+@media print {
+  *[class~="ut-d/area"]{
+    display:none;
+  }
+}
+
+
+
+
+/*
+ * ==================================================
+ * 
+ * <shape>
+ *
+ * The shape element defines the shape of a linkable 
+ * area in an imagemap.
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/keyword 
+ */
+*[class~="ut-d/shape"]:before{
+    /* TODO - dan - make all befores look the same */
+    content:"Area: " oxy_combobox(
+        edit, "#text", 
+        columns, 6, 
+        values, "rect, circle, poly, default, ");
+    font-weight: bold;
+
+}
+*[class~="ut-d/shape"]{
+    display:table-cell;
+    padding-right:0.5em;
+    
+    visibility:-oxy-collapse-text;
+    -oxy-display-tags:none;
+}
+
+
+
+/*
+ * ==================================================
+ * 
+ * <coords>
+ *
+ * The coords element specifies the coordinates of a 
+ * linkable region in an imagemap. (px)
+ * 
+ * Inherits styles from parent class:
+ *  
+ *     + topic/ph 
+ */
+*[class~="ut-d/coords"]{
+    display:table-cell;
+    padding-right:0.5em;
+}
+
