@@ -51,7 +51,7 @@ with those set forth herein.
     
     <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1a.xml"/>
     <property name="dita.map.merged.post.processed" value="${dita.map.merged}.pp"/>
-  	<property name="dita.css" value="${dita.plugin.org.dita.pdf2.dir}/../../../css/print/prince/p-dita.css"/>
+  	<property name="dita.css" value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/css/print/prince/p-dita.css"/>
     
     <!-- Postprocess the merged file -->
     <xslt in="${dita.map.merged}" 
