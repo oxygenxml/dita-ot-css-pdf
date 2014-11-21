@@ -5,6 +5,7 @@
  * 
  * =====================================================
  */
+
 @media print {
 
     /* Make invisible the indexterms in the content */
@@ -52,21 +53,21 @@
         margin-left:1em;
     }
 
-    index\.groups formatted\.value{
+    index\.groups formatted\.value {
         display:block;
         margin-left:1em;
     }
 
-    index\.groups refID:before{
+    index\.groups refID:before {
         content: " ";
     }
 
-    index\.groups index-link{
+    index\.groups index-link {
         content: target-counter(attr(href), page) ",";
         prince-link:attr(href);
     }
 
-    index\.groups index-link:last-child{
+    index\.groups index-link:last-child {
         content: target-counter(attr(href), page);
     }
 }

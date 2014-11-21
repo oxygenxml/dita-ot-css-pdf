@@ -8,24 +8,23 @@
  * ==========================================
  */
 
-
 @media print {
 
     comment {
-      display:block;
-      position:relative;
-      float: left;
-      clear:left;
-      margin: 0 0 1em -1.25in;
-      width: 1in;
-      min-height:1in;
-      font-size: 0.8em;
-      page-break-inside: avoid;
-      background-color: yellow;
-      color:black;
-      padding:0.5em;
-      border-radius: 10px;
-      link:attr(href);
+        display:block;
+        position:relative;
+        float: left;
+        clear:left;
+        margin: 0 0 1em -1.25in;
+        width: 1in;
+        min-height:1in;
+        font-size: 0.8em;
+        page-break-inside: avoid;
+        background-color: yellow;
+        color:black;
+        padding:0.5em;
+        border-radius: 10px;
+        link:attr(href);
     }
 
     comment:before {
