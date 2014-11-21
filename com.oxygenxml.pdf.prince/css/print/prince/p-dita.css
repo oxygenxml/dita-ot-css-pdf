@@ -1,5 +1,6 @@
 @import '../../core/-dita.css';
 
+@import 'p-fonts.css';
 @import 'p-side-notes.css';
 @import 'p-foot-notes.css';
 @import 'p-front-page.css';
