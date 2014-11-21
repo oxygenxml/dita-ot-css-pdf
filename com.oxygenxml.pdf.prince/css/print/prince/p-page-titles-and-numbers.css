@@ -5,50 +5,50 @@
  * 
  * ================================================
  */
-@media print{
+    
+@media print {
 
- 
-*[class ~= "map/map"] { 
-     string-set: maptitle attr(title);
-     counter-reset: page 1 figcount 1 chapter 1;
-     /* TODO - move to p-styling */
-     margin: 0;
-}
- 
-/* Reset the page counter on the first topic. Also the counter for the figures. */
-*[class ~= "map/map"] > *[class ~= "topic/topic"]:first { 
-    counter-reset: page; 
-}
-
-/* Define the string sets for the titles */
-*[class ~= "map/map"] >  *[class ~= "topic/topic"] > *[class ~= "topic/title"] { 
-     string-set: chaptertitle content(); 
-}
-
-
-@page :left{
-    @top-left {
-       content: string(maptitle) " | " string(chaptertitle) " | " counter(page);
-       font-size:8pt;
+    *[class ~= "map/map"] {
+        string-set: maptitle attr(title);
+        counter-reset: page 1 figcount 1 chapter 1;
+        /* TODO - move to p-styling */
+        margin: 0;
     }
-    @bottom-left {
-/**/
-}
-    @bottom-right {
-/**/
-}
- }
- 
-@page :right{
-    @top-right {
-       content: string(maptitle) " | " string(chaptertitle) " | " counter(page);
-       font-size:8pt;
+
+    /* Reset the page counter on the first topic. Also the counter for the figures. */
+    *[class ~= "map/map"] > *[class ~= "topic/topic"]:first {
+        counter-reset: page;
     }
-    @bottom-right {
-/**/
-}    
-    @bottom-left {
-/**/
-}
- } 
+
+    /* Define the string sets for the titles */
+    *[class ~= "map/map"] >  *[class ~= "topic/topic"] > *[class ~= "topic/title"] {
+        string-set: chaptertitle content();
+    }
+
+
+    @page :left {
+        @top-left {
+            content: string(maptitle) " | " string(chaptertitle) " | " counter(page);
+            font-size:8pt;
+        }
+        @bottom-left {
+            /**/
+        }
+        @bottom-right {
+            /**/
+        }
+    }
+
+    @page :right{
+        @top-right {
+            content: string(maptitle) " | " string(chaptertitle) " | " counter(page);
+            font-size:8pt;
+        }
+        @bottom-right {
+            /**/
+        }
+        @bottom-left {
+            /**/
+        }
+    }
 }

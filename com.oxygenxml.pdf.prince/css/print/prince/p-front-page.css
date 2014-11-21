@@ -1,16 +1,17 @@
 /*
  * =====================================================
- *
+ * 
  * Defines the front page aspect.
  * 
  * It matches the XSL created <front-page/> element.
- *  
+ * 
  * =====================================================
  */
+
 @media print {
 
     front-page {
-        page: front-page; 
+        page: front-page;
     }
 
     front-page-title {
@@ -20,7 +21,7 @@
         font-size:2em;
         font-family:arial, helvetica, sans-serif;
     }
-    
+
     @page front-page {
         @top {          content:none }
         @bottom {       content:none }

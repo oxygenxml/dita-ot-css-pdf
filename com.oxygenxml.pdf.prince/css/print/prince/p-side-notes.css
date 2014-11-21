@@ -2,43 +2,42 @@
  * ==========================================
  * 
  * Sidenotes. These are the oXygen review processing instructions
- * converted from XSL to elements. Thy are floating to one 
+ * converted from XSL to elements. Thy are floating to one
  * side of the page.
- *  
+ * 
  * ==========================================
  */
-
 
 @media print {
 
     comment {
-      display:block;
-      position:relative;
-      float: left;
-      clear:left;
-      margin: 0 0 1em -1.25in;
-      width: 1in;
-      min-height:1in;
-      font-size: 0.8em;
-      page-break-inside: avoid;
-      background-color: yellow;
-      color:black;
-      padding:0.5em;
-      border-radius: 10px;
-      link:attr(href);
+        display:block;
+        position:relative;
+        float: left;
+        clear:left;
+        margin: 0 0 1em -1.25in;
+        width: 1in;
+        min-height:1in;
+        font-size: 0.8em;
+        page-break-inside: avoid;
+        background-color: yellow;
+        color:black;
+        padding:0.5em;
+        border-radius: 10px;
+        link:attr(href);
     }
-    
+
     comment:before {
         content:'[' attr(hr_id) '] ';
-    } 
-    
+    }
+
     comment-author {
-        font-weight:bold;    
+        font-weight:bold;
     }
     comment-author:after {
-        content:':';    
+        content:':';
     }
-    
+
     comment-text{
         display:block;
         margin-top:0.5em;
@@ -50,21 +49,21 @@
     comment-text:after {
         content:'”';
     }
-    
+
     comment-date {
         display:block;
         margin-top:0.5em;
         margin-bottom:0.5em;
         text-align:right;
     }
-    
+
     /*
      * This is the link to the floated comment.
      * This remains in the main content flow.
      */
     comment-anchor:before {
         content:'[' attr(hr_id) ']';
-        background-color: yellow;    
+        background-color: yellow;
     }
 
 }

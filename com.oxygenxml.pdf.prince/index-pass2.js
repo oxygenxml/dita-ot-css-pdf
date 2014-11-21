@@ -3,19 +3,19 @@ window.onload = rewriteIndex;
 function rewriteIndex()
 {
     var div = document.getElementsByTagName("index.groups");
-    if (div.length > 0){    
-        var refs = div[0].getElementsByTagName("refID");   
+    if (div.length > 0) {
+        var refs = div[0].getElementsByTagName("refID");
         for (var i = 0; i < refs.length; ++i)
         {
             var refElement = refs[i];
             console.log("refID " + refElement.getAttribute("value"));
-            rewriteRef(refElement);            
-        }        
+            rewriteRef(refElement);
+        }
     }
 }
 
 /**
- * Makes sure the index-links having the same page are removed from the parent.  
+ * Makes sure the index-links having the same page are removed from the parent.
  * 
  */
 function rewriteRef(refElement) {

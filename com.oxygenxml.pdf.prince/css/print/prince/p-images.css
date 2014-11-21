@@ -1,12 +1,13 @@
- /*
+/*
  * =====================================================
- *
+ * 
  * Defines the images resolution.
- *  
+ * 
  * =====================================================
  */
-@media print{
+
+@media print {
     *[class ~= "topic/image"] {
         prince-image-resolution: 120dpi;
-    }      
- }
+    }
+}
