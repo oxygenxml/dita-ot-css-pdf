@@ -75,7 +75,7 @@
   border-color:transparent;
 }
 *[class ~= "topic/thead"]{
-  background-color:#DDEEFF;
+  background-color:inherit;
 }
 *[class ~= "topic/entry"]{
   border-color:#EEEEEE;
@@ -86,6 +86,16 @@
     background-color:blue !important;
   }
 }
+
+*[class~="topic/pre"] {
+  background-color:#F0F0F0;
+}
+@media oxygen-high-contrast-black{
+  *[class ~= "topic/pre"]{
+    background-color:inherit;
+  }
+}
+
 
 /* ====================================
  *
@@ -184,7 +194,7 @@
     color:inherit;
   }
 }
-
+*[keyref]:before,
 *[class ~= "topic/link"],
 *[class ~= "topic/xref"],
 *[class ~= "topic/longquoteref"][href]:before,

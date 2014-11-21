@@ -1111,7 +1111,7 @@
  */
 *[class ~= "learningBase/lcTime"][name]:before{
   content: oxy_substring(oxy_local-name(), 2)  " " 
-           oxy_textfield(edit , "@value" , columns , 6) " ";
+           oxy_textfield(edit , "@value" , columns , 8) " ";
 }
 
 /* ====================================

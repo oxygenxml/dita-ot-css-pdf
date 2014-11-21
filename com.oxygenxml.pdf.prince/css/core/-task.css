@@ -300,7 +300,7 @@
  */
 *[class~="task/info"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+  margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 *[class~="task/info"]:before {
@@ -326,7 +326,7 @@
  */
 *[class~="task/substeps"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+    margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 /* ====================================
@@ -359,7 +359,7 @@
  */
 *[class~="task/choicetable"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+  margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 /* ====================================
@@ -492,7 +492,7 @@
  */
 *[class~="task/choices"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+  margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 *[class~="task/choices"]:before {
@@ -530,7 +530,7 @@
  */
 *[class~="task/stepxmp"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+  margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 *[class~="task/stepxmp"]:before {
@@ -555,7 +555,7 @@
  */
 *[class~="task/stepresult"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+  margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 *[class~="task/stepresult"]:before {
@@ -578,7 +578,7 @@
  */
 *[class~="task/tutorialinfo"] {
   /* -task_step_child- >>> */
-  margin-left: 4em;
+  margin: 0.5em 0.5em 0.5em 4em;
   /* <<< */
 }
 *[class~="task/tutorialinfo"]:before {

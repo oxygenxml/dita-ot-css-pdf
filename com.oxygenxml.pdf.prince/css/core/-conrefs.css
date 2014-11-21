@@ -209,6 +209,8 @@ The content will we present on the conreffed element.*/
        /*Use concat to cast from URI to string*/
       link: oxy_concat("", attr(keyref, keyref));
       content:url("../../img/link.png") "[" attr(keyref) "]";
+      /*See -colors.css */
+      text-decoration:underline;
   }
   *[keyref]:empty {
       content: oxy_label(text, oxy_getSomeText(oxy_link-text(), 150, true), background-color, rgb(240, 240, 240));

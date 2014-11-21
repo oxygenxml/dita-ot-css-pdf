@@ -160,7 +160,7 @@
 *[class~="topic/example"] {
   /*See -colors.css*/
   display: block;
-  margin-left: 4em;
+  margin:1em 1em 1em 4em;
   border: 1pt solid;
 }
 @media oxygen {
@@ -182,7 +182,7 @@
  */
 *[class~="topic/fig"] {
   display: block;
-  margin: 0.5em 0;
+  margin: 1em 0;
 }
 /*
  * The figure titles are italic.
@@ -266,7 +266,7 @@
   width: attr(width, length);
 }
 *[class~="topic/image"][height] {
-  width: attr(height, length);
+  height: attr(height, length);
 }
 /*EXM-21459 Ignore such href values*/
 *[class~="topic/image"][href="-dita-use-conref-target"] {
@@ -464,7 +464,7 @@
  */
 *[class~="topic/p"] {
   display: block;
-  margin: 0.4em 0;
+  margin: 0.5em 0;
 }
 /* ==========================================================
  * 

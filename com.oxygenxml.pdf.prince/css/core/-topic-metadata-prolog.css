@@ -24,15 +24,16 @@
 *[class~="topic/prolog"],
 *[class~="map/topicmeta"] {
   display: block;
-  font-family: arial, helvetica, sans-serif;
+  font-family: sans-serif;
   font-size: 0.8em;
   margin-top: 0.5em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
   /*See -colors.css */
   border: 1pt solid;
   line-height: 1.2em;
   -oxy-foldable: true;
+  -oxy-placeholder-content:"Meta information";
 }
 @media print {
   *[class~="topic/prolog"],

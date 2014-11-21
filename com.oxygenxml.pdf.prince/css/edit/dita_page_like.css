@@ -8,25 +8,23 @@ oxy|comment {
 }
 
 
-/* @media oxygen (os:windows) {  */
 *[class ~= "topic/topic"]{
-  font-family:Calibri, Verdana, sans-serif;  
+  font-family: Calibri, serif;
   background-color:white;
 }
-  
+
+
 *[class ~= "topic/topic"] > *[class ~= "topic/title"]{
-  font-family:"Trebuchet MS", Verdana, sans-serif;
+  font-family:"Trebuchet MS", sansserif;
   margin-bottom:1em;
   margin-top:1em;
 }
-/*}*/
 
 
-@media (min-width:10in){
+@media oxygen AND (min-width:25cm){
 
     oxy|document {
-      background-color:gray;
-      /*background-color:#fbfbfb;*/
+      background-color:#fbfbfb;
     }
     
     *[class ~= "topic/topic"]{
@@ -34,14 +32,18 @@ oxy|comment {
       
       margin-left: auto;
       margin-right: auto;
-      width: 7in; 
-      min-height:7in;
+      width: 21.59cm; 
+      min-height:27.94cm;
       
-      padding: 1em 1em 1em 2em;
+      padding-top:1em;
+      padding-right:1em;
+      padding-left:2em;
+      padding-bottom:10em;      
     }
     
     *[class ~= "topic/topic"] *[class ~= "topic/topic"]{
       min-height:0;  
+      padding-bottom: 1em;
     }
 }
 
