@@ -1,7 +1,7 @@
 var refs = {};
 
 function index(href, counter) {
-    refs[href] = counter;    
+    refs[href] = counter;
     return counter;
 }
 
@@ -12,7 +12,7 @@ function dumpIndex()
     for (var href in refs) {
         keys.push(href);
     }
-    
+
     keys.sort();
 
     for (var i in keys) {
