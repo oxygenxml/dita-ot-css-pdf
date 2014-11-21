@@ -1,4 +1,4 @@
-/* 
+/*
  * ======================================================
  * 
  * Table of Contents.
@@ -11,8 +11,8 @@
         display: block;
         page: table-of-contents;
         font-size:10pt;
-    }    
-        
+    }
+
 
     @page table-of-contents {
         @top {          content: "Table of Contents" }
@@ -22,32 +22,32 @@
         @top-right {    content: none }
         @top-left {     content: none }
     }
-   
-    
+
+
     *[class ~= "map/topicref"] {
         display:block;
-    }    
-    
+    }
+
     *[class ~= "map/topicref"] *[class ~= "map/topicref"] {
         margin-left:4em;
-    }    
+    }
 
     /* The chapters, the level 1 topicref from the opentopic:map are bolded. */
     *[class ~= "map/topicref"][is-chapter] {
         font-weight: bold;
         font-size:1.5em;
     }
-    *[class ~= "map/topicref"][is-chapter] > *[class ~= "map/topicref"]:not(is-chapter)  { 
+    *[class ~= "map/topicref"][is-chapter] > *[class ~= "map/topicref"]:not(is-chapter)  {
         font-weight: normal;
         font-size:0.67em;
     }
-    
+
     /* Hide chapters below level 3. */
-    *[class ~= "map/topicref"][is-chapter] > *[class ~= "map/topicref"] > *[class ~= "map/topicref"] > *[class ~= "map/topicref"] { 
+    *[class ~= "map/topicref"][is-chapter] > *[class ~= "map/topicref"] > *[class ~= "map/topicref"] > *[class ~= "map/topicref"] {
         display:none;
     }
- 
-    
+
+
     /* A dotted line between the topic name and the page number. */
      *[class ~= "map/topicref"] *[class ~= "topic/navtitle"] {
         font-weight:inherit;
@@ -63,5 +63,3 @@
         link:attr(href);
      }
 }
-
-
