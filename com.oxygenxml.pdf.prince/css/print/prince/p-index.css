@@ -27,7 +27,6 @@
         counter-reset: index-page 1;
         columns: 2;
         column-fill: auto; 
-        page: index; 
     }
     @page index {    
         @top {          content: "Index" }
