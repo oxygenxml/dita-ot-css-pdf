@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- 
+<!--
 
     Does the same thing like the build.xml file from "org.dita.pdf2" plugin,
     but skips some processing steps like generating the FO intermediate file and running FOP as they are not necessary
@@ -13,23 +13,23 @@
   <!--
     
     
-    The main target. 
+    The main target.
     
     
     The same as "org.dita.pdf2:dita2pdf2"
-    but using 
+    but using
       prince.map2pdf2
     instead of
       map2pdf2
-       
+      
     Removed dependecy on:
       topic2pdf2
   -->
   <target name="prince.dita2pdf2" depends="dita2pdf2.init, build-init, preprocess, prince.map2pdf2"/>
 
-  <!-- 
+  <!--
     The same as "org.dita.pdf2:map2pdf2"
-    but using calling 
+    but using calling
       prince.publish.map.pdf
     instead of
       publish.map.pdf
@@ -48,23 +48,23 @@
     <antcall target="prince.publish.map.pdf"/>
   </target>
 
-  <!-- 
+  <!--
     The same as "org.dita.pdf2:publish.map.pdf"
-    but using 
-      prince.transform.topic2pdf 
+    but using
+      prince.transform.topic2pdf
     instead of
       transform.topic2pdf
   -->
   <target name="prince.publish.map.pdf"
     depends="
-        transform.topic2pdf.init,                    
-        publish.map.pdf.init,                    
+        transform.topic2pdf.init,
+        publish.map.pdf.init,
         prince.transform.topic2pdf"/>
   
 
-  <!-- 
+  <!--
     The same as "org.dita.pdf2:transform.topic2pdf"
-    but using 
+    but using
       prince.transform.topic2fo
     instead of
       transform.topic2fo
@@ -73,23 +73,23 @@
       transform.fo2pdf
       delete.fo2pdf.topic.fo
   -->
-  <target name="prince.transform.topic2pdf" 
+  <target name="prince.transform.topic2pdf"
       depends="copyCoreArtwork,prince.transform.topic2fo"/>
   
   
 
-  <!-- 
+  <!--
     The same as "org.dita.pdf2:transform.topic2fo"
-      
+    
     Removed dependency on:
-      transform.topic2fo.main,                    
+      transform.topic2fo.main,
       transform.topic2fo.i18n
   -->
   
   <target name="prince.transform.topic2fo"
     depends="
-    transform.topic2fo.init,                    
-    transform.topic2fo.index,                    
+    transform.topic2fo.init,
+    transform.topic2fo.index,
     transform.topic2fo.flagging"/>
 
 </project>
