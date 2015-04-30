@@ -162,6 +162,8 @@ with those set forth herein.
     <echo>First phase</echo>
     <!-- First pass, generates an index-pass2.js, with info relating ids to page numbers -->
     <exec executable="${prince.exec.path}" output="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js" failonerror="true" logError="true">
+      <arg value="--log"/>
+      <arg value="${dita.temp.dir.fullpath}${file.separator}firstPhaseLog.txt"/>   
       <arg value="--style"/>
       <arg value="${main.css.path}"/>
       <arg value="--style"/>
@@ -185,6 +187,8 @@ with those set forth herein.
     <echo>Second phase</echo>
     <!-- Second pass. -->
     <exec executable="${prince.exec.path}" failonerror="true">
+      <arg value="--log"/>
+      <arg value="${dita.temp.dir.fullpath}${file.separator}secondPhaseLog.txt"/>   
       <arg value="--style"/>
    	  <arg value="${main.css.path}"/>
       <arg value="--style"/>
