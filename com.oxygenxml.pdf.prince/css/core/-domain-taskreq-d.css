@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -462,7 +461,7 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/safety"]:before {
-  content: url(../img/caution.png) " Safety:";
+  content: url(../../img/caution.png) " Safety:";
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */

@@ -24,8 +24,15 @@ licensing agreement to the extent that such terms and conditions conflict
 with those set forth herein.
 -->
 <project name="com.oxygenxml.pdf.prince" basedir=".">
-  <!-- Path to the Prince Executable -->
-  <property name="princeExecPath">prince</property>
+  <!-- Path to the Prince Executable. May come as argument -->
+	
+  <condition property="prince.exec.path" value="prince.exe">
+	      <os family="windows"/>
+  </condition>  
+  <property name="prince.exec.path" value="prince"/>
+		
+  <!-- Control the display of the user comments or change tracking info (encoded in oXygen processing instructions). -->
+  <property name="show.changes.and.comments">no</property>
   
   <!--
     
@@ -43,44 +50,128 @@ with those set forth herein.
     2. Converts the merged map to PDF using Prince.
     
   -->
-  <target name="dita2pdf-prince" depends="prince.dita2pdf2, merged2pdf"/>
+  <target name="dita2pdf-prince" depends="check.prince.exec, prince.dita2pdf2, merged2pdf"/>
 
+  <target name="check.prince.exec">
+  	
+  	
+  	<property environment="env" />
+  	<condition property="commandname.present">
+	  	<or>
+	  	<available file="${prince.exec.path}" />
+	  	<available file="${prince.exec.path}" filepath="${env.PATH}" />
+	  	<!-- special case for Windows, may be PATH or Path -->
+	  	<available file="${prince.exec.path}" filepath="${env.Path}" />
+	  	<available file="${prince.exec.path}" filepath="${env.PATH}" />
+  		</or>
+  	</condition>
+
+  	<fail unless="commandname.present">
+  		 [DOTP001] [ERROR] Cannot find the Prince XML executable: "${prince.exec.path}". Make sure it is installed and the parent directory of the executable is listed the PATH environment variable, or make sure the parameter "prince.exec.path" is set in the transformation scenario and points to the prince executable. Please note this program is not part of oXygen and it can be downloaded/purchased from: http://www.princexml.com/
+  	</fail>
+  </target>
 
   <target name="merged2pdf" >
+  	
+  	<!-- Use the CSSs from the oXygen frameworks/dita directory, if available.
+  		 They are preferred because they can be easily changed by the end user (making use of the CSS Inspector)
+  	-->
+    <condition property="default.css.dir" 
+    	value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/../../../css" 
+    	else ="${dita.plugin.com.oxygenxml.pdf.prince.dir}/css">
+    	
+    	<available file="${dita.plugin.com.oxygenxml.pdf.prince.dir}/../../../css"></available>
+    </condition>
+  	<property name="default.css.dir.abs.path" location="${default.css.dir}"></property>
+  	
+  	<!-- This property may be overriden from the oXygen transformation scenario, based on the user selection of the stylesheet. -->
+  	<property name="dita.css.list"  value="${default.css.dir.abs.path}/edit/style-basic.css"/>
+  	<property name="dita.print.css" value="${default.css.dir.abs.path}/print/prince/p-dita.css"/>
+  	
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}${file.separator}dummy.file"/>
-    
     <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1a.xml"/>
     <property name="dita.map.merged.post.processed" value="${dita.map.merged}.pp"/>
-  	<property name="dita.css" value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/css/print/prince/p-dita.css"/>
+
+  	<echo message="The args input ${args.input}."/>
     
     <!-- Postprocess the merged file -->
     <xslt in="${dita.map.merged}"
           out="${dita.map.merged.post.processed}"
-          style="${dita.plugin.com.oxygenxml.pdf.prince.dir}/post-process.xsl">
+          style="${dita.plugin.com.oxygenxml.pdf.prince.dir}/post-process.xsl" 
+          force="true"
+          classpath="${dita.plugin.com.oxygenxml.pdf.prince.dir}/xslt-extensions">
       
       <param name="args.input" expression="${args.input}"/>
       <param name="dita.map.filename.root" expression="${dita.map.filename.root}"/>
+      <param name="show.changes.and.comments" expression="${show.changes.and.comments}"/>
     </xslt>
     
+  	
+
     <condition property="outputFile" value="${dita.map.output.dir}/${dita.map.filename.root}.pdf">
       <not><isset property="outputFile"/></not>
     </condition>
-    
-    <echo>=============================</echo>
-    <echo>Processing with Prince: ${dita.map.merged.post.processed}</echo>
-    <echo>Output file : ${outputFile}</echo>
-    <echo>=============================</echo>
+  	
+  	<!--  	
+  		It is best to fail early than to wait for Prince to create the PDF 
+  		and then fail when writing the output file. 
+  		Usually the output file remains opened in Acrobat Reader.
+  	-->  	
+  	<delete file="${outputFile}" failonerror="false"/>
+  	<fail message="[DOTP002] [ERROR] Cannot overwrite the output file: ${outputFile}. Make sure it is not opened in Acrobat Reader or other program that locks it.">
+  	     <condition>
+  	     	<available file="${outputFile}"></available>
+  	     </condition>
+	</fail>
 
-
+  	
+  	<!-- 
+  	  Generating a main stylesheet that imports all the CSSs specified by the user.
+  	  Will be passed as a parameter to the Prince process. We are using this approach because 
+  	  we cannot dynamically alter the number of -style arguments.
+  	  -->
+  	<property name="main.css.path" value="${dita.temp.dir.fullpath}/main.css"/>
+  	<script language="javascript">
+  	 <![CDATA[
+		var tmp = "";
+  	    var arr = project.getProperty('dita.css.list').split(';'); 
+  	    for (i = 0; i < arr.length; i++) {
+			if (arr[i].length() > 0) {
+		  		  tmp = tmp.concat("@import '");
+	  			  tmp = tmp.concat(arr[i]);
+	  	    	  tmp = tmp.concat("';\n");  
+  		   	}
+  	    }
+  		project.setProperty('main.css.content', tmp);
+  	 ]]>
+  	 </script>
+  	<echo file="${main.css.path}">${main.css.content}</echo>
+  	
     <echo>=============================</echo>
+  	<echo>Prince executable: ${prince.exec.path}</echo>
+    <echo>Processing: ${dita.map.merged.post.processed}</echo>
+    <echo>Output file: ${outputFile}</echo>
+  	<echo>Showing comments and trackchanges: ${show.changes.and.comments}</echo>
+  	<echo>User CSS files: </echo>
+  	<echo>${dita.css.list}</echo>
+  	<echo>Print CSS file: </echo>
+    <echo>${dita.print.css}</echo>
+    <echo>=============================</echo>
+  	
+
     <echo>First phase</echo>
     <!-- First pass, generates an index-pass2.js, with info relating ids to page numbers -->
-    <exec executable="${princeExecPath}" output="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js" failonerror="true">
+    <exec executable="${prince.exec.path}" output="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js" failonerror="true" logError="true">
       <arg value="--style"/>
-      <arg value="${dita.css}"/>
+      <arg value="${main.css.path}"/>
+      <arg value="--style"/>
+      <arg value="${dita.print.css}"/>
       <arg value="--style"/>
       <arg value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/index-pass1.css"/>
 
+   	  
+      <arg value="--no-network"/>
+    	
       <arg value="--javascript"/>
       <arg value="--script"/>
       <arg value="${dita.plugin.com.oxygenxml.pdf.prince.dir}/index-pass1.js"/>
@@ -93,9 +184,13 @@ with those set forth herein.
     <echo>=============================</echo>
     <echo>Second phase</echo>
     <!-- Second pass. -->
-    <exec executable="${princeExecPath}" failonerror="true">
+    <exec executable="${prince.exec.path}" failonerror="true">
       <arg value="--style"/>
-      <arg value="${dita.css}"/>
+   	  <arg value="${main.css.path}"/>
+      <arg value="--style"/>
+      <arg value="${dita.print.css}"/>
+
+      <arg value="--no-network"/>
 
       <arg value="--javascript"/>
       <arg value="--script"/>

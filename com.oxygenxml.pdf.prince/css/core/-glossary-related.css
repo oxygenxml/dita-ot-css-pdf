@@ -14,9 +14,6 @@
  * ==================================================
  * 
  */
- 
- 
-
 /* ====================================
  *
  * <abbreviated-form>
@@ -35,13 +32,9 @@
  * Because of its @keyref attribute, it is decorated with 
  * a link (a generic selector not in this CSS). 
  */
-*[class~="abbrev-d/abbreviated-form"]{
-/**/
+*[class~="abbrev-d/abbreviated-form"] {
+  /**/
 }
-
-
-
-
 /* ====================================
  *
  * <glossref>
@@ -65,13 +58,11 @@
  * Needs the [keys] to override the content defined by the 
  * map/topicref CSS selector of the same precedence. 
  */
-*[class~="glossref-d/glossref"][keys]:before{
-    /* TODO - dan - maybe a mixin for the rest, after the PNG...*/
-    content: url("../../img/glossref.png") " "  oxy_capitalize(oxy_local-name()) " [" oxy_unescapeURLValue(oxy_attributes()) " ]";
+@media oxygen {
+  *[class~="glossref-d/glossref"][keys]:before(1100) {
+    content: url("../../img/glossref.png");
+  }
 }
-
-
-
 /* ====================================
  *
  * <glossgroup>
@@ -85,6 +76,6 @@
  *     + topic/topic concept/concept
  * 
  */
-*[class~="glossgroup/glossgroup"]{
-/**/
+*[class~="glossgroup/glossgroup"] {
+  /**/
 }

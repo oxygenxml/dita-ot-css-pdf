@@ -1,3 +1,5 @@
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
 /* EXM-22130 If a table refers other table, its display is block */
 *[class~="topic/table"][conref]:not([conaction]),
 *[class~="topic/table"][conkeyref]:not([conaction]){
@@ -25,60 +27,32 @@ The content will we present on the conreffed element.*/
     display:inline;
     margin:0px;
 }
+/*EXM-33149 We might also have an after content.*/
+*[conref]:not([conaction]):after,
+*[conkeyref]:not([conaction]):after{
+    content:"";
+    display:inline;
+    margin:0px;
+}
 /* start conref/conkeyref handling */
-/* Hides the required content that is just needed for display on 
- conkeyref and conref for topic, ol/li, ul/li, table */
- /*topic*/
-*[class~="topic/topic"][conkeyref]:not([conaction]) > *[class~="topic/topic"],
-*[class~="topic/topic"][conref]:not([conaction]) > *[class~="topic/topic"],
-/*table*/
-*[class~="topic/table"][conkeyref]:not([conaction]) > *[class~="topic/table"],
-*[class~="topic/table"][conref]:not([conaction]) > *[class~="topic/table"],
-/*ol*/
-*[class~="topic/ol"][conkeyref]:not([conaction]) > *[class~="topic/ol"],
-*[class~="topic/ol"][conref]:not([conaction]) > *[class~="topic/ol"],
-/* ul */
-*[class~="topic/ul"][conkeyref]:not([conaction]) > *[class~="topic/ul"],
-*[class~="topic/ul"][conref]:not([conaction]) > *[class~="topic/ul"],
-/* Definition list of parml */
-*[class~="topic/dl"][conkeyref]:not([conaction]) > *[class~="topic/dl"],
-*[class~="topic/dl"][conref]:not([conaction]) > *[class~="topic/dl"],
-/* Product info */
-*[class~="topic/prodinfo"][conkeyref]:not([conaction]) > *[class~="topic/prodinfo"],
-*[class~="topic/prodinfo"][conref]:not([conaction]) > *[class~="topic/prodinfo"],
-/*Phrase*/
-*[class~="topic/ph"][conkeyref]:not([conaction]) > *[class~="topic/ph"],
-*[class~="topic/ph"][conref]:not([conaction]) > *[class~="topic/ph"],
-/*dlentry*/
-*[class~="topic/dlentry"][conkeyref]:not([conaction]) > *[class~="topic/dlentry"],
-*[class~="topic/dlentry"][conref]:not([conaction]) > *[class~="topic/dlentry"]
-
+/* Hides the required content that is not needed for display on conkeyref and conref */
+*[conref]:-oxy-has-valid-referenced-content 
+            > *:not(:-oxy-referenced-content):not(oxy|reference),
+*[conkeyref]:-oxy-has-valid-referenced-content 
+            > *:not(:-oxy-referenced-content):not(oxy|reference)
 {
-    display : inherit;
+    display : none !important;
 }
 
-*[class~="topic/table"][conkeyref]:not([conaction]) > *,    
-*[class~="topic/table"][conref]:not([conaction]) > *,
-*[class~="topic/ol"][conkeyref]:not([conaction]) > *,    
-*[class~="topic/ol"][conref]:not([conaction]) > *,
-*[class~="topic/ul"][conkeyref]:not([conaction]) > *,    
-*[class~="topic/ul"][conref]:not([conaction]) > *, 
-*[class~="topic/topic"][conref]:not([conaction]) > *,
-*[class~="topic/topic"][conkeyref]:not([conaction]) > *,
-/* Definition list of parml */
-*[class~="topic/dl"][conref]:not([conaction]) > *,
-*[class~="topic/dl"][conkeyref]:not([conaction]) > *,
-/* Product info */
-*[class~="topic/prodinfo"][conref]:not([conaction]) > *,
-*[class~="topic/prodinfo"][conkeyref]:not([conaction]) > *,
-/*Phrase*/
-*[class~="topic/ph"][conref]:not([conaction]) > *,
-*[class~="topic/ph"][conkeyref]:not([conaction]) > *,
-/*Dlentry*/
-*[class~="topic/dlentry"][conref]:not([conaction]) > *,
-*[class~="topic/dlentry"][conkeyref]:not([conaction]) > *
-{
-    display : none;
+*[conref]:-oxy-has-valid-referenced-content,
+*[conkeyref]:-oxy-has-valid-referenced-content {
+	visibility:-oxy-collapse-text;
+}
+
+oxy|reference, 
+*[conref]:-oxy-has-valid-referenced-content > *:-oxy-referenced-content,
+*[conkeyref]:-oxy-has-valid-referenced-content > *:-oxy-referenced-content{
+	visibility:visible;
 }
 
 /* --- end conref/conkeyref handling --- */
@@ -108,27 +82,29 @@ The content will we present on the conreffed element.*/
     content: "";
 }
 
+/* Counter increment for the first, second, third and fourth level of ordered list*/
 *[class~="topic/ol"] > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"],
 *[class~="topic/ol"] > *[class~="topic/li"][conkeyref]:not([conaction]) > *[class~="topic/li"]{
     counter-increment: item-count;
 }
 
-/*EXM-28795 second level of ordered list*/
-*[class~="topic/ol"] *[class~="topic/ol"]  > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"],
-*[class~="topic/ol"] *[class~="topic/ol"]  > *[class~="topic/li"][conkeyref]:not([conaction]) > *[class~="topic/li"]{
-    counter-increment: item2-count;
-}
-
+/* Counter display for the first, second, third and fourth level of ordered list*/
 *[class~="topic/ol"] > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"]:before,
 *[class~="topic/ol"] > *[class~="topic/li"][conkeyref]:not([conaction]) > *[class~="topic/li"]:before{
-    content: counters(item-count, ".", decimal) ". ";
+    content: counter(item-count, decimal) ". ";
     font-weight:bold;
 }
-/*EXM-28795 second level of ordered list*/
 *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"]:before,
 *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"][conkeyref]:not([conaction]) > *[class~="topic/li"]:before{
-    content: counters(item2-count, ".", lower-alpha) " ";
-    font-weight:bold;
+    content: counter(item-count, lower-alpha) ". ";
+}
+*[class~="topic/ol"] *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"]:before,
+*[class~="topic/ol"] *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"][conkeyref]:not([conaction]) > *[class~="topic/li"]:before{
+    content: counter(item-count, lower-roman) ". ";
+}
+*[class~="topic/ol"] *[class~="topic/ol"] *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"]:before,
+*[class~="topic/ol"] *[class~="topic/ol"] *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"][conkeyref]:not([conaction]) > *[class~="topic/li"]:before{
+    content: counter(item-count, decimal) ". ";
 }
 
 *[class~="topic/ol"] > *[class~="topic/li"][conref]:not([conaction])    > *[class~="topic/li"],
@@ -138,6 +114,40 @@ The content will we present on the conreffed element.*/
     on the same line, in compact tag display.*/
     display:list-item;
     list-style:none;    
+}
+
+
+/*Make the steps and substeps more readable when using conrefs.*/
+
+*[class~="task/substeps"] > *[class~="task/substep"][conref]:not([conaction]):before,
+*[class~="task/substeps"] > *[class~="task/substep"][conkeyref]:not([conaction]):before{
+	display:none;  
+}
+
+*[class~="task/substeps"] > *[class~="task/substep"][conref]:not([conaction]) > *,
+*[class~="task/substeps"] > *[class~="task/substep"][conkeyref]:not([conaction]) > *{
+	display:none;  
+}
+
+*[class~="task/steps"] > *[class~="task/step"][conref]:not([conaction]):before,
+*[class~="task/steps"] > *[class~="task/step"][conkeyref]:not([conaction]):before {
+	display:none;  
+}
+
+*[class~="task/steps"] > *[class~="task/step"][conref]:not([conaction]) > * ,
+*[class~="task/steps"] > *[class~="task/step"][conkeyref]:not([conaction]) > * {
+	display:none;  
+}
+
+
+/*EXM-31899 Allow arrows between UI controls referred with conref or conkeyref*/
+*[class~="ui-d/menucascade"] > *[class~="ui-d/uicontrol"][conref] > *[class~="ui-d/uicontrol"]:before,
+*[class~="ui-d/menucascade"] > *[class~="ui-d/uicontrol"][conkeyref] > *[class~="ui-d/uicontrol"]:before{
+    content: "→";
+}
+*[class~="ui-d/menucascade"] > *[class~="ui-d/uicontrol"][conref]:first-child > *[class~="ui-d/uicontrol"]:before,
+*[class~="ui-d/menucascade"] > *[class~="ui-d/uicontrol"][conkeyref]:first-child > *[class~="ui-d/uicontrol"]:before{
+    content: "";
 }
 
 
@@ -189,8 +199,7 @@ The content will we present on the conreffed element.*/
 /*EXM-16989 Some conref cases end*/
 
 /*EXM-30888 Avoid full tags on directly linked content*/
-*[conref] > *, 
-*[conkeyref] > *{
+*:-oxy-has-valid-referenced-content > *:-oxy-referenced-content{
     -oxy-display-tags: none;
 }
 
@@ -214,5 +223,11 @@ The content will we present on the conreffed element.*/
   }
   *[keyref]:empty {
       content: oxy_label(text, oxy_getSomeText(oxy_link-text(), 150, true), background-color, rgb(240, 240, 240));
+  }
+}
+  
+@media oxygen-high-contrast-black {
+    *[keyref]:empty {
+      content: oxy_label(text, oxy_getSomeText(oxy_link-text(), 150, true), background-color, rgb(128, 128, 128));
   }
 }

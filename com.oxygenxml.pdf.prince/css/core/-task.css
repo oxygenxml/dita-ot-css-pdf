@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -79,7 +78,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/prereq"]:before {
-  content: "Prerequisites: ";
+  content: "Before you begin: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -105,7 +104,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/postreq"]:before {
-  content: "Post-requisites: ";
+  content: "What to do next: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -132,7 +131,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/context"]:before {
-  content: "Context: ";
+  content: "About this task: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -157,7 +156,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/result"]:before {
-  content: "Result: ";
+  content: "Results: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -238,6 +237,7 @@
  *     + topic/ul
  */
 *[class~="task/stepsection"] {
+  display:block !important;
   margin-left: 0em !important;
   list-style: none !important;
   counter-reset: none !important;
@@ -287,6 +287,54 @@
 *[class~="task/cmd"] {
   /**/
 }
+
+/* ====================================
+ *
+ * <steptroubleshooting>
+ * 
+ * The <steptroubleshooting> element provides information 
+ * that is designed to help remedy the situation when a 
+ * step does not complete as expected. In particular, this 
+ * element can be used to explain how users can recover when 
+ * the results of a step do not match those listed in 
+ * the <stepresult> element.
+ *  
+ * Inherits styles from parent class:
+ *  
+ *     + topic/itemgroup
+ */
+/* ====================================
+ *
+ * <tasktroubleshooting>
+ * 
+ * The <tasktroubleshooting> element provides information 
+ * designed to help users remedy the situation when a task 
+ * does not complete as expected. In particular, this element 
+ * can be used to explain how users can recover when the 
+ * results of a task do not match those listed in the 
+ * <result> element. 
+ *  
+ * Inherits styles from parent class:
+ *  
+ *     + topic/section 
+ */
+*[class~="task/tasktroubleshooting"],
+*[class~="task/steptroubleshooting"]{
+  margin: 0.5em 0 0.5em 2em;
+  /*See -colors.css */
+  border-left: 2pt solid;  
+  padding: 1em;  
+  -oxy-foldable: false;
+}
+*[class~="task/tasktroubleshooting"]:before,
+*[class~="task/steptroubleshooting"]:before{
+  content: "Troubleshooting: ";
+  /* -task_before- >>> */
+  font-weight: bold;
+  /* <<< */
+}
+
+
 /* ====================================
  *
  * <info>
@@ -514,7 +562,7 @@
  *     + topic/li 
  */
 *[class~="task/choices"] > *[class~="task/choice"] {
-  list-style-type: circle;
+  list-style-type: disc;
 }
 /* ====================================
  *
@@ -559,7 +607,7 @@
   /* <<< */
 }
 *[class~="task/stepresult"]:before {
-  content: "Step result: ";
+  content: "Result: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */

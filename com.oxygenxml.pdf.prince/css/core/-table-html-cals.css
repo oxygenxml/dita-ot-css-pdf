@@ -17,6 +17,24 @@
     margin-top: 0.5em;
 }
 
+@media print {
+  /* 
+    Put a number before the table title.
+    The counter is reset in p-page-titles-and-numbers.css
+  */
+*[class~="topic/table"] > caption,
+*[class~="topic/table"] > info > *[class~="topic/title"],
+*[class~="topic/table"] > *[class~="topic/title"]{ 
+    counter-increment: tablecount;
+}
+*[class~="topic/table"] > caption:before,
+*[class~="topic/table"] > info > *[class~="topic/title"]:before,
+*[class~="topic/table"] > *[class~="topic/title"]:before{ 
+    content: "Table " counter(tablecount) ": ";
+  }
+}
+
+
 /* 
     A Table in a document 
 */
@@ -782,15 +800,12 @@ td[bgcolor]{
 	  font-size:0.75em;
 }
 
-*[class~="topic/colspec"]:before{
-    content: "column ";
-}
 *[class~="topic/colspec"]:after{
     content:
     		"  name " oxy_textfield(edit, "@colname", columns, 7) 
     		"  number " oxy_textfield(edit, "@colnum", columns, 7)
     		"  width " oxy_textfield(edit, "@colwidth", columns, 7)
-    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 8)
+    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10)
     		"  "    		
     		oxy_checkbox(edit, "@colsep", values, "1", uncheckedValues, "0", labels, "colsep", fontInherit, true) 
     		oxy_checkbox(edit, "@rowsep", values, "1", uncheckedValues, "0", labels, "rowsep", fontInherit, true);
@@ -798,15 +813,12 @@ td[bgcolor]{
 	padding-bottom: 5px;
 }
 
-col:before{
-    content:"column ";
-}
 col:after{
     content:
     		"  title " oxy_textfield(edit, "@title", columns, 7)   
     		"  span " oxy_textfield(edit, "@span", columns, 7) 
     		"  width " oxy_textfield(edit, "@width", columns, 7)
-    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 8);
+    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10);
     white-space: pre;
     padding-bottom: 5px;
 }

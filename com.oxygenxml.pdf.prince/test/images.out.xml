@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
+    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <oxy:front-page-title/>
+    </oxy:front-page>
+    <topic break-before="true" class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Introduction</title>
+        <p class="- topic/p ">
+            <!-- The width and height should take into account the scaling attribute. -->
+            <!-- The relative image should be changed to absolute. -->
+            <image class="- topic/image " href="MAP_DIR_URI/images/Gerbera.jpg" width="83" height="83" scale="33" placement="inline"/>
+            <image class="- topic/image " href="MAP_DIR_URI/images/Gerbera.jpg" width="250" height="250" scale="100" placement="inline"/>
+            <!-- This one has width specified, do not touch it. -->
+            <image class="- topic/image " href="MAP_DIR_URI/images/Gerbera.jpg" scale="50" width="10" placement="inline"/>
+            <!-- This one has height specified, do not touch it. -->
+            <image class="- topic/image " href="MAP_DIR_URI/images/Gerbera.jpg" scale="50" height="10" placement="inline"/>
+            <!-- This does not exist, should not generate width and height for it. -->
+            <image class="- topic/image " href="MAP_DIR_URI/images/NotExisting.jpg" scale="33" placement="inline"/>
+        </p>
+    </topic>
+</bookmap>

@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -90,8 +89,8 @@
 }
 /* Separates the submenus. */
 *[class~="ui-d/menucascade"] > *[class~="ui-d/uicontrol"]:before{
-    /*content: "→";*/
-    content: " > ";
+    content: "→";
+/*    content: " > ";*/
 }
 *[class~="ui-d/menucascade"] > *[class~="ui-d/uicontrol"]:first-child:before{
     content: "";

@@ -1,4 +1,5 @@
-@import "hide_colspec.css";
+@import "dita.css";
+@import "alternate-table-hide-colspec.css";
 
 @namespace oxy "http://www.oxygenxml.com/extensions/author";
 

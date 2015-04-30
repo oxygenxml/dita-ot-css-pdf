@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -31,10 +30,7 @@
  */
 *[class~="topic/topic"] {
     display: block;
-    margin: 0.25in 0.1in 1in 0.1in;
-   /* margin-top: 0.25in;
-    margin-bottom: 1in;
-   */   
+    margin:0.5em;
 }
 @media print {
   *[class~="topic/topic"] {
@@ -58,38 +54,35 @@
 *[class~="topic/title"] {
     display:block;
     font-weight:bold;
-    margin-top:0.5em;
-    margin-bottom:0.1em;
+    margin-top:0.6em;
+    margin-bottom:0.2em;
 }
 
 /*
   Reduce the font size as the title is placed deeper in the content.
  */
 *[class~="topic/topic"] > *[class~="topic/title"] {
-    font-size: 1.75em;
+    font-size: 2em;
 }
 * *[class~="topic/topic"] > *[class~="topic/title"] {
-    font-size: 1.6em;
+    font-size: 1.75em;
 }
 * * *[class~="topic/topic"] > *[class~="topic/title"] {
-    font-size: 1.4em;
-    border-bottom:none;
+    font-size: 1.5em;
 }
 * * * *[class~="topic/topic"] > *[class~="topic/title"] {
     font-size: 1.2em;
 }
-* * * * *[class~="topic/topic"] > *[class~="topic/title"] {
-    font-size: 1em;
-}
-
 /*
   Some underlining for the titles, when printing.
  */
 @media print {
   *[class~="topic/topic"] > *[class~="topic/title"] {
+      padding-bottom:2pt;
       border-bottom:2pt solid;
   }
   *[class~="topic/topic"]  *[class~="topic/topic"] > *[class~="topic/title"] {
+      padding-bottom:1pt;
       border-bottom:1pt solid;
   }  
   *[class~="topic/topic"]  *[class~="topic/topic"]  *[class~="topic/topic"] > *[class~="topic/title"] {
@@ -140,6 +133,7 @@
     margin: 0.5em 0;
     font-weight: bold;
     display: block;
+    -oxy-foldable:false !important;
 }
 *[class~="topic/searchtitle"]:before,
 *[class~="topic/navtitle"]:before {
@@ -173,9 +167,6 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-}
-*[class~="topic/abstract"] > *[class~="topic/shortdesc"]{
-    display:inline;
 }
 
 @media print {
@@ -224,7 +215,15 @@
  */
 *[class~="topic/body"] {
     display: block;
+    /* Put an indent of the body when in page layout. The short 
+    description and related links are indented to the right.*/
+    margin-left:1em;
+
+    margin-bottom:2em;
+    margin-top:1em;
+    margin-right:1em;
 }
+
 
 
 

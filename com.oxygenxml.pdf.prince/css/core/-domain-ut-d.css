@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -60,6 +59,10 @@
     border:1pt solid;    
     padding:0.5em;
 }
+/*Force block display in order to have it show up in Author*/
+*[class~="ut-d/imagemap"] > *[class~="topic/image"] {
+  display: block;
+}
 @media print {
   *[class~="ut-d/imagemap"]{
     border:none;
@@ -111,7 +114,6 @@
     /* TODO - dan - make all befores look the same */
     content:"Area: " oxy_combobox(
         edit, "#text", 
-        columns, 6, 
         values, "rect, circle, poly, default, ");
     font-weight: bold;
 

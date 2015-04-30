@@ -7,5 +7,7 @@
  */
 
 @media print {
-    /**/
+    :root{
+        font-size:12px;
+    }
 }

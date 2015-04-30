@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -61,16 +60,19 @@
  * 
  * The <coderef> element references an external file that 
  * contains literal code. When evaluated, the <coderef> 
- * element should cause the target code to be displayed inline.
+ * element should present the content of the file.
  *  
  * Inherits styles from parent class:
  *  
  *     + topic/xref
  */
 @media oxygen {
-  /*EXM-28599 Present @href value for coderef*/
-  *[class~="pr-d/coderef"][href]:before {
-    -oxy-append-content: "[" attr(href) "]";
+  *[class~="pr-d/coderef"][class]:before,
+  *[class~="pr-d/coderef"][class]:after,
+  *[class~="pr-d/coderef"][class] {
+    text-decoration:inherit;
+    color:inherit;
+    content:"";
   }
 }
 /* ====================================
@@ -119,7 +121,7 @@
  *     + topic/keyword
  */
 *[class~="pr-d/parmname"] {
-  font-style: italic;
+  font-weight: bold;
 }
 /* ====================================
  *
@@ -235,7 +237,7 @@
  *     + topic/figgroup
  */
 *[class~="pr-d/groupseq"] {
-  /**/
+   display:inline;
 }
 /* ====================================
  *
@@ -251,7 +253,7 @@
  *     + topic/figgroup
  */
 *[class~="pr-d/groupchoice"] {
-  /**/
+  display:inline; 
 }
 *[class~="pr-d/groupchoice"]:before {
   content: "{ ";
@@ -354,10 +356,8 @@
  *     + topic/xref 
  * 
  */
-*[class~="pr-d/synnoteref"][href]:empty {
-  link: attr(href);
-  content: oxy_local-name();
-  font-style: italic;
+*[class~="pr-d/synnoteref"]{
+    font-style:italic;
 }
 /* ====================================
  *

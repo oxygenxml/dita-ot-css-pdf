@@ -41,14 +41,14 @@ informaltable{
 }
 *[class~="topic/tgroup"]:before! > *[class~="topic/colspec"]{ 
     display:block;
-    content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, blue, fontInherit, true, showText, true, enableInReadOnlyContext, true);
+    content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
     text-align:left;
     font-family: sansserif, verdana, helvetica;
     font-size: 0.75em;
     padding-bottom: 0.2em;
 }
 *[class~="topic/tgroup"]:-oxy-visible-colspecs:before{
-    content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, blue, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
+    content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
 }
 
 col, colgroup {

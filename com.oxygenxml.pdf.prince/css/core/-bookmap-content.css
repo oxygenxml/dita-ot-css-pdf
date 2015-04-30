@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -87,7 +86,6 @@
  */
 *[class~="bookmap/mainbooktitle"] {
   display: block;
-  font-size: larger;
 }
 /* ====================================
  *
@@ -142,8 +140,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/appendix"]:before {
-  content: url("../../img/appendix.png") " " oxy_capitalize(oxy_local-name()) " [" oxy_attributes() " ]" !important;
+@media oxygen {
+  *[class~="bookmap/appendix"]:before(1100) {
+    content: url("../../img/appendix.png");
+  }
 }
 /* ====================================
  *
@@ -157,16 +157,16 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/backmatter"] {
-  border-top: 2pt solid;
-  margin-top: 0.5em;
-  padding-top: 0.5em;
-}
-*[class~="bookmap/backmatter"]:before {
-  content: "Backmatter ";
-  /* -before_bold- >>> */
-  font-weight: bold;
-  /* <<< */
+@media oxygen {
+ *[class~="bookmap/backmatter"] {
+   border-top: 2pt solid;
+   margin-top: 0.5em;
+   padding-top: 0.5em;
+ }
+
+ *[class~="bookmap/backmatter"]:before(1100) {
+    content: url("../../img/DitaBackmatterRef16.gif");
+  }
 }
 /* ====================================
  *
@@ -182,16 +182,15 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/frontmatter"] {
-  border-bottom: 2pt solid;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
-}
-*[class~="bookmap/frontmatter"]:before {
-  content: "Frontmatter ";
-  /* -before_bold- >>> */
-  font-weight: bold;
-  /* <<< */
+@media oxygen {
+  *[class~="bookmap/frontmatter"] {
+    border-bottom: 2pt solid;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+  }
+  *[class~="bookmap/frontmatter"]:before(1100) {
+    content: url("../../img/DitaFrontmatterRef16.gif");
+  }
 }
 /* ====================================
  *
@@ -241,9 +240,6 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/booklist"] {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
-}
 /* ====================================
  *
  * <booklists>
@@ -255,11 +251,8 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/booklists"]:before {
-  content: "Lists";
-  /* -before_bold- >>> */
-  font-weight: bold;
-  /* <<< */
+*[class~="bookmap/booklists"]:before(1100) {
+  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
 }
 /* ====================================
  *
@@ -272,9 +265,6 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/booktitlealt"] {
-  /**/
-}
 /* ====================================
  *
  * <chapter>
@@ -286,17 +276,28 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/chapter"]:before {
-  content: url("../../img/chapter.png") " " oxy_capitalize(oxy_local-name()) " " counter(chapter) " [" oxy_attributes() " ]" !important;
-}
-*[class~="bookmap/chapter"][toc="no"]:before {
-  content: url("../../img/chapter.png") " " oxy_capitalize(oxy_local-name()) " [" oxy_attributes() " ]" !important;
-}
-*[class~="bookmap/chapter"] {
-  counter-increment: chapter;
-}
-*[class~="bookmap/chapter"][toc="no"] {
-  counter-increment: none;
+@media oxygen {
+  *[class~="bookmap/chapter"]:before(1100) {
+    content: url("../../img/chapter.png");
+  }
+  *[class~="bookmap/chapter"]:before(1040) {
+    content: " " counter(chapter) " ";
+  }
+  *[class~="bookmap/chapter"][toc="no"]:before(1040) {
+    content: none;
+  }
+  /*There are two conditions in order to increase the rule specificity.
+  From the alterntate stylesheets, one can hide all the topicref the 
+  element names, but we want chapter to still be visible.*/
+  *[class~="bookmap/chapter"][class~="bookmap/chapter"]:before(1050) {
+    content: oxy_capitalize(oxy_local-name()) " " !important;
+  }
+  *[class~="bookmap/chapter"] {
+    counter-increment: chapter;
+  }
+  *[class~="bookmap/chapter"][toc="no"] {
+    counter-increment: none;
+  }
 }
 /* ====================================
  *
@@ -424,8 +425,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/part"]:before {
-  content: url("../../img/part.png") " " oxy_capitalize(oxy_local-name()) " [" oxy_attributes() " ]";
+@media oxygen {
+  *[class~="bookmap/part"]:before(1100) {
+    content: url("../../img/part.png");
+  }
 }
 /* ====================================
  *

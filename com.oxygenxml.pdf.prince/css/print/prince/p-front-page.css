@@ -20,6 +20,7 @@
         margin-top:3in;
         font-size:2em;
         font-family:arial, helvetica, sans-serif;
+        font-weight:bold;
     }
 
     @page front-page {

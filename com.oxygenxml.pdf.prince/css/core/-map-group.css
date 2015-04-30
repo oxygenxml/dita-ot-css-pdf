@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -16,8 +15,6 @@
  * ==================================================
  * 
  */
-
-
 /* ==================================================
  *
  *  <anchorref>
@@ -31,13 +28,10 @@
  * Inherits styles from parent class:
  *  
  *     + map/topicref 
- */ 
-*[class~="mapgroup-d/anchorref"]{
-  /* TODO - dan - check media print */  
+ */
+*[class~="mapgroup-d/anchorref"]:before(1100) {
+  content: url("../../img/anchor.png");
 }
-
-
-
 /* ==================================================
  *
  *  <keydef>
@@ -51,21 +45,19 @@
  * Inherits styles from parent class:
  *  
  *     + map/topicref 
- */ 
-*[class~="mapgroup-d/keydef"][keys]:before{
-    content: url("../../img/keydef.png") " "  oxy_capitalize(oxy_local-name()) !important;
+ */
+*[class~="mapgroup-d/keydef"][keys]:before(1100) {
+  content: url("../../img/keydef.png");
 }
 /*Edit the @keys on a keydef, it is required*/
-*[class~="mapgroup-d/keydef"][keys]{
-    /*EXM-26388 If no values are given, the map opening takes a lot of time if there are many keydefs.*/
-    -oxy-append-content: " keys " oxy_editor(type, text, edit, "@keys", values, '', columns, 15);
+*[class~="mapgroup-d/keydef"][keys] {
+  /*EXM-26388 If no values are given, the map opening takes a lot of time if there are many keydefs.*/
+  -oxy-append-content: "   keys: " oxy_editor(type, text, edit, "@keys", values, '', columns, 15);
 }
-*[class~="mapgroup-d/keydef"][href]{
-    /*EXM-26388 If no values are given, the map opening takes a lot of time if there are many keydefs.*/
-    -oxy-append-content: " href " oxy_editor(type, text, edit, "@href", values, '', columns, 15);
+*[class~="mapgroup-d/keydef"][href] {
+  /*EXM-26388 If no values are given, the map opening takes a lot of time if there are many keydefs.*/
+  -oxy-append-content: " href: " oxy_editor(type, text, edit, "@href", values, '', columns, 15);
 }
-
-
 /* ==================================================
  *
  *  <mapref>
@@ -77,14 +69,10 @@
  * Inherits styles from parent class:
  *  
  *     + map/topicref 
- */  
-*[class~="mapgroup-d/mapref"]{
-/**/
+ */
+*[class~="mapgroup-d/mapref"]:before(1100) {
+  content: url("../../img/DitamapRef16.gif");
 }
-
-
-
-
 /* ====================================
  *
  * <topicgroup>
@@ -98,21 +86,13 @@
  *  
  *     + map/topicref 
  */
-*[class~="mapgroup-d/topicgroup"]{
-    border-left:2pt solid;
-/* TODO - Dan - check printing */
+*[class~="mapgroup-d/topicgroup"] {
+  border-left: 2pt solid;
+  /* TODO - Dan - check printing */
 }
-*[class~="mapgroup-d/topicgroup"]:before{
-    display:inline;
-    content: url("../../img/topicgroup.png") " " 
-              oxy_capitalize(oxy_local-name()) 
-              " [" oxy_unescapeURLValue(oxy_attributes()) " ]" 
-              !important;
+*[class~="mapgroup-d/topicgroup"]:before(1100) {
+  content: url("../../img/topicgroup.png");
 }
-
-
-
-
 /* ====================================
  *
  * <topichead>
@@ -127,20 +107,11 @@
  *  
  *     + map/topicref 
  */
-*[class~="mapgroup-d/topichead"]{
-}
-@media oxygen{
-  *[class~="mapgroup-d/topichead"]:before{
-      content: url("../../img/topichead.png") " " 
-                oxy_capitalize(oxy_local-name()) 
-                " [" oxy_unescapeURLValue(oxy_attributes()) " ]"
-                !important;
+@media oxygen {
+  *[class~="mapgroup-d/topichead"]:before(1100) {
+    content: url("../../img/topichead.png");
   }
 }
-
-
-
-
 /* ====================================
  *
  * <topicset>
@@ -156,20 +127,13 @@
  *  
  *     + map/topicref 
  */
-*[class~="mapgroup-d/topicset"]{
-    /* TODO - Dan - check printing */
+*[class~="mapgroup-d/topicset"] {
+  /* TODO - Dan - check printing */
 }
-*[class~="mapgroup-d/topicset"]:before{
-    /* TODO - Dan - make an image for the set 'topicset.png'.*/
-    content: url("../../img/topicgroup.png") " " 
-              oxy_capitalize(oxy_local-name()) 
-              " [" oxy_unescapeURLValue(oxy_attributes()) " ]"
-              !important;
+*[class~="mapgroup-d/topicset"]:before(1100) {
+  /* TODO - Dan - make an image for the set 'topicset.png'.*/
+  content: url("../../img/topicgroup.png");
 }
-
-
-
-
 /* ====================================
  *
  * <topicsetref>
@@ -182,15 +146,10 @@
  *  
  *     + map/topicref 
  */
-*[class~="mapgroup-d/topicsetref"]{
-    /* TODO - Dan - check printing */
+*[class~="mapgroup-d/topicsetref"] {
+  /* TODO - Dan - check printing */
 }
-*[class~="mapgroup-d/topicsetref"]:before{
-    /* TODO - Dan - make an image for the set 'topicsetref.png'.*/
-    content: url("../../img/topicsetref.png") " " 
-              oxy_capitalize(oxy_local-name()) 
-              " [" oxy_unescapeURLValue(oxy_attributes()) " ]"
-              !important;
+*[class~="mapgroup-d/topicsetref"]:before(1100) {
+  /* TODO - Dan - make an image for the set 'topicsetref.png'.
+  content: url("../../img/topicsetref.png");*/
 }
-
-

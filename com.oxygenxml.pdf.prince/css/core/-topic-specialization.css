@@ -91,11 +91,13 @@
  * two opposite values, such as yes / no or on / off. 
  */ 
 *[class~="topic/boolean"]{
-    /*See -colors.css */
-    visibility:-oxy-collapse-text;
-    -oxy-display-tags:none;
 }
 *[class~="topic/boolean"]:before{
+    content: "boolean: " ;
+}
+
+*[class~="topic/boolean"][state='no']:before,
+*[class~="topic/boolean"][state='yes']:before{
     content: 
              oxy_checkbox(edit, "@state", 
              values, "yes",
@@ -149,6 +151,10 @@
  */ 
 *[class~="topic/foreign"] {
 /**/
+}
+/*Treat math element with href as an image.*/
+*[class~="math-d/math"][href]{
+    content:attr(href, url);
 }
 @media print {
   *[class~="topic/foreign"]{
@@ -238,6 +244,24 @@
       display:none;
   }
 }
+
+
+
+/* == special content and exhibits == */
+/*
+  The specialized title attribute allows
+  architects of specialized types to define
+  a fixed or default title for a specialized
+  element. Not intended for direct use by authors.
+ */
+ @media oxygen {
+*[spectitle]{
+    display: block;
+    font-weight: bold;
+    content: attr(spectitle)": ";
+}
+}
+/* == specially highlighted elements == */
 
 
  

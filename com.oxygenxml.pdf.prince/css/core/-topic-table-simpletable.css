@@ -1,4 +1,3 @@
-
 /* ==================================================
  * 
  * <simpletable>
@@ -14,6 +13,8 @@
   display:table;
   border-collapse:collapse;
   border:thin solid;
+  margin: 0.5em 0 0.5em 0;
+  -oxy-foldable:true;
 }
 
 /* ==================================================

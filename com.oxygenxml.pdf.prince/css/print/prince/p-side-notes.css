@@ -2,68 +2,185 @@
  * ==========================================
  * 
  * Sidenotes. These are the oXygen review processing instructions
- * converted from XSL to elements. Thy are floating to one
+ * converted from XSL to elements. They are floating to one
  * side of the page.
  * 
  * ==========================================
  */
-
 @media print {
 
-    comment {
-        display:block;
+    oxy-attributes,
+    oxy-comment,
+    oxy-delete,
+    oxy-insert {
+        font-size:0.8em;
+        font-family:arial, helvetica, sans-serif;
+        
         position:relative;
-        float: left;
-        clear:left;
-        margin: 0 0 1em -1.25in;
+        float: right;
+        clear:right;
+        margin: 0 -0.7in 1em 0;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        /* This should be correlated with the page margin from the p-page-size.css */
         width: 1in;
-        min-height:1in;
-        font-size: 0.8em;
+        min-height:1em;
         page-break-inside: avoid;
         background-color: yellow;
         color:black;
         padding:0.5em;
+       
+        border: 0.5pt solid yellow;
         border-radius: 10px;
+
         link:attr(href);
+        
+        text-decoration:none !important;
+    }
+    
+    oxy-attributes{
+        border-color:black;
+    }
+    oxy-comment{
+        border-color:yellow;
+    }
+    oxy-delete{
+        border-color:red;
+    }
+    oxy-insert{
+        border-color:blue;
     }
 
-    comment:before {
+    
+    /* The ID of the change, like the number of a footnote. */
+    oxy-attributes:before,
+    oxy-comment:before,
+    oxy-delete:before,
+    oxy-insert:before{
         content:'[' attr(hr_id) '] ';
     }
 
-    comment-author {
+    /* Author */
+    oxy-author {
         font-weight:bold;
     }
-    comment-author:after {
+    oxy-author:after {
         content:':';
     }
-
-    comment-text{
+    
+    /* Comment */
+    oxy-comment-text{
         display:block;
         margin-top:0.5em;
         margin-bottom:0.5em;
     }
-    comment-text:before {
-        content:'“';
+    oxy-comment-text:before {
+        content:'\201C';
     }
-    comment-text:after {
-        content:'”';
+    oxy-comment-text:after {
+        content:'\201D';
     }
-
-    comment-date {
+        
+    /* Content of the change */    
+    oxy-content{
+        display:block;
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+    }
+    oxy-content:before {
+        content:'\201C';
+    }
+    oxy-content:after {
+        content:'\201D';
+    }
+    oxy-delete > oxy-content {
+        text-decoration:line-through;
+    }
+    oxy-insert > oxy-content {
+        font-style:italic;
+    }
+    oxy-insert > oxy-content:before {
+        content:"<<";
+    }
+    oxy-insert > oxy-content:after {
+        content:">>";
+    }
+     
+    /* Date */    
+    oxy-date {
         display:block;
         margin-top:0.5em;
         margin-bottom:0.5em;
         text-align:right;
     }
 
+
+    /* Old and cuattribute value */    
+    oxy-old-value {
+        display:block;
+    }
+    oxy-old-value:before,
+    oxy-current-value:before {
+        display:block;
+        font-weight:bold;
+        text-decoration:none;
+    }
+    oxy-old-value:before{
+        content: "Was:";
+    }        
+    oxy-current-value[unknown='true']:before{
+    	content:"<< Cannot determine the current value >>";
+    	color:red;
+    }    
+    oxy-current-value {
+        display:block;
+    }
+
+
+    oxy-attribute-change:before{
+        display:block;
+        content: " @" attr(name) "\A" attr(type)" by \A";
+        font-weight:bold;
+    }
+    
+
     /*
      * This is the link to the floated comment.
      * This remains in the main content flow.
      */
-    comment-anchor:before {
+    oxy-range-start:before {
         content:'[' attr(hr_id) ']';
         background-color: yellow;
+    }
+    /*
+     * This marks the end of the range. 
+     */
+    oxy-range-end:before {
+        content:'[/' attr(hr_id) ']';
+        background-color: yellow;
+    }
+    
+    /*
+     * Between an insert range start and end, underline the text.  
+     */
+    oxy-insert-hl{
+        text-decoration:underline;
+        color:blue;
+    }
+    
+    /*
+     * Between an delete range start and end, underline the text.  
+     */    
+    oxy-delete-hl{
+        text-decoration:line-through;
+        color:red;
+    }
+
+    /*
+     * Between an comment range start and end, highlight the text.  
+     */    
+    oxy-comment-hl{
+        background-color:yellow;
     }
 
 }

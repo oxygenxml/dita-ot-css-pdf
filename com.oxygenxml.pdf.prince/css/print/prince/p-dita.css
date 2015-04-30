@@ -1,5 +1,3 @@
-@import '../../core/-dita.css';
-
 @import 'p-fonts.css';
 @import 'p-side-notes.css';
 @import 'p-foot-notes.css';
@@ -11,7 +9,4 @@
 @import 'p-toc.css';
 @import 'p-index.css';
 @import 'p-images.css';
-
-
-
-
+@import 'p-bookmap.css';

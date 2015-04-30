@@ -11,12 +11,23 @@
     *[class ~= "map/map"] > map {
         display: block;
         page: table-of-contents;
-        font-size:10pt;
+        counter-reset: toc_chapters;
+    }
+
+    /* The bookmap title migrates into the opentopic:map element. Since it is already on the 
+       front page, it should be hidden. */
+    *[class ~= "map/map"] > map > *[class ~= "topic/title"] {
+        display:none;
     }
 
 
     @page table-of-contents {
-        @top {          content: "Table of Contents" }
+        @top {          
+           content: "Contents";
+           font-weight: bold;
+           font-size:2em;
+           text-align:left;
+        }
         @bottom {       content: counter(page, lower-roman) }
         @bottom-right { content: none }
         @bottom-left {  content: none }
@@ -30,21 +41,23 @@
     }
 
     *[class ~= "map/topicref"] *[class ~= "map/topicref"] {
-        margin-left:4em;
+        margin-left:2em;
     }
 
-    /* The chapters, the level 1 topicref from the opentopic:map are bolded. */
+    /* The chapters from the opentopic:map are bolded and larger */
     *[class ~= "map/topicref"][is-chapter] {
         font-weight: bold;
-        font-size:1.5em;
     }
     *[class ~= "map/topicref"][is-chapter] > *[class ~= "map/topicref"]:not(is-chapter)  {
         font-weight: normal;
-        font-size:0.67em;
     }
 
-    /* Hide chapters below level 3. */
-    *[class ~= "map/topicref"][is-chapter] > *[class ~= "map/topicref"] > *[class ~= "map/topicref"] > *[class ~= "map/topicref"] {
+    /* Hide sections below level 3. */
+    *[class ~= "map/topicref"][is-chapter] > 
+        *[class ~= "map/topicref"] > 
+        *[class ~= "map/topicref"] > 
+        *[class ~= "map/topicref"] {
+        
         display:none;
     }
 
@@ -52,9 +65,16 @@
     /* A dotted line between the topic name and the page number. */
     *[class ~= "map/topicref"] *[class ~= "topic/navtitle"] {
         font-weight:inherit;
+        /*EXM-32190 Link on topic title*/
+        link:attr(href);
     }
     *[class ~= "map/topicref"] *[class ~= "topic/navtitle"]:before {
         content:none;
+    }
+    /*EXM-32190 Ignore displaying keywords metadata*/
+    *[class ~= "map/topicmeta"] > *[class ~= "topic/keywords"],
+    *[class ~= "map/topicmeta"] > *[class ~= "topic/prodinfo"] {
+        display:none;
     }
     *[class ~= "map/topicref"] *[class ~= "topic/navtitle"]:after,
     /* For the Index page we do not have a navtitle, but a linktext */

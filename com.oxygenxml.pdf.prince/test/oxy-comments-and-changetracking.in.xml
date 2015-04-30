@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    class="- map/map bookmap/bookmap ">
+    <topic class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">The reviewed topic.</title>
+        <body class="- topic/body ">
+             <p class="- topic/p ">A comment
+                <?oxy_comment_start author="dan" timestamp="20150327T105625+0200" comment="This is my &quot;sample&quot; comment. "?>here<?oxy_comment_end?>.</p>
+            <p class="- topic/p ">Now a <?oxy_delete author="dan" timestamp="20150327T105643+0200" content="&lt;b&gt;deletion with markup.&lt;/b&gt;"?>.</p>
+            <p class="- topic/p ">Now a <?oxy_delete author="dan" timestamp="20150327T105643+0200" content="deletion with comment" comment="Attention, I deleted something."?>.</p>
+            <p class="- topic/p ">And an
+                <?oxy_insert_start author="dan" timestamp="20150327T105657+0200"?>insertion<?oxy_insert_end?>.</p>
+            <p class="- topic/p ">Other
+                <?oxy_insert_start author="dan" timestamp="20150327T105657+0200" comment="Insetion comment."?>insertion with comment<?oxy_insert_end?>.</p>
+          	<?oxy_attributes status="&lt;change comment=&quot;The comment&quot; type=&quot;modified&quot; oldValue=&quot;ooold atr value&quot; author=&quot;gabriel&quot; timestamp=&quot;20150330T162041+0300&quot; /&gt;" translate="&lt;change type=&quot;inserted&quot; author=&quot;gabriel&quot; timestamp=&quot;20150330T162220+0300&quot; /&gt;"?>
+            <p class="- topic/p " status="new" translate="yes">Attribute changes:
+            </p>
+            <?oxy_attributes importance="&lt;change type=&quot;inserted&quot; author=&quot;gabriel2&quot; timestamp=&quot;20150421T111538+0300&quot; /&gt;"?>
+        	<p class="- topic/p " importance="low">Spring Time, the time of growth and renewal of new plant</p>
+            <p class="- topic/p ">
+                <?oxy_insert_start author="gabriel" timestamp="20150331T163319+0300" type="split"?></p><p class="- topic/p "><?oxy_insert_end?></p>
+            <p class="- topic/p "> These are
+                <?oxy_comment_start author="Mary" timestamp="20120510T121702+0300" comment="Let&apos;s add information about fertilizers."?><?oxy_comment_start author="John" timestamp="20120510T121814+0300" comment="We must include information about fertilizers impact to the environment." mid="1"?>
+                overlapping 
+                <?oxy_comment_end?>
+                comments
+                <?oxy_comment_end mid="1"?>
+            </p><p class="- topic/p ">A <?oxy_insert_start author="gabriel" timestamp="20150401T123508+0300" type="surround"?><b class="- topic/b "><?oxy_insert_end?>surround</b>.</p>
+            <?oxy_attributes id="&lt;change type=&quot;modified&quot; author=&quot;gabriel2&quot; timestamp=&quot;20150421T111538+0300&quot; /&gt;"?>
+            <p class="- topic/p " id='dita_ot_generated_id_concatenated_with_original_value' importance="low">We cannot present the old values of the ID attributes as they are rewriten by the OT.</p>
+        </body>
+    </topic>
+</bookmap>

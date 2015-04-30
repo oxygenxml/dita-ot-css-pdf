@@ -24,30 +24,32 @@ function rewriteRef(refElement) {
     var linkElementsToDelete = [];
 
     var lastPage;
-    for (var i = 0; i < linkElements.length; ++i) {
-        var link = linkElements[i];
-        var href = link.getAttribute("href");
-
-        if (!refs[href]) {
-            Log.warning("unknown index refElement: "+href);
-            continue;
+    if(refs){
+        for (var i = 0; i < linkElements.length; ++i) {
+            var link = linkElements[i];
+            var href = link.getAttribute("href");
+    
+            if (!refs[href]) {
+                Log.warning("unknown index refElement: "+href);
+                continue;
+            }
+    
+            var page = refs[href];
+    
+            if (!lastPage) {
+                lastPage = page;
+            } else if (lastPage != page) {
+                lastPage = page;
+            } else {
+                // Duplicated page.
+                linkElementsToDelete.push(link);
+            }
+        }        
+        for (var i = 0; i < linkElementsToDelete.length; ++i) {
+            linkElementsToDelete[i].parentNode.removeChild(linkElementsToDelete[i]);
+            console.log("Removed " + linkElementsToDelete[i] );
         }
-
-        var page = refs[href];
-
-        if (!lastPage) {
-            lastPage = page;
-        } else if (lastPage != page) {
-            lastPage = page;
-        } else {
-            // Duplicated page.
-            linkElementsToDelete.push(link);
-        }
+    } else {
+        Log.warning("unknown refs variable");
     }
-
-    for (var i = 0; i < linkElementsToDelete.length; ++i) {
-        linkElementsToDelete[i].parentNode.removeChild(linkElementsToDelete[i]);
-        console.log("Removed " + linkElementsToDelete[i] );
-    }
-
 }

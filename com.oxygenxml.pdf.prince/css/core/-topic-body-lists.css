@@ -1,6 +1,3 @@
-
-
-
 /* ==========================================================
  * 
  * <li>
@@ -54,6 +51,16 @@
     margin: 0.5em 0;
 }
 
+/*
+ * Deal witht the compact flag. The "yes" value is the default.
+ */
+*[class~="topic/ul"][compact='no'] > *,
+*[class~="topic/ul"][compact='no'] > *,
+*[class~="topic/sl"][compact='no'] > *{
+    margin-top:0.75em;
+    margin-bottom:0.75em;
+}
+
 @media print {
     *[class~="topic/ul"],
     *[class~="topic/ol"] {
@@ -85,7 +92,7 @@
 *[class~="topic/ol"] > *[class~="topic/li"] {
   list-style-type: decimal;
 }
-*[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"] {
+*[class~="topic/ol"]  > *[class~="topic/li"] *[class~="topic/ol"] > *[class~="topic/li"] {
   list-style-type: lower-alpha;
 }
  
@@ -95,7 +102,6 @@
   the "list-style-type" property.
  */
 @media oxygen{  
-  
   /* Use list-item instead of block to avoid putting the 
      sentinels markers of the "ol" and the first "li"
      on the same line, in compact tag display.*/
@@ -112,22 +118,37 @@
       counter-increment: item-count;
   }
   *[class~="topic/ol"] > *[class~="topic/li"]:before {
-      content: counters(item-count, ".", decimal) ". ";
+      content: counter(item-count, decimal) ". ";
       font-weight:bold;
   }
   
-  /*EXM-28795 second level of ordered list*/
-  *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"]:first-child {
-      counter-reset: item2-count;
+  /*
+  
+  Not using the simpler expression:
+  
+  *[class~="topic/ol"]                        *[class~="topic/ol"] > *[class~="topic/li"]:before
+  
+  Because in case of conrefs, there is a second ol right inside the first one, and will consider inner OL as being level 2.  
+  We'll use this consturction instead, this refers to ol elements that are properly nested: 
+   
+  *[class~="topic/ol"] > *[class~="topic/li"] *[class~="topic/ol"] > *[class~="topic/li"]:before 
+  
+  */
+  *[class~="topic/ol"] > *[class~="topic/li"] 
+    *[class~="topic/ol"] > *[class~="topic/li"]:before {
+      content: counter(item-count, lower-alpha) ". ";
   }
-  *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"] {
-      counter-increment: item2-count;
+  *[class~="topic/ol"] > *[class~="topic/li"] 
+    *[class~="topic/ol"] > *[class~="topic/li"]  
+       *[class~="topic/ol"] > *[class~="topic/li"]:before {
+      content: counter(item-count, lower-roman) ". ";
   }
-  *[class~="topic/ol"] *[class~="topic/ol"] > *[class~="topic/li"]:before {
-      content: counters(item2-count, ".", lower-alpha) ". ";
-      font-weight:bold;
+  *[class~="topic/ol"] > *[class~="topic/li"] 
+    *[class~="topic/ol"] > *[class~="topic/li"]  
+       *[class~="topic/ol"] > *[class~="topic/li"]  
+         *[class~="topic/ol"] > *[class~="topic/li"]:before {
+      content: counter(item-count, decimal) ". ";
   }
-
 }
 
 

@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -22,9 +21,11 @@
 @import "-reference.css";
 @import "-glossary.css";
 @import "-glossary-related.css";
+@import "-select-atts.css";
 
 @import "-map.css";
 @import "-bookmap.css";
+@import "-subject-scheme-map.css";
 
 @import "-learning-spec-topics.css";
 @import "-learning-spec-map.css";
@@ -42,13 +43,18 @@
 @import "-domain-ui-d.css";
 @import "-domain-xnal.css";
 @import "-domain-taskreq-d.css";
+@import "-domain-troubleshooting.css";
+@import "-domain-markup-d.css";
+@import "-domain-xml-mention-domain.css";
 
 @import "-group-display-atts.css";
 
 @import "-d4p.css";
 
-
 @import "-colors.css";
+@import "-page.css";
+
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
 
 /* ====================================
  *
@@ -71,6 +77,16 @@ dita{
     display:block;
 }
 
+/*
+ * The XML comments before the root are not relevant in DITA.
+ */
+oxy|comment {
+ display:none !important;
+}
+
+:root oxy|comment {
+ display: -oxy-morph !important;
+}
 
 
 

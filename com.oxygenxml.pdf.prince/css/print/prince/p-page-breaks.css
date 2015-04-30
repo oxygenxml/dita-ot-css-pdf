@@ -7,6 +7,7 @@
  * =====================================================
  */
 
-*[class ~= "topic/topic"][is-chapter = "true"] {
+*[class ~= "topic/topic"][break-before = "true"] {
     page-break-before:always;
 }
+

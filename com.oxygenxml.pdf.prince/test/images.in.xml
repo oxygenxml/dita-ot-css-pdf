@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <topic class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Introduction</title>
+        <p class="- topic/p ">
+            <!-- The width and height should take into account the scaling attribute. -->
+            <!-- The relative image should be changed to absolute. -->
+            <image class="- topic/image " href="images/Gerbera.jpg" scale="33" placement="inline"  xtrf="MAP_FILE_DIR/topics/flowers/iris.dita"/>
+            <image class="- topic/image " href="images/Gerbera.jpg" scale="100" placement="inline" xtrf="MAP_FILE_DIR/topics/flowers/iris.dita"/>
+            
+            <!-- This one has width specified, do not touch it. -->
+            <image class="- topic/image " href="images/Gerbera.jpg" scale="50"  width="10" placement="inline" xtrf="MAP_FILE_DIR/topics/flowers/iris.dita"/>
+            
+            <!-- This one has height specified, do not touch it. -->
+            <image class="- topic/image " href="images/Gerbera.jpg" scale="50"  height="10" placement="inline" xtrf="MAP_FILE_DIR/topics/flowers/iris.dita"/>
+            
+            <!-- This does not exist, should not generate width and height for it. -->
+            <image class="- topic/image " href="images/NotExisting.jpg" scale="33" placement="inline" xtrf="MAP_FILE_DIR/topics/flowers/iris.dita"/>
+        </p>
+    </topic>
+</bookmap>

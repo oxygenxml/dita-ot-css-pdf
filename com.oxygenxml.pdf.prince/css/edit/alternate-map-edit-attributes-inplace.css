@@ -1,0 +1,43 @@
+/**
+ * Makes visible the set of form controls allowing editing of various attributes directly in the map. 
+ */
+ 
+*[class~='map/reltable'] *[class~='map/topicref']:before(1005),
+*[class~="map/topicref"]:before(1005) {
+    display:block;
+    font-family: dialog, sans-serif;
+    font-size: 0.8em;
+    font-weight:normal;
+    margin-top:0.5em;
+    min-width: 40em; 
+}
+
+*[class~='map/reltable'] *[class~='map/topicref']:before(1005) {
+    display:inline;
+    content: " " oxy_editor(type, urlChooser, edit, "@href", columns, 25, fontInherit, true);
+    min-width: 20em; 
+    
+}
+*[class~="map/topicref"]:before(1005) {
+  content: 
+ oxy_label(text, "Href: "    , width, 5em, text-align, right) oxy_editor(type, urlChooser, edit, "@href", columns, 44, fontInherit, true) "\A"
+ oxy_label(text, "Navtitle: ", width, 5em, text-align, right) oxy_editor(type, text, edit, "@navtitle", columns, 35, fontInherit, true) " Lock Title: " oxy_editor(type, check, edit, "@locktitle", values, "yes", uncheckedValues, "no", labels, "", fontInherit, true) "\A"
+ oxy_label(text, "Keys: "    , width, 5em, text-align, right) oxy_editor(type, text, edit, "@keys", columns, 15, fontInherit, true)     oxy_label(text, "Keyref:"         , width, 10em, text-align, right) oxy_editor(type, combo, edit, "@keyref", columns, 15, fontInherit, true) "\A"
+ oxy_label(text, "Format: "  , width, 5em, text-align, right) oxy_editor(type, combo, edit, "@format", columns, 15, fontInherit, true)  oxy_label(text, "Collection type:", width, 10em, text-align, right) oxy_editor(type, combo, edit, "@collection-type", columns, 15, fontInherit, true) "\A"
+ oxy_label(text, "Audience: ", width, 5em, text-align, right) oxy_editor(type, text, edit, "@audience", columns, 15, fontInherit, true) oxy_label(text, "Platform:"       , width, 10em, text-align, right) oxy_editor(type, text, edit, "@platform", columns, 15, fontInherit, true) "\A"
+ oxy_label(text, "Product: " , width, 5em, text-align, right) oxy_editor(type, combo, edit, "@product", columns, 15, fontInherit, true) "\A"
+ oxy_label(text, "Props:"     , width, 5em, text-align, right) oxy_editor(type, text, edit, "@props", columns, 15, fontInherit, true)   oxy_label(text, "Other props:"     , width, 10em, text-align, right) oxy_editor(type, text, edit, "@otherprops", columns, 15, fontInherit, true)"\A"
+ oxy_label(text, "Type: "    , width, 5em, text-align, right) oxy_editor(type, text, edit, "@type", columns, 15, fontInherit, true)    oxy_label(text, "Scope: "         , width, 10em, text-align, right) oxy_editor(type, combo, edit, "@scope", columns, 15, fontInherit, true) "\A"
+ oxy_label(text, "Linking: " , width, 5em, text-align, right) oxy_editor(type, combo, edit, "@linking", columns, 15, fontInherit, true) oxy_label(text, "Toc: "           , width, 10em, text-align, right) oxy_editor(type, check, edit, "@toc", values, "yes", uncheckedValues, "no", labels, "", fontInherit, true) "\A"
+}
+
+/* Hides the label showing all attributes since they are presented in the content using form controls.*/
+*[class~='map/reltable'] *[class~='map/topicref']:before(1010),
+*[class~="map/topicref"]:before(1010) {
+  content: none !important;
+}
+
+/* Shows the reltable title textfield. */
+*[class~="map/reltable"][title]:before {
+  content: "Title: "oxy_textfield(edit, '@title', columns, 40);
+}

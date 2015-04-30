@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -236,7 +235,7 @@
  *     + topic/data
  */
 *[class ~= "learningmeta-d/lomTypicalLearningTime"][name]:before{
-  content: oxy_substring(oxy_local-name(), 3)  " " oxy_textfield(edit , "@value" , columns , 10) " ";
+  content: oxy_label(text, oxy_substring(oxy_local-name(), 3), width, 10em)  " " oxy_textfield(edit , "@value" , columns , 10) " ";
 }
 
 

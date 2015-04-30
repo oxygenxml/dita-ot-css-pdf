@@ -10,23 +10,21 @@
  * ==================================================
  * ==================================================
  * 
- * TODO - dan - i18n.
  */
 @namespace oxy "http://www.oxygenxml.com/extensions/author";
-
-@media oxygen-high-contrast-black{
-/* ====================================
+@media oxygen-high-contrast-black {
+  /* ====================================
      *
      * built-in oXygen elements
      * 
      */
-  oxy|comment{
-    color:#3DB39B !important;
-    background-color:transparent !important;
+  oxy|comment {
+    color: #3DB39B !important;
+    background-color: transparent !important;
   }
   oxy|reference,
-  oxy|entity{
-    background-color:transparent !important;
+  oxy|entity {
+    background-color: transparent !important;
   }
   /* ====================================
      *
@@ -34,182 +32,243 @@
      */
   *:before,
   *,
-  *:after{
-    color:inherit !important;
-    background-color:inherit !important;
-    border-color:inherit !important;
+  *:after {
+    color: inherit !important;
+    background-color: inherit !important;
+    border-color: inherit !important;
   }
 }
 
 
-*[class ~= "pr-d/syntaxdiagram"]{
-  color:maroon;
+*[class~="pr-d/syntaxdiagram"] {
+  color: maroon;
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "pr-d/syntaxdiagram"]{
-    color:#808080 !important;
+@media oxygen-high-contrast-black {
+  *[class~="pr-d/syntaxdiagram"] {
+    color: #A63D17 !important;
   }
 }
 
 
-*[class ~= "reference/properties"]{
-  border-color:#ff9494;
+
+*[class~="reference/properties"] {
+  border-color: #ff9494;
 }
-*[class ~= "reference/prophead"]{
-  background-color:#ffe0e0;
+*[class~="reference/prophead"] {
+  background-color: #ffe0e0;
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "reference/properties"]{
-    border-color:inherit !important;
+@media oxygen-high-contrast-black {
+  *[class~="reference/properties"] {
+    border-color: inherit !important;
   }
-  *[class ~= "reference/prophead"]{
-    background-color:inherit !important;
+  *[class~="reference/prophead"] {
+    background-color: inherit !important;
   }
 }
+
 
 /* ====================================
  *
  * Tables
  */
-*[class ~= "topic/table"]{
-  border-color:transparent;
+*[class~="topic/table"] {
+  border-color: transparent;
 }
-*[class ~= "topic/thead"]{
-  background-color:inherit;
+*[class~="topic/thead"],
+*[class~="map/relheader"] {
+  background-color: #EEFAFF;
 }
-*[class ~= "topic/entry"]{
-  border-color:#EEEEEE;
-}
-
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/thead"]{
-    background-color:blue !important;
+@media print {
+  *[class~="topic/thead"],
+  *[class~="map/relheader"] {
+    background-color: inherit;
   }
 }
+@media oxygen-high-contrast-black {
+  *[class~="topic/thead"],
+  *[class~="map/relheader"] {
+    background-color: blue !important;
+  }
+}
+*[class~="topic/entry"] {
+  border-color: #EEEEEE;
+}
 
+
+
+/* ====================================
+ *
+ * Formatted text.
+ */
 *[class~="topic/pre"] {
-  background-color:#F0F0F0;
+  background-color: #F0F0F0;
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/pre"]{
-    background-color:inherit;
+@media oxygen-high-contrast-black {
+  *[class~="topic/pre"] {
+    background-color: inherit;
   }
 }
+
 
 
 /* ====================================
  *
  * Editorial
  */
-*[class ~= "topic/draft-comment"]{
-  background-color:#99FF99;
-  border-left-color:green;
-  border-right-color:green;
+*[class~="topic/draft-comment"] {
+  background-color: #99FF99;
+  border-left-color: green;
+  border-right-color: green;
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/draft-comment"]{
-    background-color:green !important;
+@media oxygen-high-contrast-black {
+  *[class~="topic/draft-comment"] {
+    background-color: green !important;
   }
 }
-
-*[class ~= "topic/required-cleanup"]{
-  background-color:#FFFF99;
-  border-left-color:red;
+*[class~="topic/required-cleanup"] {
+  background-color: #FFFF99;
+  border-left-color: red;
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/required-cleanup"]{
-    background-color:red !important;
+@media oxygen-high-contrast-black {
+  *[class~="topic/required-cleanup"] {
+    background-color: red !important;
   }
 }
-
-
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/pre"]{
-    color:black !important;
-    background-color:yellow !important;
+@media oxygen-high-contrast-black {
+  *[class~="topic/pre"] {
+    color: black !important;
+    background-color: #FFE080 !important;
   }
 }
-
-
-
-*[class ~= "topic/indextermref"]{
-  color:red;
+*[class~="topic/indextermref"] {
+  color: red;
 }
+
+
 
 /* ====================================
  *
  * Metainfo  
  */
-@media screen{ /* Not Print */
-  *[class ~= "topic/prolog"],
-  *[class ~= "map/topicmeta"]{
-    border-color:#e5e500;
-    background-color:#ffffb3;
+@media screen {
+  /* Not Print */
+  *[class~="topic/prolog"],
+  *[class~="map/topicmeta"] {
+    border-color: #e5e500;
+    background-color: #FFFFD9;
   }
-  *[class ~= "topic/prolog"] > *,
-  *[class ~= "map/topicmeta"] > *{
-    border-top-color:#e5e500;
+  *[class~="topic/prolog"] > *,
+  *[class~="map/topicmeta"] > * {
+    border-top-color: #e5e500;
+  }
+}
+@media oxygen-high-contrast-black {
+  *[class~="topic/prolog"],
+  *[class~="map/topicmeta"] {
+    color: black !important;
+    background-color: #FFE080 !important;
   }
 }
 
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/prolog"],
-  *[class ~= "map/topicmeta"]{
-    color:black !important;
-    background-color:yellow !important;
-  }
-}
 
 
 /* ====================================
  *
  * Specialization
  */
-*[class ~= "topic/boolean"]{
-  color:green;
+*[class~="topic/boolean"] {
+  color: green;
 }
-*[class ~= "topic/state"]{
-  color:green;
+*[class~="topic/state"] {
+  color: green;
+}
+*[class~="topic/no-topic-nesting"]:before {
+  color: red;
+}
+*[class~="topic/example"] {
+  border-color: gray;
 }
 
-*[class ~= "topic/no-topic-nesting"]:before{
-  color:red;
-}
-
-
-*[class ~= "topic/example"]{
-  border-color:gray;
-}
 
 
 /* ====================================
  *
  * Links
  */
-*[class ~= "topic/link"][role]:before{
-  color:black;
+*[class~="topic/link"][role]:before {
+  color: black;
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/link"][role]:before{
-    color:inherit;
+@media oxygen-high-contrast-black {
+  *[class~="topic/link"][role]:before {
+    color: inherit;
   }
 }
 *[keyref]:before,
-*[class ~= "topic/link"],
-*[class ~= "topic/xref"],
-*[class ~= "topic/longquoteref"][href]:before,
-*[class ~= "topic/source"][href]:after{
+*[href]:before,
+*[mapref]:before,
+*[class~="topic/link"],
+*[class~="topic/xref"],
+*[class~="topic/longquoteref"][href]:before,
+*[class~="topic/source"][href]:after {
   /* -link-color >>> */
-  color:navy;
+  color: navy;
   /* <<< */
 }
-@media oxygen-high-contrast-black{
-  *[class ~= "topic/link"],
-  *[class ~= "topic/xref"],
-  *[class ~= "topic/longquoteref"][href]:before,
-  *[class ~= "topic/source"][href]:after{
+
+@media oxygen{
+
+    /* These are breaking the Prince publishing. Better isolated in an oXygen @media */
+    *:before(1100),
+    *:before(1050),
+    *:before(1040),
+    *:before(1030),
+    *:before(1020) {
+      /* -link-color >>> */
+      color: navy;
+      /* <<< */    
+    }
+
+    *:before(1010) {
+      color: purple;
+    }
+}
+
+@media oxygen-high-contrast-black {
+  *[keyref]:before,
+  *[href]:before,
+  *[mapref]:before,
+  *:before(1100),
+  *:before(1050),
+  *:before(1040),
+  *:before(1030),
+  *:before(1020),
+  *:before(1010),
+  *[class~="topic/link"],
+  *[class~="topic/xref"],
+  *[class~="topic/longquoteref"][href]:before,
+  *[class~="topic/source"][href]:after {
     /* -link-color >>> */
-    color:blue !important;
+    color: #AAAAFF !important;
     /* <<< */
+  }
+  
+  *:before(1010) {
+    color: inherit;
+  }
+}
+/* ====================================
+ *
+ * Troubleshooting.
+ */
+*[class~='troubleshooting/troubleSolution'],
+*[class~="task/tasktroubleshooting"],
+*[class~="task/steptroubleshooting"] {
+  border-color: gray;
+}
+@media oxygen-high-contrast-black {
+  *[class~='troubleshooting/troubleSolution'],
+  *[class~="task/tasktroubleshooting"],
+  *[class~="task/steptroubleshooting"] {
+    border-color: yellow;
   }
 }

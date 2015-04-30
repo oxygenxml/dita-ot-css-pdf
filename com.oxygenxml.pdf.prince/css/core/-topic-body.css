@@ -1,4 +1,3 @@
-
 /*
  * ==================================================
  * ==================================================
@@ -13,8 +12,6 @@
  * 
  * ==================================================
  * ==================================================
- * 
- * TODO - i18n
  */
 /*
  * ==================================================
@@ -127,17 +124,17 @@
   border-left: thick solid;
   border-right: thick solid;
 }
-*[class~="topic/draft-comment"]:before {
+*[class~="topic/draft-comment"][author]:before {
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
   content: "Comment by " attr(author) ": ";
 }
-@media print {
-  *[class~="topic/draft-comment"],
-  *[class~="topic/draft-comment"]:before {
-    display: none;
-  }
+*[class~="topic/draft-comment"]:before {
+  /* -before_bold- >>> */
+  font-weight: bold;
+  /* <<< */
+  content: "Comment: ";
 }
 /* ==================================================
  * 
@@ -160,7 +157,8 @@
 *[class~="topic/example"] {
   /*See -colors.css*/
   display: block;
-  margin:1em 1em 1em 4em;
+  margin:1em 1em 1em 1em;
+  padding:0.5em;
   border: 1pt solid;
 }
 @media oxygen {
@@ -170,7 +168,7 @@
   }
 }
 *[class~="topic/example"] > *[class~="topic/title"]:before {
-  content: "Example";
+  content: "Example: ";
 }
 /* ==================================================
  * 
@@ -193,19 +191,14 @@
 }
 @media print {
   /* 
-    Put a number before the figure title. 
+    Put a number before the figure title.
+    The counter is reset in p-page-titles-and-numbers.css
   */
-  /*
-         Moved to pagination-toc
-        *[class~="map/map"] > map{
-          counter-reset: figcount;
-        }
-       */
   *[class~="topic/fig"] {
     counter-increment: figcount;
   }
   *[class~="topic/fig"] > *[class~="topic/title"]:before {
-    content: "Figure: " counter(figcount) ". ";
+    content: "Figure " counter(figcount) ": ";
   }
 }
 /* ==================================================
@@ -256,17 +249,27 @@
 *[class~="topic/image"] {
   content: attr(href, url);
 }
+@media oxygen AND (platform:webapp) {
+	/* We need the image to be block in the webapp in order to impose the parent width and height on it.*/	
+    *[class~="topic/image"] {
+      display:inline-block;    
+    }    
+}
+
 *[class~="topic/image"][placement="inline"] {
   display: inline;
 }
 *[class~="topic/image"][placement="break"] {
   display: block;
 }
-*[class~="topic/image"][width] {
-  width: attr(width, length);
-}
-*[class~="topic/image"][height] {
-  height: attr(height, length);
+/*EXM-32453 The standalone Oxygen can interpret width and height.*/
+@media oxygen and (platform:webapp){
+	*[class~="topic/image"][width] {
+	  width: attr(width, length);
+	}
+	*[class~="topic/image"][height] {
+	  height: attr(height, length);
+	}
 }
 /*EXM-21459 Ignore such href values*/
 *[class~="topic/image"][href="-dita-use-conref-target"] {
@@ -281,8 +284,9 @@
 *[class~="topic/image"][keyref][href]:before {
   content: "";
 }
-*[class~="topic/image"][keyref],
-*[class~="topic/image"][keyref][href] {
+/*Avoid being overwritten from the conrefs.css, double the keyref condition*/
+*[class~="topic/image"][keyref][keyref],
+*[class~="topic/image"][keyref][keyref][href] {
   content: attr(keyref, keyref);
 }
 /* ==================================================
@@ -383,7 +387,8 @@
  */
 *[class~="topic/note"] {
   display: block;
-  margin: 1em 2em;
+  margin: 0em 1em;
+  padding: 0.5em;
 }
 *[class~="topic/note"]:before {
   /* TODO - dan - ar merge ca imaginea sa fie aliniata mai jos, acum sta pe baseline. Poate am putea specifica X si Y?*/
@@ -425,6 +430,9 @@
 }
 *[class~="topic/note"][type="other"][othertype]:before {
   content: attr(othertype) ": ";
+}
+*[class~="topic/note"][type="trouble"]:before {
+  content: url('../../img/troubleshooting.png') " Troubleshooting: ";  
 }
 /*
  * =========================================================
@@ -490,7 +498,7 @@
 *[class~="topic/pre"] {
   display: block;
   /*See -colors.css */
-  white-space: pre-wrap;
+  white-space: pre;
   margin: 0.5em 0;
   margin-right: 0.5em;
   padding: 0.5em;
@@ -582,14 +590,15 @@
  * or phrase that is trademarked. Trademarks include registered 
  * trademarks, service marks, slogans and logos.
  */
+*[class~="topic/tm"] {
+   -oxy-display-tags: none;
+}
 *[class~="topic/tm"]:after {
-  content: "TM";
-  vertical-align: super;
-  font-size: smaller;
+  content: "\2122";
 }
 *[class~="topic/tm"][tmtype="reg"]:after {
   content: "\AE";
 }
 *[class~="topic/tm"][tmtype="service"]:after {
-  content: "SM";
+  content: "\2120";
 }
