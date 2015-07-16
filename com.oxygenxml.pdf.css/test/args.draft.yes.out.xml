@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
+    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <oxy:front-page-title/>
+    </oxy:front-page>
+    <topic break-before="true" class="- topic/topic " id="unique_1" oid="introduction" xml:lang="en">
+        <title class="- topic/title ">Introduction</title>
+        <body class="- topic/body ">
+            <draft-comment author="dan" class="- topic/draft-comment " translate="no">THIS IS A DRAFT COMMENT.</draft-comment>
+            <required-cleanup class="- topic/required-cleanup ">This need cleanup</required-cleanup>
+            <p class="- topic/p ">With just a little bit of care and preparation, any flower garden can be a vibrantly colored environment. </p>
+        </body>
+    </topic>
+</bookmap>
+

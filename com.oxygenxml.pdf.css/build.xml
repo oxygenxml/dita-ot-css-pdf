@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright © 2014 by Syncro Soft SRL
+
+SYNCRO SOFT SRL IS DELIVERING THE SOFTWARE "AS IS," WITH
+ABSOLUTELY NO WARRANTIES WHATSOEVER, WHETHER EXPRESS OR IMPLIED, AND
+SYNCRO SOFT SRL DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE AND WARRANTY OF NON-INFRINGEMENT. SYNCRO SOFT SRL SHALL NOT
+BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, COVER, PUNITIVE, EXEMPLARY,
+RELIANCE, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO LOSS OF
+ANTICIPATED PROFIT), ARISING FROM ANY CAUSE UNDER OR RELATED TO  OR ARISING
+OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF SYNCRO SOFT SRL
+HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+SYNCRO SOFT SRL and its licensors shall not be liable for any
+damages suffered by any person as a result of using and/or modifying the
+Software or its derivatives. In no event shall SYNCRO SOFT SRL's
+liability for any damages hereunder exceed the amounts received by SYNCRO SOFT
+SRL as a result of this transaction.
+
+These terms and conditions supersede the terms and conditions in any
+licensing agreement to the extent that such terms and conditions conflict
+with those set forth herein.
+-->
+<project name="com.oxygenxml.pdf.css" basedir=".">
+	
+  <property name="css.processor.type" value="prince"/>
+
+	
+  <!-- Path to the processor executable. May come as argument -->
+  <condition property="css.processor.path.prince" value="prince.exe">
+     <os family="windows"/>
+  </condition>  
+  <property name="css.processor.path.prince" value="prince"/>	
+  <condition property="css.processor.path.antenna-house" value="AHFCmd.exe">
+    <os family="windows"/>
+  </condition>  
+  <property name="css.processor.path.antenna-house" value="AHFCmd"/>
+ 
+  
+
+  <condition property="use.antenna-house">
+  	<equals arg1="${css.processor.type}" arg2="antenna-house" casesensitive="false"/>
+  </condition>  
+  <condition property="use.prince">
+  	<equals arg1="${css.processor.type}" arg2="prince" casesensitive="false"/>
+  </condition>  
+
+	
+  <!-- Control the display of the user comments or change tracking info (encoded in oXygen processing instructions). -->
+  <property name="show.changes.and.comments">no</property>
+  
+  <!--
+    
+    Depends on the PDF2 pipe
+    
+   -->
+  <import file="build_pdf2.xml"/>
+
+  <!--
+    
+    The main target.
+    
+    1. Merges the map in a file together with metainformation about the TOC and index
+      (similar to what the "org.dita.pdf2" plugin would do before converting it to FO.)
+    2. Converts the merged map to PDF using Prince.
+    
+  -->
+  <target name="dita2pdf-css" depends="
+  		check.exec.prince, 
+  	    check.exec.antenna-house, 
+  		css.dita2pdf2, 
+  	    merged2pdf"/>
+
+	
+   <!--
+      
+      Checks the existence of the Prince formatter executable.
+   
+   -->	
+  <target name="check.exec.prince" if="use.prince">
+  	<property environment="env" />
+  	<condition property="commandname.present">
+	  	<or>
+	  	<available file="${css.processor.path.prince}" />
+	  	<available file="${css.processor.path.prince}" filepath="${env.PATH}" />
+	  	<!-- special case for Windows, may be PATH or Path -->
+	  	<available file="${css.processor.path.prince}" filepath="${env.Path}" />
+	  	<available file="${css.processor.path.prince}" filepath="${env.PATH}" />
+  		</or>
+  	</condition>
+  	<fail unless="commandname.present">
+  		 [DOTP001] [ERROR] Cannot find the Prince XML executable: "${css.processor.path.prince}". Make sure it is installed and the parent directory of the executable is listed the PATH environment variable, or make sure the parameter "css.processor.path.prince" is set in the transformation scenario and points to the prince executable. Please note this program is not part of oXygen and it can be downloaded/purchased from: http://www.princexml.com/
+  	</fail>  	
+    <echo>Found Prince executable.</echo>  	
+  </target>
+	
+   <!--
+      
+      Checks the existence of the Antenna-House formatter executable.
+   
+   -->	
+  <target name="check.exec.antenna-house" if="use.antenna-house">
+  	<property environment="env" />
+  	<condition property="commandname.present">
+      <or>
+      <available file="${css.processor.path.antenna-house}" />
+      <available file="${css.processor.path.antenna-house}" filepath="${env.PATH}" />
+      <!-- special case for Windows, may be PATH or Path -->
+      <available file="${css.processor.path.antenna-house}" filepath="${env.Path}" />
+      <available file="${css.processor.path.antenna-house}" filepath="${env.PATH}" />
+      </or>
+  	</condition>
+  	<fail unless="commandname.present">
+  		 [DOTP001] [ERROR] Cannot find the Antenna House executable: "${css.processor.path.antenna-house}". Make sure it is installed and the parent directory of the executable is listed the PATH environment variable, or make sure the parameter "css.processor.path.antenna-house" is set in the transformation scenario and points to the Antenna-House executable. Please note this program is not part of oXygen and it can be downloaded/purchased from: http://www.antennahouse.com/
+  	</fail>  	
+    <echo>Found Antenna House executable.</echo>
+  </target>
+
+  <target name="merged2pdf" >
+  	<echo>Type: ${css.processor.type}</echo>
+  	<!-- 
+  	     Use the CSSs from the oXygen frameworks/dita directory, if available.
+  		 They are preferred because they can be easily changed by the end user 
+  		 (making use of the CSS Inspector)
+  	-->
+    <condition property="default.css.dir" 
+    	value="${dita.plugin.com.oxygenxml.pdf.css.dir}/../../../css" 
+    	else ="${dita.plugin.com.oxygenxml.pdf.css.dir}/css">
+    	
+    	<available file="${dita.plugin.com.oxygenxml.pdf.css.dir}/../../../css"></available>
+    </condition>
+  	<property name="default.css.dir.abs.path" location="${default.css.dir}"></property>
+  	
+  	<!-- 
+  		This property may be overriden from the oXygen transformation scenario, 
+  	    based on the user selection of the stylesheet. 
+  	-->
+  	<property name="dita.css.list"  value="${default.css.dir.abs.path}/edit/style-basic.css"/>
+  	<property name="dita.print.css" value="${default.css.dir.abs.path}/print/p-dita.css"/>
+  	
+    <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}${file.separator}dummy.file"/>
+    <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1a.xml"/>
+    <property name="dita.map.merged.post.processed" value="${dita.map.merged}.pp"/>
+
+  	<echo message="The args input ${args.input}."/>
+    
+    <!-- Postprocess the merged file -->
+    <xslt in="${dita.map.merged}"
+          out="${dita.map.merged.post.processed}"
+          style="${dita.plugin.com.oxygenxml.pdf.css.dir}/post-process.xsl" 
+          force="true"
+          classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xslt-extensions">
+      
+      <param name="args.input" expression="${args.input}"/>
+      <param name="args.draft" expression="${args.draft}"/>
+      <param name="dita.map.filename.root" expression="${dita.map.filename.root}"/>
+      <param name="show.changes.and.comments" expression="${show.changes.and.comments}"/>
+    </xslt>
+    
+  	
+
+    <condition property="outputFile" value="${dita.map.output.dir}/${dita.map.filename.root}.pdf">
+      <not><isset property="outputFile"/></not>
+    </condition>
+  	
+  	<!--  	
+  		It is best to fail early than to wait for formatter to create the PDF 
+  		and then fail when writing the output file. 
+  		Usually the output file remains opened in Acrobat Reader.
+  	-->  	
+  	<delete file="${outputFile}" failonerror="false"/>
+  	<fail message="[DOTP002] [ERROR] Cannot overwrite the output file: ${outputFile}. Make sure it is not opened in Acrobat Reader or other program that locks it.">
+  	     <condition>
+  	     	<available file="${outputFile}"></available>
+  	     </condition>
+	</fail>
+
+  	
+  	<!-- 
+  	  Generating a main stylesheet that imports all the CSSs specified by the user.
+  	  Will be passed as a parameter to the Prince process. We are using this approach because 
+  	  we cannot dynamically alter the number of -style arguments.
+  	  -->
+  	<property name="main.css.path" value="${dita.temp.dir.fullpath}/main.css"/>
+  	<script language="javascript">
+  	 <![CDATA[
+		var tmp = "";
+  	    var arr = project.getProperty('dita.css.list').split(';'); 
+  	    for (i = 0; i < arr.length; i++) {
+			if (arr[i].length() > 0) {
+		  		  tmp = tmp.concat("@import '");
+	  			  tmp = tmp.concat(arr[i]);
+	  	    	  tmp = tmp.concat("';\n");  
+  		   	}
+  	    }
+  		project.setProperty('main.css.content', tmp);
+  	 ]]>
+  	 </script>
+  	<echo file="${main.css.path}">${main.css.content}</echo>
+  	
+  	<antcall target="prince"/>  	
+    <antcall target="ahouse"/>
+  </target>
+  
+  
+  
+  <target name="ahouse" if="use.antenna-house">
+    
+    <echo>=============================</echo>
+    <echo>Antenna House executable: ${css.processor.path.antenna-house}</echo>
+    <echo>Processing: ${dita.map.merged.post.processed}</echo>
+    <echo>Output file: ${outputFile}</echo>
+    <echo>Showing comments and trackchanges: ${show.changes.and.comments}</echo>
+    <echo>User CSS files: </echo>
+    <echo>${dita.css.list}</echo>
+    <echo>Print CSS file: </echo>
+    <echo>${dita.print.css}</echo>
+    <echo>=============================</echo>
+    
+    
+    <echo>First phase</echo>
+    <exec executable="${css.processor.path.antenna-house}" failonerror="true" logError="true">
+      <arg value="-css"/>
+      <arg value="${main.css.path}"/>
+      <arg value="-css"/>
+      <arg value="${dita.print.css}"/>
+      
+    	<arg value="-2pass"/>
+    	<arg value="-pgbar"/>
+    	      
+    	
+      <arg value="-x"/>
+      <arg value="3"/>
+      <arg value="-d"/>
+      <arg value="${dita.map.merged.post.processed}"/>
+      <arg value="-o"/>
+      <arg value="${outputFile}"/>
+    </exec>
+    
+  </target>
+  
+  
+	
+	
+  <target name="prince" if="use.prince">
+    
+    <echo>=============================</echo>
+    <echo>Prince executable: ${css.processor.path.prince}</echo>
+    <echo>Processing: ${dita.map.merged.post.processed}</echo>
+    <echo>Output file: ${outputFile}</echo>
+  	<echo>Showing comments and trackchanges: ${show.changes.and.comments}</echo>
+  	<echo>User CSS files: </echo>
+  	<echo>${dita.css.list}</echo>
+  	<echo>Print CSS file: </echo>
+    <echo>${dita.print.css}</echo>
+    <echo>=============================</echo>
+  	
+
+    <echo>First phase</echo>
+    <!-- First pass, generates an index-pass2.js, with info relating ids to page numbers -->
+    <exec executable="${css.processor.path.prince}" output="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js" failonerror="true" logError="true">
+      <!-- 
+	  What to do?
+	     Moving the output in a log hides the error messages in the oXygen console.
+	     Living them in the normal output may create garbage in the output collected for the next stage.
+      <arg value="-\-log"/>
+      <arg value="${dita.temp.dir.fullpath}${file.separator}firstPhaseLog.txt"/>   
+      -->
+      <arg value="--style"/>
+      <arg value="${main.css.path}"/>
+      <arg value="--style"/>
+      <arg value="${dita.print.css}"/>
+      <arg value="--style"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass1.css"/>
+
+   	  
+      <arg value="--no-network"/>
+    	
+      <arg value="--javascript"/>
+      <arg value="--script"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass1.js"/>
+
+      <arg value="${dita.map.merged.post.processed}"/>
+      <arg value="-o"/>
+      <arg value="${outputFile}"/>
+    </exec>
+
+    <echo>=============================</echo>
+    <echo>Second phase</echo>
+    <!-- Second pass. -->
+    <exec executable="${css.processor.path.prince}" failonerror="true">
+      <arg value="--log"/>
+      <arg value="${dita.temp.dir.fullpath}${file.separator}secondPhaseLog.txt"/>   
+      <arg value="--style"/>
+   	  <arg value="${main.css.path}"/>
+      <arg value="--style"/>
+      <arg value="${dita.print.css}"/>
+
+      <arg value="--no-network"/>
+
+      <arg value="--javascript"/>
+      <arg value="--script"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass2.js"/>
+      <arg value="--script"/>
+      <arg value="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js"/>
+      
+      <arg value="${dita.map.merged.post.processed}"/>
+      <arg value="-o"/>
+      <arg value="${outputFile}"/>
+    </exec>
+    
+  </target>
+  
+</project>

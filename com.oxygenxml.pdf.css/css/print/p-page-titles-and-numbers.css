@@ -1,0 +1,70 @@
+/*
+ * ================================================
+ * 
+ * Page numbers and titles.
+ * 
+ * ================================================
+ */
+    
+@media print {
+
+
+
+    /* Counters */
+
+    *[class ~= "map/map"] {
+        counter-reset: page 1 chapter 1  figcount 0 tablecount 0;       
+    }    
+
+    /* 
+        Reset the page counter on the first topic. Using the element name to apply :first-of-type
+        The counter was used in the p-toc generating numbers for the pages entering TOC.
+    */
+    *[class ~= "map/map"] > topic:first-of-type{
+        counter-reset: page 1;
+    }
+
+
+
+    /* Titles */
+
+    /* Collect the title of the map. */
+    *[class ~= "map/map"][title] {
+        string-set: maptitle attr(title);
+    }
+    /* The bookmap title may migrate in the opentopic:map element*/
+    *[class ~= "map/map"] > map > *[class ~= "topic/title"] {
+        string-set: maptitle content();
+    }
+    /* Collect the chapter titles. */
+    *[class ~= "map/map"] >  *[class ~= "topic/topic"] > *[class ~= "topic/title"] {
+        string-set: chaptertitle content();
+    }
+
+
+    @page :left {
+        @top-left {
+            content: string(maptitle) " | " string(chaptertitle) " | " counter(page);
+            font-size:8pt;
+        }
+        @bottom-left {
+            /**/
+        }
+        @bottom-right {
+            /**/
+        }
+    }
+
+    @page :right{
+        @top-right {
+            content: string(maptitle) " | " string(chaptertitle) " | " counter(page);
+            font-size:8pt;
+        }
+        @bottom-right {
+            /**/
+        }
+        @bottom-left {
+            /**/
+        }
+    }
+}
