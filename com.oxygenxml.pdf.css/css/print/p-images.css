@@ -1,0 +1,22 @@
+/*
+ * =====================================================
+ * 
+ * Defines the images resolution, scaling, size.
+ * 
+ * =====================================================
+ */
+
+@media print {
+    *[class ~= "topic/image"] {
+        prince-image-resolution: 120dpi;
+        -ah-image-resolution: 120dpi;
+    }
+    
+    *[class~="topic/image"][width] {
+       width: attr(width, px);
+    }
+    
+    *[class~="topic/image"][height] {
+       height: attr(height, px);
+    }
+}
