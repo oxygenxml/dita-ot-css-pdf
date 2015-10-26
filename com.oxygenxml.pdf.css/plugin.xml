@@ -17,7 +17,6 @@
       desc="Choose the formatting processor.">
       <val default="true">prince</val>
       <val>antenna-house</val>
-      <val>pdfreactor</val>
      </param>
     
     <param name="dita.css.list" type="file"
