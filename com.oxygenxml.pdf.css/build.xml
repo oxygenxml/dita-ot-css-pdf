@@ -186,16 +186,18 @@ with those set forth herein.
   	<property name="main.css.path" value="${dita.temp.dir.fullpath}/main.css"/>
   	<script language="javascript">
   	 <![CDATA[
-		var tmp = "";
-  	    var arr = project.getProperty('dita.css.list').split(';'); 
-  	    for (i = 0; i < arr.length; i++) {
-			if (arr[i].length() > 0) {
-		  		  tmp = tmp.concat("@import '");
-	  			  tmp = tmp.concat(arr[i]);
-	  	    	  tmp = tmp.concat("';\n");  
-  		   	}
-  	    }
-  		project.setProperty('main.css.content', tmp);
+	 var tmp = "";
+	 var path = project.getProperty('dita.css.list');
+	 pathFixed = path.replace(/\\/g, "/");
+	 var arr = pathFixed.split(';'); 
+         for (i = 0; i < arr.length; i++) {
+  	   if (arr[i].length() > 0) {
+ 	  	  tmp = tmp.concat("@import 'file:///");
+	 	  tmp = tmp.concat(arr[i]);
+	  	  tmp = tmp.concat("';\n");  
+	   }
+  	 }
+  	 project.setProperty('main.css.content', tmp);
   	 ]]>
   	 </script>
   	<echo file="${main.css.path}">${main.css.content}</echo>
