@@ -137,7 +137,7 @@ with those set forth herein.
   		This property may be overriden from the oXygen transformation scenario, 
   	    based on the user selection of the stylesheet. 
   	-->
-  	<property name="dita.css.list"  value="${default.css.dir.abs.path}/edit/style-basic.css"/>
+  	<property name="dita.css.list"  value="file:${default.css.dir.abs.path}/edit/style-basic.css"/>
   	<property name="dita.print.css" value="${default.css.dir.abs.path}/print/p-dita.css"/>
   	
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}${file.separator}dummy.file"/>
@@ -191,7 +191,11 @@ with those set forth herein.
   	    for (i = 0; i < arr.length; i++) {
 			if (arr[i].length() > 0) {
 		  		  tmp = tmp.concat("@import '");
-	  			  tmp = tmp.concat(arr[i]);
+  		
+  				  // Replace \ with /
+  		          var url = arr[i].replace(/\\/g, "/");
+  		
+	  			  tmp = tmp.concat(url);
 	  	    	  tmp = tmp.concat("';\n");  
   		   	}
   	    }

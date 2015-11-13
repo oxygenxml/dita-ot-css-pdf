@@ -20,12 +20,12 @@
      </param>
     
     <param name="dita.css.list" type="file"
-      desc="You can use this to specify a list of CSS files to be used by the Prince processor. If the value is empty, then are used the DITA topics/maps CSS files (the current selection from the [Styles] dropdown)."
+      desc="You can use this to specify a list of CSS URLs to be used by the PDF processor. If the value is empty, then are used the DITA topics/maps CSS files (the current selection from the oXygen [Styles] dropdown)."
     /> 
 
     <param name="show.changes.and.comments" 
       type="enum"
-      desc="When set on 'yes', the user comments and trackchanges are shown in the output.">
+      desc="When set on 'yes', the user comments, colored highlights and trackchanges are shown in the output.">
       <val default="true">no</val>
       <val>yes</val>
     </param>
