@@ -121,6 +121,11 @@
   font-style:italic;
 }
 
+@media oxygen AND (platform:"eclipse") {
+  *[class~="bookmap/booktitlealt"] {
+    font-style:normal;
+  }
+}
 
 /* ====================================
  *
@@ -316,7 +321,7 @@
     content: url("../../img/chapter.png");
   }
   *[class~="bookmap/chapter"]:before(1040) {
-    content: " " counter(chapter) " ";
+    content: " " counter(chapter) "   ";
   }
   *[class~="bookmap/chapter"][toc="no"]:before(1040) {
     content: none;

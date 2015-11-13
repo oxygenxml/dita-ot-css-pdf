@@ -226,13 +226,7 @@ oxy|reference,
   }
 }
   
-@media oxygen-high-contrast-black {
-    *[keyref]:empty {
-      content: oxy_label(text, oxy_getSomeText(oxy_link-text(), 150, true), background-color, rgb(128, 128, 128));
-  }
-}
-
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
     *[keyref]:empty {
       content: oxy_label(text, oxy_getSomeText(oxy_link-text(), 150, true), background-color, rgb(128, 128, 128));
   }

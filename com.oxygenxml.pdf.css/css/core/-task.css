@@ -348,7 +348,7 @@
  */
 *[class~="task/info"] {
   /* -task_step_child- >>> */
-  margin: 0.5em 0.5em 0.5em 4em;
+  margin: 0.5em 0.5em 0.5em 1em;
   /* <<< */
 }
 *[class~="task/info"]:before {
@@ -374,7 +374,7 @@
  */
 *[class~="task/substeps"] {
   /* -task_step_child- >>> */
-    margin: 0.5em 0.5em 0.5em 4em;
+    margin: 0.5em 0.5em 0.5em 1em;
   /* <<< */
 }
 /* ====================================
@@ -603,7 +603,7 @@
  */
 *[class~="task/stepresult"] {
   /* -task_step_child- >>> */
-  margin: 0.5em 0.5em 0.5em 4em;
+  margin: 0.5em 0.5em 0.5em 1em;
   /* <<< */
 }
 *[class~="task/stepresult"]:before {

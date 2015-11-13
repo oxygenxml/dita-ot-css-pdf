@@ -807,8 +807,8 @@ td[bgcolor]{
     		"  width " oxy_textfield(edit, "@colwidth", columns, 7)
     		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10)
     		"  "    		
-    		oxy_checkbox(edit, "@colsep", values, "1", uncheckedValues, "0", labels, "colsep", fontInherit, true) 
-    		oxy_checkbox(edit, "@rowsep", values, "1", uncheckedValues, "0", labels, "rowsep", fontInherit, true);
+    		oxy_checkbox(edit, "@colsep", values, "1", labels, "colsep", fontInherit, true) 
+    		oxy_checkbox(edit, "@rowsep", values, "1", labels, "rowsep", fontInherit, true);
 	white-space: pre;
 	padding-bottom: 5px;
 }

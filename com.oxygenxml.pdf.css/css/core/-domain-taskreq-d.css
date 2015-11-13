@@ -104,6 +104,12 @@
 *[class~="taskreq-d/reqcontp"] {
   font-style: italic;
 }
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="taskreq-d/reqcontp"] {
+    font-style: normal;
+  }
+}
 /* ====================================
  *
  * <noconds>
@@ -121,6 +127,12 @@
   /* -taskreq_no- >>> */
   font-style: italic;
   /* <<< */
+}
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="taskreq-d/noconds"]:before {
+    font-style: normal;
+  }
 }
 /* ====================================
  *
@@ -302,6 +314,12 @@
   font-style: italic;
   /* <<< */
 }
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="taskreq-d/nosupeq"]:before {
+    font-style: normal;
+  }
+}
 /* ====================================
  *
  * <supplies>
@@ -367,6 +385,12 @@
   font-style: italic;
   /* <<< */
 }
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="taskreq-d/nosupply"]:before {
+    font-style: normal;
+  }
+}
 /* ====================================
  *
  * <spare>
@@ -416,6 +440,12 @@
   font-style: italic;
   /* <<< */
 }
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="taskreq-d/nospares"]:before {
+    font-style: normal;
+  }
+}
 /* ====================================
  *
  * <nosafety>
@@ -433,6 +463,12 @@
   /* -taskreq_no- >>> */
   font-style: italic;
   /* <<< */
+}
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="taskreq-d/nosafety"]:before {
+    font-style: normal;
+  }
 }
 /* ====================================
  *

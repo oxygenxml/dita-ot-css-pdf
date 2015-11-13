@@ -4,13 +4,14 @@
  */
  
 @import "alternate-full-width-layout.css";
+
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
  
 /* All reference nodes become transparent */
-*|reference:before {
+oxy|reference:before {
   content: "" !important;  
 }
-*|reference{
-    -oxy-editable:false !important;
+oxy|reference{
     background-color: transparent !important;
     margin:0px !important;
     padding: 0px !important;
@@ -46,4 +47,8 @@
 /*Do not display metadata*/
 *[class~="topic/prolog"]{
  display:none;
+}
+/*Overwrite setting in default CSSs*/
+*[class~="map/topicref"]:empty {
+  padding-left: 0px;
 }

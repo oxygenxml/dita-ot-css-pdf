@@ -77,13 +77,13 @@
 *[class~="topic/ul"] > *[class~="topic/li"] {
     list-style-type: disc;
 }
-*[class~="topic/ul"] *[class~="topic/ul"] > *[class~="topic/li"] {
+*[class~="topic/ul"]  > *[class~="topic/li"] *[class~="topic/ul"] > *[class~="topic/li"] {
     list-style-type: circle;
 }
-*[class~="topic/ul"] *[class~="topic/ul"] *[class~="topic/ul"] > *[class~="topic/li"] {
+*[class~="topic/ul"]  > *[class~="topic/li"] *[class~="topic/ul"]  > *[class~="topic/li"] *[class~="topic/ul"] > *[class~="topic/li"] {
     list-style-type: square;
 }
-*[class~="topic/ul"] *[class~="topic/ul"] *[class~="topic/ul"] *[class~="topic/ul"] > *[class~="topic/li"] {
+*[class~="topic/ul"]  > *[class~="topic/li"] *[class~="topic/ul"]  > *[class~="topic/li"] *[class~="topic/ul"]  > *[class~="topic/li"] *[class~="topic/ul"] > *[class~="topic/li"] {
     list-style-type: disc;
 }
 
@@ -109,11 +109,23 @@
       display:list-item;
       list-style:none !important;
   }
-  
-  /* Declare counter on the first list item. */
+}
+
+/* Declare counter on the first list item. */
+@media oxygen AND (platform:eclipse),
+    oxygen AND (platform:standalone) {  
+  *[class~="topic/ol"] > *[class~="topic/li"]:first-of-type {
+      counter-reset: item-count;
+  }
+}
+@media oxygen AND (platform:webapp) {
+  /* First-of-type is not supported in webapp for the moment. */
   *[class~="topic/ol"] > *[class~="topic/li"]:first-child {
       counter-reset: item-count;
   }
+}
+
+@media oxygen{  
   *[class~="topic/ol"] > *[class~="topic/li"] {
       counter-increment: item-count;
   }

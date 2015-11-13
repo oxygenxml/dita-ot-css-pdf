@@ -183,11 +183,16 @@
   margin: 1em 0;
 }
 /*
- * The figure titles are italic.
+ * The figure titles are italic only in the stand-alone application.
  */
 *[class~="topic/fig"] > *[class~="topic/title"] {
   font-style: italic;
   font-size: 1em;
+}
+@media oxygen AND (platform:"eclipse") {
+  *[class~="topic/fig"] > *[class~="topic/title"] {
+    font-style: normal;
+  }
 }
 @media print {
   /* 
@@ -238,6 +243,12 @@
   }
   *[class~="topic/fn"]:after {
     content: "";
+  }
+}
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="topic/fn"] {
+    font-style: normal;
   }
 }
 /* ==================================================
@@ -350,6 +361,12 @@
   
   text-decoration: underline;
   font-style: italic;
+}
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="topic/longquoteref"][href]:before {
+    font-style: normal;
+  }
 }
 
 @media print{

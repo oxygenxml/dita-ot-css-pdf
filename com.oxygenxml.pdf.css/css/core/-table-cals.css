@@ -50,6 +50,15 @@ informaltable{
 *[class~="topic/tgroup"]:-oxy-visible-colspecs:before{
     content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
 }
+/*Different foreground color for button*/
+@media oxygen-high-contrast-black, oxygen-dark-theme{
+    *[class~="topic/tgroup"]:before! > *[class~="topic/colspec"]{
+         content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, white, fontInherit, true, showText, true, enableInReadOnlyContext, true);
+    }
+    *[class~="topic/tgroup"]:-oxy-visible-colspecs:before{
+    content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, white, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
+    }
+}
 
 col, colgroup {
 	display:block;

@@ -17,6 +17,17 @@
   /*EXM-27204 Always show place holder content for indexterms*/
   -oxy-show-placeholder: always;
 }
+
+/* Do not reduce size of the nested indexterms, starting with level 3 */
+*[class~="topic/indexterm"] *[class~="topic/indexterm"]  *[class~="topic/indexterm"]{
+  font-size: 1em;
+}
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="topic/indexterm"] {
+    font-style: normal;
+  }
+}
 *[class~="topic/indexterm"]:before {
   content: "(";
   width: auto;

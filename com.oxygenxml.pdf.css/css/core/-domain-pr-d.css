@@ -361,6 +361,12 @@
 *[class~="pr-d/synnoteref"]{
     font-style:italic;
 }
+
+@media oxygen AND (platform:"eclipse") {
+  *[class~="pr-d/synnoteref"]{
+    font-style:normal;
+  }
+}
 /* ====================================
  *
  * <kwd>

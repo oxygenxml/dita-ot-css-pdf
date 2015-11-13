@@ -32,14 +32,10 @@
  *  
  *     + topic/author
  */
-*[class~="xnal-d/authorinformation"]{
-/**/
-}
-/* Make the direct children foldable. */
 @media oxygen{
-  *[class~="xnal-d/authorinformation"] > *:not(:empty) {
-     -oxy-foldable:true;
-  } 
+  *[class~="xnal-d/authorinformation"]:not(:empty){
+       -oxy-foldable:true;
+  }
 }
 
 /* ====================================

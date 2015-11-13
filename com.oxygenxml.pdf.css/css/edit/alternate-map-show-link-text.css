@@ -10,8 +10,9 @@
 *[class$=" map/topicref "]:before(1050) {
   content: none !important;
 }
-/* Hide the href. Has the same specificity as the one from -map-basic.css */
-*[class~="map/topicref"][href]:before(1020) {
+/* Hide the href or the navtitle attribute shown in -map-basic.css */
+*[class~="map/topicref"][href]:before(1020),
+*[class~="map/topicref"][navtitle]:before(1020) {
   display: none !important;
 }
 

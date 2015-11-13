@@ -29,38 +29,38 @@
 
 @media oxygen{
 
-*[importance]:before{
+*[class~="topic/topic"] *[importance]:before{
     font-weight:bold;   
 }
 
-*[importance='obsolete']:before{
+*[class~="topic/topic"] *[importance='obsolete']:before{
         -oxy-append-content: "Obsolete: " !important;
 }
-*[importance='deprecated']:before{
+*[class~="topic/topic"] *[importance='deprecated']:before{
         -oxy-append-content: "Deprecated: " !important;
 }
-*[importance='optional']:before{
+*[class~="topic/topic"] *[importance='optional']:before{
         -oxy-append-content: "Optional: " !important;
 }
-*[importance='low']:before{
+*[class~="topic/topic"] *[importance='low']:before{
         -oxy-append-content: "Low importance: " !important;
 }
-*[importance='default']:before{
+*[class~="topic/topic"] *[importance='default']:before{
         -oxy-append-content: "Default importance: " !important;
 }
-*[importance='normal']:before{
+*[class~="topic/topic"] *[importance='normal']:before{
         -oxy-append-content: "Normal importance: " !important;
 }
-*[importance='high']:before{
+*[class~="topic/topic"] *[importance='high']:before{
         -oxy-append-content: "Important: " !important;
 }
-*[importance='recommended']:before{
+*[class~="topic/topic"] *[importance='recommended']:before{
         -oxy-append-content: "Recommended: " !important;
 }
-*[importance='required']:before{
+*[class~="topic/topic"] *[importance='required']:before{
         -oxy-append-content: "Required: " !important;
 }
-*[importance='urgent']:before{
+*[class~="topic/topic"] *[importance='urgent']:before{
         -oxy-append-content: "Urgent: " !important;
 }
 

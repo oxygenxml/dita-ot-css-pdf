@@ -47,33 +47,19 @@
   display: block;
   margin: 0.2em;
 }
-*[class~="map/topicmeta"] > *:not(:empty) {
-  -oxy-foldable: true;
-}
+
+
 *[class~="topic/prolog"] > *,
 *[class~="map/topicmeta"] > * {
   margin: 0.1em;
-  /*See -colors.css */
-  border-top: 1pt solid;
   padding-top: 0.3em;
-}
-*[class~="topic/prolog"] > *:first-child,
-*[class~="map/topicmeta"] > *:first-child {
-  border-top: none;
 }
 *[class~="topic/prolog"] > * > *,
 *[class~="map/topicmeta"] > * > * {
   margin-left: 2em;
 }
-*[class~="topic/prolog"] > * > * *,
-*[class~="map/topicmeta"] > * > * * {
-  margin-left: 2em;
-}
 
-*[class~="topic/prolog"] >     *:not([keyref]):not([href]):before,
-*[class~="topic/prolog"] > * > *:not([keyref]):not([href]):before,
-*[class~="map/topicmeta"]>     *:not([keyref]):not([href]):before,
-*[class~="map/topicmeta"]> * > *:not([keyref]):not([href]):before
+*:before(300)
 {
   width: 6em;
   display: inline;
@@ -88,19 +74,19 @@
  * The audience metadata element indicates, through the value of 
  * its type attribute, the intended audience for a topic.
  */
-*[class~="topic/audience"]:before {
+*[class~="topic/audience"]:before(300) {
   content: "Audience: ";
 }
-*[class~="topic/audience"][type]:after {
+*[class~="topic/audience"][type]:before {
   -oxy-append-content: " type: " oxy_textfield(edit, "@type", columns, 10);
 }
-*[class~="topic/audience"][job]:after {
+*[class~="topic/audience"][job]:before {
   -oxy-append-content: " job: " oxy_textfield(edit, "@job", columns, 10);
 }
-*[class~="topic/audience"][experiencelevel]:after {
+*[class~="topic/audience"][experiencelevel]:before {
   -oxy-append-content: " experience: " oxy_textfield(edit, "@experiencelevel", columns, 10);
 }
-*[class~="topic/audience"][name]:after {
+*[class~="topic/audience"][name]:before {
   -oxy-append-content: " name: " oxy_textfield(edit, "@name", columns, 10);
 }
 /* ==================================================
@@ -114,10 +100,10 @@
  * Creator element in Dublin Core.
  *  
  */
-*[class~="topic/author"]:before {
+*[class~="topic/author"]:before(300) {
   content: "Author: ";
 }
-*[class~="topic/author"][type]:after {
+*[class~="topic/author"][type]:before {
   -oxy-append-content: " " oxy_combobox(edit, "@type", columns, 10);
 }
 /* ==================================================
@@ -128,7 +114,10 @@
  * associated with the product described by the parent 
  * prodinfo element.
  */
-*[class~="topic/brand"]:before {
+*[class~="topic/prodinfo"]:not(:empty){
+  -oxy-foldable: true;
+}
+*[class~="topic/brand"]:before(300) {
   content: "Brand: ";
 }
 /* ==================================================
@@ -141,7 +130,7 @@
  * to group topics in a generated navigation bar. Topics 
  * can belong to multiple categories.
  */
-*[class~="topic/category"]:before {
+*[class~="topic/category"]:before(300) {
   content: "Category: ";
 }
 /* ==================================================
@@ -151,7 +140,7 @@
  * The component element describes the component of the 
  * product that this topic is concerned with.
  */
-*[class~="topic/component"]:before {
+*[class~="topic/component"]:before(300) {
   content: "Component: ";
 }
 /* ==================================================
@@ -160,11 +149,11 @@
  * 
  * The copyright element specifies legal ownership of the content.
  */
-*[class~="topic/copyright"]:before {
+*[class~="topic/copyright"]:before(300) {
   content: "Copyright ";
 }
 *[class~="topic/copyright"][type]:before {
-  -oxy-append-content: oxy_combobox(edit, "@type", columns, 10, editable, true, values, "primary, secondary, ");
+  content: oxy_combobox(edit, "@type", columns, 10, editable, true, values, "primary, secondary, ");
 }
 /* ==================================================
  * 
@@ -179,13 +168,14 @@
  * that holds legal rights to the material contained 
  * in the topic.
  */
-*[class~="topic/copyryear"]:before {
+*[class~="topic/copyryear"]:before(300) {
   content: "Year: ";
 }
-*[class~="topic/copyryear"]:after {
+*[class~="topic/copyryear"]:before {
   -oxy-append-content: oxy_datePicker(columns, 12, edit, "@year", format, "yyyy", validateInput, false);
 }
-*[class~="topic/copyrholder"]:before {
+
+*[class~="topic/copyrholder"]:before(300) {
   content: "Holder:  ";
 }
 /* ==================================================
@@ -199,7 +189,7 @@
 *[class~="topic/critdates"] {
   display: block;
 }
-*[class~="topic/critdates"]:before {
+*[class~="topic/critdates"]:before(300) {
   content: "Critical dates";
 }
 /* ==================================================
@@ -209,16 +199,16 @@
  * The created element specifies the document creation 
  * date using the date attribute.
  */
-*[class~="topic/created"]:before {
+*[class~="topic/created"]:before(300) {
   content: "Created: ";
 }
-*[class~="topic/created"]:after {
+*[class~="topic/created"]:before {
   content: oxy_datePicker(columns, 12, edit, "@date", format, "yyyy-MM-dd", validateInput, false) "     ";
 }
-*[class~="topic/created"][golive]:after {
+*[class~="topic/created"][golive]:before{
   -oxy-append-content: oxy_label(text, "golive: ") oxy_datePicker(columns, 12, edit, "@golive", format, "yyyy-MM-dd", validateInput, false) "     ";
 }
-*[class~="topic/created"][expiry]:after {
+*[class~="topic/created"][expiry]:before {
   -oxy-append-content: oxy_label(text, "expiry: ") oxy_datePicker(columns, 12, edit, "@expiry", format, "yyyy-MM-dd", validateInput, false);
 }
 /* ==================================================
@@ -230,17 +220,17 @@
  * development cycle, such as the last modification date, 
  * the original availability date, and the expiration date.
  */
-*[class~="topic/revised"]:before {
+*[class~="topic/revised"]:before(300) {
   content: "Revised: ";
 }
-*[class~="topic/revised"]:after {
+*[class~="topic/revised"]:before {
   content: oxy_datePicker(columns, 12, edit, "@modified", format, "yyyy-MM-dd", validateInput, false) "     ";
 }
-*[class~="topic/revised"][golive]:after {
-  -oxy-append-content: oxy_label(text, "golive: ") oxy_datePicker(columns, 12, edit, "@golive", format, "yyyy-MM-dd", validateInput, false) "     ";
+*[class~="topic/revised"][golive]:before {
+  -oxy-append-content: "golive: "  oxy_datePicker(columns, 12, edit, "@golive", format, "yyyy-MM-dd", validateInput, false) "     ";
 }
-*[class~="topic/revised"][expiry]:after {
-  -oxy-append-content: oxy_label(text, "expiry: ") oxy_datePicker(columns, 12, edit, "@expiry", format, "yyyy-MM-dd", validateInput, false);
+*[class~="topic/revised"][expiry]:before {
+  -oxy-append-content: "expiry: " oxy_datePicker(columns, 12, edit, "@expiry", format, "yyyy-MM-dd", validateInput, false);
 }
 /* ==================================================
  * 
@@ -249,7 +239,7 @@
  * The featnum element contains the feature number 
  * of a product in the metadata. 
  */
-*[class~="topic/featnum"]:before {
+*[class~="topic/featnum"]:before(300) {
   content: "Feature number: ";
 }
 /* ==================================================
@@ -261,7 +251,7 @@
  * vocabulary that applies to the topic or map. 
  * The keywords may be used by a search engine. 
  */
-*[class~="topic/keywords"]:before {
+*[class~="topic/keywords"]:before(300) {
   content: "Keywords: ";
 }
 *[class~="topic/keywords"] * {
@@ -287,7 +277,10 @@
   /* TODO - dan - check this: makes space for the prodinfo border.*/
   padding-left: 4pt;
 }
-*[class~="topic/metadata"]:before {
+*[class~="topic/metadata"]:not(:empty){
+  -oxy-foldable: true;
+}
+*[class~="topic/metadata"]:before(300) {
   content: "Metadata";
 }
 /* ==================================================
@@ -298,10 +291,10 @@
  * information about a topic such as audience and 
  * product information.
  */
-*[class~="topic/othermeta"]:before {
+*[class~="topic/othermeta"]:before(300) {
   content: "Othermeta:";
 }
-*[class~="topic/othermeta"]:after {
+*[class~="topic/othermeta"]:before {
   content: " name: " oxy_textfield(edit, "@name", columns, 15) " content: " oxy_textfield(edit, "@content", columns, 10);
 }
 /* ==================================================
@@ -312,10 +305,10 @@
  * specifies the level of entitlement needed to access 
  * the content.
  */
-*[class~="topic/permissions"]:before {
+*[class~="topic/permissions"]:before(300) {
   content: "Permissions: ";
 }
-*[class~="topic/permissions"]:after {
+*[class~="topic/permissions"]:before {
   content: " " 
     oxy_combobox( 
         edit, '@view',
@@ -332,7 +325,7 @@
  * of the operating system and/or hardware related to 
  * the product being described by the prodinfo element
  */
-*[class~="topic/platform"]:before {
+*[class~="topic/platform"]:before(300) {
   content: "Platform: ";
 }
 /* ==================================================
@@ -343,7 +336,7 @@
  * about the product or products that are the subject 
  * matter of the current topic. 
  */
-*[class~="topic/prodinfo"]:before {
+*[class~="topic/prodinfo"]:before(300) {
   content: "Product info ";
 }
 /* ==================================================
@@ -354,7 +347,7 @@
  * of the product that is supported by the information 
  * in this topic. 
  */
-*[class~="topic/prodname"]:before {
+*[class~="topic/prodname"]:before(300) {
   content: "Product name: ";
 }
 /* ==================================================
@@ -367,7 +360,7 @@
  * could be replaced by an order number when a product 
  * completes development.
  */
-*[class~="topic/prognum"]:before {
+*[class~="topic/prognum"]:before(300) {
   content: "Program number: ";
 }
 /* ==================================================
@@ -379,7 +372,7 @@
  * for making the content or subject of the topic 
  * available.
  */
-*[class~="topic/publisher"]:before {
+*[class~="topic/publisher"]:before(300) {
   content: "Publisher: ";
 }
 /* ==================================================
@@ -391,22 +384,23 @@
  * scheme, such as context-sensitive help systems and 
  * databases.
  */
-*[class~="topic/resourceid"]:before {
+
+*[class~="topic/resourceid"]:before(300) {
   content: "Resource Id: ";
 }
-*[class~="topic/resourceid"][id]:after {
+*[class~="topic/resourceid"][id]:before {
   -oxy-append-content: oxy_textfield(columns, 12, edit, "@id");
 }
-*[class~="topic/resourceid"][appid]:after {
+*[class~="topic/resourceid"][appid]:before{
   -oxy-append-content: oxy_label(text, " appId: ", width, 5ex) oxy_textfield(columns, 12, edit, "@appid");
 }
-*[class~="topic/resourceid"][appname]:after {
+*[class~="topic/resourceid"][appname]:before {
   -oxy-append-content: oxy_label(text, " name: ", width, 5ex) oxy_textfield(columns, 12, edit, "@appname");
 }
-*[class~="topic/resourceid"][ux-contextstring]:after {
+*[class~="topic/resourceid"][ux-contextstring]:before {
   -oxy-append-content: oxy_label(text, " context-string: ", width, 5ex) oxy_textfield(columns, 12, edit, "@ux-contextstring");
 }
-*[class~="topic/resourceid"][ux-windowref]:after {
+*[class~="topic/resourceid"][ux-windowref]:before {
   -oxy-append-content: oxy_label(text, " windowref: ", width, 5ex) oxy_textfield(columns, 12, edit, "@ux-windowref");
 }
 /* ==================================================
@@ -416,7 +410,7 @@
  * The series metadata element contains information 
  * about the product series that the topic supports.
  */
-*[class~="topic/series"]:before {
+*[class~="topic/series"]:before(300) {
   content: "Series: ";
 }
 /* ==================================================
@@ -427,7 +421,7 @@
  * which the present topic is derived, either 
  * completely or in part.
  */
-*[class~="topic/source"]:before {
+*[class~="topic/source"]:before(300) {
   content: "Source: ";
 }
 *[class~="topic/source"][href]:after {
@@ -453,7 +447,7 @@
  * information for multiple products or versions of 
  * products to which the topic applies.
  */
-*[class~="topic/vrmlist"]:before {
+*[class~="topic/vrmlist"]:before(300) {
   content: "Versions: ";
 }
 /* ==================================================
@@ -464,99 +458,235 @@
  * product's version, modification, and release, to 
  * which the current topic applies.
  */
-*[class~="topic/vrm"]:after {
+*[class~="topic/vrm"]:before {
   content: " version: " oxy_textfield(edit, "@version", columns, 10) " release: " oxy_textfield(edit, "@release", columns, 10) " modification: " oxy_textfield(edit, "@modification", columns, 10);
 }
 
+
+
 /*========= EXM-29633 - DITA 1.3 Change elements domain =======*/
-*[class~="relmgmt-d/change-historylist"]{
-    display:block;
-    margin:3pt;
-}
-*[class~="relmgmt-d/change-historylist"]:before{
+
+
+
+
+
+/* ==================================================
+ *
+ * <change-historylis>
+ * 
+ * Use the <change-historylist> element as a container for 
+ * individual release notes, as represented by the <change-item> 
+ * element. It appears in the topic prolog or the map 
+ * <topicmeta> element.
+ * 
+ * Inherits from:
+ * - topic/metadata  
+ */
+*[class~="relmgmt-d/change-historylist"]:before(300){
     content: "Change History List: ";
 }
-/*Change item*/
+
+/* ==================================================
+ *
+ * <change-item>
+ * 
+ * Use the <change-item> element to represent a record 
+ * of a single change to a DITA topic or map.
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
 *[class~="relmgmt-d/change-item"]{
     display:list-item;
-    margin-left:3pt;
+    margin-left:1em;
 }
+*[class~="relmgmt-d/change-item"]:before(300) {
+    content:"Change: ";
+}
+/* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-item"]:before {
-    content:"Change: " !important;
-    width:130px;
-}
-/*Change person*/
-*[class~="relmgmt-d/change-person"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-person"]:before {
-    content:"Person: " !important;
-    width:130px;
-}
-/*Change organization*/
-*[class~="relmgmt-d/change-organization"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-organization"]:before {
-    content:"Organization: " !important;
-    width:130px;
-}
-/*Change started*/
-*[class~="relmgmt-d/change-started"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-started"]:before {
-    content:"Started: " !important;
-    width:130px;
-}
-*[class~="relmgmt-d/change-completed"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-completed"]:before {
-    content:"Completed: " !important;
-    width:130px;
-}
-/*Change summary*/
-*[class~="relmgmt-d/change-summary"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-summary"]:before {
-    content:"Summary: " !important;
-    width:130px;
-}
-/*Change revisionid*/
-*[class~="relmgmt-d/change-revisionid"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-revisionid"]:before {
-    content:"Revision ID: " !important;
-    width:130px;
-}
-/*Change request*/
-*[class~="relmgmt-d/change-request-reference"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-request-reference"] * {
-    margin-left:2pt;
-}
-*[class~="relmgmt-d/change-request-reference"]:before {
-    content:"Request Reference " !important;
-    display:block;
-}
-/*Change request system*/
-*[class~="relmgmt-d/change-request-system"] {
-    display:block;
-}
-*[class~="relmgmt-d/change-request-system"]:before {
-    content:"System: " !important;
-    width:100px;
+    content:none !important; 
 }
 
-/*Change request id*/
-*[class~="relmgmt-d/change-request-id"] {
-    display:block;
+
+/* ==================================================
+ *
+ * <change-person>
+ * 
+ * Use the <change-person> element to specify the name
+ *  of the person who made the change.
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
+*[class~="relmgmt-d/change-person"]{
+    display:list-item;
+    margin-left:1em;
 }
+*[class~="relmgmt-d/change-person"]:before(300) {
+    content:"Person: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-person"]:before {
+    content:none !important; 
+}
+
+
+
+/* ==================================================
+ *
+ * <change-organization>
+ * 
+ * Use the <change-organization> element to specify 
+ * the name of an organization that required the change.
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
+*[class~="relmgmt-d/change-organization"]:before(300) {
+    content:"Organization: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-organization"]:before {
+    content:none !important; 
+}
+
+
+/* ==================================================
+ *
+ * <change-started>
+ * 
+ * Use the <change-started> element to specify the 
+ * date on which the change was initiated.
+ * The recommended best practice is to use date strings 
+ * that conform to the ISO 8601 standard, unless a 
+ * unix-style machine timestamp is used. 
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
+*[class~="relmgmt-d/change-started"]:before(300) {
+    content:"Started: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-started"]:before {
+    content:none !important; 
+}
+
+
+/* ==================================================
+ *
+ * <change-completed>
+ * 
+ * Use the <change-completed> element to indicate the 
+ * date on which the change was completed.
+ * 
+ * The recommended best practice is to use date strings 
+ * that conform to the ISO 8601 standard, 
+ * unless a unix-style machine timestamp is used. 
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
+*[class~="relmgmt-d/change-completed"]:before(300) {
+    content:"Completed: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-completed"]:before {
+    content:none !important; 
+}
+
+/* ==================================================
+ *
+ * <change-summary>
+ * 
+ * Use the <change-summary> element to summarize 
+ * the change. It is the portion of the release note 
+ * that might appear in a document.
+ * 
+ * Inherits from:
+ * - topic/data
+ */
+*[class~="relmgmt-d/change-summary"]:before(300) {
+    content:"Summary: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-summary"]:before {
+    content:none !important; 
+}
+
+/* ==================================================
+ *
+ * <change-revisionid>
+ * 
+ * Use the <change-revisionid> element to specify a 
+ * revision ID string that can identify the change.
+ * 
+ * Inherits from:
+ * - topic/data
+ */
+*[class~="relmgmt-d/change-revisionid"]:before(300) {
+    content:"Revision Id: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-revisionid"]:before {
+    content:none !important; 
+}
+
+/* ==================================================
+ *
+ * <change-request-reference>
+ * 
+ * Use the <change-request-reference> element to 
+ * provide information that links the change to an 
+ * external tracking system.
+ * 
+ * Inherits from:
+ * - topic/data
+ */
+*[class~="relmgmt-d/change-request-reference"]:before(300) {
+    content:"Request Reference: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-request-reference"]:before {
+    content:none !important; 
+}
+
+/* ==================================================
+ *
+ * <change-request-system>
+ * 
+ * Use the <change-request-system> element to specify 
+ * the name of an information system that manages or 
+ * serves the referenced change request, for example, 
+ * an issue tracking system.
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
+*[class~="relmgmt-d/change-request-system"]:before(300) {
+    content:"System: ";
+}
+/* Inhibit the topic/data inherited static content */
+*[class~="relmgmt-d/change-request-system"]:before {
+    content:none !important; 
+}
+
+/* ==================================================
+ *
+ * <change-request-id>
+ * 
+ * Use the <change-request-id> element to specify an 
+ * identifier associated with the change request, such 
+ * as an issue ID or ticket number. 
+ * 
+ * Inherits from:
+ * - topic/data  
+ */
+*[class~="relmgmt-d/change-request-id"]:before(300) {
+    content:"Request Id: ";
+}
+/* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-request-id"]:before {
-    content:"ID: " !important;
-    width:100px;
+    content:none !important; 
 }

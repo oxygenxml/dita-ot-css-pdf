@@ -71,12 +71,14 @@
 *[class~="topic/xref"][href]:empty,
 *[class~="topic/link"][type][href]:empty,
 *[class~="topic/xref"][type][href]:empty {
-    content: oxy_label(text, oxy_getSomeText(oxy_link-text(), 150, true));
+    content: oxy_getSomeText(oxy_link-text(), 150, true);
 }
 /*EXM-28844 Show rendered text in-place in Author when referencing external resources.*/
 *[class~="topic/link"][href][scope="external"]:empty,
+*[class~="topic/link"][href][scope="peer"]:empty,
 *[class~="topic/link"][href][format="html"]:empty,
 *[class~="topic/xref"][href][scope="external"]:empty ,
+*[class~="topic/xref"][href][scope="peer"]:empty ,
 *[class~="topic/xref"][href][format="html"]:empty {
     content: oxy_label(text, oxy_getSomeText(attr(href), 150, true));
 }

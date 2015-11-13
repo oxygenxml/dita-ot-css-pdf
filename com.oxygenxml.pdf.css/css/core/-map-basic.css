@@ -67,36 +67,69 @@ map > *[class~="topic/title"], /* opentopic namespace - merged map */
   padding-left: 12px;
 }
 @media oxygen {
+
+
   /*
- * The map references icons
- */
+   * A faded link icon, to stimulate the 
+   * user discover that clicking on the 
+   * link or icon opens the refered topic.
+   */ 
+  *[class~="map/topicref"][href]:before(1150){
+    content: url("../../img/link-light.png");
+    width: 16px;
+    link: attr(href);
+  }
+
+  /*
+   * The map topic references icons
+   */
   *[class~="map/topicref"]:before(1100) {
     content: url("../../img/topic.png");
     padding-top: 0.1em;
     padding-right: 0.2em;
   }
+
+  *[class~="ditavalref-d/ditavalref"]:before(1100) {
+    content: url("../../img/DitamapDitavalref16.png");
+  }
+
+  *[class~="map/topicref"][href]:before(1100){
+    link: attr(href);
+  }
+
   /*
- * The element name, only if is a subclass of topicref. Putting the topicref element on all elements
- * is cluttering the map.
- */
+   * The element name, only if is a subclass of topicref. Putting the topicref element on all elements
+   * is cluttering the map.
+   */
   *[class~="map/topicref"]:not([class$=" map/topicref "]):before(1050) {
-    content: oxy_capitalize(oxy_local-name()) " ";
+     content: oxy_capitalize(oxy_local-name()) " ";
   }
-  /*
- * The reference, the href value.
- */
+
+  *[class~="map/topicref"]:before(1020){
+     font-weight: bold;     
+  }
   *[class~="map/topicref"][href]:before(1020) {
-    content: attr(href) " ";
-    font-weight: bold;
+     content: attr(href) " ";
   }
-  /*
- * The attributes.
- */
-  *[class~="map/topicref"]:before(1010) {
+  *[class~="map/topicref"][navtitle]:before(1020) {
+     content: attr(navtitle) " ";
+  }
+   /*
+    * The attributes.
+    */
+  *[class~="map/topicref"][href]:before(1010) {
     content: oxy_replace(oxy_unescapeURLValue(oxy_attributes()), 'href="(.*?)"', "", true);
-    color: purple;
     /*See -colors.css */
   }
+  *[class~="map/topicref"][navtitle]:before(1010) {
+    content: oxy_replace(oxy_unescapeURLValue(oxy_attributes()), 'navtitle="(.*?)"', "", true);
+    /*See -colors.css */
+  }
+  *[class~="map/topicref"]:not([navtitle]):not([href]):before(1010) {
+    content: oxy_unescapeURLValue(oxy_attributes());
+    /*See -colors.css */
+  }
+
 }
 /*EXM-33953 Avoid italic style for topicref attributes on Eclipse*/
 @media oxygen AND (platform:"standalone") {
@@ -105,14 +138,6 @@ map > *[class~="topic/title"], /* opentopic namespace - merged map */
   }
 }
 
-*[class~="map/topicref"][href]:before,
-*[class~="map/topicref"][href]:before(1100),
-*[class~="map/topicref"][href]:before(1050),
-*[class~="map/topicref"][href]:before(1040),
-*[class~="map/topicref"][href]:before(1030),
-*[class~="map/topicref"][href]:before(1020) {
-  link: attr(href);
-}
 /* Override the generic rules applying on all elements having [keyref] */
 *[class~="map/topicref"][keyref]:empty {
   content: "";
