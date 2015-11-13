@@ -41,12 +41,7 @@ topic:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter topic content";
 }
-@media oxygen-high-contrast-black {
-  topic:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   topic:empty {
     color: white!important;
   }
@@ -70,12 +65,7 @@ concept:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter concept content";
 }
-@media oxygen-high-contrast-black {
-  concept:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   concept:empty {
     color: white!important;
   }
@@ -99,12 +89,7 @@ task:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter task content";
 }
-@media oxygen-high-contrast-black {
-  task:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   task:empty {
     color: white!important;
   }
@@ -128,12 +113,7 @@ reference:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter reference content";
 }
-@media oxygen-high-contrast-black {
-  reference:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   reference:empty {
     color: white!important;
   }
@@ -157,12 +137,7 @@ glossgroup:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter glossary entries";
 }
-@media oxygen-high-contrast-black {
-  glossgroup:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossgroup:empty {
     color: white!important;
   }
@@ -176,12 +151,7 @@ body:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter main topic content";
 }
-@media oxygen-high-contrast-black {
-  body:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   body:empty {
     color: white!important;
   }
@@ -194,12 +164,7 @@ taskbody:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter main task content";
 }
-@media oxygen-high-contrast-black {
-  taskbody:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   taskbody:empty {
     color: white!important;
   }
@@ -212,12 +177,7 @@ refbody:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter main reference content";
 }
-@media oxygen-high-contrast-black {
-  refbody:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   refbody:empty {
     color: white!important;
   }
@@ -230,12 +190,7 @@ conbody:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter main concept content";
 }
-@media oxygen-high-contrast-black {
-  conbody:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   conbody:empty {
     color: white!important;
   }
@@ -248,12 +203,7 @@ glossBody:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter glossary body content";
 }
-@media oxygen-high-contrast-black {
-  glossBody:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossBody:empty {
     color: white!important;
   }
@@ -267,12 +217,7 @@ title:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter title";
 }
-@media oxygen-high-contrast-black {
-  title:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   title:empty {
     color: white!important;
   }
@@ -285,12 +230,7 @@ section > title:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter section title";
 }
-@media oxygen-high-contrast-black {
-  section > title:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   section > title:empty {
     color: white!important;
   }
@@ -311,12 +251,7 @@ topic > title:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter topic title";
 }
-@media oxygen-high-contrast-black {
-  topic > title:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   topic > title:empty {
     color: white!important;
   }
@@ -337,12 +272,7 @@ reference > title:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter reference title";
 }
-@media oxygen-high-contrast-black {
-  reference > title:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   reference > title:empty {
     color: white!important;
   }
@@ -363,12 +293,7 @@ task > title:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter task title";
 }
-@media oxygen-high-contrast-black {
-  task > title:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   task > title:empty {
     color: white!important;
   }
@@ -389,12 +314,7 @@ concept > title:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter concept title";
 }
-@media oxygen-high-contrast-black {
-  concept > title:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   concept > title:empty {
     color: white!important;
   }
@@ -407,12 +327,7 @@ glossterm:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter term";
 }
-@media oxygen-high-contrast-black {
-  glossterm:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossterm:empty {
     color: white!important;
   }
@@ -433,12 +348,7 @@ titlealts:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter alternative navigation and search title";
 }
-@media oxygen-high-contrast-black {
-  titlealts:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   titlealts:empty {
     color: white!important;
   }
@@ -451,12 +361,7 @@ navtitle:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter navigation title";
 }
-@media oxygen-high-contrast-black {
-  navtitle:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   navtitle:empty {
     color: white!important;
   }
@@ -469,12 +374,7 @@ searchtitle:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter search title";
 }
-@media oxygen-high-contrast-black {
-  searchtitle:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   searchtitle:empty {
     color: white!important;
   }
@@ -496,12 +396,7 @@ abstract:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter abstract information";
 }
-@media oxygen-high-contrast-black {
-  abstract:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   abstract:empty {
     color: white!important;
   }
@@ -514,12 +409,7 @@ shortdesc:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter short description";
 }
-@media oxygen-high-contrast-black {
-  shortdesc:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   shortdesc:empty {
     color: white!important;
   }
@@ -605,12 +495,7 @@ sl:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter simple list items";
 }
-@media oxygen-high-contrast-black {
-  sl:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   sl:empty {
     color: white!important;
   }
@@ -623,12 +508,7 @@ sli:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter simple list item";
 }
-@media oxygen-high-contrast-black {
-  sli:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   sli:empty {
     color: white!important;
   }
@@ -641,12 +521,7 @@ ul:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter unordered list items";
 }
-@media oxygen-high-contrast-black {
-  ul:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   ul:empty {
     color: white!important;
   }
@@ -659,12 +534,7 @@ ol:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter ordered list items";
 }
-@media oxygen-high-contrast-black {
-  ol:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   ol:empty {
     color: white!important;
   }
@@ -677,12 +547,7 @@ li:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter list item";
 }
-@media oxygen-high-contrast-black {
-  li:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   li:empty {
     color: white!important;
   }
@@ -703,12 +568,7 @@ dl:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition list entries";
 }
-@media oxygen-high-contrast-black {
-  dl:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   dl:empty {
     color: white!important;
   }
@@ -721,12 +581,7 @@ dlhead:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition list head information";
 }
-@media oxygen-high-contrast-black {
-  dlhead:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   dlhead:empty {
     color: white!important;
   }
@@ -739,12 +594,7 @@ dthd:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition term heading";
 }
-@media oxygen-high-contrast-black {
-  dthd:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   dthd:empty {
     color: white!important;
   }
@@ -757,12 +607,7 @@ ddhd:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition description heading";
 }
-@media oxygen-high-contrast-black {
-  ddhd:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   ddhd:empty {
     color: white!important;
   }
@@ -775,12 +620,7 @@ dlentry:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition list entry";
 }
-@media oxygen-high-contrast-black {
-  dlentry:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   dlentry:empty {
     color: white!important;
   }
@@ -793,12 +633,7 @@ dt:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition term";
 }
-@media oxygen-high-contrast-black {
-  dt:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   dt:empty {
     color: white!important;
   }
@@ -811,12 +646,7 @@ dd:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition description";
 }
-@media oxygen-high-contrast-black {
-  dd:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   dd:empty {
     color: white!important;
   }
@@ -837,12 +667,7 @@ plentry:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter parameter list entry";
 }
-@media oxygen-high-contrast-black {
-  plentry:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   plentry:empty {
     color: white!important;
   }
@@ -855,12 +680,7 @@ pt:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter parameter name";
 }
-@media oxygen-high-contrast-black {
-  pt:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   pt:empty {
     color: white!important;
   }
@@ -873,12 +693,7 @@ pd:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter parameter definition";
 }
-@media oxygen-high-contrast-black {
-  pd:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   pd:empty {
     color: white!important;
   }
@@ -900,12 +715,7 @@ steps:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter ordered steps information";
 }
-@media oxygen-high-contrast-black {
-  steps:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   steps:empty {
     color: white!important;
   }
@@ -926,12 +736,7 @@ steps-unordered:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter unordered steps information";
 }
-@media oxygen-high-contrast-black {
-  steps-unordered:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   steps-unordered:empty {
     color: white!important;
   }
@@ -952,12 +757,7 @@ steps-informal:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter informal steps information";
 }
-@media oxygen-high-contrast-black {
-  steps-informal:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   steps-informal:empty {
     color: white!important;
   }
@@ -970,12 +770,7 @@ step:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "You need to enter a command for this step!";
 }
-@media oxygen-high-contrast-black {
-  step:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   step:empty {
     color: white!important;
   }
@@ -988,12 +783,7 @@ cmd:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter step action";
 }
-@media oxygen-high-contrast-black {
-  cmd:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   cmd:empty {
     color: white!important;
   }
@@ -1007,12 +797,7 @@ p:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter paragraph content";
 }
-@media oxygen-high-contrast-black {
-  p:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   p:empty {
     color: white!important;
   }
@@ -1025,12 +810,7 @@ pre:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter preformated content";
 }
-@media oxygen-high-contrast-black {
-  pre:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   pre:empty {
     color: white!important;
   }
@@ -1051,12 +831,7 @@ codeblock:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter code fragments";
 }
-@media oxygen-high-contrast-black {
-  codeblock:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   codeblock:empty {
     color: white!important;
   }
@@ -1077,12 +852,7 @@ screen:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter screen content";
 }
-@media oxygen-high-contrast-black {
-  screen:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   screen:empty {
     color: white!important;
   }
@@ -1103,12 +873,7 @@ lines:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter lines";
 }
-@media oxygen-high-contrast-black {
-  lines:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   lines:empty {
     color: white!important;
   }
@@ -1129,12 +894,7 @@ bodydiv:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter body div content";
 }
-@media oxygen-high-contrast-black {
-  bodydiv:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   bodydiv:empty {
     color: white!important;
   }
@@ -1155,12 +915,7 @@ sectiondiv:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter section div content";
 }
-@media oxygen-high-contrast-black {
-  sectiondiv:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   sectiondiv:empty {
     color: white!important;
   }
@@ -1181,12 +936,7 @@ conbodydiv:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter concept body div content";
 }
-@media oxygen-high-contrast-black {
-  conbodydiv:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   conbodydiv:empty {
     color: white!important;
   }
@@ -1207,12 +957,7 @@ refbodydiv:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter reference body div content";
 }
-@media oxygen-high-contrast-black {
-  refbodydiv:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   refbodydiv:empty {
     color: white!important;
   }
@@ -1233,12 +978,7 @@ prolog:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter prolog information";
 }
-@media oxygen-high-contrast-black {
-  prolog:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   prolog:empty {
     color: white!important;
   }
@@ -1251,12 +991,7 @@ author:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter author name";
 }
-@media oxygen-high-contrast-black {
-  author:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   author:empty {
     color: white!important;
   }
@@ -1269,12 +1004,7 @@ source:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter a reference to a resource";
 }
-@media oxygen-high-contrast-black {
-  source:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   source:empty {
     color: white!important;
   }
@@ -1287,12 +1017,7 @@ publisher:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter publisher name";
 }
-@media oxygen-high-contrast-black {
-  publisher:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   publisher:empty {
     color: white!important;
   }
@@ -1305,12 +1030,7 @@ copyrholder:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter copyright holder";
 }
-@media oxygen-high-contrast-black {
-  copyrholder:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   copyrholder:empty {
     color: white!important;
   }
@@ -1323,12 +1043,7 @@ critdates:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter creation and revision dates";
 }
-@media oxygen-high-contrast-black {
-  critdates:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   critdates:empty {
     color: white!important;
   }
@@ -1349,12 +1064,7 @@ metadata:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter metadata information";
 }
-@media oxygen-high-contrast-black {
-  metadata:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   metadata:empty {
     color: white!important;
   }
@@ -1367,12 +1077,7 @@ audience:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter audience";
 }
-@media oxygen-high-contrast-black {
-  audience:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   audience:empty {
     color: white!important;
   }
@@ -1385,12 +1090,7 @@ category:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter category";
 }
-@media oxygen-high-contrast-black {
-  category:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   category:empty {
     color: white!important;
   }
@@ -1403,12 +1103,7 @@ keywords:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter keywords";
 }
-@media oxygen-high-contrast-black {
-  keywords:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   keywords:empty {
     color: white!important;
   }
@@ -1421,12 +1116,7 @@ prodinfo:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter product information";
 }
-@media oxygen-high-contrast-black {
-  prodinfo:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   prodinfo:empty {
     color: white!important;
   }
@@ -1439,12 +1129,7 @@ prodname:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter product name";
 }
-@media oxygen-high-contrast-black {
-  prodname:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   prodname:empty {
     color: white!important;
   }
@@ -1457,12 +1142,7 @@ vrmlist:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter product version information";
 }
-@media oxygen-high-contrast-black {
-  vrmlist:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   vrmlist:empty {
     color: white!important;
   }
@@ -1483,12 +1163,7 @@ section:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter section content";
 }
-@media oxygen-high-contrast-black {
-  section:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   section:empty {
     color: white!important;
   }
@@ -1509,12 +1184,7 @@ syntaxdiagram:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter syntax diagram content";
 }
-@media oxygen-high-contrast-black {
-  syntaxdiagram:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   syntaxdiagram:empty {
     color: white!important;
   }
@@ -1535,12 +1205,7 @@ lq:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter long quote";
 }
-@media oxygen-high-contrast-black {
-  lq:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   lq:empty {
     color: white!important;
   }
@@ -1561,12 +1226,7 @@ msgblock:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter message block content";
 }
-@media oxygen-high-contrast-black {
-  msgblock:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   msgblock:empty {
     color: white!important;
   }
@@ -1587,12 +1247,7 @@ note:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter note content";
 }
-@media oxygen-high-contrast-black {
-  note:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   note:empty {
     color: white!important;
   }
@@ -1613,12 +1268,7 @@ fig:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter figure content";
 }
-@media oxygen-high-contrast-black {
-  fig:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   fig:empty {
     color: white!important;
   }
@@ -1639,12 +1289,7 @@ example:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter example";
 }
-@media oxygen-high-contrast-black {
-  example:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   example:empty {
     color: white!important;
   }
@@ -1665,12 +1310,7 @@ desc:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter description";
 }
-@media oxygen-high-contrast-black {
-  desc:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   desc:empty {
     color: white!important;
   }
@@ -1691,12 +1331,7 @@ draft-comment:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter commment";
 }
-@media oxygen-high-contrast-black {
-  draft-comment:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   draft-comment:empty {
     color: white!important;
   }
@@ -1725,12 +1360,7 @@ linklist:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter link list content";
 }
-@media oxygen-high-contrast-black {
-  linklist:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   linklist:empty {
     color: white!important;
   }
@@ -1751,12 +1381,7 @@ linkinfo:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter link information";
 }
-@media oxygen-high-contrast-black {
-  linkinfo:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   linkinfo:empty {
     color: white!important;
   }
@@ -1777,12 +1402,7 @@ linkpool:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter link pool content";
 }
-@media oxygen-high-contrast-black {
-  linkpool:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   linkpool:empty {
     color: white!important;
   }
@@ -1803,12 +1423,7 @@ hazardstatement:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter hazard information";
 }
-@media oxygen-high-contrast-black {
-  hazardstatement:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   hazardstatement:empty {
     color: white!important;
   }
@@ -1821,12 +1436,7 @@ typeofhazard:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Specify the hazard type";
 }
-@media oxygen-high-contrast-black {
-  typeofhazard:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   typeofhazard:empty {
     color: white!important;
   }
@@ -1839,12 +1449,7 @@ consequence:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter the consequences of not avoiding the hazard";
 }
-@media oxygen-high-contrast-black {
-  consequence:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   consequence:empty {
     color: white!important;
   }
@@ -1857,12 +1462,7 @@ howtoavoid:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Specify how to avoid the hazard";
 }
-@media oxygen-high-contrast-black {
-  howtoavoid:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   howtoavoid:empty {
     color: white!important;
   }
@@ -1875,12 +1475,7 @@ hazardsymbol:not([href]):not([keyref]):empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Set href or keyref for this hazard symbol!";
 }
-@media oxygen-high-contrast-black {
-  hazardsymbol:not([href]):not([keyref]):empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   hazardsymbol:not([href]):not([keyref]):empty {
     color: white!important;
   }
@@ -1901,12 +1496,7 @@ coords:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter coordinates";
 }
-@media oxygen-high-contrast-black {
-  coords:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   coords:empty {
     color: white!important;
   }
@@ -1927,12 +1517,7 @@ taskbody > prereq:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter pre-requisites";
 }
-@media oxygen-high-contrast-black {
-  taskbody > prereq:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   taskbody > prereq:empty {
     color: white!important;
   }
@@ -1953,12 +1538,7 @@ taskbody > context:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter context information";
 }
-@media oxygen-high-contrast-black {
-  taskbody > context:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   taskbody > context:empty {
     color: white!important;
   }
@@ -1987,12 +1567,7 @@ stepresult:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter the result of this step";
 }
-@media oxygen-high-contrast-black {
-  stepresult:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   stepresult:empty {
     color: white!important;
   }
@@ -2013,12 +1588,7 @@ choice:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Provide an option";
 }
-@media oxygen-high-contrast-black {
-  choice:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   choice:empty {
     color: white!important;
   }
@@ -2039,12 +1609,7 @@ step > info:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter step information";
 }
-@media oxygen-high-contrast-black {
-  step > info:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   step > info:empty {
     color: white!important;
   }
@@ -2065,12 +1630,7 @@ substep > info:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter substep information";
 }
-@media oxygen-high-contrast-black {
-  substep > info:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   substep > info:empty {
     color: white!important;
   }
@@ -2091,12 +1651,7 @@ step > tutorialinfo:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter tutorial information";
 }
-@media oxygen-high-contrast-black {
-  step > tutorialinfo:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   step > tutorialinfo:empty {
     color: white!important;
   }
@@ -2117,12 +1672,7 @@ substep > tutorialinfo:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter tutorial information";
 }
-@media oxygen-high-contrast-black {
-  substep > tutorialinfo:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   substep > tutorialinfo:empty {
     color: white!important;
   }
@@ -2143,12 +1693,7 @@ step > stepxmp:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Provide a step example";
 }
-@media oxygen-high-contrast-black {
-  step > stepxmp:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   step > stepxmp:empty {
     color: white!important;
   }
@@ -2169,12 +1714,7 @@ substep > stepxmp:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Provide a step example";
 }
-@media oxygen-high-contrast-black {
-  substep > stepxmp:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   substep > stepxmp:empty {
     color: white!important;
   }
@@ -2203,12 +1743,7 @@ taskbody > result:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter the result of the task";
 }
-@media oxygen-high-contrast-black {
-  taskbody > result:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   taskbody > result:empty {
     color: white!important;
   }
@@ -2229,12 +1764,7 @@ taskbody > postreq:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter post-requisites";
 }
-@media oxygen-high-contrast-black {
-  taskbody > postreq:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   taskbody > postreq:empty {
     color: white!important;
   }
@@ -2255,12 +1785,7 @@ stepsection:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter step section information";
 }
-@media oxygen-high-contrast-black {
-  stepsection:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   stepsection:empty {
     color: white!important;
   }
@@ -2281,12 +1806,7 @@ refsyn:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter reference syntax content";
 }
-@media oxygen-high-contrast-black {
-  refsyn:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   refsyn:empty {
     color: white!important;
   }
@@ -2308,12 +1828,7 @@ xref:not([href]):not([keyref]):empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Set href or keyref for this cross reference!";
 }
-@media oxygen-high-contrast-black {
-  xref:not([href]):not([keyref]):empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   xref:not([href]):not([keyref]):empty {
     color: white!important;
   }
@@ -2327,12 +1842,7 @@ longquoteref:not([href]):not([keyref]):empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Set href or keyref on this long quote";
 }
-@media oxygen-high-contrast-black {
-  longquoteref:not([href]):not([keyref]):empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   longquoteref:not([href]):not([keyref]):empty {
     color: white!important;
   }
@@ -2345,12 +1855,7 @@ longdescref:not([href]):not([keyref]):empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Set href or keyref on this long description";
 }
-@media oxygen-high-contrast-black {
-  longdescref:not([href]):not([keyref]):empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   longdescref:not([href]):not([keyref]):empty {
     color: white!important;
   }
@@ -2380,12 +1885,7 @@ glossentry:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter glossary entry";
 }
-@media oxygen-high-contrast-black {
-  glossentry:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossentry:empty {
     color: white!important;
   }
@@ -2398,12 +1898,7 @@ glossdef:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter definition";
 }
-@media oxygen-high-contrast-black {
-  glossdef:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossdef:empty {
     color: white!important;
   }
@@ -2424,12 +1919,7 @@ glossAlt:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Alternative term";
 }
-@media oxygen-high-contrast-black {
-  glossAlt:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossAlt:empty {
     color: white!important;
   }
@@ -2442,12 +1932,7 @@ glossAbbreviation:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter abbreviated form of the term";
 }
-@media oxygen-high-contrast-black {
-  glossAbbreviation:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossAbbreviation:empty {
     color: white!important;
   }
@@ -2460,12 +1945,7 @@ glossAcronym:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter acronym";
 }
-@media oxygen-high-contrast-black {
-  glossAcronym:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossAcronym:empty {
     color: white!important;
   }
@@ -2478,12 +1958,7 @@ glossShortForm:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter short form alternative";
 }
-@media oxygen-high-contrast-black {
-  glossShortForm:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossShortForm:empty {
     color: white!important;
   }
@@ -2496,12 +1971,7 @@ glossSynonym:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter synonym";
 }
-@media oxygen-high-contrast-black {
-  glossSynonym:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossSynonym:empty {
     color: white!important;
   }
@@ -2514,12 +1984,7 @@ glossUsage:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter usage information";
 }
-@media oxygen-high-contrast-black {
-  glossUsage:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossUsage:empty {
     color: white!important;
   }
@@ -2532,12 +1997,7 @@ glossStatus:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter usage status";
 }
-@media oxygen-high-contrast-black {
-  glossStatus:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossStatus:empty {
     color: white!important;
   }
@@ -2550,12 +2010,7 @@ glossProperty:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter additional details";
 }
-@media oxygen-high-contrast-black {
-  glossProperty:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossProperty:empty {
     color: white!important;
   }
@@ -2568,12 +2023,7 @@ glossPartOfSpeech:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter part of speech information";
 }
-@media oxygen-high-contrast-black {
-  glossPartOfSpeech:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossPartOfSpeech:empty {
     color: white!important;
   }
@@ -2586,12 +2036,7 @@ glossSurfaceForm:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter surface form information";
 }
-@media oxygen-high-contrast-black {
-  glossSurfaceForm:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossSurfaceForm:empty {
     color: white!important;
   }
@@ -2612,12 +2057,7 @@ glossScopeNote:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter scope note";
 }
-@media oxygen-high-contrast-black {
-  glossScopeNote:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   glossScopeNote:empty {
     color: white!important;
   }
@@ -2639,12 +2079,7 @@ prelreqs:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter preliminary requirements";
 }
-@media oxygen-high-contrast-black {
-  prelreqs:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   prelreqs:empty {
     color: white!important;
   }
@@ -2665,12 +2100,7 @@ closereqs:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter closing requirements";
 }
-@media oxygen-high-contrast-black {
-  closereqs:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   closereqs:empty {
     color: white!important;
   }
@@ -2691,12 +2121,7 @@ reqconds:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter required conditions";
 }
-@media oxygen-high-contrast-black {
-  reqconds:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   reqconds:empty {
     color: white!important;
   }
@@ -2709,12 +2134,7 @@ reqcond:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter required condition";
 }
-@media oxygen-high-contrast-black {
-  reqcond:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   reqcond:empty {
     color: white!important;
   }
@@ -2727,12 +2147,7 @@ reqcontp:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter a technical publication";
 }
-@media oxygen-high-contrast-black {
-  reqcontp:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   reqcontp:empty {
     color: white!important;
   }
@@ -2753,12 +2168,7 @@ reqpers:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter required personnel";
 }
-@media oxygen-high-contrast-black {
-  reqpers:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   reqpers:empty {
     color: white!important;
   }
@@ -2771,12 +2181,7 @@ personnel:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter the number of personnel";
 }
-@media oxygen-high-contrast-black {
-  personnel:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   personnel:empty {
     color: white!important;
   }
@@ -2789,12 +2194,7 @@ perscat:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter required category level";
 }
-@media oxygen-high-contrast-black {
-  perscat:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   perscat:empty {
     color: white!important;
   }
@@ -2807,12 +2207,7 @@ perskill:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter required skill level";
 }
-@media oxygen-high-contrast-black {
-  perskill:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   perskill:empty {
     color: white!important;
   }
@@ -2825,12 +2220,7 @@ esttime:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter time estimate";
 }
-@media oxygen-high-contrast-black {
-  esttime:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   esttime:empty {
     color: white!important;
   }
@@ -2851,12 +2241,7 @@ supequip:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter support equipment";
 }
-@media oxygen-high-contrast-black {
-  supequip:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   supequip:empty {
     color: white!important;
   }
@@ -2869,12 +2254,7 @@ supeqli:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter support equipment items";
 }
-@media oxygen-high-contrast-black {
-  supeqli:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   supeqli:empty {
     color: white!important;
   }
@@ -2887,12 +2267,7 @@ supequi:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter support equipment item";
 }
-@media oxygen-high-contrast-black {
-  supequi:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   supequi:empty {
     color: white!important;
   }
@@ -2913,12 +2288,7 @@ supplies:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter supplies";
 }
-@media oxygen-high-contrast-black {
-  supplies:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   supplies:empty {
     color: white!important;
   }
@@ -2931,12 +2301,7 @@ supplyli:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter supply items";
 }
-@media oxygen-high-contrast-black {
-  supplyli:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   supplyli:empty {
     color: white!important;
   }
@@ -2949,12 +2314,7 @@ supply:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter supply description";
 }
-@media oxygen-high-contrast-black {
-  supply:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   supply:empty {
     color: white!important;
   }
@@ -2975,12 +2335,7 @@ spares:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter spare parts";
 }
-@media oxygen-high-contrast-black {
-  spares:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   spares:empty {
     color: white!important;
   }
@@ -2993,12 +2348,7 @@ sparesli:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter spare parts items";
 }
-@media oxygen-high-contrast-black {
-  sparesli:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   sparesli:empty {
     color: white!important;
   }
@@ -3011,12 +2361,7 @@ spare:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter spare part description";
 }
-@media oxygen-high-contrast-black {
-  spare:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   spare:empty {
     color: white!important;
   }
@@ -3037,12 +2382,7 @@ safety:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter safety information";
 }
-@media oxygen-high-contrast-black {
-  safety:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   safety:empty {
     color: white!important;
   }
@@ -3055,12 +2395,7 @@ safecond:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Enter safety condition";
 }
-@media oxygen-high-contrast-black {
-  safecond:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   safecond:empty {
     color: white!important;
   }
@@ -3093,12 +2428,7 @@ condition:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Describe the condition to be corrected";
 }
-@media oxygen-high-contrast-black {
-  condition:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   condition:empty {
     color: white!important;
   }
@@ -3119,12 +2449,7 @@ troubleSolution:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Describe a possible solution";
 }
-@media oxygen-high-contrast-black {
-  troubleSolution:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   troubleSolution:empty {
     color: white!important;
   }
@@ -3145,12 +2470,7 @@ cause:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Describe a possible cause";
 }
-@media oxygen-high-contrast-black {
-  cause:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   cause:empty {
     color: white!important;
   }
@@ -3171,12 +2491,7 @@ remedy:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Describe a possible remedy";
 }
-@media oxygen-high-contrast-black {
-  remedy:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   remedy:empty {
     color: white!important;
   }
@@ -3197,12 +2512,7 @@ responsibleParty:empty {
   -oxy-show-placeholder: always;
   -oxy-placeholder-content: "Who should perform the remedy procedure?";
 }
-@media oxygen-high-contrast-black {
-  responsibleParty:empty {
-    color: white!important;
-  }
-}
-@media oxygen-dark-theme {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
   responsibleParty:empty {
     color: white!important;
   }

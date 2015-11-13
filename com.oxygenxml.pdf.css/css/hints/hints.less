@@ -55,16 +55,11 @@
         -oxy-placeholder-content: @content;
     }
     
-@media oxygen-high-contrast-black {
+@media oxygen-high-contrast-black, oxygen-dark-theme {
     &:empty {
         color:white!important;
     }
 }   
-@media oxygen-dark-theme {
-    &:empty {
-        color:white!important;
-    }
-}
     /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
 }
 .placeholder-warning(@content) {
