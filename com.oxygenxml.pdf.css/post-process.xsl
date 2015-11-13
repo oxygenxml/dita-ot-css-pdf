@@ -22,7 +22,8 @@
                     processing-instruction('oxy_attributes') |
                     processing-instruction('oxy_comment_start') |
                     processing-instruction('oxy_delete') |
-                    processing-instruction('oxy_insert_start'))">
+                    processing-instruction('oxy_insert_start') |
+                    processing-instruction('oxy_custom_start'))">
                 <mapping id="{generate-id()}" nr="{position()}"/>
             </xsl:for-each>
         </xsl:if>
@@ -326,6 +327,16 @@
         <xsl:value-of select="normalize-space($raw-href)"/>
     </xsl:function>
 
+
+    <!-- 
+        The highlight in the editor do not generate anything. 
+        The template matching text() is dealing with them. -->
+    <xsl:template 
+        match="
+        processing-instruction('oxy_custom_start') | 
+        processing-instruction('oxy_custom_end') "/>
+       
+
     <!--
     	
         Comments.
@@ -562,29 +573,74 @@
 
                 <xsl:variable name="is-in-comment"
                     select="$preceding-comment[last()]/name() = 'oxy_comment_start'"/>
+                
+                
+                <!-- TODO The highlight is not perfect, it fails on nested highlights. -->
+                <xsl:variable name="preceding-highlight"
+                    select="
+                    preceding::processing-instruction()
+                    [(name() = 'oxy_custom_start' and contains(., 'type=&quot;oxy_content_highlight&quot;')) or name() = 'oxy_custom_end']"/>
+                
+                <xsl:variable name="is-in-highlight"
+                    select="$preceding-highlight[last()]/name() = 'oxy_custom_start'"/>
+                
 
-                <xsl:choose>
-                    <xsl:when test="$is-in-insert and not($is-in-comment)">
-                        <oxy:oxy-insert-hl>
-                            <xsl:copy/>
-                        </oxy:oxy-insert-hl>
-                    </xsl:when>
-                    <xsl:when test="$is-in-insert and $is-in-comment">
-                        <oxy:oxy-comment-hl>
+                <!-- Start building the markup for comments, highlights -->
+                <xsl:variable name="fragment">
+                    <xsl:copy/>
+                </xsl:variable>
+                
+                <!-- Insert -->
+                <xsl:variable name="fragment">
+                    <xsl:choose>
+                        <xsl:when test="$is-in-insert">
                             <oxy:oxy-insert-hl>
-                                <xsl:copy/>
-                            </oxy:oxy-insert-hl>
-                        </oxy:oxy-comment-hl>
-                    </xsl:when>
-                    <xsl:when test="not($is-in-insert) and $is-in-comment">
-                        <oxy:oxy-comment-hl>
-                            <xsl:copy/>
-                        </oxy:oxy-comment-hl>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:copy/>
-                    </xsl:otherwise>
-                </xsl:choose>
+                                <xsl:copy-of select="$fragment"/>
+                            </oxy:oxy-insert-hl>                            
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="$fragment"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+
+                <!-- Comment -->
+                <xsl:variable name="fragment">
+                    <xsl:choose>
+                        <xsl:when test="$is-in-comment">
+                            <oxy:oxy-comment-hl>
+                                <xsl:copy-of select="$fragment"/>
+                            </oxy:oxy-comment-hl>                            
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="$fragment"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
+                <!-- Color highlight -->
+                <xsl:variable name="fragment">
+                    <xsl:choose>
+                        <xsl:when test="$is-in-highlight">
+                            <xsl:variable name="highlight-color">
+                                <xsl:call-template name="get-pi-part">
+                                    <xsl:with-param name="part" select="'color'"/>
+                                    <xsl:with-param name="data" select="$preceding-highlight[last()]"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            
+                            <oxy:oxy-color-hl color="rgba({$highlight-color},50)">
+                                <xsl:copy-of select="$fragment"/>
+                            </oxy:oxy-color-hl>                            
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:copy-of select="$fragment"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
+                <xsl:copy-of select="$fragment"/>                
+
             </xsl:when>
             <xsl:otherwise>
                 <xsl:copy/>
@@ -596,7 +652,7 @@
     <!-- Gets a part from the comment PI. -->
     <xsl:template name="get-pi-part">
         <xsl:param name="part"/>
-        <xsl:variable name="data" select="."/>
+        <xsl:param name="data" select="."/>
         <xsl:variable name="after" select="substring-after($data, concat($part, '=&quot;'))"/>
         <xsl:variable name="before" select="substring-before($after, '&quot;')"/>
         <xsl:value-of select="$before"/>
