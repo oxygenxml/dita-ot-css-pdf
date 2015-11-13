@@ -183,5 +183,10 @@
     oxy-comment-hl{
         background-color:yellow;
     }
-
+    /*
+     * Between an highlight range start and end, highlight the text.  
+     */    
+    oxy-color-hl[color]{
+        background-color:attr(color, color);
+    }
 }

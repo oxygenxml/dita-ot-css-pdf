@@ -765,6 +765,39 @@
         <xsl:value-of select="$s6"/>
     </xsl:function>
 
+
+    <!-- 
+    	https://github.com/oxygenxml/dita-css/issues/10
+        Convert the CALS column and span attributes:
+        
+        @morerows
+        @namest, @nameend 
+        
+        to:
+        
+        @rowspan
+        @cospan 
+        
+        The CSS will match these attributes. Works with Prince and Antenna House.
+    -->
+	<xsl:template match="*[contains(@class, ' topic/entry ')]">
+	    <xsl:copy>
+	        <xsl:copy-of select="@*"/>
+	        <xsl:if test="@morerows">
+	              <xsl:attribute name="rowspan" select="number(@morerows) + 1"></xsl:attribute>  
+	        </xsl:if>
+	        <xsl:if test="@namest and @nameend">
+	            <xsl:variable name="namest" select="@namest"/>
+	            <xsl:variable name="nameend" select="@nameend"/>
+	            <xsl:variable name="namestPos" select="number(parent::*/parent::*/parent::*/*[contains(@class, ' topic/colspec ')][@colname=$namest]/@colnum)"/>
+	            <xsl:variable name="nameendPos" select="number(parent::*/parent::*/parent::*/*[contains(@class, ' topic/colspec ')][@colname=$nameend]/@colnum)"/>
+	            <xsl:attribute name="colspan" select="$nameendPos - $namestPos + 1"/>  
+	        </xsl:if>
+	        <xsl:apply-templates/>
+	    </xsl:copy>
+	</xsl:template>
+
+
     <!--
     	
         Default copy template.

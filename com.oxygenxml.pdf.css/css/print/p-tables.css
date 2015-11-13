@@ -1,0 +1,16 @@
+/*
+ * =================================================
+ * 
+ * CSS rules applying to tables.
+ * 
+ * =================================================
+ */
+
+@media print {
+    *[class~="topic/entry"][colspan] {
+       table-column-span:attr(colspan);
+    }
+	*[class~="topic/entry"][rowspan] {
+       table-row-span:attr(rowspan);
+    }
+}
