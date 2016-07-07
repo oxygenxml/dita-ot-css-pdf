@@ -62,9 +62,16 @@ map > *[class~="topic/title"], /* opentopic namespace - merged map */
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-*[class~="map/topicref"]:empty {
-  -oxy-foldable: false;
-  padding-left: 12px;
+@media oxygen and (platform:eclipse),
+       oxygen and (platform:standalone) {
+    /** 
+     * In webapp we do not have folding handles, so we do not need to 
+     * add padding to the empty elements to achieve proper alignment. 
+     */
+    *[class~="map/topicref"]:empty {
+      -oxy-foldable: false;
+      padding-left: 12px;
+    }
 }
 @media oxygen {
 
@@ -299,9 +306,9 @@ document. To open a reference one could click the topicref icon.*/
 
 
 @media oxygen and (platform:webapp) {
-    *[class~="map/map"][title]:not(:-oxy-show-topic-titles):before {
+    *[class~="map/map"]:not(:-oxy-show-topic-titles):before(2000) {
         display: block;
-        content: oxy_button(actionID, "show.topic.titles");
+        content: oxy_button(actionID, "show.topic.titles") "\A";
         margin-bottom: 10px;
     }
     *[class~="map/map"]:-oxy-show-topic-titles *[class~="map/topicref"][href]:before(1030) {

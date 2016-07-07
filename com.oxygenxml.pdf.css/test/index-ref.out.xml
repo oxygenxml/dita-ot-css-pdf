@@ -4,6 +4,7 @@
         <oxy:front-page-title/>
     </oxy:front-page>
     <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" empty="true"/>
         <topicref is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_2" type="topic">
             <topicmeta class="- map/topicmeta ">
                 <navtitle href="#unique_2" class="- topic/navtitle ">Introduction</navtitle>

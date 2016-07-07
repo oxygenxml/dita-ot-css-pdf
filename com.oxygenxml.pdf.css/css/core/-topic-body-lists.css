@@ -69,7 +69,9 @@
     
     /* Dan: Prince mixes the counters for the inner OL's taking the initial 
         value from the outer one. We make sure the counter is reset. */
-    *[class~="topic/ol"] {
+    *[class~="topic/ol"],
+    /* EXM-35991 Dan: It seems that the same problem is also for the UL's. Resetting the counter. */
+    *[class~="topic/ul"]{
        counter-reset:list-item;
     }
 }

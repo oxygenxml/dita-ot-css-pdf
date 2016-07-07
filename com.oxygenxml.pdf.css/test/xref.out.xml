@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" class="- map/map bookmap/bookmap ">
+    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <oxy:front-page-title/>
+    </oxy:front-page>
+    <topic break-before="true" class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">The reviewed topic.</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">With just <xref class="- topic/xref " href="#unique_2" type="topic">Care and Preparation<desc class="- topic/desc ">"This is a description"</desc></xref>.</p>
+            <p class="- topic/p ">With just <xref class="- topic/xref " href="#unique_2" type="topic">Care and Preparation<desc class="- topic/desc ">When caring for your flower garden you want to feed your plants properly, control pests and weeds.</desc></xref>.</p>
+        </body>
+    </topic>
+</bookmap>

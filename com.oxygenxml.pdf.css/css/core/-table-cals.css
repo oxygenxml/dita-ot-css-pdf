@@ -32,23 +32,25 @@ informaltable{
 /* 
   Mechanism for toggling on/off the visibility of the colspecs. 
  */
-*[class~="topic/colspec"], spanspec{
-    display:none;    
-}
-*[class~="topic/tgroup"]:-oxy-visible-colspecs *[class~="topic/colspec"], 
-*[class~="topic/tgroup"]:-oxy-visible-colspecs spanspec{
-    display:block;
-}
-*[class~="topic/tgroup"]:before! > *[class~="topic/colspec"]{ 
-    display:block;
-    content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
-    text-align:left;
-    font-family: sansserif, verdana, helvetica;
-    font-size: 0.75em;
-    padding-bottom: 0.2em;
-}
-*[class~="topic/tgroup"]:-oxy-visible-colspecs:before{
-    content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
+ @media oxygen {
+    *[class~="topic/colspec"], spanspec{
+        display:none;    
+    }
+    *[class~="topic/tgroup"]:-oxy-visible-colspecs *[class~="topic/colspec"], 
+    *[class~="topic/tgroup"]:-oxy-visible-colspecs spanspec{
+        display:block;
+    }
+    *[class~="topic/tgroup"]:before! > *[class~="topic/colspec"]{ 
+        display:block;
+        content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
+        text-align:left;
+        font-family: sansserif, verdana, helvetica;
+        font-size: 0.75em;
+        padding-bottom: 0.2em;
+    }
+    *[class~="topic/tgroup"]:-oxy-visible-colspecs:before{
+        content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
+    }
 }
 /*Different foreground color for button*/
 @media oxygen-high-contrast-black, oxygen-dark-theme{
@@ -60,10 +62,24 @@ informaltable{
     }
 }
 
-col, colgroup {
-	display:block;
+@media oxygen {
+    col, colgroup {
+    	display:block;
+    }
 }
 
+@media print {
+ /*
+  * Use the width set on the colspec "style" attribute.
+  * For this we have to mark the  topic/colspec as table-column.
+  */
+ *[class~="topic/colspec"], col {
+     display:table-column;
+ }
+ colgroup {
+     display:table-column-group;
+ }
+}
 
 /*
  * The frame is displayed on tgroup
@@ -105,7 +121,7 @@ informaltable[frame = 'lhs'] > *[class~="topic/tgroup"] {
 }
 
 *[class~="topic/table"][frame = 'vsides'] > *[class~="topic/tgroup"],
-*[class~="topic/table"][frame = 'sides']  > *[class~="topic/tgroup"] {
+*[class~="topic/table"][frame = 'sides'] > *[class~="topic/tgroup"] {
     border-left-style:solid;
     border-left-width:1px;
     
@@ -123,9 +139,9 @@ informaltable[frame = 'lhs'] > *[class~="topic/tgroup"] {
     border-bottom-width:1px;
 }
 
-*[class~="topic/table"][frame = 'box']    > *[class~="topic/tgroup"],
+*[class~="topic/table"][frame = 'box'] > *[class~="topic/tgroup"],
 *[class~="topic/table"][frame = 'border'] > *[class~="topic/tgroup"],
-*[class~="topic/table"][frame = 'all']    > *[class~="topic/tgroup"] {
+*[class~="topic/table"][frame = 'all'] > *[class~="topic/tgroup"] {
     border-style:solid;
     border-width:1px;
 }

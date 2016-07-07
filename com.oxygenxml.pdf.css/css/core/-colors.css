@@ -50,14 +50,12 @@
 
 
 *[class~="reference/properties"] {
-  border-color: #ff9494;
 }
 *[class~="reference/prophead"] {
   background-color: #ffe0e0;
 }
 @media oxygen-high-contrast-black, oxygen-dark-theme {
   *[class~="reference/properties"] {
-    border-color: inherit !important;
   }
   *[class~="reference/prophead"] {
     background-color: inherit !important;
@@ -75,9 +73,15 @@
 *[class~="map/relheader"] {
   background-color: #EEFAFF;
 }
-*[class~="topic/sthead"] {
+*[class~="topic/sthead"],
+*[class ~= "topic/simpletable"][keycol="1"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:first-child,
+*[class ~= "topic/simpletable"][keycol="2"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(2),
+*[class ~= "topic/simpletable"][keycol="3"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(3),
+*[class ~= "topic/simpletable"][keycol="4"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(4){
   background-color: rgb(246, 246, 246);
-}
+} 
+
+
 @media print {
   *[class~="topic/thead"],
   *[class~="map/relheader"],
@@ -90,9 +94,14 @@
   *[class~="map/relheader"] {
     background-color: rgb(3, 9, 107) !important;
   }
-  *[class~="topic/sthead"] {
+ *[class~="topic/sthead"],
+ *[class ~= "topic/simpletable"][keycol="1"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:first-child,
+ *[class ~= "topic/simpletable"][keycol="2"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(2),
+ *[class ~= "topic/simpletable"][keycol="3"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(3),
+ *[class ~= "topic/simpletable"][keycol="4"]> *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(4){
     background-color: rgb(87, 87, 87) !important;
-  }
+ } 
+
 }
 *[class~="topic/entry"] {
   border-color: #EEEEEE;
@@ -213,6 +222,17 @@ border-top-color: #e5e500;
   /* <<< */
 }
 
+*[class~="topic/desc"],
+*[class~="topic/alt"]{
+    color: #707070;
+}
+@media oxygen-high-contrast-black, oxygen-dark-theme {
+  *[class~="topic/desc"],
+  *[class~="topic/alt"] {
+    color: #a6a6a6 !important;
+  }
+}
+
 @media oxygen{
 
     /* These are breaking the Prince publishing. Better isolated in an oXygen @media */
@@ -259,15 +279,39 @@ border-top-color: #e5e500;
  *
  * Troubleshooting.
  */
-*[class~='troubleshooting/troubleSolution'],
+*[class~='troubleshooting/cause'],
 *[class~="task/tasktroubleshooting"],
 *[class~="task/steptroubleshooting"] {
   border-color: gray;
 }
+*[class~='troubleshooting/remedy']{
+  border-color: silver;
+}
+
 @media oxygen-high-contrast-black, oxygen-dark-theme {
-  *[class~='troubleshooting/troubleSolution'],
+  *[class~='troubleshooting/cause'],
+  *[class~='troubleshooting/remedy'],
   *[class~="task/tasktroubleshooting"],
   *[class~="task/steptroubleshooting"] {
     border-color: yellow;
   }
 }
+
+
+
+/* ====================================
+ *
+ * Image map shapes.
+ */
+*[class~="ut-d/shape"]:before(2){    
+    background-color:blue;
+    color:white;
+}
+@media oxygen-high-contrast-black, oxygen-dark-theme {
+	*[class~="ut-d/shape"]:before(2){    
+	    background-color:yellow;
+	    color:black;
+	}
+}
+	
+	

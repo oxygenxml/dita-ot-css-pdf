@@ -55,7 +55,7 @@
  * Deals with the keycol attribute
  */
 
-*[class ~= "topic/simpletable"][keycol="1"] > *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(1),
+*[class ~= "topic/simpletable"][keycol="1"] > *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:first-child,
 *[class ~= "topic/simpletable"][keycol="2"] > *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(2),
 *[class ~= "topic/simpletable"][keycol="3"] > *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(3),
 *[class ~= "topic/simpletable"][keycol="4"] > *[class ~= "topic/strow"] > *[class ~= "topic/stentry"]:nth-child(4){

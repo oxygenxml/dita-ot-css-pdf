@@ -90,15 +90,12 @@
  */
 *[class~='troubleshooting/troubleSolution']{
   margin: 0.5em 0 1.5em 2em;
-  /*See -colors.css */
-  border-left: 2pt solid;  
-  padding: 1em;       
 }
 *[class~='troubleshooting/troubleSolution'] > *{
   margin-left:1em;   
 }
 *[class~='troubleshooting/troubleSolution']:before {
-  content: "Solution ";
+/*  content: "Solution ";*/
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
@@ -120,10 +117,14 @@
  *     + topic/section
  */
 *[class~='troubleshooting/cause']{
-   -oxy-foldable: false; 
+   -oxy-foldable: false;  
+   border-left: 0.5em solid;
+   padding-left: 1em;
 }
+
 *[class~='troubleshooting/cause']:before {
-  content: "Cause ";
+  content: "Cause: ";
+  display:block;
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
@@ -143,9 +144,12 @@
  */
 *[class~='troubleshooting/remedy']{
    -oxy-foldable: false; 
+   border-left: 0.5em solid;
+   padding-left: 1em;
 }
 *[class~='troubleshooting/remedy']:before {
-  content: "Remedy ";
+  content: "Remedy: ";
+  display:block;
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */

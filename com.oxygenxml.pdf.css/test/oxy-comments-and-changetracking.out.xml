@@ -6,48 +6,11 @@
     <topic break-before="true" class="- topic/topic " id="unique_1">
         <title class="- topic/title ">The reviewed topic.</title>
         <body class="- topic/body ">
-            <p class="- topic/p ">A comment <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_1" hr_id="1"/>
-                <oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_1" hr_id="1">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-comment-text>This is my &quot;sample&quot; comment. </oxy:oxy-comment-text>
-                    <oxy:oxy-date>2015/03/27</oxy:oxy-date>
-                </oxy:oxy-comment>
-                <oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">here</oxy:oxy-comment-hl>
-                <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="1"/>.</p>
-            <p class="- topic/p ">Now a <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_2" hr_id="2"/>
-                <oxy:oxy-delete-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">&lt;b&gt;deletion with markup.&lt;/b&gt;</oxy:oxy-delete-hl>
-                <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="2"/>
-                <oxy:oxy-delete xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_2" hr_id="2">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-content>&lt;b&gt;deletion with markup.&lt;/b&gt;</oxy:oxy-content>
-                    <oxy:oxy-date>2015/03/27</oxy:oxy-date>
-                </oxy:oxy-delete>.</p>
-            <p class="- topic/p ">Now a <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_3" hr_id="3"/>
-                <oxy:oxy-delete-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">deletion with comment</oxy:oxy-delete-hl>
-                <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="3"/>
-                <oxy:oxy-delete xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_3" hr_id="3">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-comment-text>Attention, I deleted something.</oxy:oxy-comment-text>
-                    <oxy:oxy-content>deletion with comment</oxy:oxy-content>
-                    <oxy:oxy-date>2015/03/27</oxy:oxy-date>
-                </oxy:oxy-delete>.</p>
-            <p class="- topic/p ">And an <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_4" hr_id="4"/>
-                <oxy:oxy-insert xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_4" hr_id="4">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-content>insert</oxy:oxy-content>
-                    <oxy:oxy-date>2015/03/27</oxy:oxy-date>
-                </oxy:oxy-insert>
-                <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">insertion</oxy:oxy-insert-hl>
-                <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="4"/>.</p>
-            <p class="- topic/p ">Other <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_5" hr_id="5"/>
-                <oxy:oxy-insert xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_5" hr_id="5">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-comment-text>Insetion comment.</oxy:oxy-comment-text>
-                    <oxy:oxy-content>insert</oxy:oxy-content>
-                    <oxy:oxy-date>2015/03/27</oxy:oxy-date>
-                </oxy:oxy-insert>
-                <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">insertion with comment</oxy:oxy-insert-hl>
-                <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="5"/>.</p>
+            <p class="- topic/p ">A comment <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_1" hr_id="1"/><oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_1" flag="done" hr_id="1"><oxy:oxy-author>dan</oxy:oxy-author><oxy:oxy-comment-text>This is &lt;my&gt; "sample" comment. </oxy:oxy-comment-text><oxy:oxy-date>2015/03/27</oxy:oxy-date><oxy:oxy-hour>10:56:25</oxy:oxy-hour><oxy:oxy-tz>+02:00</oxy:oxy-tz></oxy:oxy-comment><oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">here</oxy:oxy-comment-hl><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="1"/>.</p>
+            <p class="- topic/p ">Now a <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_2" hr_id="2"/><oxy:oxy-delete-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">&lt;b&gt;deletion with markup.&lt;/b&gt;</oxy:oxy-delete-hl><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="2"/><oxy:oxy-delete xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_2" hr_id="2"><oxy:oxy-author>dan</oxy:oxy-author><oxy:oxy-content>&lt;b&gt;deletion with markup.&lt;/b&gt;</oxy:oxy-content><oxy:oxy-date>2015/03/27</oxy:oxy-date><oxy:oxy-hour>10:56:43</oxy:oxy-hour><oxy:oxy-tz>+02:00</oxy:oxy-tz></oxy:oxy-delete>.</p>
+            <p class="- topic/p ">Now a <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_3" hr_id="3"/><oxy:oxy-delete-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">deletion with comment</oxy:oxy-delete-hl><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="3"/><oxy:oxy-delete xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_3" hr_id="3"><oxy:oxy-author>dan</oxy:oxy-author><oxy:oxy-comment-text>Attention, I deleted something.</oxy:oxy-comment-text><oxy:oxy-content>deletion with comment</oxy:oxy-content><oxy:oxy-date>2015/03/27</oxy:oxy-date><oxy:oxy-hour>10:56:43</oxy:oxy-hour><oxy:oxy-tz>+02:00</oxy:oxy-tz></oxy:oxy-delete>.</p>
+            <p class="- topic/p ">And an <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_4" hr_id="4"/><oxy:oxy-insert xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_4" hr_id="4"><oxy:oxy-author>dan</oxy:oxy-author><oxy:oxy-content>insert</oxy:oxy-content><oxy:oxy-date>2015/03/27</oxy:oxy-date><oxy:oxy-hour>10:56:57</oxy:oxy-hour><oxy:oxy-tz>+02:00</oxy:oxy-tz></oxy:oxy-insert><oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">insertion</oxy:oxy-insert-hl><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="4"/>.</p>
+            <p class="- topic/p ">Other <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_5" hr_id="5"/><oxy:oxy-insert xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_5" hr_id="5"><oxy:oxy-author>dan</oxy:oxy-author><oxy:oxy-comment-text>Insetion comment.</oxy:oxy-comment-text><oxy:oxy-content>insert</oxy:oxy-content><oxy:oxy-date>2015/03/27</oxy:oxy-date><oxy:oxy-hour>10:56:57</oxy:oxy-hour><oxy:oxy-tz>+02:00</oxy:oxy-tz></oxy:oxy-insert><oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">insertion with comment</oxy:oxy-insert-hl><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="5"/>.</p>
             <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_6" hr_id="6"/>
             <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="6"/>
             <oxy:oxy-attributes xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_6" hr_id="6">
@@ -57,11 +20,15 @@
                     <oxy:oxy-old-value>ooold atr value</oxy:oxy-old-value>
                     <oxy:oxy-current-value>new</oxy:oxy-current-value>
                     <oxy:oxy-date>2015/03/30</oxy:oxy-date>
+                    <oxy:oxy-hour>16:20:41</oxy:oxy-hour>
+                    <oxy:oxy-tz>+03:00</oxy:oxy-tz>
                 </oxy:oxy-attribute-change>
                 <oxy:oxy-attribute-change type="inserted" name="translate">
                     <oxy:oxy-author>gabriel</oxy:oxy-author>
                     <oxy:oxy-current-value>yes</oxy:oxy-current-value>
                     <oxy:oxy-date>2015/03/30</oxy:oxy-date>
+                    <oxy:oxy-hour>16:22:20</oxy:oxy-hour>
+                    <oxy:oxy-tz>+03:00</oxy:oxy-tz>
                 </oxy:oxy-attribute-change>
             </oxy:oxy-attributes>
             <p class="- topic/p " status="new" translate="yes">Attribute changes: </p>
@@ -72,6 +39,8 @@
                     <oxy:oxy-author>gabriel2</oxy:oxy-author>
                     <oxy:oxy-current-value>low</oxy:oxy-current-value>
                     <oxy:oxy-date>2015/04/21</oxy:oxy-date>
+                    <oxy:oxy-hour>11:15:38</oxy:oxy-hour>
+                    <oxy:oxy-tz>+03:00</oxy:oxy-tz>
                 </oxy:oxy-attribute-change>
             </oxy:oxy-attributes>
             <p class="- topic/p " importance="low">Spring Time, the time of growth and renewal of new plant</p>
@@ -81,34 +50,17 @@
                     <oxy:oxy-author>gabriel</oxy:oxy-author>
                     <oxy:oxy-content>split</oxy:oxy-content>
                     <oxy:oxy-date>2015/03/31</oxy:oxy-date>
+                    <oxy:oxy-hour>16:33:19</oxy:oxy-hour>
+                    <oxy:oxy-tz>+03:00</oxy:oxy-tz>
                 </oxy:oxy-insert>
             </p>
             <p class="- topic/p ">
                 <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="8"/>
             </p>
-            <p class="- topic/p "> These are <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_9" hr_id="9"/>
-                <oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_9" hr_id="9">
-                    <oxy:oxy-author>Mary</oxy:oxy-author>
-                    <oxy:oxy-comment-text>Let&apos;s add information about fertilizers.</oxy:oxy-comment-text>
-                    <oxy:oxy-date>2012/05/10</oxy:oxy-date>
-                </oxy:oxy-comment>
-                <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_10" hr_id="10"/>
-                <oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_10" hr_id="10">
-                    <oxy:oxy-author>John</oxy:oxy-author>
-                    <oxy:oxy-comment-text>We must include information about fertilizers impact to the environment.</oxy:oxy-comment-text>
-                    <oxy:oxy-date>2012/05/10</oxy:oxy-date>
-                </oxy:oxy-comment>
-                <oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"> overlapping </oxy:oxy-comment-hl>
-                <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="9"/> comments <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="10"/>
+            <p class="- topic/p "> These are <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_9" hr_id="9"/><oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_9" hr_id="9"><oxy:oxy-author>Mary</oxy:oxy-author><oxy:oxy-comment-text>Let's add information about fertilizers.</oxy:oxy-comment-text><oxy:oxy-date>2012/05/10</oxy:oxy-date><oxy:oxy-hour>12:17:02</oxy:oxy-hour><oxy:oxy-tz>+03:00</oxy:oxy-tz></oxy:oxy-comment><oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_10" hr_id="10"/><oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_10" hr_id="10"><oxy:oxy-author>John</oxy:oxy-author><oxy:oxy-comment-text>We must include information about fertilizers impact to the
+                environment.</oxy:oxy-comment-text><oxy:oxy-comment-id>1</oxy:oxy-comment-id><oxy:oxy-mid>1</oxy:oxy-mid><oxy:oxy-date>2012/05/10</oxy:oxy-date><oxy:oxy-hour>12:18:14</oxy:oxy-hour><oxy:oxy-tz>+03:00</oxy:oxy-tz></oxy:oxy-comment><oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"> overlapping </oxy:oxy-comment-hl><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="9"/> comments <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="10"/>
             </p>
-            <p class="- topic/p ">A <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_11" hr_id="11"/>
-                <oxy:oxy-insert xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_11" hr_id="11">
-                    <oxy:oxy-author>gabriel</oxy:oxy-author>
-                    <oxy:oxy-content>surround</oxy:oxy-content>
-                    <oxy:oxy-date>2015/04/01</oxy:oxy-date>
-                </oxy:oxy-insert>
-                <b class="- topic/b ">
-                    <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="11"/>surround</b>.</p>
+            <p class="- topic/p ">A <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_11" hr_id="11"/><oxy:oxy-insert xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_11" hr_id="11"><oxy:oxy-author>gabriel</oxy:oxy-author><oxy:oxy-content>surround</oxy:oxy-content><oxy:oxy-date>2015/04/01</oxy:oxy-date><oxy:oxy-hour>12:35:08</oxy:oxy-hour><oxy:oxy-tz>+03:00</oxy:oxy-tz></oxy:oxy-insert><b class="- topic/b "><oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="11"/>surround</b>.</p>
             <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_12" hr_id="12"/>
             <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="12"/>
             <oxy:oxy-attributes xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_12" hr_id="12">
@@ -116,10 +68,11 @@
                     <oxy:oxy-author>gabriel2</oxy:oxy-author>
                     <oxy:oxy-current-value unknown="true"/>
                     <oxy:oxy-date>2015/04/21</oxy:oxy-date>
+                    <oxy:oxy-hour>11:15:38</oxy:oxy-hour>
+                    <oxy:oxy-tz>+03:00</oxy:oxy-tz>
                 </oxy:oxy-attribute-change>
             </oxy:oxy-attributes>
             <p class="- topic/p " id="dita_ot_generated_id_concatenated_with_original_value" importance="low">We cannot present the old values of the ID attributes as they are rewriten by the OT.</p>
         </body>
     </topic>
 </bookmap>
-

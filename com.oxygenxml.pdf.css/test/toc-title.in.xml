@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <booktitle class="- topic/title bookmap/booktitle ">
+            <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+                <ph class="- topic/ph " keyref="product" product="author">Oxygen XML Author</ph>
+            </mainbooktitle>
+        </booktitle>
+        <frontmatter class="- map/topicref bookmap/frontmatter ">
+            <booklists class="- map/topicref bookmap/booklists ">
+                <!-- The navtitle should generate a title element that can be styled later. -->
+                <toc class="- map/topicref bookmap/toc " navtitle="This is the TOC."/>
+            </booklists>
+        </frontmatter>
+
+        <topicref class="- map/topicref " href="#unique_5" id="unique_5" locktitle="yes"
+            navtitle="Installation Options" type="concept">
+            <topicmeta class="- map/topicmeta ">
+                <linktext class="- map/linktext ">Installation Options for Oxygen XML
+                    Author</linktext>
+            </topicmeta>
+        </topicref>
+
+    </opentopic:map>
+</bookmap>

@@ -21,13 +21,17 @@
  * The alt element provides alternate text for an image.
  */
 *[class~="topic/alt"] {
-  display: block;
+  display: inherit;
+  font-style: italic;
+  padding-left: 0.3em;
 }
 *[class~="topic/alt"]:before {
   content: "[";
+  font-style: normal;
 }
 *[class~="topic/alt"]:after {
   content: "]";
+  font-style: normal;
 }
 @media print {
   *[class~="topic/alt"]:before,
@@ -98,6 +102,17 @@
  */
 *[class~="topic/desc"] {
   display: inline;
+  font-style: italic;
+  text-decoration: none;
+  padding-left: 0.3em;
+}
+*[class~="topic/desc"]:before {
+    content: "[";
+    font-style: normal;
+}
+*[class~="topic/desc"]:after {
+    content: "]";
+    font-style: normal;
 }
 *[class~="topic/fig"] > *[class~="topic/desc"],
 *[class~="topic/object"] > *[class~="topic/desc"],
@@ -567,6 +582,12 @@
   -oxy-foldable: true;
   -oxy-not-foldable-child: title;
 }
+
+*[class~="topic/section"] > *[class~="topic/title"] {
+    font-size:1.1em;
+}
+
+
 /* ==========================================================
  * 
  * <sectiondiv>
@@ -609,9 +630,6 @@
  * or phrase that is trademarked. Trademarks include registered 
  * trademarks, service marks, slogans and logos.
  */
-*[class~="topic/tm"] {
-   -oxy-display-tags: none;
-}
 *[class~="topic/tm"]:after {
   content: "\2122";
 }

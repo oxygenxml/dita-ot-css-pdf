@@ -6,15 +6,13 @@
     <topic break-before="true" class="- topic/topic " id="unique_1">
         <title class="- topic/title ">The reviewed topic.</title>
         <body class="- topic/body ">
-            <p class="- topic/p ">A highlight starting <oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)">from the first paragraph to the third one.</oxy:oxy-color-hl>
-            </p>
+            <p class="- topic/p ">A highlight starting <oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)">from the first paragraph to the third one.</oxy:oxy-color-hl></p>
             <oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)"> </oxy:oxy-color-hl>
             <p class="- topic/p ">
                 <oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)">A highlight starting from the first paragraph to the third one.</oxy:oxy-color-hl>
             </p>
             <oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)"> </oxy:oxy-color-hl>
-            <p class="- topic/p ">
-                <oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)">A highlight starting from the </oxy:oxy-color-hl>first paragraph to the third one.</p>
+            <p class="- topic/p "><oxy:oxy-color-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author" color="rgba(153,255,255,50)">A highlight starting from the </oxy:oxy-color-hl>first paragraph to the third one.</p>
         </body>
     </topic>
 </bookmap>

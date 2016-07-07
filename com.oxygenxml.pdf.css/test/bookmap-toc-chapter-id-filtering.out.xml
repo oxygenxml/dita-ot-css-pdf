@@ -4,6 +4,7 @@
         <oxy:front-page-title/>
     </oxy:front-page>
     <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic">
+        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" empty="true"/>
         <!-- 
         The ID attribute from the topicref, including the specializations 
         should be removed, otherwise it will create a link to itself. 
