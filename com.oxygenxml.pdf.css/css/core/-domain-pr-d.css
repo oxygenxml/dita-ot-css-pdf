@@ -1,3 +1,4 @@
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
 /*
  * ==================================================
  * ==================================================
@@ -70,9 +71,19 @@
   *[class~="pr-d/coderef"][class]:before,
   *[class~="pr-d/coderef"][class]:after,
   *[class~="pr-d/coderef"][class] {
-    text-decoration:inherit;
+    text-decoration:none;
     color:inherit;
     content:"";
+  }
+  
+  *[class~="pr-d/coderef"][class] {
+    display:block;
+  }
+  
+  /*Add a newline after the open reference icon */
+  coderef > oxy|reference:before,
+  coderef > oxy|reference {
+    display:block!important;
   }
 }
 /* ====================================

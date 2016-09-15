@@ -118,6 +118,37 @@ with those set forth herein.
     <echo>Found Antenna House executable.</echo>
   </target>
 
+	
+  	
+   <!-- XSLT Pipe: Generic postprocessing of the merged file -->
+   <target name="xslt.pipeline.generic.processing">
+	   <xslt in="${dita.map.merged}"
+	          out="${dita.map.merged.post.processed}"
+	          style="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/post-process.xsl" 
+	          force="true"
+	          classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/java">
+	      
+	      <param name="args.input" expression="${args.input}"/>
+	      <param name="args.draft" expression="${args.draft}"/>
+	      <param name="dita.map.filename.root" expression="${dita.map.filename.root}"/>
+	      <param name="show.changes.and.comments" expression="${show.changes.and.comments}"/>
+	  </xslt>
+   </target>
+	
+   <!-- XSLT Pipe: Postprocess the merged file, aggregating the replies into threads associated to changes/comments.-->
+   <target name="xslt.pipeline.aggregate.comments.replies" if="${show.changes.and.comments}">
+		<move file="${dita.map.merged.post.processed}" tofile="${dita.map.merged.post.processed}.1"/>
+		
+	    <xslt in="${dita.map.merged.post.processed}.1"
+	          out="${dita.map.merged.post.processed}"
+	          style="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/review/review-group-replies.xsl" 
+	          force="true"
+	          classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xslt-extensions">		     
+	   </xslt>
+  </target>
+
+	
+	
   <target name="merged2pdf" >
   	<echo>Type: ${css.processor.type}</echo>
   	<!-- 
@@ -138,27 +169,30 @@ with those set forth herein.
   	    based on the user selection of the stylesheet. 
   	-->
   	<property name="dita.css.list"  value="file:${default.css.dir.abs.path}/edit/style-basic.css"/>
-  	<property name="dita.print.css" value="${default.css.dir.abs.path}/print/p-dita.css"/>
+	<!-- 
+		This has the semantic similar to the args.css from the XHTML transtype, of additional CSSs that contain the most important rules.
+	-->
+    <property name="args.css"  value=""/>
+    <property name="dita.print.css" value="${default.css.dir.abs.path}/print/p-dita.css"/>
   	
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}${file.separator}dummy.file"/>
-    <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1a.xml"/>
+    <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1.xml"/>
     <property name="dita.map.merged.post.processed" value="${dita.map.merged}.pp"/>
 
   	<echo message="The args input ${args.input}."/>
     
-    <!-- Postprocess the merged file -->
-    <xslt in="${dita.map.merged}"
-          out="${dita.map.merged.post.processed}"
-          style="${dita.plugin.com.oxygenxml.pdf.css.dir}/post-process.xsl" 
-          force="true"
-          classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xslt-extensions">
-      
-      <param name="args.input" expression="${args.input}"/>
-      <param name="args.draft" expression="${args.draft}"/>
-      <param name="dita.map.filename.root" expression="${dita.map.filename.root}"/>
-      <param name="show.changes.and.comments" expression="${show.changes.and.comments}"/>
-    </xslt>
-    
+  	<!--
+  	
+  		XSLT pipeline
+  	
+  	-->
+  	
+    <!-- 1. Generic postprocessing of the merged file -->
+  	<antcall target="xslt.pipeline.generic.processing"/>
+
+    <!-- 2. Aggregate the replies into threads associated to changes/comments.-->  	
+  	<antcall target="xslt.pipeline.aggregate.comments.replies"/>
+  	
   	
 
     <condition property="outputFile" value="${dita.map.output.dir}/${dita.map.filename.root}.pdf">
@@ -187,13 +221,20 @@ with those set forth herein.
   	<script language="javascript">
   	 <![CDATA[
 		var tmp = "";
-  	    var arr = project.getProperty('dita.css.list').split(';'); 
+		var cssList = project.getProperty('dita.css.list').concat(';').concat(project.getProperty('args.css'));
+  	    var arr = cssList.split(';'); 
   	    for (i = 0; i < arr.length; i++) {
 			if (arr[i].length() > 0) {
 		  		  tmp = tmp.concat("@import '");
+		  		  
+		  		  var url = arr[i];
+		  		  if (!url.contains(':/') && !url.startsWith('file:')) {
+  		  		    // Transforms file paths into URLs.		  		    
+		  		    url = "file:/".concat(url);		  		    
+		  		  }
   		
   				  // Replace \ with /
-  		          var url = arr[i].replace(/\\/g, "/");
+  		          url = url.replace(/\\/g, '/');
   		
 	  			  tmp = tmp.concat(url);
 	  	    	  tmp = tmp.concat("';\n");  
@@ -202,7 +243,8 @@ with those set forth herein.
   		project.setProperty('main.css.content', tmp);
   	 ]]>
   	 </script>
-  	<echo file="${main.css.path}">${main.css.content}</echo>
+    <echo>${main.css.content}</echo>
+    <echo file="${main.css.path}">${main.css.content}</echo>
   	
   	<antcall target="prince"/>  	
     <antcall target="ahouse"/>
@@ -278,10 +320,18 @@ with those set forth herein.
       <arg value="${dita.print.css}"/>
       <arg value="--style"/>
       <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass1.css"/>
-
-   	  
-      <arg value="--no-network"/>
-    	
+      
+      <!-- Please remove the comment wrapping the following two arguments if you are behind a proxy and your
+      documentation refers remote resources, for example images. 
+      
+      Note: You also need to remove the backslash '\' that appears before the property name: "http-proxy".
+      That backslash is there because a sequence of two dashes ('-') is not permited inside a comment.
+      -->
+      <!--
+        <arg value="-\-http-proxy=${http.proxyHost}:${http.proxyPort}"/>
+        <arg value="-\-http-proxy=${https.proxyHost}:${https.proxyPort}"/>
+      -->
+      
       <arg value="--javascript"/>
       <arg value="--script"/>
       <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass1.js"/>
@@ -301,9 +351,18 @@ with those set forth herein.
    	  <arg value="${main.css.path}"/>
       <arg value="--style"/>
       <arg value="${dita.print.css}"/>
-
-      <arg value="--no-network"/>
-
+      
+      <!-- Please remove the comment wrapping the following two arguments if you are behind a proxy and your
+      documentation refers remote resources, for example images. 
+      
+      Note: You also need to remove the backslash '\' that appears before the property name: "http-proxy".
+      That backslash is there because a sequence of two dashes ('-') is not permited inside a comment.
+      -->
+      <!--
+        <arg value="-\-http-proxy=${http.proxyHost}:${http.proxyPort}"/>
+        <arg value="-\-http-proxy=${https.proxyHost}:${https.proxyPort}"/>
+      -->
+      
       <arg value="--javascript"/>
       <arg value="--script"/>
       <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass2.js"/>

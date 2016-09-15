@@ -33,14 +33,27 @@
         page: table-of-contents;
     }
 
-    /* The bookmap title migrates into the opentopic:map element. Since it is already on the 
-       front page, it should be hidden. */
+    /*      
+         One can use the oxy:toc-title title element to give a title to the TOC.
+         If is marked as empty, use the static text: "Contents"         
+     */
+    toc-title {
+        display:block;
+        font-size:3em;
+        margin-bottom:1em;
+    }
+    toc-title[empty]:before{
+        content: "Contents";
+    }
+    
+    
+    /* 
+        The bookmap title migrates into the opentopic:map element. Since it is already on the 
+        front page, it should be hidden. 
+    */
     *[class ~= "map/map"] > map > *[class ~= "topic/title"] {
         display:none;
     }
-
-
-
 
     *[class ~= "map/topicref"] {
         display:block;
@@ -91,4 +104,17 @@
         link:attr(href);
         -ah-link:attr(href);
     }
+
+	/*
+	 
+	 All the topicrefs from the TOC (located on level 1) receive a chapter number.
+	 This is in correlation to the "chapter" counter used in p-page-titles-and-numbers.
+	 
+	 */
+    map > *[class ~= "map/topicref"] > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before,
+	map > *[class ~= "map/topicref"] > *[class ~= "map/topicmeta"] > *[class ~= "map/linktext"]:before  {
+        content: counter(toc-chapter) ". " !important;
+        counter-increment:toc-chapter;
+        color:inherit;
+    }     
 }

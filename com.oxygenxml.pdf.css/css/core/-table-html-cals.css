@@ -72,6 +72,7 @@ informaltable[border]{
 *[class~="topic/table"][frame],
 informaltable[frame]{
     border-style:none;
+    border-color:black;
 }
 
 *[class~="topic/table"][frame='above'],
@@ -189,6 +190,8 @@ th, *[class~="topic/thead"] {
 *[class~="topic/tfoot"] {
   display: table-footer-group;
   font-style:oblique;
+  background-color: #DEDEDE;
+  font-weight: bold;
 }
 
 
@@ -206,7 +209,7 @@ tr{
 */
 *[class~="topic/entry"],
 td{
-    display:table-cell;   
+    display:table-cell;
     /*See -colors.css */
     border-color: #EEEEEE;
     border-style:solid;
@@ -286,7 +289,7 @@ td[bgcolor]{
 *[class~="topic/table"][border][rules=all] > *[class~="topic/thead"] > tr > th,
 *[class~="topic/table"][border][rules=all] > *[class~="topic/tfoot"] > tr > td,
 *[class~="topic/table"][border][rules=all] > *[class~="topic/tfoot"] > tr > th{
-    border:1pt solid;
+    border:1px solid;
 }
 
 /*
@@ -300,7 +303,7 @@ td[bgcolor]{
 *[class~="topic/table"][border][rules=none] > *[class~="topic/thead"] > tr > th,
 *[class~="topic/table"][border][rules=none] > *[class~="topic/tfoot"] > tr > td,
 *[class~="topic/table"][border][rules=none] > *[class~="topic/tfoot"] > tr > th{
-    border:1pt solid #EEEEEE;
+    border:1px solid #EEEEEE;
 }
 
 /*
@@ -797,7 +800,7 @@ td[bgcolor]{
     text-align:left;
     background-color:inherit;
     font-family:sansserif, verdana, helvetica;
-	  font-size:0.75em;
+	font-size:0.75em;
 }
 
 *[class~="topic/colspec"]:after{
@@ -805,7 +808,7 @@ td[bgcolor]{
     		"  name " oxy_textfield(edit, "@colname", columns, 7) 
     		"  number " oxy_textfield(edit, "@colnum", columns, 7)
     		"  width " oxy_textfield(edit, "@colwidth", columns, 7)
-    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10)
+    		"  align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10)
     		"  "    		
     		oxy_checkbox(edit, "@colsep", values, "1", labels, "colsep", fontInherit, true) 
     		oxy_checkbox(edit, "@rowsep", values, "1", labels, "rowsep", fontInherit, true);
@@ -818,7 +821,7 @@ col:after{
     		"  title " oxy_textfield(edit, "@title", columns, 7)   
     		"  span " oxy_textfield(edit, "@span", columns, 7) 
     		"  width " oxy_textfield(edit, "@width", columns, 7)
-    		"  align " oxy_combobox(edit, "@align", editable, false, columns, 10);
+    		"  align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10);
     white-space: pre;
     padding-bottom: 5px;
 }

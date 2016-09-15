@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    class="- map/map bookmap/bookmap ">
+    <topic class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">Replies.</title>
+        <body class="- topic/body ">
+            <p>
+            	<?oxy_comment_start author="dan" timestamp="20160129T090328+0200" comment="But we need it. " parentID="e21_wzc_v5"
+            	?><?oxy_comment_start author="dan" timestamp="20160129T090337+0200" comment="But no..." parentID="e21_wzc_v5" mid="7"
+            	?><?oxy_delete author="dan" timestamp="20160129T090310+0200" id="e21_wzc_v5" content=" and seasons are intimately bound to each" comment="No need."
+            	?><?oxy_comment_end
+            	?><?oxy_comment_end mid="7"
+            	?>        
+           </p>
+        </body>           
+    </topic>
+</bookmap>

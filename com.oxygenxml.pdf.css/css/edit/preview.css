@@ -48,3 +48,12 @@ oxy|entity {
 dita > *[class~="topic/li"] {
     display: block;
 }
+
+/*EXM-35935 Hide buttons after imagemap area and show areas.*/
+*[class~='ut-d/imagemap'] > *[class~='topic/image']:after,
+*[class~='ut-d/imagemap'] > *[class~='topic/image']:after(2){
+    display : none;
+}
+*[class~="ut-d/imagemap"]  > *[class~="ut-d/area"][class~="ut-d/area"]{
+     display:table-row;
+}

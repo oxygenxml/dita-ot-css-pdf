@@ -156,39 +156,3 @@
   font-size: 0.9em;
   /* <<< */
 }
-/* ====================================
- *
- * <userinput>
- * 
- * The user input (<userinput>) element 
- * represents the text a user should input 
- * in response to a program or system prompt.  
- *  
- * Inherits styles from parent class:
- *  
- *     + topic/ph
- */
-*[class~="sw-d/userinput"] {
-  /* -monospace- >>> */
-  font-family: monospace;
-  font-size: 0.9em;
-  /* <<< */
-}
-/* ====================================
- *
- * <systemoutput>
- * 
- * The system output (<systemoutput>) element 
- * represents computer output or responses to 
- * a command or situation
- * 
- * Inherits styles from parent class:
- *  
- *     + topic/ph
- */
-*[class~="sw-d/systemoutput"] {
-  /* -monospace- >>> */
-  font-family: monospace;
-  font-size: 0.9em;
-  /* <<< */
-}

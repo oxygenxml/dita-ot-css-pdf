@@ -4,6 +4,7 @@
         <oxy:front-page-title/>
     </oxy:front-page>
     <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" empty="true"/>
         <topicref is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_2" type="topic">
             <topicmeta class="- map/topicmeta ">
                 <navtitle href="#unique_2" class="- topic/navtitle ">Introduction</navtitle>
@@ -12,7 +13,7 @@
         <!-- Should generate here a link to the index.groups element -->
         <topicref is-chapter="true" class="- map/topicref ">
             <topicmeta class="- map/topicmeta ">
-                <linktext href="#GENERATED_ID" class="- map/linktext ">Index</linktext>
+                <navtitle href="#remapped_id_1" class="- topic/navtitle ">Index</navtitle>
             </topicmeta>
         </topicref>
     </opentopic:map>
@@ -20,7 +21,7 @@
         <title class="- topic/title ">Introduction</title>
     </topic>
     <!-- Should generate an ID on this element, linked from the above link. -->
-    <opentopic-index:index.groups id="GENERATED_ID">
+    <opentopic-index:index.groups id="remapped_id_1">
         <opentopic-index:index.group>
             <opentopic-index:label>A</opentopic-index:label>
             <opentopic-index:index.entry value="Archives">

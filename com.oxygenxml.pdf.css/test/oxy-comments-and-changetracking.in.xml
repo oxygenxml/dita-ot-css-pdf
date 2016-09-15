@@ -5,7 +5,7 @@
         <title class="- topic/title ">The reviewed topic.</title>
         <body class="- topic/body ">
              <p class="- topic/p ">A comment
-                <?oxy_comment_start author="dan" timestamp="20150327T105625+0200" comment="This is my &quot;sample&quot; comment. "?>here<?oxy_comment_end?>.</p>
+                <?oxy_comment_start author="dan" timestamp="20150327T105625+0200" flag="done" comment="This is &lt;my&gt; &quot;sample&quot; comment. "?>here<?oxy_comment_end?>.</p>
             <p class="- topic/p ">Now a <?oxy_delete author="dan" timestamp="20150327T105643+0200" content="&lt;b&gt;deletion with markup.&lt;/b&gt;"?>.</p>
             <p class="- topic/p ">Now a <?oxy_delete author="dan" timestamp="20150327T105643+0200" content="deletion with comment" comment="Attention, I deleted something."?>.</p>
             <p class="- topic/p ">And an

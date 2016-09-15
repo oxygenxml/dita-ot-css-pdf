@@ -1,3 +1,5 @@
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
 /*
  * ==================================================
  * ==================================================
@@ -32,16 +34,16 @@
     font-size:10pt;
     content: oxy_textfield(edit, '@value', columns, 10) !important;
 }
+
 *[class~="ut-d/sort-as"]:before {
     content: "Sort As: " !important;
 }
+
 @media print {
   *[class~="ut-d/sort-as"]{    
       display:none;
   }
 }
-
-
 
 
 /*
@@ -61,13 +63,17 @@
  */
 *[class~="ut-d/imagemap"]{
     display:table;
+    width:100%;
     border:1pt solid;    
     padding:0.5em;
+    counter-reset: areas;
 }
+
 /*Force block display in order to have it show up in Author*/
 *[class~="ut-d/imagemap"] > *[class~="topic/image"] {
   display: block;
 }
+
 @media print {
   *[class~="ut-d/imagemap"]{
     border:none;
@@ -76,6 +82,49 @@
 }
 
 
+/*
+ * Support for expanding and collapsing the area elements.
+ */
+    *[class~="ut-d/imagemap"]  > *[class~="topic/image"]:after(2){ 
+        display:inline;
+            
+        content:oxy_button(
+            actionID, 'imagemap.expand.area',          
+            showText, true, 
+            showIcon, false, 
+            enableInReadOnlyContext, true);
+            
+        text-align:left;
+        font-family: sansserif, verdana, helvetica;
+        font-size: 0.75em;
+        padding-bottom: 0.2em;
+    }
+    
+    *[class~="ut-d/imagemap"]:-oxy-visible-imagemap-area  > *[class~="topic/image"]:after(2){
+        display:inline;    
+        content:oxy_button(
+            actionID, 'imagemap.collapse.area',          
+            showText, true, 
+            showIcon, false, 
+            enableInReadOnlyContext, true);		
+    }
+
+@media oxygen and (platform:eclipse),
+       oxygen and (platform:standalone) {
+    
+    /*
+     * Support for editing the image map.
+     */
+    *[class~="ut-d/imagemap"] > *[class~="topic/image"]:after(1){
+        display:inline;
+        content:'\a' oxy_button(actionID, 'edit.image.map');		
+    }
+    *:-oxy-has-valid-referenced-content  *[class~="ut-d/imagemap"] > *[class~="topic/image"]:after(1)
+    {
+        /* Hide the button when the topic is in a map with expanded topics. */
+        display:none;
+    }
+}
 
 /*
  * ==================================================
@@ -92,15 +141,23 @@
  *     + topic/figgroup 
  */
 *[class~="ut-d/area"]{
-  display:table-row;
+  display:none;
+  counter-increment:areas;
 }
+
+*[class~="ut-d/imagemap"]:-oxy-visible-imagemap-area *[class~="ut-d/area"]{
+     display:table-row;
+}
+
+*[class~="ut-d/imagemap"]:-oxy-visible-imagemap-area  *[class~="ut-d/area"] > *[class~="topic/xref"] {
+     padding-left:0.5em;
+}
+
 @media print {
   *[class~="ut-d/area"]{
     display:none;
   }
 }
-
-
 
 
 /*
@@ -115,22 +172,34 @@
  *  
  *     + topic/keyword 
  */
-*[class~="ut-d/shape"]:before{
-    /* TODO - dan - make all befores look the same */
-    content:"Area: " oxy_combobox(
+*[class~="ut-d/shape"]:before(1){
+    content:"  " oxy_combobox(
         edit, "#text", 
-        values, "rect, circle, poly, default, ");
+        values, "rect, circle, poly, default");
     font-weight: bold;
+    min-width:5em;
 
 }
+
+*[class~="ut-d/shape"]:before(2){
+   /* For colors see -colors.css */
+    content: " " counter(areas) " ";
+    border-radius:1em;
+    padding:0.1em;
+    margin-left:0.1em;
+    font-weight: bold;
+    width:2em;
+    font-size:smaller;
+    text-align:center;
+    display:inline-block;
+}
+
 *[class~="ut-d/shape"]{
     display:table-cell;
     padding-right:0.5em;
-    
     visibility:-oxy-collapse-text;
     -oxy-display-tags:none;
 }
-
 
 
 /*
@@ -148,5 +217,7 @@
 *[class~="ut-d/coords"]{
     display:table-cell;
     padding-right:0.5em;
+    font-size:smaller;
+    border:1px solid #EEEEEE;
 }
 

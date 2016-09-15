@@ -106,4 +106,56 @@
     index\.groups index-link:last-child {
         content: target-counter(attr(href), page);
     }
+    
+    /* 
+    
+        Deal with <index-see> and <index-see-also>. 
+        
+        The <index-see> should list the labels of the index terms the user needs to see. 
+        No page number should be shown, since this is a pure redirection. 
+
+        The <index-see-also> should list the labels of the index terms the user needs to see. 
+        The page numbers must be shown. 
+
+    */
+    index\.groups see-childs{
+        display:inline;
+    }
+    index\.groups see-childs:before {
+        content:" see ";
+        font-style:italic;
+    } 
+    
+    index\.groups see-also-childs {
+        display:block;
+        padding-left:1em;
+    }
+    index\.groups see-also-childs:before {
+       content:"see also ";
+       font-style:italic;
+    }
+    
+    /* All "see" terms are on a line. */    
+    index\.groups see-childs *,
+    index\.groups see-also-childs * {
+        display:inline;
+        margin:0;
+    }
+    
+    /* There may be multiple formatted value under the same indexterm. We need to separated them. */
+    index\.groups see-childs formatted-value:after,
+    index\.groups see-also-childs formatted-value:after {
+        content:" ";
+    }
+
+    /* Separator in the list of terms*/
+    index\.groups see-childs > index\.entry:before,
+    index\.groups see-also-childs > index\.entry:before {
+        content:", ";
+    }
+    index\.groups see-childs > index\.entry:first-child:before,
+    index\.groups see-also-childs > index\.entry:first-child:before {
+        content:none;
+    }
+
 }

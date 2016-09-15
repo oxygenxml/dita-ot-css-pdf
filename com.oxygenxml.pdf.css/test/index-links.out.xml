@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
+    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <oxy:front-page-title/>
+    </oxy:front-page>
+<!-- This is a topic that declares the following indexterms:
+    
+        packages:
+        packages:adding automatically
+        
+        deployment: http
+        deployment: https
+        
+        
+        The structure of the index should be:
+        
+        packages [link]
+            adding automatically [link]
+        deployment 
+            http  [link]
+            https [link]
+            
+        The "packages" branch node should have a link because there is also an indexterm with just this value.
+        The "deployment" branch node should NOT have a link because it appears only in conjunction with its children.
+            
+-->
+    <topic break-before="true" class="- topic/topic " id="unique_2">
+        <!-- The "packages" leaf indexterm -->
+        <opentopic-index:index.entry value="packages">
+            <opentopic-index:formatted-value>packages</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_1" value="packages:"/>
+        </opentopic-index:index.entry>
+        <!-- The "packages" branch indexterm -->
+        <opentopic-index:index.entry value="packages">
+            <opentopic-index:formatted-value>packages</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_2" value="packages:"/>
+            <opentopic-index:index.entry value="adding automanually">
+                <opentopic-index:formatted-value>adding automanually</opentopic-index:formatted-value>
+                <opentopic-index:refID id="remapped_id_3" value="packages:adding automanually:"/>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.entry>
+        <!-- The "deployment" branch indexterm -->
+        <opentopic-index:index.entry value="deployment">
+            <opentopic-index:formatted-value>deployment</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_4" value="deployment:"/>
+            <opentopic-index:index.entry value="http">
+                <opentopic-index:formatted-value>HTTP</opentopic-index:formatted-value>
+                <opentopic-index:refID id="remapped_id_5" value="deployment:http:"/>
+            </opentopic-index:index.entry>
+            <opentopic-index:index.entry value="https">
+                <opentopic-index:formatted-value>HTTPS</opentopic-index:formatted-value>
+                <opentopic-index:refID id="remapped_id_6" value="deployment:https:"/>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.entry>
+    </topic>
+    <opentopic-index:index.groups id="remapped_id_7">
+        <opentopic-index:index.group>
+            <opentopic-index:label>P</opentopic-index:label>
+            <opentopic-index:index.entry value="packages">
+                <opentopic-index:formatted-value>packages</opentopic-index:formatted-value>
+                <!-- Should generate a link this element, bacause of the leaf "packages" indexterm. -->
+                <opentopic-index:refID value="packages:">
+                    <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_1"> [remapped_id_1] </oxy:index-link>
+                </opentopic-index:refID>
+                <opentopic-index:index.entry value="adding automanually">
+                    <opentopic-index:formatted-value>adding automanually</opentopic-index:formatted-value>
+                    <opentopic-index:refID value="packages:adding automanually:">
+                        <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_3"> [remapped_id_3] </oxy:index-link>
+                    </opentopic-index:refID>
+                </opentopic-index:index.entry>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.group>
+        <opentopic-index:index.group>
+            <opentopic-index:label>D</opentopic-index:label>
+            <opentopic-index:index.entry value="deployment">
+                <opentopic-index:formatted-value>deployment</opentopic-index:formatted-value>
+                <!-- Should NOT generate a link this element, bacause there is no leaf "deployment" indexterm. -->
+                <opentopic-index:refID value="deployment:"/>
+                <opentopic-index:index.entry value="http">
+                    <opentopic-index:formatted-value>HTTP</opentopic-index:formatted-value>
+                    <opentopic-index:refID value="deployment:http:">
+                        <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_5"> [remapped_id_5] </oxy:index-link>
+                    </opentopic-index:refID>
+                </opentopic-index:index.entry>
+                <opentopic-index:index.entry value="https">
+                    <opentopic-index:formatted-value>HTTPS</opentopic-index:formatted-value>
+                    <opentopic-index:refID value="deployment:https:">
+                        <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_6"> [remapped_id_6] </oxy:index-link>
+                    </opentopic-index:refID>
+                </opentopic-index:index.entry>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.group>
+    </opentopic-index:index.groups>
+</bookmap>

@@ -5,12 +5,65 @@
  * 
  * =================================================
  */
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
 
 @media print {
+
+    
+    /*
+     * 
+     * Implementing rowspan and colspan.
+     * 
+     */
     *[class~="topic/entry"][colspan] {
        table-column-span:attr(colspan);
     }
 	*[class~="topic/entry"][rowspan] {
        table-row-span:attr(rowspan);
     }
+    
+    
+    /*
+     *
+     * In order for the headers of a simpletable or properties table 
+     * to be repeated on the next page, the "header" is 
+     * wrapped into an artificial element in the post processing phase.
+     *
+     * This element must have display "table-header-group".
+     *
+     * The rest of the rows are wrapped in an element with "table-row-group".
+     *  
+     */
+     table-header-group{
+         display:table-header-group;
+     }
+     table-row-group{
+         display:table-row-group;
+     }
+
+
+     /*
+      * DITA is using a tgroup element as parent of the cols, thead, tbody.
+      * This should be marked with display "table".
+      */
+     *[class~="topic/table"] {
+         display:block ;
+     }
+     *[class~="topic/table"] > *[class~="topic/tgroup"] {
+         display:table;
+     }
+     *[class~="topic/table"] > *[class~="topic/title"] {
+         display:block;
+     }
+     /*
+      * Use the width set on the colspec "style" attribute.
+      * For this we have to mark the  topic/colspec as table-column.
+      */
+     *[class~="topic/table"] > *[class~="topic/colspec"] {
+         display:table-column;
+     }
+
+
+
+
 }

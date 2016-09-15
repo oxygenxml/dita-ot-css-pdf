@@ -49,15 +49,6 @@
 *[class~="mapgroup-d/keydef"][keys]:before(1100) {
   content: url("../../img/keydef.png");
 }
-/*Edit the @keys on a keydef, it is required*/
-*[class~="mapgroup-d/keydef"][keys] {
-  /*EXM-26388 If no values are given, the map opening takes a lot of time if there are many keydefs.*/
-  -oxy-append-content: "   keys: " oxy_editor(type, text, edit, "@keys", values, '', columns, 15);
-}
-*[class~="mapgroup-d/keydef"][href] {
-  /*EXM-26388 If no values are given, the map opening takes a lot of time if there are many keydefs.*/
-  -oxy-append-content: " href: " oxy_editor(type, text, edit, "@href", values, '', columns, 15);
-}
 /* ==================================================
  *
  *  <mapref>

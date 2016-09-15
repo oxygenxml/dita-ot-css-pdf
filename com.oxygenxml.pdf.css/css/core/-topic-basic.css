@@ -164,6 +164,7 @@
 }
 *[class~="topic/shortdesc"]:before {
   display: inline;
+  content: "Short Description: ";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */

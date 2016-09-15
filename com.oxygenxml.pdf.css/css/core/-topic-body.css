@@ -21,13 +21,17 @@
  * The alt element provides alternate text for an image.
  */
 *[class~="topic/alt"] {
-  display: block;
+  display: inherit;
+  font-style: italic;
+  padding-left: 0.3em;
 }
 *[class~="topic/alt"]:before {
   content: "[";
+  font-style: normal;
 }
 *[class~="topic/alt"]:after {
   content: "]";
+  font-style: normal;
 }
 @media print {
   *[class~="topic/alt"]:before,
@@ -98,6 +102,17 @@
  */
 *[class~="topic/desc"] {
   display: inline;
+  font-style: italic;
+  text-decoration: none;
+  padding-left: 0.3em;
+}
+*[class~="topic/desc"]:before {
+    content: "[";
+    font-style: normal;
+}
+*[class~="topic/desc"]:after {
+    content: "]";
+    font-style: normal;
 }
 *[class~="topic/fig"] > *[class~="topic/desc"],
 *[class~="topic/object"] > *[class~="topic/desc"],
@@ -462,9 +477,105 @@
  * element, and attribute semantics derive from their HTML
  * definitions.
  */
-*[class~="topic/object"]:before {
-  content: oxy_button(actionID, "play.media", transparent, true, enableInReadOnlyContext, true);
-}
+
+/* 
+ * Datakeyref video.
+ */
+    *[class~="topic/object"][outputclass="video"][datakeyref]:before {
+      display:block;
+      content: oxy_video(href, attr(datakeyref, keyref));
+    }
+    *[class~="topic/object"][outputclass="video"][datakeyref][width][height]:before {
+      display:block;
+      content: oxy_video(href, attr(datakeyref, keyref), width, attr(width, length), height, attr(height, length));
+    }
+    *[class~="topic/object"][outputclass="video"][datakeyref][width]:before {
+      display:block;
+      content: oxy_video(href, attr(datakeyref, keyref), width, attr(width, length));
+    }
+    *[class~="topic/object"][outputclass="video"][datakeyref][height]:before {
+      display:block;
+      content: oxy_video(href, attr(datakeyref, keyref), height, attr(height, length));
+    }
+/* 
+ * Audio datakeyref. 
+ */
+    *[class~="topic/object"][outputclass="audio"][datakeyref]:before,
+    *[class~="topic/object"][outputclass="audio"][datakeyref][height]:before{
+      display:block;
+      content: oxy_audio(href, attr(datakeyref, keyref));
+    }
+    *[class~="topic/object"][outputclass="audio"][datakeyref][width]:before,
+    *[class~="topic/object"][outputclass="audio"][datakeyref][width][height]:before{
+      content: oxy_audio(href, attr(datakeyref, keyref), width, attr(width, length));
+    }
+/* 
+ * Browser datakeyref.
+ */
+    *[class~="topic/object"][outputclass="iframe"][datakeyref]:before {
+      display:block;
+      content: oxy_browser(href, attr(datakeyref, keyref));
+    }
+    *[class~="topic/object"][outputclass="iframe"][datakeyref][width][height]:before {
+      display:block;
+      content: oxy_browser(href, attr(datakeyref, keyref), width, attr(width, length), height, attr(height, length));
+    }
+    *[class~="topic/object"][outputclass="iframe"][datakeyref][width]:before {
+      display:block;
+      content: oxy_browser(href, attr(datakeyref, keyref), width, attr(width, length));
+    }
+    *[class~="topic/object"][outputclass="iframe"][datakeyref][height]:before {
+      display:block;
+      content: oxy_browser(href, attr(datakeyref, keyref), height, attr(height, length));
+    }
+    
+/* 
+ * Data attribute.
+ */
+    *[class~="topic/object"][outputclass="iframe"][data]:before {
+      display:block;
+      content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)));
+    }
+    *[class~="topic/object"][outputclass="iframe"][data][width][height]:before {
+      content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length), height, attr(height, length));
+    }
+    *[class~="topic/object"][outputclass="iframe"][data][width]:before {
+      content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length));
+    }
+    *[class~="topic/object"][outputclass="iframe"][data][height]:before {
+      content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)), height, attr(height, length));
+    }
+    
+    *[class~="topic/object"][data]:before {
+      display:block;
+      content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)));
+    }
+    *[class~="topic/object"][data][width][height]:before {
+      content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length), height, attr(height, length));
+    }
+    *[class~="topic/object"][data][width]:before {
+      content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length));
+    }
+    *[class~="topic/object"][data][height]:before {
+      content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)), height, attr(height, length));
+    }
+    
+    *[class~="topic/object"][outputclass="audio"][data]:before,
+    *[class~="topic/object"][outputclass="audio"][data][height]:before{
+      display:block;
+      content: oxy_audio(href, oxy_url(oxy_base-uri(), attr(data)));
+    }
+    
+    *[class~="topic/object"][outputclass="audio"][data][width]:before,
+    *[class~="topic/object"][outputclass="audio"][data][width][height]:before{
+      content: oxy_audio(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length));
+    }
+    
+    object > param[name='src']:before(10) {
+      display:block;
+      content: oxy_video(href, oxy_url(oxy_base-uri()))
+    }
+
 @media print {
   *[class~="topic/object"] {
     display: none;
@@ -567,6 +678,12 @@
   -oxy-foldable: true;
   -oxy-not-foldable-child: title;
 }
+
+*[class~="topic/section"] > *[class~="topic/title"] {
+    font-size:1.1em;
+}
+
+
 /* ==========================================================
  * 
  * <sectiondiv>
@@ -609,9 +726,6 @@
  * or phrase that is trademarked. Trademarks include registered 
  * trademarks, service marks, slogans and logos.
  */
-*[class~="topic/tm"] {
-   -oxy-display-tags: none;
-}
 *[class~="topic/tm"]:after {
   content: "\2122";
 }

@@ -3,7 +3,7 @@
     <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
         <oxy:front-page-title/>
     </oxy:front-page>
-    <part class="- map/topicref bookmap/part " id="d2e80">
+    <part class="- map/topicref bookmap/part " id="remapped_id_1">
         <topicref class="- map/topicref bookmap/chapter " href="#unique_2" id="unique_2" type="topic">
             <topicmeta class="- map/topicmeta ">
                 <navtitle class="- topic/navtitle ">Introduction</navtitle>

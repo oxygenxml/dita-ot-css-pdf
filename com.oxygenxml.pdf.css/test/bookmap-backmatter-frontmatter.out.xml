@@ -21,6 +21,7 @@
         </topic>
     </oxy:front-matter>
     <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic">
+        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" empty="true"/>
         <topicref is-chapter="true" class="- map/topicref " href="#remaining1"/>
         <topicref is-chapter="true" class="- map/topicref " href="#remaining2"/>
     </opentopic:map>

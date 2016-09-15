@@ -389,7 +389,7 @@
   content: "Resource Id: ";
 }
 *[class~="topic/resourceid"][id]:before {
-  -oxy-append-content: oxy_textfield(columns, 12, edit, "@id");
+  -oxy-append-content: oxy_textfield(columns, 30, edit, "@id");
 }
 *[class~="topic/resourceid"][appid]:before{
   -oxy-append-content: oxy_label(text, " appId: ", width, 5ex) oxy_textfield(columns, 12, edit, "@appid");
