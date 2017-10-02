@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title/>
+  </oxy:front-page>
+  <topic>
+    <colspec class="- topic/colspec " colname="col1" colnum="1" colwidth="1*" rowheader="headers" style="width:20%;"/>
+    <colspec class="- topic/colspec " colname="col2" colnum="3" colwidth="1*" rowheader="headers" style="width:20%;"/>
+    <colspec class="- topic/colspec " colname="col3" colnum="2" colwidth="2*" rowheader="headers" style="width:40%;"/>
+    <colspec class="- topic/colspec " colname="col4" colnum="4" colwidth=" *" rowheader="headers" style="width:20%;"/>
+  </topic>
+</bookmap>

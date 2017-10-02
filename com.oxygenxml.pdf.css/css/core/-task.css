@@ -352,7 +352,6 @@
   /* <<< */
 }
 *[class~="task/info"]:before {
-  content: "Info: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */

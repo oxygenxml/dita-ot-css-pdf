@@ -4,9 +4,16 @@
     <topic class="- topic/topic " id="unique_1">
         <title class="- topic/title ">The reviewed topic.</title>
         <body class="- topic/body ">
+            <p class="- topic/p ">=====================================.</p>
             <p class="- topic/p ">A highlight starting <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>from the first paragraph to the third one.</p>          
             <p class="- topic/p ">A highlight starting from the first paragraph to the third one.</p>
             <p class="- topic/p ">A highlight starting from the <?oxy_custom_end?>first paragraph to the third one.</p>
+            <p class="- topic/p ">=====================================.</p>
+            <p class="- topic/p ">A highlight starting <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>from the first paragraph to the fourth one.</p>          
+            <p class="- topic/p ">An other highlight starting <?oxy_custom_start type="oxy_content_highlight" color="20,10,10"?>from the second paragraph to the third one.</p>
+            <p class="- topic/p ">A highlight starting from the <?oxy_custom_end?>second paragraph to the third one.</p>
+            <p class="- topic/p ">A highlight starting from the <?oxy_custom_end?>first paragraph to the fourth one.</p>
+            
         </body>
     </topic>
 </bookmap>

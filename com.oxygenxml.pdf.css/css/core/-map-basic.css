@@ -35,8 +35,10 @@
 *[class~="map/map"]:before {
   font-weight: bold;
 }
-*[class~="map/map"][title] {
-  content: oxy_label(text, attr(title, string, 'No title attribute specified'), styles, 'font-weight: bold; font-size: 2.5em;');
+@media oxygen {
+    *[class~="map/map"][title] {
+      content: oxy_label(text, attr(title, string, 'No title attribute specified'), styles, 'font-weight: bold; font-size: 2.5em;');
+    }
 }
 *[class~="map/map"]:before,
 map > *[class~="topic/title"], /* opentopic namespace - merged map */
@@ -62,17 +64,11 @@ map > *[class~="topic/title"], /* opentopic namespace - merged map */
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-@media oxygen and (platform:eclipse),
-       oxygen and (platform:standalone) {
-    /** 
-     * In webapp we do not have folding handles, so we do not need to 
-     * add padding to the empty elements to achieve proper alignment. 
-     */
-    *[class~="map/topicref"]:empty {
-      -oxy-foldable: false;
-      padding-left: 12px;
-    }
+*[class~="map/topicref"]:empty {
+  -oxy-foldable: false;
+  padding-left: 12px;
 }
+
 @media oxygen {
 
 
@@ -295,13 +291,13 @@ document. To open a reference one could click the topicref icon.*/
   -oxy-append-content: " features " oxy_textfield(edit, "@features", columns, 10);
 }
 *[class~="map/ux-window"][on-top] :before {
-  -oxy-append-content: " on-top " oxy_combobox(edit, "@on-top", editable, no, values, "yes, no, -dita-use-conref-target");
+  -oxy-append-content: " on-top " oxy_combobox(edit, "@on-top", editable, no);
 }
 *[class~="map/ux-window"][relative]:before {
-  -oxy-append-content: " relative " oxy_combobox(edit, "@relative", editable, no, values, "yes, no, -dita-use-conref-target");
+  -oxy-append-content: " relative " oxy_combobox(edit, "@relative", editable, no);
 }
 *[class~="map/ux-window"][full-screen]:before {
-  -oxy-append-content: " full-screen " oxy_combobox(edit, "@full-screen", editable, no, values, "yes, no, -dita-use-conref-target");
+  -oxy-append-content: " full-screen " oxy_combobox(edit, "@full-screen", editable, no);
 }
 
 

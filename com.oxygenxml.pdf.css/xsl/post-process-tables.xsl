@@ -53,7 +53,8 @@
 				<xsl:for-each select="$proportions">
 					<colspec class=" topic/colspec ">
 						<xsl:variable name="prop-width" select="number(.)"/>				
-						<xsl:variable name="percent" select="round($prop-width div $total-prop-width*100)"/>
+						<xsl:variable name="percent" select="round($prop-width div $total-prop-width*1000000) div 10000"/>
+						<xsl:variable name="percent" select="if (round($percent) = $percent) then $percent else format-number($percent,'##0.0000')"/>						
 						<xsl:attribute name="style">width:<xsl:value-of select="$percent"/>%;</xsl:attribute>
 					</colspec>
 				</xsl:for-each>
@@ -96,11 +97,22 @@
 				<xsl:when test="contains(@colwidth, '*')">
 					<!-- It is a proportional width. Solve it to % -->
 					<xsl:variable name="total-prop-width" select="sum(
-						..//*[contains(@colwidth, '*')]/xs:decimal(substring-before(@colwidth, '*'))
+						..//*[contains(@colwidth, '*')]/number(
+						if (string-length(normalize-space(substring-before(@colwidth, '*'))) = 0) 
+						then 1 else normalize-space(substring-before(@colwidth, '*')) )
 						)"/>
-					<xsl:variable name="prop-width" select="xs:decimal(substring-before(@colwidth, '*'))"/>
-					<xsl:variable name="percent" select="round($prop-width div $total-prop-width*100)"/>
-					<xsl:attribute name="style">width:<xsl:value-of select="$percent"/>%;</xsl:attribute>				
+					
+					
+					<xsl:variable name="prop-width" 
+						select="number(
+						if (string-length(normalize-space(substring-before(@colwidth, '*'))) = 0) 
+							then 1 
+							else normalize-space(substring-before(@colwidth, '*')))"/>					
+					<xsl:if test="string($total-prop-width) != 'NaN'">
+						<xsl:variable name="percent" select="round($prop-width div $total-prop-width * 1000000) div 10000"/>
+						<xsl:variable name="percent" select="if (round($percent) = $percent) then $percent else format-number($percent,'##0.0000')"/>
+						<xsl:attribute name="style">width:<xsl:value-of select="$percent"/>%;</xsl:attribute>										
+					</xsl:if>
 				</xsl:when>
 				<xsl:when test="@colwidth">
 					<!-- It is a fixed value. Use it as it is -->

@@ -17,14 +17,15 @@
       desc="Choose the formatting processor.">
       <val default="true">prince</val>
       <val>antenna-house</val>
+      <val>chemistry</val>
      </param>
     
     <param name="dita.css.list" type="file"
-      desc="You can use this to specify a list of CSS URLs to be used by the PDF processor. The files must be have URL syntax and be separated using semicolon. If the value is empty, then are used the DITA topics/maps CSS files (the current selection from the oXygen [Styles] dropdown)."
+      desc="You can use this to specify a list of CSS URLs to be used by the PDF processor. The files must have URL syntax and be separated using semicolons. If the value is empty, then the DITA topics/maps CSS files (currently selected from the oXygen [Styles] dropdown) are used."
     /> 
 
     <param name="args.css" type="file"
-      desc="You can use this to specify a list of CSS URLs to be used in addition to the dita.css.list parameter. The files must have URL syntax and be separated using a semicolon. The dita.css.list parameter may be left empty if the current selection from the oXygen [Styles] dropdown is to be used."
+      desc="You can use this to specify a list of CSS URLs to be used in addition to the dita.css.list parameter. The files must have URL syntax and be separated using semicolons."
     /> 
     
     <param name="show.changes.and.comments" 

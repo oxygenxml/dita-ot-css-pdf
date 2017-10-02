@@ -17,7 +17,11 @@
 		
     -->
     
-
+    <!-- If the index structure is empty, do not copy it to the output. -->
+    <xsl:template match="opentopic-index:index.groups[count(*) = 0]" priority="2"/>
+    
+    
+    <xsl:key name="index-leaf-definitions" match="//*[contains(@class, ' topic/topic ')]//opentopic-index:refID[not(../opentopic-index:index.entry)]" use="@value"/>
     <!-- For each refID in the content, make sure there is an @id attribute for it. -->
     <xsl:template match="*[contains(@class, ' topic/topic ')]//opentopic-index:refID">
         <xsl:copy>
@@ -34,7 +38,7 @@
             <xsl:variable name="for-value" select="@value"/>
             <!-- Find in the content all the definitions that are leafs. Add links from the index to these elements. -->
             <xsl:for-each
-                select="//*[contains(@class, ' topic/topic ')]//opentopic-index:refID[@value = $for-value][not(../opentopic-index:index.entry)]">
+                select="key('index-leaf-definitions', $for-value)">
                 <oxy:index-link href="#{generate-id(.)}"> [<xsl:value-of select="generate-id(.)"/>]
                 </oxy:index-link>
             </xsl:for-each>

@@ -7,9 +7,8 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns:ImageInfo="java:ImageInfo" exclude-result-prefixes="#all">
 
-    <xsl:param name="args.input"/>
-    <xsl:param name="dita.map.filename.root"/>
     <xsl:param name="args.draft" select="'no'"/>
+    <xsl:param name="input.dir.url"/>
     
     <xsl:include href="review/review-pis-to-elements.xsl"/>    
     <xsl:include href="post-process-create-title-page.xsl"/>
@@ -21,5 +20,8 @@
     <xsl:include href="post-process-draft-comments.xsl"/>    
     <xsl:include href="post-process-index.xsl"/>    
     <xsl:include href="post-process-tables.xsl"/>
-        
+    <xsl:include href="post-process-links.xsl"/>
+    <xsl:include href="post-process-whitespaces.xsl"/>
+    
+    <xsl:include href="post-process-flagging.xsl"/>
 </xsl:stylesheet>

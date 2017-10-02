@@ -2,7 +2,7 @@
 <!--
     
 Oxygen WebHelp Plugin
-Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
+Copyright (c) 1998-2017 Syncro Soft SRL, Romania.  All rights reserved.
 
 -->
 <!--
@@ -17,7 +17,8 @@ Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
 
 <xsl:stylesheet 
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:oxy="http://www.oxygenxml.com/extensions/author"    
+    xmlns:oxy="http://www.oxygenxml.com/extensions/author"
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"    
     exclude-result-prefixes="oxy"
     version="2.0">
     
@@ -82,4 +83,17 @@ Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
         <xsl:copy-of select="@*"/>
     </xsl:template>
     
+    <!-- 
+        EXM-36374:
+          Filter review related content (like author, date, review type) from the
+          the HTML metadata elements (meta[@name: description, DC.title, abstract, etc...])
+          or the HTML page title element.
+    -->
+    <xsl:template match="oxy:*" mode="dita-ot:text-only" priority="10"/>
+    
+    <!-- EXM-36374: Do not filter the highlighted content. -->
+    <xsl:template match="oxy:oxy-comment-hl | oxy:oxy-delete-hl | oxy:oxy-insert-hl | oxy:oxy-color-hl" 
+        mode="dita-ot:text-only" priority="20">
+        <xsl:apply-templates select="text()|*|processing-instruction()" mode="dita-ot:text-only"/>
+    </xsl:template>
 </xsl:stylesheet>

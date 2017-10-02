@@ -2,7 +2,7 @@
 <!--
     
 Oxygen WebHelp Plugin
-Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
+Copyright (c) 1998-2017 Syncro Soft SRL, Romania.  All rights reserved.
 
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
@@ -68,7 +68,8 @@ Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
     <xsl:template name="copyAttributesAndRenumber" >
         <xsl:copy-of select="@*[not(name() = 'hr_id')]"/>
         <xsl:variable name="hrid" select="@hr_id"/>
-        <xsl:variable name="nr" select="$hrid2nr/mapping[@id = $hrid]/@nr"/>
+        <!--EXM-37601 take only the first matched ID, there can be more...-->
+        <xsl:variable name="nr" select="($hrid2nr/mapping[@id = $hrid]/@nr)[1]"/>
         <xsl:attribute name="hr_id" select="$nr"/>
     </xsl:template>
     

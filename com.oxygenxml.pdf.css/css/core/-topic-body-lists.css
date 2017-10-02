@@ -28,11 +28,13 @@
 
 
 @media print {
-    /* Align the bullet at the center of the left space. */
+    /* Align the bullet at the middle of the space. */
     *[class~="topic/li"]::marker {
-      width:0.25in;
       text-align: center;
-      font-weight:bold;      
+      font-weight:bold;   
+    }
+    *[class~="topic/li"] {
+      margin-left: 0.25in;
     }
 }
 

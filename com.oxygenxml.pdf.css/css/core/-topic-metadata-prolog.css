@@ -153,7 +153,7 @@
   content: "Copyright ";
 }
 *[class~="topic/copyright"][type]:before {
-  content: oxy_combobox(edit, "@type", columns, 10, editable, true, values, "primary, secondary, ");
+  content: oxy_combobox(edit, "@type", columns, 10, editable, true);
 }
 /* ==================================================
  * 
@@ -312,8 +312,7 @@
   content: " " 
     oxy_combobox( 
         edit, '@view',
-        editable, true,
-        values, 'internal, classified, all, entitled, -dita-use-​conref-​target'
+        editable, true
     );
 
 }

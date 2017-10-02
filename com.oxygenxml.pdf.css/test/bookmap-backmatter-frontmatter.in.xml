@@ -20,7 +20,7 @@
         </frontmatter>
 
 
-        <part class="- map/topicref bookmap/part ">
+        <part class="- map/topicref bookmap/part " id="p1" navtitle="A Part">
             
             <topicref class="- map/topicref " href="#remaining1"/>
             <topicref class="- map/topicref " href="#remaining2"/>

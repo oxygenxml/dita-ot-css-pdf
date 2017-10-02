@@ -3,7 +3,14 @@
     xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
     class="- map/map bookmap/bookmap " collection-type="sequence">
     <ot-placeholder:toc xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder"/>
-    <topic class="- topic/topic ">
+     <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic">
+     	 <chapter class="- map/topicref bookmap/chapter " href="#i1"/>
+     	 <chapter class="- map/topicref bookmap/chapter " href="#i2"/>
+     	 <chapter class="- map/topicref bookmap/chapter "  href="#i3">
+     	 	<topicref class="- map/topicref " href="#i3_1"/>
+     	 </chapter>
+     </opentopic:map>
+    <topic class="- topic/topic " id="i1">
         <title class="- topic/title ">Level 1 - 1</title>
         <body class="- topic/body ">
             <p class="- topic/p "/>
@@ -21,7 +28,7 @@
             </topic>
         </body>
     </topic>
-    <topic class="- topic/topic ">
+    <topic class="- topic/topic " id="i2">
         <title class="- topic/title ">Level 1 - 2</title>
         <body class="- topic/body ">
             <p class="- topic/p "/>
@@ -40,17 +47,17 @@
         </body>
     </topic>
     
-    <topic class="- topic/topic ">
+    <topic class="- topic/topic " id="i3">
         <title class="- topic/title ">Level 1 - 3</title>
         <body class="- topic/body ">
             <p class="- topic/p "/>
-            <topic class="- topic/topic ">
+            <topic class="- topic/topic " id="i3_1">
                 <title class="- topic/title ">Level 2 - 1</title>
                 <body class="- topic/body ">
                     <p class="- topic/p "/>
                 </body>
             </topic>
-            <topic class="- topic/topic ">
+            <topic class="- topic/topic " >
                 <title class="- topic/title ">Level 2 - 2</title>
                 <body class="- topic/body ">
                     <p class="- topic/p "/>

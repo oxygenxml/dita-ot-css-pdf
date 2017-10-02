@@ -1,118 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map " ditaarch:DITAArchVersion="1.2">
-    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
-        <oxy:front-page-title/>
-    </oxy:front-page>
-    <topic break-before="true" class="- topic/topic " id="unique_1" oid="goldfish" xml:lang="en">
-        <title class="- topic/title ">Goldfish</title>
-        <prolog class="- topic/prolog ">
-            <metadata class="- topic/metadata ">
-                <keywords class="- topic/keywords ">
-                    <opentopic-index:index.entry value="goldfish">
-                        <opentopic-index:formatted-value>goldfish</opentopic-index:formatted-value>
-                        <opentopic-index:refID id="remapped_id_1" value="goldfish:"/>
-                    </opentopic-index:index.entry>
-                    <opentopic-index:index.entry value="aquarium">
-                        <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
-                        <opentopic-index:refID id="remapped_id_2" value="aquarium:"/>
-                    </opentopic-index:index.entry>
-                </keywords>
-            </metadata>
-        </prolog>
-        <body class="- topic/body ">
-            <p class="- topic/p ">This is the common goldfish we find in any aquarium.</p>
-        </body>
-    </topic>
-    <topic break-before="true" class="- topic/topic " id="unique_2" oid="carassius_aureus" xml:lang="en">
-        <title class="- topic/title ">Carassius Aureus</title>
-        <prolog class="- topic/prolog ">
-            <metadata class="- topic/metadata ">
-                <keywords class="- topic/keywords ">
-                    <opentopic-index:index.entry no-page="true" value="Carassius Aureus">
-                        <opentopic-index:formatted-value>Carassius Aureus</opentopic-index:formatted-value>
-                        <opentopic-index:refID id="remapped_id_3" value="Carassius Aureus:"/>
-                        <opentopic-index:see-childs>
-                            <opentopic-index:index.entry value="Goldfish">
-                                <opentopic-index:formatted-value>Goldfish</opentopic-index:formatted-value>
-                                <opentopic-index:refID id="remapped_id_4" value="Goldfish:"/>
-                            </opentopic-index:index.entry>
-                        </opentopic-index:see-childs>
-                    </opentopic-index:index.entry>
-                    <opentopic-index:index.entry value="glass-bol">
-                        <opentopic-index:formatted-value>glass-bol</opentopic-index:formatted-value>
-                        <opentopic-index:refID id="remapped_id_5" value="glass-bol:"/>
-                        <opentopic-index:see-also-childs>
-                            <opentopic-index:index.entry value="aquarium">
-                                <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
-                                <opentopic-index:refID id="remapped_id_6" value="aquarium:"/>
-                            </opentopic-index:index.entry>
-                        </opentopic-index:see-also-childs>
-                    </opentopic-index:index.entry>
-                </keywords>
-            </metadata>
-        </prolog>
-        <body class="- topic/body ">
-            <p class="- topic/p ">This is the scientific name of a common fish, you may find in a glass-bol.</p>
-        </body>
-    </topic>
-    <topic break-before="true" class="- topic/topic " id="unique_3" oid="aquarium" xml:lang="en">
-        <title class="- topic/title ">Aquarium</title>
-        <prolog class="- topic/prolog ">
-            <metadata class="- topic/metadata ">
-                <keywords class="- topic/keywords ">
-                    <opentopic-index:index.entry value="aquarium">
-                        <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
-                        <opentopic-index:refID id="remapped_id_7" value="aquarium:"/>
-                    </opentopic-index:index.entry>
-                </keywords>
-            </metadata>
-        </prolog>
-        <body class="- topic/body ">
-            <p class="- topic/p ">The glass recipient where we store fishes.</p>
-        </body>
-    </topic>
-    <opentopic-index:index.groups id="remapped_id_8">
-        <opentopic-index:index.group>
-            <opentopic-index:label>A</opentopic-index:label>
-            <opentopic-index:index.entry value="aquarium">
+<map class="- map/map " ditaarch:DITAArchVersion="1.2" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_1" oid="goldfish" xml:lang="en">
+    <title class="- topic/title ">Goldfish</title>
+    <prolog class="- topic/prolog ">
+      <metadata class="- topic/metadata ">
+        <keywords class="- topic/keywords ">
+          <opentopic-index:index.entry value="goldfish">
+            <opentopic-index:formatted-value>goldfish</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_1" value="goldfish:"/>
+          </opentopic-index:index.entry>
+          <opentopic-index:index.entry value="aquarium">
+            <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_2" value="aquarium:"/>
+          </opentopic-index:index.entry>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body class="- topic/body ">
+      <p class="- topic/p ">This is the common goldfish we find in any aquarium.</p>
+    </body>
+  </topic>
+  <topic class="- topic/topic " id="unique_2" oid="carassius_aureus" xml:lang="en">
+    <title class="- topic/title ">Carassius Aureus</title>
+    <prolog class="- topic/prolog ">
+      <metadata class="- topic/metadata ">
+        <keywords class="- topic/keywords ">
+          <opentopic-index:index.entry no-page="true" value="Carassius Aureus">
+            <opentopic-index:formatted-value>Carassius Aureus</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_3" value="Carassius Aureus:"/>
+            <opentopic-index:see-childs>
+              <opentopic-index:index.entry value="Goldfish">
+                <opentopic-index:formatted-value>Goldfish</opentopic-index:formatted-value>
+                <opentopic-index:refID id="remapped_id_4" value="Goldfish:"/>
+              </opentopic-index:index.entry>
+            </opentopic-index:see-childs>
+          </opentopic-index:index.entry>
+          <opentopic-index:index.entry value="glass-bol">
+            <opentopic-index:formatted-value>glass-bol</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_5" value="glass-bol:"/>
+            <opentopic-index:see-also-childs>
+              <opentopic-index:index.entry value="aquarium">
                 <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
-                <opentopic-index:refID value="aquarium:">
-                    <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_2"> [remapped_id_2] </oxy:index-link>
-                    <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_6"> [remapped_id_6] </oxy:index-link>
-                    <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_7"> [remapped_id_7] </oxy:index-link>
-                </opentopic-index:refID>
-            </opentopic-index:index.entry>
-        </opentopic-index:index.group>
-        <opentopic-index:index.group>
-            <opentopic-index:label>C</opentopic-index:label>
-            <opentopic-index:index.entry no-page="true" value="Carassius Aureus">
-                <opentopic-index:formatted-value>Carassius Aureus</opentopic-index:formatted-value>
-                <opentopic-index:see-childs>
-                    <opentopic-index:index.entry value="Goldfish">
-                        <opentopic-index:formatted-value>Goldfish</opentopic-index:formatted-value>
-                    </opentopic-index:index.entry>
-                </opentopic-index:see-childs>
-            </opentopic-index:index.entry>
-        </opentopic-index:index.group>
-        <opentopic-index:index.group>
-            <opentopic-index:label>G</opentopic-index:label>
-            <opentopic-index:index.entry value="glass-bol">
-                <opentopic-index:formatted-value>glass-bol</opentopic-index:formatted-value>
-                <opentopic-index:refID value="glass-bol:">
-                    <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_5"> [remapped_id_5] </oxy:index-link>
-                </opentopic-index:refID>
-                <opentopic-index:see-also-childs>
-                    <opentopic-index:index.entry value="aquarium">
-                        <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
-                    </opentopic-index:index.entry>
-                </opentopic-index:see-also-childs>
-            </opentopic-index:index.entry>
-            <opentopic-index:index.entry value="goldfish">
-                <opentopic-index:formatted-value>goldfish</opentopic-index:formatted-value>
-                <opentopic-index:refID value="goldfish:">
-                    <oxy:index-link xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#remapped_id_1"> [remapped_id_1] </oxy:index-link>
-                </opentopic-index:refID>
-            </opentopic-index:index.entry>
-        </opentopic-index:index.group>
-    </opentopic-index:index.groups>
+                <opentopic-index:refID id="remapped_id_6" value="aquarium:"/>
+              </opentopic-index:index.entry>
+            </opentopic-index:see-also-childs>
+          </opentopic-index:index.entry>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body class="- topic/body ">
+      <p class="- topic/p ">This is the scientific name of a common fish, you may find in a
+                glass-bol.</p>
+    </body>
+  </topic>
+  <topic class="- topic/topic " id="unique_3" oid="aquarium" xml:lang="en">
+    <title class="- topic/title ">Aquarium</title>
+    <prolog class="- topic/prolog ">
+      <metadata class="- topic/metadata ">
+        <keywords class="- topic/keywords ">
+          <opentopic-index:index.entry value="aquarium">
+            <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
+            <opentopic-index:refID id="remapped_id_7" value="aquarium:"/>
+          </opentopic-index:index.entry>
+        </keywords>
+      </metadata>
+    </prolog>
+    <body class="- topic/body ">
+      <p class="- topic/p ">The glass recipient where we store fishes.</p>
+    </body>
+  </topic>
+  <opentopic-index:index.groups id="remapped_id_8">
+    <opentopic-index:index.group>
+      <opentopic-index:label>A</opentopic-index:label>
+      <opentopic-index:index.entry value="aquarium">
+        <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
+        <opentopic-index:refID value="aquarium:">
+          <oxy:index-link href="#remapped_id_2" xmlns:oxy="http://www.oxygenxml.com/extensions/author"> [remapped_id_2]
+                </oxy:index-link>
+          <oxy:index-link href="#remapped_id_6" xmlns:oxy="http://www.oxygenxml.com/extensions/author"> [remapped_id_6]
+                </oxy:index-link>
+          <oxy:index-link href="#remapped_id_7" xmlns:oxy="http://www.oxygenxml.com/extensions/author"> [remapped_id_7]
+                </oxy:index-link>
+        </opentopic-index:refID>
+      </opentopic-index:index.entry>
+    </opentopic-index:index.group>
+    <opentopic-index:index.group>
+      <opentopic-index:label>C</opentopic-index:label>
+      <opentopic-index:index.entry no-page="true" value="Carassius Aureus">
+        <opentopic-index:formatted-value>Carassius Aureus</opentopic-index:formatted-value>
+        <opentopic-index:see-childs>
+          <opentopic-index:index.entry value="Goldfish">
+            <opentopic-index:formatted-value>Goldfish</opentopic-index:formatted-value>
+          </opentopic-index:index.entry>
+        </opentopic-index:see-childs>
+      </opentopic-index:index.entry>
+    </opentopic-index:index.group>
+    <opentopic-index:index.group>
+      <opentopic-index:label>G</opentopic-index:label>
+      <opentopic-index:index.entry value="glass-bol">
+        <opentopic-index:formatted-value>glass-bol</opentopic-index:formatted-value>
+        <opentopic-index:refID value="glass-bol:">
+          <oxy:index-link href="#remapped_id_5" xmlns:oxy="http://www.oxygenxml.com/extensions/author"> [remapped_id_5]
+                </oxy:index-link>
+        </opentopic-index:refID>
+        <opentopic-index:see-also-childs>
+          <opentopic-index:index.entry value="aquarium">
+            <opentopic-index:formatted-value>aquarium</opentopic-index:formatted-value>
+          </opentopic-index:index.entry>
+        </opentopic-index:see-also-childs>
+      </opentopic-index:index.entry>
+      <opentopic-index:index.entry value="goldfish">
+        <opentopic-index:formatted-value>goldfish</opentopic-index:formatted-value>
+        <opentopic-index:refID value="goldfish:">
+          <oxy:index-link href="#remapped_id_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"> [remapped_id_1]
+                </oxy:index-link>
+        </opentopic-index:refID>
+      </opentopic-index:index.entry>
+    </opentopic-index:index.group>
+  </opentopic-index:index.groups>
 </map>

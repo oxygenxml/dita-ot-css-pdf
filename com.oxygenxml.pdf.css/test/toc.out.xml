@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
-    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
-        <oxy:front-page-title>
-            <booktitle xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" class="- topic/title bookmap/booktitle ">
-                <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
-                    <ph class="- topic/ph ">Oxygen XML Author</ph>
-                    <ph class="- topic/ph ">17.0</ph>
-                </mainbooktitle>
-            </booktitle>
-        </oxy:front-page-title>
-    </oxy:front-page>
-    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
-        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" empty="true"/>
-        <booktitle class="- topic/title bookmap/booktitle ">
-            <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
-                <ph class="- topic/ph ">Oxygen XML Author</ph>
-                <ph class="- topic/ph ">17.0</ph>
-            </mainbooktitle>
-        </booktitle>
-        <topicref is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_2" type="topic">
-            <topicmeta class="- map/topicmeta ">
-                <navtitle href="#unique_2" class="- topic/navtitle ">Introduction®</navtitle>
-                <!-- Linktext is elimnated. -->
-            </topicmeta>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title>
+      <booktitle class="- topic/title bookmap/booktitle " xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+          <ph class="- topic/ph ">Oxygen XML Author</ph>
+          <ph class="- topic/ph ">17.0</ph>
+        </mainbooktitle>
+      </booktitle>
+    </oxy:front-page-title>
+  </oxy:front-page>
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <booktitle class="- topic/title bookmap/booktitle ">
+      <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+        <ph class="- topic/ph ">Oxygen XML Author</ph>
+        <ph class="- topic/ph ">17.0</ph>
+      </mainbooktitle>
+    </booktitle>
+    <part class="- map/topicref bookmap/part " is-chapter="true" is-part="true" navtitle="Sequence">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#remapped_id_1">Sequence</navtitle>
+      </topicmeta>
+      <topicref class="- map/topicref bookmap/chapter " href="#unique_2" is-chapter="true" type="topic">
+        <topicmeta class="- map/topicmeta ">
+          <navtitle class="- topic/navtitle " href="#unique_2">Introduction®</navtitle>
+          <!-- Linktext is elimnated. -->
+        </topicmeta>
+      </topicref>
+      <!-- The ID is eliminated, the referred topic has the same ID so the links do not work. -->
+      <topicref class="- map/topicref bookmap/chapter " href="#unique_4" is-chapter="true" type="topic">
+        <topicmeta class="- map/topicmeta ">
+          <!-- Move the href from the parent topicref to the navtitle. -->
+          <navtitle class="- topic/navtitle " href="#unique_4">Installation</navtitle>
+          <!-- Linktext is elimnated. -->
+          <!-- Shortdesc is elimnated. -->
+        </topicmeta>
+        <topicref class="- map/topicref " href="#unique_5" navtitle="Installation Options" type="concept">
+          <topicmeta class="- map/topicmeta ">
+            <navtitle class="- topic/navtitle " href="#unique_5">Installation Options for Oxygen XML
+                            Author</navtitle>
+          </topicmeta>
         </topicref>
-        <!-- The ID is eliminated, the referred topic has the same ID so the links do not work. -->
-        <topicref is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_4" type="topic">
-            <topicmeta class="- map/topicmeta ">
-                <!-- Move the href from the parent topicref to the navtitle. -->
-                <navtitle href="#unique_4" class="- topic/navtitle ">Installation</navtitle>
-                <!-- Linktext is elimnated. -->
-                <!-- Shortdesc is elimnated. -->
-            </topicmeta>
-            <topicref class="- map/topicref " href="#unique_5" navtitle="Installation Options" type="concept">
-                <topicmeta class="- map/topicmeta ">
-                    <navtitle class="- topic/navtitle " href="#unique_5">Installation Options for Oxygen XML Author</navtitle>
-                </topicmeta>
-            </topicref>
-        </topicref>
-        <!-- Remove the topicref with the @toc="no" -->
-        <!-- Reltables are filtered out from the TOC. -->
-    </opentopic:map>
+      </topicref>
+      <!-- Remove the topicref with the @toc="no" -->
+    </part>
+    <!-- Reltables are filtered out from the TOC. -->
+  </opentopic:map>
 </bookmap>

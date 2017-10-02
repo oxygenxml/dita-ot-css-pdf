@@ -8,19 +8,17 @@
     
 @media print {
 
-
-
-    /* Counters */
-
+    /* Reset the counters */
     *[class ~= "map/map"] {
-        counter-reset: page 1 chapter 0  figcount 0 tablecount 0 toc-chapter 0;       
+        counter-reset: page 1 part 0 chapter 0  figcount 0 tablecount 0;       
     }    
 
     /* 
-        Reset the page counter on the first topic. Using the element name to apply :first-of-type
-        The counter was used in the p-toc generating numbers for the pages entering TOC.
+        Reset the page counter on the first topic that follows the TOC placeholder:
+         <ot-placeholder:toc xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" /> 
+        The page counter was used in the p-toc generating numbers for the TOC pages.
     */
-    *[class ~= "map/map"] > topic:first-of-type{
+    *[class ~= "map/map"] > toc + *[class ~= "topic/topic"]{
         counter-reset: page 1;
     }
 
@@ -28,43 +26,53 @@
 
     /* Titles */
 
+
     /* Collect the title of the map. */
     *[class ~= "map/map"][title] {
         string-set: maptitle attr(title);
     }
     /* The bookmap title may migrate in the opentopic:map element*/
-    *[class ~= "map/map"] > map > *[class ~= "topic/title"] {
+    map > *[class ~= "topic/title"] {
         string-set: maptitle content();
     }
     /* Collect the chapter titles. */
-    *[class ~= "map/map"] >  *[class ~= "topic/topic"] > *[class ~= "topic/title"] {
-        string-set: chaptertitle content();
+    *[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"] {
+        string-set: chaptertitle  " | " counter(chapter) " - " content();
+    }
+    /* Collect the part titles. */
+    *[class ~= "topic/topic"][is-part] > *[class ~= "topic/title"] {
+        string-set: parttitle " | " counter(part, upper-roman) " - " content(), chaptertitle  ""; /* Avoid propagating a past chapter title on a new part */
     }
 
 
      
     /* 
-    First level topics increment the chapter number, 
-    except for the ones in the front-matter and in the back-matter.
-    The counter is used in the static parts of the page, and before the title.
+      The counters are used in the static parts of the page, and before the title.
     */ 
-    *[class ~= "map/map"]                > *[class ~= "topic/topic"] > *[class ~= "topic/title"] {
+    *[class ~= "topic/topic"][is-chapter]{
         counter-increment:chapter;
     }
-    
-    *[class ~= "map/map"] > front-matter > *[class ~= "topic/topic"] > *[class ~= "topic/title"],
-    *[class ~= "map/map"] > back-matter  > *[class ~= "topic/topic"] > *[class ~= "topic/title"] {
-       counter-increment:none;
+    *[class ~= "topic/topic"][is-chapter] > *[class ~= "topic/title"]:before {
+        content: "Chapter " counter(chapter) ". ";
     }
-
-    *[class ~= "map/map"]               >  *[class ~= "topic/topic"] > *[class ~= "topic/title"]:before {
-        content:counter(chapter) ". ";
+    *[class ~= "topic/topic"][is-part]{
+        counter-increment:part;
+        counter-reset:chapter;
+    }
+    *[class ~= "topic/topic"][is-part] > *[class ~= "topic/title"]:before {
+        content: "Part " counter(part, upper-roman) ". ";
+    }
+    
+    *[class ~= "map/map"] > front-matter,
+    *[class ~= "map/map"] > back-matter{
+       counter-increment:none;
+       counter-reset: chapter part ;
     }
 
 
     @page :left {
         @top-left {
-            content: string(maptitle) " | " counter(chapter) " - " string(chaptertitle) " | " counter(page);
+            content: string(maptitle) string(parttitle) string(chaptertitle) " | " counter(page);
             font-size:8pt;
         }
         @bottom-left {
@@ -77,7 +85,7 @@
 
     @page :right{
         @top-right {
-            content: string(maptitle) " | " counter(chapter) " - " string(chaptertitle) " | " counter(page);
+            content: string(maptitle) string(parttitle) string(chaptertitle) " | " counter(page);
             font-size:8pt;
         }
         @bottom-right {

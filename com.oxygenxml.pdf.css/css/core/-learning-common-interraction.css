@@ -111,7 +111,7 @@
  *    + topic/keyword learningInteractionBase-d/keyword
  */
 *[class~="learning-d/lcAreaShape"]:before {
-  content: "Area: " oxy_combobox(edit, "#text", columns, 6, values, "rect, circle, poly, default, ");
+  content: "Area: " oxy_combobox(edit, "#text", columns, 6);
 }
 *[class~="learning-d/lcAreaShape"] {
   padding-right: 0.5em;

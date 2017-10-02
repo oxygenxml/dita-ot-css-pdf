@@ -11,7 +11,7 @@
         Create a title page
         
 	-->
-    <xsl:template match="*[contains(@class, ' map/map ')]">
+    <xsl:template match="*[contains(@class, ' map/map ')]" priority="2">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
             <oxy:front-page>
@@ -31,17 +31,22 @@
             <!-- Bookmap: Expand frontmatter -->
             <xsl:variable name="frontmatter" select="//*[contains(@class, ' bookmap/frontmatter ')]"/>
             <xsl:if test="$frontmatter">
-                <oxy:front-matter>
+                <oxy:front-matter class="{$frontmatter/@class}">
                     <xsl:apply-templates select="$frontmatter" mode="expand"/>
                 </oxy:front-matter>
             </xsl:if>
+
+
+  			<!-- Maybe it has Oxygen attribute changes processing instructions before it. Move them into the root. --> 
+            <xsl:call-template name="add-review-pis-for-root"/>
+
 
             <xsl:apply-templates select="node()"/>
 
             <!-- Bookmap: Expand backmatter -->
             <xsl:variable name="backmatter" select="//*[contains(@class, ' bookmap/backmatter ')]"/>
             <xsl:if test="$backmatter">
-                <oxy:back-matter>
+                <oxy:back-matter class="{$backmatter/@class}">
                     <xsl:apply-templates select="$backmatter" mode="expand"/>
                 </oxy:back-matter>
             </xsl:if>

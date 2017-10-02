@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" class="- map/map bookmap/bookmap "><oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author"><oxy:front-page-title/></oxy:front-page>
+    <topic class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">The topic.</title>
+        <body class="- topic/body ">
+           <p class="- topic/p ">Should be no space in the menucascade: <menucascade class="- ui-d/menucascade "><uicontrol class="- ui-d/uicontrol ">one</uicontrol><uicontrol class="- ui-d/uicontrol ">two</uicontrol></menucascade>.</p>
+        </body>
+    </topic>
+</bookmap>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    class="- map/map bookmap/bookmap ">
+    <title>The highlights of unclosed comment should should disable all comments highlights in that topic.</title>
+    <topic class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">First</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">A  <?oxy_comment_start author="dan" timestamp="20170915T123711+0300" comment="Comment"?>good one, closing <?oxy_comment_end?>.</p>                      
+        
+            <p class="- topic/p ">An comment starting  <?oxy_comment_start author="dan" timestamp="20170915T123711+0300" comment="Comment"?>in the first topic, not closing.</p>                      
+        </body>
+    </topic>
+    <topic class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Second.</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">An comment starting  <?oxy_comment_start author="dan" timestamp="20170915T123711+0300" comment="Comment"?>in the second topic<?oxy_comment_end?>, closing.</p>                      
+        </body>
+    </topic>
+</bookmap>

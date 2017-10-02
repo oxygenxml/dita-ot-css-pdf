@@ -291,8 +291,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/booklists"]:before(1100) {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/booklists"]:before(1100) {
+    content: url("../../img/DitaBookLists16.png");
+  }
 }
 /* ====================================
  *
@@ -399,8 +401,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/figurelist"] {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/figurelist"]:before(1100) {
+    content: url("../../img/DitaFigureList16.png");
+  }
 }
 /* ====================================
  *
@@ -413,8 +417,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/glossarylist"] {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/glossarylist"]:before(1100) {
+    content: url("../../img/DitaGlossaryList16.png");
+  }
 }
 /* ====================================
  *
@@ -428,8 +434,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/indexlist"] {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+ @media oxygen {
+  *[class~="bookmap/indexlist"]:before(1100) {
+    content: url("../../img/DitaIndex16.png");
+  }
 }
 /* ====================================
  *
@@ -444,8 +452,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/notices"] {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/notices"]:before(1100) {
+    content: url("../../img/DitaNotices16.png");
+  }
 }
 /* ====================================
  *
@@ -483,8 +493,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/preface"] {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/preface"]:before(1100) {
+    content: url("../../img/DitaPreface16.png");
+  }
 }
 /* ====================================
  *
@@ -500,8 +512,10 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/tablelist"]:before {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/tablelist"]:before(1100) {
+    content: url("../../img/DitaTableList16.png");
+  }
 }
 /* ====================================
  *
@@ -521,6 +535,8 @@
  *  
  *     + map/topicref  
  */
-*[class~="bookmap/toc"]:before {
-  /*TODO - dan - should have an icon, as the <chapter> has, also in the DMM.*/
+@media oxygen {
+  *[class~="bookmap/toc"]:before(1100) {
+    content: url("../../img/DitaToc16.png");
+  }
 }

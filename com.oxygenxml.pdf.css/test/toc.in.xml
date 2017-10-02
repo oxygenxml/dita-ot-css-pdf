@@ -13,7 +13,7 @@
             </mainbooktitle>
         </booktitle>
 
-        <part class="- map/topicref bookmap/part " collection-type="sequence" id="d2e80">
+        <part class="- map/topicref bookmap/part " collection-type="sequence" id="d2e80" navtitle="Sequence">
             <topicref chunk="select-branch to-content by-content"
                 class="- map/topicref bookmap/chapter " collection-type="unordered" href="#unique_2"
                 id="unique_2" type="topic">

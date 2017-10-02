@@ -16,6 +16,7 @@
                         colname="col1"
                         colnum="1"
                         colwidth="1*"
+                        align="right"
                         rowheader="headers"/>
                 <colspec class="- topic/colspec "
                         colname="col2"
@@ -25,7 +26,7 @@
                 <colspec class="- topic/colspec "
                         colname="col3"
                         colnum="3"
-                        colwidth="1.84*"
+                        colwidth="1.87*"
                         rowheader="headers"/>
                 <thead class="- topic/thead ">
                     <row class="- topic/row ">

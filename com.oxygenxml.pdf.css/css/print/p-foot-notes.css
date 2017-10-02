@@ -20,7 +20,7 @@
     }
 
     @page {
-        @footnotes {
+        @footnote {
         	border-top: solid black thin;
         	padding-top: 8pt;
         }

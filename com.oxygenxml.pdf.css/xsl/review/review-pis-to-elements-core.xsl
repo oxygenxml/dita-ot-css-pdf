@@ -2,7 +2,7 @@
 <!--
     
 Oxygen WebHelp Plugin
-Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
+Copyright (c) 1998-2017 Syncro Soft SRL, Romania.  All rights reserved.
 
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
@@ -44,6 +44,19 @@ Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
         processing-instruction('oxy_comment_start') |
         processing-instruction('oxy_delete') |
         processing-instruction('oxy_insert_start')">
+        <!-- We cannot generate Oxygen elements outside of the root element -->
+        <xsl:if test="not(parent::node() = /)">
+            <xsl:apply-templates select="." mode="processOxygenPIs"/>
+        </xsl:if>
+    </xsl:template>
+    
+    <!-- Transform all the oxygen PI with a comment into comment elements -->
+    <xsl:template
+        match="
+        processing-instruction('oxy_attributes') |
+        processing-instruction('oxy_comment_start') |
+        processing-instruction('oxy_delete') |
+        processing-instruction('oxy_insert_start')" mode="processOxygenPIs">
         
         
         <xsl:if test="$show.changes.and.comments = 'yes'">
@@ -93,12 +106,12 @@ Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
                 <xsl:attribute name="hr_id" select="$comment-nr"/>      
                 
                 <xsl:variable name="comment-flag">
-                   <xsl:call-template name="get-pi-part">
-                       <xsl:with-param name="part" select="'flag'"/>
-                   </xsl:call-template>
+                    <xsl:call-template name="get-pi-part">
+                        <xsl:with-param name="part" select="'flag'"/>
+                    </xsl:call-template>
                 </xsl:variable>
                 <xsl:if test="string-length($comment-flag) > 0">                         
-	               	<xsl:attribute name="flag" select="$comment-flag"/>
+                    <xsl:attribute name="flag" select="$comment-flag"/>
                 </xsl:if>
                 
                 
@@ -249,6 +262,7 @@ Copyright (c) 1998-2016 Syncro Soft SRL, Romania.  All rights reserved.
             </xsl:element>
         </xsl:if>
     </xsl:template>
+    
     
     <!-- Mark the range end -->
     <xsl:template

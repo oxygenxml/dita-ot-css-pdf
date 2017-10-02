@@ -9,11 +9,43 @@
     <xsl:include href="review-utils.xsl"/>
     <xsl:param name="show.changes.and.comments" select="'no'"/>
     
+<!-- defining the formatting of modifications  -->
+    <xsl:attribute-set name="insert">
+        <xsl:attribute name="color">blue</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="change">
+        <xsl:attribute name="background-color">yellow</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="delete">
+        <xsl:attribute name="color">red</xsl:attribute>
+        <xsl:attribute name="text-decoration">line-through</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="comment">
+    </xsl:attribute-set>
+    <xsl:attribute-set name="footnote_font_size">
+        <xsl:attribute name="font-size">75%</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="footnote_style" use-attribute-sets="footnote_font_size">
+        <xsl:attribute name="start-indent">0</xsl:attribute>
+        <xsl:attribute name="font-style">normal</xsl:attribute>
+        <xsl:attribute name="font-weight">100</xsl:attribute>
+        <xsl:attribute name="text-align">left</xsl:attribute>
+        <xsl:attribute name="text-align-last">left</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="footnote_char_style">
+        <xsl:attribute name="baseline-shift">super</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="footnote_body_style" use-attribute-sets="footnote_style">
+        <xsl:attribute name="font-size">12pt</xsl:attribute>
+    </xsl:attribute-set>
+    <xsl:attribute-set name="footnote_body_content_style">
+    </xsl:attribute-set>
+
     <xsl:template match="oxy:*">
         <!-- Usually ignore contents -->
     </xsl:template>
     
-    <xsl:template match="oxy:oxy-range-end">
+    <xsl:template match="oxy:oxy-range-end[not(ancestor::*[local-name() = 'marker' or local-name() = 'footnote'])]">
         <xsl:call-template name="generateFootnote">
             <xsl:with-param name="elem" select="oxy:findHighlightInfoElement(.)"/>
             <xsl:with-param name="color" select="'black'"/>
@@ -21,17 +53,50 @@
     </xsl:template>
     
     <!-- INSERT CHANGE, USE UNDERLINE -->
-    <xsl:template match="oxy:oxy-insert-hl">
-        <fo:inline color="blue">
+    <xsl:template match="oxy:oxy-insert-hl[
+        not(parent::*[local-name() = 'table' or local-name() = 'table-body' or local-name() = 'table-row' or local-name() = 'list-block' or local-name() = 'flow'])]">
+        <fo:inline xsl:use-attribute-sets="insert">
             <xsl:apply-templates/>
         </fo:inline>
     </xsl:template>
     
     <!-- DELETE CHANGE, USE STRIKEOUT -->
     <xsl:template match="oxy:oxy-delete-hl">
-        <fo:inline color="red" text-decoration="line-through">
+        <fo:inline xsl:use-attribute-sets="delete">
             <xsl:apply-templates/>
         </fo:inline>    
+    </xsl:template>
+    
+    <!-- EXM-38048 Somehow wrap in list items oxy elements which are directly in it. -->
+    <xsl:template match="fo:list-block[oxy:*]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            
+            <xsl:for-each-group select="*" group-adjacent="namespace-uri() = 'http://www.oxygenxml.com/extensions/author'">
+                <xsl:choose>
+                    <xsl:when test="namespace-uri(current-group()[1]) = 'http://www.oxygenxml.com/extensions/author'">
+                        <xsl:variable name="content">
+                            <xsl:apply-templates select="current-group()"/>
+                        </xsl:variable>
+                        <xsl:if test="normalize-space($content)">
+                            <fo:list-item>
+                                <fo:list-item-label><fo:block><fo:inline/></fo:block></fo:list-item-label>
+                                <fo:list-item-body>
+                                    <fo:block>
+                                        <fo:inline>
+                                            <xsl:copy-of select="$content"/>
+                                        </fo:inline>    
+                                    </fo:block>
+                                </fo:list-item-body>
+                            </fo:list-item>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="current-group()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each-group>
+        </xsl:copy>
     </xsl:template>
     
     <!-- COLOR HIGHLIGHT, USE PROPER BG COLOR -->
@@ -44,7 +109,7 @@
     
     <!-- COMMENT CHANGE -->
     <xsl:template match="oxy:oxy-comment-hl">
-        <fo:inline background-color="yellow">
+        <fo:inline xsl:use-attribute-sets="change">
             <xsl:apply-templates/>
         </fo:inline>
     </xsl:template>
@@ -62,12 +127,10 @@
         <xsl:if test="$commentContent != ''">
             <xsl:variable name="fnid" select="generate-id($elem)"/>
             <fo:basic-link internal-destination="{$fnid}">
-                <fo:footnote start-indent="0" font-style="normal"
-                    font-size="14" font-weight="100"
-                    text-decoration="none">
-                    <fo:inline baseline-shift="super" font-size="75%" color="{$color}">[<xsl:value-of select="$number"/>]</fo:inline>
-                    <fo:footnote-body>   
-                        <fo:block color="{$color}" id="{$fnid}">     
+                <fo:footnote xsl:use-attribute-sets="footnote_style">
+                    <fo:inline color="{$color}" xsl:use-attribute-sets="footnote_char_style">[<xsl:value-of select="$number"/>]</fo:inline>
+                    <fo:footnote-body xsl:use-attribute-sets="footnote_body_style">   
+                        <fo:block color="{$color}" id="{$fnid}" xsl:use-attribute-sets="footnote_body_content_style">     
                             <xsl:copy-of select="$commentContent"/>                                          
                         </fo:block>
                     </fo:footnote-body>
@@ -80,7 +143,7 @@
     <xsl:template mode="getCommentContent" match="*">
         <xsl:param name="number"/>
         <xsl:param name="indent" select="0"/>
-        <fo:block>
+        <fo:block xsl:use-attribute-sets="comment">
             <xsl:choose>
                 <!-- Nested replies, indent to the left so that they appear like a conversation..-->
                 <xsl:when test="$indent = 1">
@@ -91,7 +154,7 @@
                 </xsl:when>
             </xsl:choose>
             <xsl:if test="$number">
-                <fo:inline baseline-shift="super" font-size="75%">
+                <fo:inline baseline-shift="super" xsl:use-attribute-sets="footnote_font_size">
                     <xsl:value-of select="$number"/>
                 </fo:inline>
             </xsl:if>
@@ -160,6 +223,73 @@
     <xsl:template match="node() | @*">
         <xsl:copy>
             <xsl:apply-templates select="node() | @*"/>
+        </xsl:copy>
+    </xsl:template>
+    
+    <xsl:template match="*:table">
+        <!-- Push up all track changes information placed directly in table or table body in order not to break the XSL-FO -->
+        <xsl:apply-templates select="node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author'] | *:table-body/node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author']
+            | *:table-header/node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author']"/>
+        <xsl:copy>
+            <xsl:apply-templates select="node()[not(namespace-uri() = 'http://www.oxygenxml.com/extensions/author')] | @*"/>
+        </xsl:copy>        
+    </xsl:template>
+    
+    <xsl:template match="*:table-row">
+        <xsl:copy>
+            <!-- Avoid all track changes information placed directly in row -->
+            <xsl:apply-templates select="node()[not(namespace-uri() = 'http://www.oxygenxml.com/extensions/author')] | @*"/>
+        </xsl:copy>        
+    </xsl:template>
+    
+    <xsl:template match="*:table-body">
+        <xsl:copy>
+            <!-- Avoid all track changes information placed directly in table-body -->
+            <xsl:apply-templates select="node()[not(namespace-uri() = 'http://www.oxygenxml.com/extensions/author')] | @*"/>
+        </xsl:copy>        
+    </xsl:template>
+
+    <xsl:template match="*:table-header">
+        <xsl:copy>
+            <!-- Avoid all track changes information placed directly in table-body -->
+            <xsl:apply-templates select="node()[not(namespace-uri() = 'http://www.oxygenxml.com/extensions/author')] | @*"/>
+        </xsl:copy>        
+    </xsl:template>
+
+    <xsl:template match="*:cell">
+        <xsl:copy>
+            <xsl:apply-templates select="@*"/>
+            <!-- Copy also change tracking information located before the cell. -->
+            <xsl:apply-templates select="preceding-sibling::node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author']"/>    
+            <xsl:apply-templates select="node()"/>
+            <!-- Copy also change tracking information located after the cell. -->
+            <xsl:apply-templates select="following-sibling::node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author']"/>
+        </xsl:copy>        
+    </xsl:template>
+    
+    <!--Avoid directly outputting oxy elements inside it-->
+    <xsl:template match="fo:flow[oxy:*]">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <xsl:for-each-group select="*" group-adjacent="namespace-uri() = 'http://www.oxygenxml.com/extensions/author'">
+                <xsl:choose>
+                    <xsl:when test="namespace-uri(current-group()[1]) = 'http://www.oxygenxml.com/extensions/author'">
+                        <xsl:variable name="content">
+                            <xsl:apply-templates select="current-group()"/>
+                        </xsl:variable>
+                        <xsl:if test="normalize-space($content)">
+                            <fo:block>
+                                <fo:inline>
+                                    <xsl:copy-of select="$content"/>
+                                </fo:inline>    
+                            </fo:block>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="current-group()"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </xsl:for-each-group>
         </xsl:copy>
     </xsl:template>
 </xsl:stylesheet>

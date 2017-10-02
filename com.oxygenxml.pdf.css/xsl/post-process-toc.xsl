@@ -1,3 +1,8 @@
+<!-- 
+    
+    This stylesheet processes the TOC.
+
+-->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
     xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
     xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
@@ -6,38 +11,48 @@
     xmlns:saxon="http://saxon.sf.net/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns:ImageInfo="java:ImageInfo" exclude-result-prefixes="#all">
-    <!--
-    	
-        TOC fixes.
-        
-    -->
+    
     <!-- Remove the the link text, leave only the navtitle, which has markup. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' map/linktext ')]"/>
-    <!-- Remove short descriptions from topicmetas in the toc.-->
+    
+    <!-- Remove short descriptions from topicmetas in the toc. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' map/shortdesc ')]"/>
+    
     <!-- Remove the reltables from the toc. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' map/reltable ')]"/>
-
-
-    <!-- Move the id from the topicref parent to the navtitle.
-        The id is declared again in the topic content below. -->
+    
+    <!-- Remove the id from the topicref. The id is declared again in the topic from the main content and would break linking. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' map/topicref ')]/@id"/>
-
+    
+    <!-- Generate a href attribute for the topicref that has none.  -->
+    <xsl:template match="opentopic:map//*[contains(@class, ' map/topicref ')][not(@href)]/@id" priority="2">
+        <xsl:attribute name="href" select="concat('#', .)"/>
+    </xsl:template>
+    
+    <!-- For parts without topic meta that have just a @navtitle, generate a topicmeta for it. (This happens for bookmap parts with just a navtitile and have no href)-->
+    <xsl:template match="opentopic:map//*[contains(@class, ' map/topicref ')][not(*[contains(@class, ' map/topicmeta ')])][@navtitle]" priority="2">
+        <xsl:copy>
+            <xsl:apply-templates select="@* except @id"/>            
+            <topicmeta class="- map/topicmeta ">
+                <navtitle class="- topic/navtitle " href="#{@id}"><xsl:value-of select="@navtitle"/></navtitle>
+            </topicmeta>                    
+            <xsl:apply-templates select="node()"/>
+        </xsl:copy>
+    </xsl:template>
+    
     <!-- Exclude references marked as not entering the TOC. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' map/topicref ')][@toc = 'no']" priority="100"/>
- 
+
+    <!-- Remove the markup from the <navtitle> children. 
+         It causes Prince to break the lines in the TOC before and after each of the 
+         inline elements. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' topic/navtitle ')]">
         <xsl:copy>
             <xsl:call-template name="navtitle.href"/>
-            <!-- Remove the markup from the <navtitle> children. 
-                It causes Prince to break the lines in the TOC before and after each of the 
-                inline elements. -->
-            <!--   <xsl:apply-templates select="@*|node()"/> -->
             <xsl:apply-templates select="@*"/>
             <xsl:apply-templates select="node()|*" mode="navtitle"/>            
         </xsl:copy>
     </xsl:template>
-    
     <xsl:template match="*[contains(@class, ' topic/tm ')]" mode="navtitle">
         <xsl:choose>
             <xsl:when test="@tmtype = 'tm'">&#8482;</xsl:when>
@@ -45,7 +60,6 @@
             <xsl:when test="@tmtype = 'service'">&#8480;</xsl:when>
         </xsl:choose>
     </xsl:template>
-    
     <xsl:template name="navtitle.href">
         <xsl:attribute name="href">
             <xsl:variable name="closestTopicref"
@@ -69,7 +83,7 @@
     <!-- 
         Sometimes the @navtitle attribute on the topicref element is used instead 
         of the <topicmeta>/<navtitle> element.
-        DITA OT generates a linktext in this case. To simplify CSS processing,
+        DITA-OT generates a linktext in this case. To simplify CSS processing,
         we'll create a navtitle out of the linktext.
     -->
     <xsl:template match="opentopic:map//topicmeta[linktext][not(navtitle)]">
@@ -84,7 +98,7 @@
 
 
     <!-- 
-        Processes the opentopic:map element, this gives the structure of the TOC.
+        Processes the opentopic:map element, this gives the main structure of the TOC.
     -->
     <xsl:template match="opentopic:map">
         <xsl:copy>
@@ -109,17 +123,18 @@
             </oxy:toc-title>
 
             <!-- 
-                Adds the main content.
+                Adds the TOC main content.
             -->
             <xsl:apply-templates select="node()"/>
             
             <!-- 
-                Add a reference to the generated index element 
+                Add a reference to the generated index element,
+                but only if it contains at least one child.  
             -->
             <xsl:variable name="indexElem" select="//opentopic-index:index.groups[1]"/>
-            <xsl:if test="$indexElem">
+            <xsl:if test="$indexElem/*">
                 <xsl:variable name="indexId" select="generate-id($indexElem)"/>
-                <topicref is-chapter="true" class="- map/topicref ">
+                <topicref is-chapter="true" is-index="true" class="- map/topicref ">
                     <topicmeta class="- map/topicmeta ">
                         <!-- TODO i18n -->
                         <navtitle href="#{$indexId}" class="- topic/navtitle ">Index</navtitle>

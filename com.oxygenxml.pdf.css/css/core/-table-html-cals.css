@@ -41,13 +41,20 @@
 *[class~="topic/table"],
 informaltable{
   display: table;
-  margin: 1.5ex 0.5ex;
-  /*overriden in cals_table.css*/
-  /*See -colors.css */
-  border-color: #EEEEEE;
-  border-style:solid;
-  border-width:1px;
 }
+
+@media oxygen {
+	*[class~="topic/table"],
+	informaltable{
+	  /*overriden in cals_table.css*/
+	  /*See -colors.css */
+	  border-color: #EEEEEE;
+	  border-style:solid;
+	  border-width:1px;
+	  margin: 1.5em 0.5em;
+	}
+}
+
 
 /*
   Frame attribute - Specifies how the table is to be framed.
@@ -163,7 +170,7 @@ it's silly to align the colspec element*/
   A wrapper for the main content of a table, or part of a table
  */
 *[class~="topic/tgroup"] {
-  display: table-row-group;
+  display: table;
 }
 
 *[class~="topic/tbody"] {
@@ -175,13 +182,16 @@ it's silly to align the colspec element*/
     A table header consisting of one or more rows 
 */
 *[class~="topic/thead"] {
-  display: table-header-group;  
+  display: table-header-group;
+  font-weight: bold;
+  text-align: center;  
 }
 
-th, *[class~="topic/thead"] {
-  /*See -colors.css */
-  background-color: #DDEEFF;
-  font-weight:bold;
+@media oxygen {
+	*[class~="topic/thead"], th {
+	  /*See -colors.css */
+	  background-color: #DDEEFF;
+	}
 }
 
 /* 
@@ -189,9 +199,15 @@ th, *[class~="topic/thead"] {
 */
 *[class~="topic/tfoot"] {
   display: table-footer-group;
-  font-style:oblique;
-  background-color: #DEDEDE;
   font-weight: bold;
+  text-align: center;    
+}
+
+@media oxygen {	
+	*[class~="topic/tfoot"] {
+	  /*See -colors.css */
+	  background-color: #DEDEDE;
+	}
 }
 
 
@@ -210,24 +226,40 @@ tr{
 *[class~="topic/entry"],
 td{
     display:table-cell;
-    /*See -colors.css */
-    border-color: #EEEEEE;
-    border-style:solid;
-    border-width:1px;
-    padding-top:1px;
-    padding-bottom:1px;
-    padding-left:5px;
-    padding-right:5px;
+}
+tr {
+	vertical-align: middle;
+}
+
+@media screen {
+	*[class~="topic/entry"],
+	td{
+	    /*See -colors.css */
+	    border-color: #EEEEEE;
+	    border-style:solid;
+	    border-width:1px;
+	    padding-top:1px;
+	    padding-bottom:1px;
+	    padding-left:5px;
+	    padding-right:5px;
+	}	
 }
 
 th {
   display:table-cell;     
-  border-style:solid;
-  border-width:1px;
-  padding-top:1px;
-  padding-bottom:1px;
-  padding-left:5px;
-  padding-right:5px;
+  font-weight:bold;
+  text-align: center;    
+}
+
+@media oxygen {
+	th {
+	  border-style:solid;
+	  border-width:1px;
+	  padding-top:1px;
+	  padding-bottom:1px;
+	  padding-left:5px;
+	  padding-right:5px;
+	}	
 }
 
 /* 
@@ -802,6 +834,7 @@ td[bgcolor]{
     font-family:sansserif, verdana, helvetica;
 	font-size:0.75em;
 }
+@media oxygen {
 
 *[class~="topic/colspec"]:after{
     content:
@@ -836,3 +869,6 @@ spanspec:after{
     		" end column " oxy_textfield(edit, "@nameend", columns, 7);    
 	white-space: pre;
 }
+
+} 
+

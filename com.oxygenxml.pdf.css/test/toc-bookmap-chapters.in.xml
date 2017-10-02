@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Test for a bookmap that has only chapters, no parts. -->
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+
+        <chapter class="- map/topicref bookmap/chapter " href="#unique_1" id="unique_1" type="topic">
+            <topicmeta class="- map/topicmeta ">
+                <linktext class="- map/linktext ">Installing</linktext>
+            </topicmeta>
+            <topicref class="- map/topicref " href="#unique_2" id="unique_2" type="topic">
+	            <topicmeta class="- map/topicmeta ">
+	                <linktext class="- map/linktext ">Installing on Windows</linktext>
+	            </topicmeta>
+	         </topicref>
+	         <topicref class="- map/topicref " href="#unique_3" id="unique_3" type="topic">
+	            <topicmeta class="- map/topicmeta ">
+	                <linktext class="- map/linktext ">Installing on Mac</linktext>
+	            </topicmeta>
+	         </topicref>	            
+        </chapter>
+        <chapter class="- map/topicref bookmap/chapter " href="#unique_4" id="unique_4" type="topic">
+            <topicmeta class="- map/topicmeta ">
+                <linktext class="- map/linktext ">Uninstalling</linktext>
+            </topicmeta>
+        </chapter>
+            
+
+    </opentopic:map>
+     <topic class="- topic/topic " id="unique_1">
+         <title class="- topic/title "><!-- Should be marked as chapter -->Installing</title>
+	     <topic class="- topic/topic " id="unique_2">
+	            <title class="- topic/title ">Installing on Windows</title>	            
+	     </topic>            
+	     <topic class="- topic/topic " id="unique_3">
+	            <title class="- topic/title ">Installing on Mac</title>	            
+	     </topic>            
+     </topic>
+     <topic class="- topic/topic " id="unique_4">
+       <title class="- topic/title "><!-- Should be marked as chapter -->Uninstalling</title>
+     </topic>
+
+</bookmap>

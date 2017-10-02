@@ -16,13 +16,13 @@
             </booklists>
         </frontmatter>
 
-        <topicref class="- map/topicref " href="#unique_5" id="unique_5" locktitle="yes"
+        <chapter class="- map/topicref bookmap/chapter " href="#unique_5" id="unique_5" locktitle="yes"
             navtitle="Installation Options" type="concept">
             <topicmeta class="- map/topicmeta ">
                 <linktext class="- map/linktext ">Installation Options for Oxygen XML
                     Author</linktext>
             </topicmeta>
-        </topicref>
+        </chapter>
 
     </opentopic:map>
 </bookmap>

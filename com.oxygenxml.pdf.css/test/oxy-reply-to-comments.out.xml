@@ -1,83 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" class="- map/map bookmap/bookmap ">
-    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
-        <oxy:front-page-title/>
-    </oxy:front-page>
-    <topic break-before="true" class="- topic/topic " id="unique_1">
-        <title class="- topic/title ">Replies.</title>
-        <body class="- topic/body ">
-            <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_1" hr_id="1"/>
-            <oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_1" hr_id="1">
-                <oxy:oxy-author>dan</oxy:oxy-author>
-                <oxy:oxy-comment-text>A</oxy:oxy-comment-text>
-                <oxy:oxy-comment-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-id>
-                <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                <oxy:oxy-hour>09:31:52</oxy:oxy-hour>
-                <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-                <oxy:oxy-comment href="#sc_6" hr_id="6">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-comment-text>X</oxy:oxy-comment-text>
-                    <oxy:oxy-comment-id>9e0c8f32-af85-4acf-8e1a-e34bba062e54</oxy:oxy-comment-id>
-                    <oxy:oxy-comment-parent-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-parent-id>
-                    <oxy:oxy-mid>5</oxy:oxy-mid>
-                    <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                    <oxy:oxy-hour>09:32:27</oxy:oxy-hour>
-                    <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-                    <oxy:oxy-comment href="#sc_3" hr_id="3">
-                        <oxy:oxy-author>dan</oxy:oxy-author>
-                        <oxy:oxy-comment-text>X1</oxy:oxy-comment-text>
-                        <oxy:oxy-comment-id>2</oxy:oxy-comment-id>
-                        <oxy:oxy-comment-parent-id>9e0c8f32-af85-4acf-8e1a-e34bba062e54</oxy:oxy-comment-parent-id>
-                        <oxy:oxy-mid>2</oxy:oxy-mid>
-                        <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                        <oxy:oxy-hour>17:09:46</oxy:oxy-hour>
-                        <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-                    </oxy:oxy-comment>
-                    <oxy:oxy-comment href="#sc_4" hr_id="4">
-                        <oxy:oxy-author>dan</oxy:oxy-author>
-                        <oxy:oxy-comment-text>X2</oxy:oxy-comment-text>
-                        <oxy:oxy-comment-id>3</oxy:oxy-comment-id>
-                        <oxy:oxy-comment-parent-id>9e0c8f32-af85-4acf-8e1a-e34bba062e54</oxy:oxy-comment-parent-id>
-                        <oxy:oxy-mid>3</oxy:oxy-mid>
-                        <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                        <oxy:oxy-hour>17:11:11</oxy:oxy-hour>
-                        <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-                    </oxy:oxy-comment>
-                </oxy:oxy-comment>
-                <oxy:oxy-comment href="#sc_2" hr_id="2">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-comment-text>AB</oxy:oxy-comment-text>
-                    <oxy:oxy-comment-id>a2a1f462-6518-467c-aae9-e02eac1fae08</oxy:oxy-comment-id>
-                    <oxy:oxy-comment-parent-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-parent-id>
-                    <oxy:oxy-mid>1</oxy:oxy-mid>
-                    <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                    <oxy:oxy-hour>09:35:29</oxy:oxy-hour>
-                    <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-                </oxy:oxy-comment>
-                <oxy:oxy-comment href="#sc_5" hr_id="5">
-                    <oxy:oxy-author>dan</oxy:oxy-author>
-                    <oxy:oxy-comment-text>AC</oxy:oxy-comment-text>
-                    <oxy:oxy-comment-id>4</oxy:oxy-comment-id>
-                    <oxy:oxy-comment-parent-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-parent-id>
-                    <oxy:oxy-mid>4</oxy:oxy-mid>
-                    <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                    <oxy:oxy-hour>09:35:45</oxy:oxy-hour>
-                    <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-                </oxy:oxy-comment>
-            </oxy:oxy-comment>
-            <oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">selected</oxy:oxy-comment-hl>
-            <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="1"/>
-            <oxy:oxy-range-start xmlns:oxy="http://www.oxygenxml.com/extensions/author" id="sc_7" hr_id="2"/>
-            <oxy:oxy-comment xmlns:oxy="http://www.oxygenxml.com/extensions/author" href="#sc_7" hr_id="2">
-                <oxy:oxy-author>dan</oxy:oxy-author>
-                <oxy:oxy-comment-text>Other</oxy:oxy-comment-text>
-                <oxy:oxy-comment-id>75fd3556-7284-41b1-97f0-d5ae4014de883</oxy:oxy-comment-id>
-                <oxy:oxy-date>2016/01/25</oxy:oxy-date>
-                <oxy:oxy-hour>09:31:52</oxy:oxy-hour>
-                <oxy:oxy-tz>+02:00</oxy:oxy-tz>
-            </oxy:oxy-comment>
-            <oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"> This comment should be numbered as "hr_id=2", since it is the second main comment. The other ones are replies. </oxy:oxy-comment-hl>
-            <oxy:oxy-range-end xmlns:oxy="http://www.oxygenxml.com/extensions/author" hr_id="2"/>
-        </body>
-    </topic>
+<bookmap class="- map/map bookmap/bookmap " xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_1">
+    <title class="- topic/title ">Replies.</title>
+    <body class="- topic/body ">
+      <oxy:oxy-range-start hr_id="1" id="sc_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <oxy:oxy-comment hr_id="1" href="#sc_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <oxy:oxy-author>dan</oxy:oxy-author>
+        <oxy:oxy-comment-text>A</oxy:oxy-comment-text>
+        <oxy:oxy-comment-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-id>
+        <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+        <oxy:oxy-hour>09:31:52</oxy:oxy-hour>
+        <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+        <oxy:oxy-comment hr_id="6" href="#sc_6">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-comment-text>X</oxy:oxy-comment-text>
+          <oxy:oxy-comment-id>9e0c8f32-af85-4acf-8e1a-e34bba062e54</oxy:oxy-comment-id>
+          <oxy:oxy-comment-parent-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-parent-id>
+          <oxy:oxy-mid>5</oxy:oxy-mid>
+          <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+          <oxy:oxy-hour>09:32:27</oxy:oxy-hour>
+          <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          <oxy:oxy-comment hr_id="3" href="#sc_3">
+            <oxy:oxy-author>dan</oxy:oxy-author>
+            <oxy:oxy-comment-text>X1</oxy:oxy-comment-text>
+            <oxy:oxy-comment-id>2</oxy:oxy-comment-id>
+            <oxy:oxy-comment-parent-id>9e0c8f32-af85-4acf-8e1a-e34bba062e54</oxy:oxy-comment-parent-id>
+            <oxy:oxy-mid>2</oxy:oxy-mid>
+            <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+            <oxy:oxy-hour>17:09:46</oxy:oxy-hour>
+            <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          </oxy:oxy-comment>
+          <oxy:oxy-comment hr_id="4" href="#sc_4">
+            <oxy:oxy-author>dan</oxy:oxy-author>
+            <oxy:oxy-comment-text>X2</oxy:oxy-comment-text>
+            <oxy:oxy-comment-id>3</oxy:oxy-comment-id>
+            <oxy:oxy-comment-parent-id>9e0c8f32-af85-4acf-8e1a-e34bba062e54</oxy:oxy-comment-parent-id>
+            <oxy:oxy-mid>3</oxy:oxy-mid>
+            <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+            <oxy:oxy-hour>17:11:11</oxy:oxy-hour>
+            <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          </oxy:oxy-comment>
+        </oxy:oxy-comment>
+        <oxy:oxy-comment hr_id="2" href="#sc_2">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-comment-text>AB</oxy:oxy-comment-text>
+          <oxy:oxy-comment-id>a2a1f462-6518-467c-aae9-e02eac1fae08</oxy:oxy-comment-id>
+          <oxy:oxy-comment-parent-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-parent-id>
+          <oxy:oxy-mid>1</oxy:oxy-mid>
+          <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+          <oxy:oxy-hour>09:35:29</oxy:oxy-hour>
+          <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+        </oxy:oxy-comment>
+        <oxy:oxy-comment hr_id="5" href="#sc_5">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-comment-text>AC</oxy:oxy-comment-text>
+          <oxy:oxy-comment-id>4</oxy:oxy-comment-id>
+          <oxy:oxy-comment-parent-id>75fd3556-7284-41b1-97f0-d5ae4014de91</oxy:oxy-comment-parent-id>
+          <oxy:oxy-mid>4</oxy:oxy-mid>
+          <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+          <oxy:oxy-hour>09:35:45</oxy:oxy-hour>
+          <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+        </oxy:oxy-comment>
+      </oxy:oxy-comment>
+      <oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">selected</oxy:oxy-comment-hl>
+      <oxy:oxy-range-end hr_id="1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <oxy:oxy-range-start hr_id="2" id="sc_7" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <oxy:oxy-comment hr_id="2" href="#sc_7" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <oxy:oxy-author>dan</oxy:oxy-author>
+        <oxy:oxy-comment-text>Other</oxy:oxy-comment-text>
+        <oxy:oxy-comment-id>75fd3556-7284-41b1-97f0-d5ae4014de883</oxy:oxy-comment-id>
+        <oxy:oxy-date>2016/01/25</oxy:oxy-date>
+        <oxy:oxy-hour>09:31:52</oxy:oxy-hour>
+        <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+      </oxy:oxy-comment>
+      <oxy:oxy-comment-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+                This comment should be numbered as "hr_id=2", since it is the second main comment. The other ones are replies.
+            </oxy:oxy-comment-hl>
+      <oxy:oxy-range-end hr_id="2" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    </body>
+  </topic>
 </bookmap>

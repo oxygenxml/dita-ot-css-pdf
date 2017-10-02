@@ -73,6 +73,10 @@
   font-weight: bold;
   /* <<< */
 }
+/* If there is a title, do not show static content before it... */
+*[class~='troubleshooting/condition']:before! > *[class~="topic/title"] {
+  display:none;
+}
 
 /* ====================================
  *
@@ -99,6 +103,11 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
+}
+
+/* If there is a title, do not show static content before it... */
+*[class~='troubleshooting/troubleSolution']:before! > *[class~="topic/title"] {
+  display:none;
 }
 
 /* ====================================
@@ -130,6 +139,11 @@
   /* <<< */
 }
 
+/* If there is a title, do not show static content before it... */
+*[class~='troubleshooting/cause']:before! > *[class~="topic/title"] {
+  display:none;
+}
+
 /* ====================================
  *
  * <remedy>
@@ -155,6 +169,11 @@
   /* <<< */
 }
 
+/* If there is a title, do not show static content before it... */
+*[class~='troubleshooting/remedy']:before! > *[class~="topic/title"] {
+  display:none;
+}
+
 /* ====================================
  *
  * <responsibleParty>
@@ -171,4 +190,9 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
+}
+
+/* If there is a title, do not show static content before it... */
+*[class~='troubleshooting/responsibleParty']:before! > *[class~="topic/title"] {
+  display:none;
 }

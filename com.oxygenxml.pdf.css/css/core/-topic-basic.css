@@ -79,16 +79,17 @@
 @media print {
   *[class~="topic/topic"] > *[class~="topic/title"] {
       padding-bottom:2pt;
-      border-bottom:2pt solid;
+      border-bottom:2.5pt solid;
   }
   *[class~="topic/topic"]  *[class~="topic/topic"] > *[class~="topic/title"] {
       padding-bottom:1pt;
-      border-bottom:1pt solid;
+      border-bottom:1.5pt solid;
   }  
   *[class~="topic/topic"]  *[class~="topic/topic"]  *[class~="topic/topic"] > *[class~="topic/title"] {
       border-bottom:none;
   }  
 }
+
 
 
 /*
@@ -260,6 +261,14 @@
   font-weight: bold;
   /* <<< */
   content: "Related information: ";
+}
+/* 
+ * Do not show the label if there is a title in the related links list.
+ */
+@media oxygen and (platform:"standalone"), oxygen and (platform:"eclipse") {
+	*[class~="topic/related-links"]:has(*[class~="topic/linklist"] > *[class~="topic/title"]):before {
+    content: none;
+  }
 }
 
 

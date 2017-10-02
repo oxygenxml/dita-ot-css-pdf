@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
     xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-    class="- map/map bookmap/bookmap " collection-type="sequence">
+    class="- map/map  " collection-type="sequence">
     <topic class="- topic/topic " id="unique_2">
         <title class="- topic/title ">Introduction</title>
         <p class="- topic/p ">
@@ -20,4 +20,4 @@
             <image class="- topic/image " href="images/NotExisting.jpg" scale="33" placement="inline" xtrf="MAP_FILE_DIR/topics/flowers/iris.dita"/>
         </p>
     </topic>
-</bookmap>
+</map>

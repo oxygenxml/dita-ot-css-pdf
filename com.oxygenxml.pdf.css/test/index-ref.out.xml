@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
-    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
-        <oxy:front-page-title/>
-    </oxy:front-page>
-    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
-        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" empty="true"/>
-        <topicref is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_2" type="topic">
-            <topicmeta class="- map/topicmeta ">
-                <navtitle href="#unique_2" class="- topic/navtitle ">Introduction</navtitle>
-            </topicmeta>
-        </topicref>
-        <!-- Should generate here a link to the index.groups element -->
-        <topicref is-chapter="true" class="- map/topicref ">
-            <topicmeta class="- map/topicmeta ">
-                <navtitle href="#remapped_id_1" class="- topic/navtitle ">Index</navtitle>
-            </topicmeta>
-        </topicref>
-    </opentopic:map>
-    <topic break-before="true" class="- topic/topic " id="unique_2">
-        <title class="- topic/title ">Introduction</title>
-    </topic>
-    <!-- Should generate an ID on this element, linked from the above link. -->
-    <opentopic-index:index.groups id="remapped_id_1">
-        <opentopic-index:index.group>
-            <opentopic-index:label>A</opentopic-index:label>
-            <opentopic-index:index.entry value="Archives">
-                <opentopic-index:formatted-value>Archives</opentopic-index:formatted-value>
-                <opentopic-index:refID value="Archives:"/>
-                <opentopic-index:index.entry value="browse">
-                    <opentopic-index:formatted-value>browse</opentopic-index:formatted-value>
-                    <opentopic-index:refID value="Archives:browse:"/>
-                </opentopic-index:index.entry>
-            </opentopic-index:index.entry>
-        </opentopic-index:index.group>
-    </opentopic-index:index.groups>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title/>
+  </oxy:front-page>
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <topicref class="- map/topicref bookmap/chapter " href="#unique_2" is-chapter="true" type="topic">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_2">Introduction</navtitle>
+      </topicmeta>
+    </topicref>
+    <!-- Should generate here a link to the index.groups element -->
+    <topicref class="- map/topicref " is-chapter="true" is-index="true">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#remapped_id_1">Index</navtitle>
+      </topicmeta>
+    </topicref>
+  </opentopic:map>
+  <topic break-before="true" class="- topic/topic " id="unique_2" is-chapter="true" oxy:topicref-class="- map/topicref bookmap/chapter " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title ">Introduction</title>
+  </topic>
+  <!-- Should generate an ID on this element, linked from the above link. -->
+  <opentopic-index:index.groups id="remapped_id_1">
+    <opentopic-index:index.group>
+      <opentopic-index:label>A</opentopic-index:label>
+      <opentopic-index:index.entry value="Archives">
+        <opentopic-index:formatted-value>Archives</opentopic-index:formatted-value>
+        <opentopic-index:refID value="Archives:"/>
+        <opentopic-index:index.entry value="browse">
+          <opentopic-index:formatted-value>browse</opentopic-index:formatted-value>
+          <opentopic-index:refID value="Archives:browse:"/>
+        </opentopic-index:index.entry>
+      </opentopic-index:index.entry>
+    </opentopic-index:index.group>
+  </opentopic-index:index.groups>
 </bookmap>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+	xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap "
+	collection-type="sequence">
+
+	<topic xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+        xmlns:oxy="http://www.oxygenxml.com/extensions/author" break-before="true" is-chapter="true"
+        oxy:topicref-class="- map/topicref " class="- topic/topic " id="unique_1"
+        oid="prop_flaggin_properties">
+        
+		<p class="- topic/p ">
+			<ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "
+				outputclass="color:red;">
+				<prop action="flag" att="audience" color="red" val="a-color-red" />
+			</ditaval-startprop>
+			Lorem ipsum dolor sit amet,
+			<ph class="- topic/ph ">
+				<ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "
+					outputclass="background-color:blue;">
+					<prop action="flag" att="audience" backcolor="blue" val="a-bg-blue" />
+				</ditaval-startprop>
+				consectetur adipiscing
+				<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+					<prop action="flag" att="audience" backcolor="blue" val="a-bg-blue" />
+				</ditaval-endprop>
+			</ph>
+			elit.
+			Curabitur congue nibh
+			<ph class="- topic/ph ">
+				<ditaval-startprop class="+ topic/foreign ditaot-d/ditaval-startprop "
+					outputclass="background-color:orange;">
+					<prop action="flag" att="audience" backcolor="orange" val="a-bg-orange" />
+				</ditaval-startprop>
+				sit amet vestibulum consequat
+				<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+					<prop action="flag" att="audience" backcolor="orange" val="a-bg-orange" />
+				</ditaval-endprop>
+			</ph>
+			. Morbi ante enim, egestas ut
+			congue hendrerit, pharetra gravida odio.
+			<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+				<prop action="flag" att="audience" color="red" val="a-color-red" />
+			</ditaval-endprop>
+		</p>
+	</topic>
+</bookmap>

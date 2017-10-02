@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
     xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
-    class="- map/map bookmap/bookmap " collection-type="sequence">
-
-<!-- This is a topic that declares the following indexterms:
+    class="- map/map " collection-type="sequence">
     
-        packages:
-        packages:adding automatically
-        
-        deployment: http
-        deployment: https
-        
-        
-        The structure of the index should be:
-        
-        packages [link]
-            adding automatically [link]
-        deployment 
-            http  [link]
-            https [link]
-            
-        The "packages" branch node should have a link because there is also an indexterm with just this value.
-        The "deployment" branch node should NOT have a link because it appears only in conjunction with its children.
-            
--->
     <topic class="- topic/topic " id="unique_2">
         <!-- The "packages" leaf indexterm -->
         <opentopic-index:index.entry value="packages">
@@ -91,4 +70,4 @@
         </opentopic-index:index.group>
         
     </opentopic-index:index.groups>
-</bookmap>
+</map>

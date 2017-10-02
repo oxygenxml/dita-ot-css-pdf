@@ -399,15 +399,13 @@
  * Although rendering is left up to implementations, 
  * processors generally render lq as an indented block.
  */
-*[class~="topic/lq"]:before {
-      content: '\201C'; /* was: open-quote, but Prince XML does not know it.*/
-}
-*[class~="topic/lq"]:after {
-      content: '\201D'; /* was: closed-quote, but Prince XML does not know it.*/
-}
 *[class~="topic/lq"] {
   display: block;
-  margin: 1.5em 3em;
+  margin: 1.5em 5em 1.5em 5em;
+  padding-left:0.5em;
+  display: block;
+  border-style:solid;
+  border-width:1px;
 }
 /*
  * =========================================================
@@ -481,100 +479,102 @@
 /* 
  * Datakeyref video.
  */
-    *[class~="topic/object"][outputclass="video"][datakeyref]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="video"][datakeyref]{
       content: oxy_video(href, attr(datakeyref, keyref));
     }
-    *[class~="topic/object"][outputclass="video"][datakeyref][width][height]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="video"][datakeyref][width][height]{
       content: oxy_video(href, attr(datakeyref, keyref), width, attr(width, length), height, attr(height, length));
     }
-    *[class~="topic/object"][outputclass="video"][datakeyref][width]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="video"][datakeyref][width]{
       content: oxy_video(href, attr(datakeyref, keyref), width, attr(width, length));
     }
-    *[class~="topic/object"][outputclass="video"][datakeyref][height]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="video"][datakeyref][height]{
       content: oxy_video(href, attr(datakeyref, keyref), height, attr(height, length));
     }
 /* 
  * Audio datakeyref. 
  */
-    *[class~="topic/object"][outputclass="audio"][datakeyref]:before,
-    *[class~="topic/object"][outputclass="audio"][datakeyref][height]:before{
-      display:block;
+    *[class~="topic/object"][outputclass="audio"][datakeyref],
+    *[class~="topic/object"][outputclass="audio"][datakeyref][height]{
       content: oxy_audio(href, attr(datakeyref, keyref));
     }
-    *[class~="topic/object"][outputclass="audio"][datakeyref][width]:before,
-    *[class~="topic/object"][outputclass="audio"][datakeyref][width][height]:before{
+    *[class~="topic/object"][outputclass="audio"][datakeyref][width],
+    *[class~="topic/object"][outputclass="audio"][datakeyref][width][height]{
       content: oxy_audio(href, attr(datakeyref, keyref), width, attr(width, length));
     }
 /* 
  * Browser datakeyref.
  */
-    *[class~="topic/object"][outputclass="iframe"][datakeyref]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="iframe"][datakeyref]{
       content: oxy_browser(href, attr(datakeyref, keyref));
     }
-    *[class~="topic/object"][outputclass="iframe"][datakeyref][width][height]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="iframe"][datakeyref][width][height]{
       content: oxy_browser(href, attr(datakeyref, keyref), width, attr(width, length), height, attr(height, length));
     }
-    *[class~="topic/object"][outputclass="iframe"][datakeyref][width]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="iframe"][datakeyref][width]{
       content: oxy_browser(href, attr(datakeyref, keyref), width, attr(width, length));
     }
-    *[class~="topic/object"][outputclass="iframe"][datakeyref][height]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="iframe"][datakeyref][height]{
       content: oxy_browser(href, attr(datakeyref, keyref), height, attr(height, length));
     }
     
 /* 
  * Data attribute.
  */
-    *[class~="topic/object"][outputclass="iframe"][data]:before {
-      display:block;
+    *[class~="topic/object"][outputclass="iframe"][data]{
+        display:inline;
       content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)));
     }
-    *[class~="topic/object"][outputclass="iframe"][data][width][height]:before {
+    *[class~="topic/object"][outputclass="iframe"][data][width][height]{
       content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length), height, attr(height, length));
     }
-    *[class~="topic/object"][outputclass="iframe"][data][width]:before {
+    *[class~="topic/object"][outputclass="iframe"][data][width]{
       content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length));
     }
-    *[class~="topic/object"][outputclass="iframe"][data][height]:before {
+    *[class~="topic/object"][outputclass="iframe"][data][height]{
       content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(data)), height, attr(height, length));
     }
     
-    *[class~="topic/object"][data]:before {
-      display:block;
+    *[class~="topic/object"][data]{
       content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)));
     }
-    *[class~="topic/object"][data][width][height]:before {
+    *[class~="topic/object"][data][width][height]{
       content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length), height, attr(height, length));
     }
-    *[class~="topic/object"][data][width]:before {
+    *[class~="topic/object"][data][width]{
       content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length));
     }
-    *[class~="topic/object"][data][height]:before {
+    *[class~="topic/object"][data][height]{
       content: oxy_video(href, oxy_url(oxy_base-uri(), attr(data)), height, attr(height, length));
     }
     
-    *[class~="topic/object"][outputclass="audio"][data]:before,
-    *[class~="topic/object"][outputclass="audio"][data][height]:before{
-      display:block;
+    *[class~="topic/object"][outputclass="audio"][data],
+    *[class~="topic/object"][outputclass="audio"][data][height]{
       content: oxy_audio(href, oxy_url(oxy_base-uri(), attr(data)));
     }
     
-    *[class~="topic/object"][outputclass="audio"][data][width]:before,
-    *[class~="topic/object"][outputclass="audio"][data][width][height]:before{
+    *[class~="topic/object"][outputclass="audio"][data][width],
+    *[class~="topic/object"][outputclass="audio"][data][width][height]{
       content: oxy_audio(href, oxy_url(oxy_base-uri(), attr(data)), width, attr(width, length));
     }
     
-    object > param[name='src']:before(10) {
-      display:block;
-      content: oxy_video(href, oxy_url(oxy_base-uri()))
+    object > param[name='src']{
+      content: oxy_video(href, oxy_url(oxy_base-uri()), attr(src))
     }
+    
+    video > source[value]{
+      content: oxy_video(href, oxy_url(oxy_base-uri(), attr(value)))
+    }
+    video > source[value*="www.youtube.com"]{
+      content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(value)))
+    }
+    audio > source[value]{
+      content: oxy_audio(href, oxy_url(oxy_base-uri(), attr(value)))
+    }
+    video > source[class]:before, audio > source[class]:before {
+      content: "\A Source Value: " oxy_textfield(edit, "@value", columns, 10);
+    }
+
 
 @media print {
   *[class~="topic/object"] {

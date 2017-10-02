@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
-    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
-        <oxy:front-page-title/>
-    </oxy:front-page>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title/>
+  </oxy:front-page>
 </bookmap>

@@ -23,13 +23,16 @@
         font-weight:bold;
     }
 
-    @page front-page {
-/*TODO - does not apply correclty in AH */
-        @top {          content:none }
-        @bottom {       content:none }
-        @bottom-right { content:none }
-        @bottom-left {  content:none }
-        @top-right {    content:none }
-        @top-left {     content:none }
+    @page front-page {    	
+        @top-left-corner    {          content:none }
+        @top-left           {          content:none }
+        @top-center         {          content:none }
+        @top-right          {          content:none }
+        @top-right-corner   {          content:none }
+        @bottom-left-corner {          content:none }
+        @bottom-left        {          content:none }
+        @bottom-center      {          content:none }
+        @bottom-right       {          content:none }
+        @bottom-right-corner{          content:none }
     }
 }

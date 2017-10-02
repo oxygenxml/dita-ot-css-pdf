@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title/>
+  </oxy:front-page>
+  <title>The highlights of unclosed insert should should disable all insert highlights in that topic.</title>
+  <topic class="- topic/topic " id="unique_1">
+    <title class="- topic/title ">First</title>
+    <body class="- topic/body ">
+      <p class="- topic/p ">A  <oxy:oxy-range-start hr_id="1" id="sc_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+        <oxy:oxy-insert hr_id="1" href="#sc_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-content>insert</oxy:oxy-content>
+          <oxy:oxy-date>2017/09/15</oxy:oxy-date>
+          <oxy:oxy-hour>12:37:03</oxy:oxy-hour>
+          <oxy:oxy-tz>+03:00</oxy:oxy-tz>
+        </oxy:oxy-insert>good one, closing <oxy:oxy-range-end hr_id="1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>.</p>
+      <p class="- topic/p ">An insert starting  <oxy:oxy-range-start hr_id="2" id="sc_2" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+        <oxy:oxy-insert hr_id="2" href="#sc_2" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-content>insert</oxy:oxy-content>
+          <oxy:oxy-date>2017/09/15</oxy:oxy-date>
+          <oxy:oxy-hour>12:37:03</oxy:oxy-hour>
+          <oxy:oxy-tz>+03:00</oxy:oxy-tz>
+        </oxy:oxy-insert>in the first topic, not closing.</p>
+    </body>
+  </topic>
+  <topic class="- topic/topic " id="unique_2">
+    <title class="- topic/title ">Second.</title>
+    <body class="- topic/body ">
+      <p class="- topic/p ">An insert starting  <oxy:oxy-range-start hr_id="3" id="sc_3" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+        <oxy:oxy-insert hr_id="3" href="#sc_3" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-content>insert</oxy:oxy-content>
+          <oxy:oxy-date>2017/09/15</oxy:oxy-date>
+          <oxy:oxy-hour>12:37:03</oxy:oxy-hour>
+          <oxy:oxy-tz>+03:00</oxy:oxy-tz>
+        </oxy:oxy-insert>
+        <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">in the second topic</oxy:oxy-insert-hl>
+        <oxy:oxy-range-end hr_id="3" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>, closing.</p>
+    </body>
+  </topic>
+</bookmap>

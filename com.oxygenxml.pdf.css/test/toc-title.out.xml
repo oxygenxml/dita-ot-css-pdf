@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
-    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
-        <oxy:front-page-title>
-            <booktitle xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" class="- topic/title bookmap/booktitle ">
-                <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
-                    <ph class="- topic/ph ">Oxygen XML Author</ph>
-                </mainbooktitle>
-            </booktitle>
-        </oxy:front-page-title>
-    </oxy:front-page>
-    <oxy:front-matter xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
-    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
-        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author">This is the TOC.</oxy:toc-title>
-        <booktitle class="- topic/title bookmap/booktitle ">
-            <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
-                <ph class="- topic/ph ">Oxygen XML Author</ph>
-            </mainbooktitle>
-        </booktitle>
-        <topicref is-chapter="true" class="- map/topicref " href="#unique_5" navtitle="Installation Options" type="concept">
-            <topicmeta class="- map/topicmeta ">
-                <navtitle class="- topic/navtitle " href="#unique_5">Installation Options for Oxygen XML Author</navtitle>
-            </topicmeta>
-        </topicref>
-    </opentopic:map>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title>
+      <booktitle class="- topic/title bookmap/booktitle " xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+          <ph class="- topic/ph ">Oxygen XML Author</ph>
+        </mainbooktitle>
+      </booktitle>
+    </oxy:front-page-title>
+  </oxy:front-page>
+  <oxy:front-matter class="- map/topicref bookmap/frontmatter " xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author">This is the TOC.</oxy:toc-title>
+    <booktitle class="- topic/title bookmap/booktitle ">
+      <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+        <ph class="- topic/ph ">Oxygen XML Author</ph>
+      </mainbooktitle>
+    </booktitle>
+    <chapter class="- map/topicref bookmap/chapter " href="#unique_5" is-chapter="true" navtitle="Installation Options" type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_5">Installation Options for Oxygen XML
+                    Author</navtitle>
+      </topicmeta>
+    </chapter>
+  </opentopic:map>
 </bookmap>

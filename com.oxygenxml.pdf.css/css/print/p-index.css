@@ -60,17 +60,40 @@
     index\.groups {
         display: block;
         page: index;
-        counter-reset: index-page 1;
+        counter-reset: page 1;
         columns: 2;
         column-fill: auto;
     }
+	
+   /**
+	* Static label before the index section.
+	*/ 
+    index\.groups:before {
+        content: "Index";
+        display: block;
+        margin-bottom: 0.5em;
+        font-size: 3em;        
+        column-span: all;
+    }
+
     @page index {
-        @top {          content: "Index" }
-        @bottom {       content: counter(index-page, lower-alpha) }
-        @bottom-right { content: none }
-        @bottom-left {  content: none }
-        @top-right {    content: none }
-        @top-left {     content: none }
+        @top-left-corner    {          content:none }
+        @top-left           {          content:none }
+        /*@top-center         {          content: "Index" }*/
+        @top-right          {          content:none }
+        @top-right-corner   {          content:none }
+        @bottom-left-corner {          content:none }
+        @bottom-left        {          content:none }
+        @bottom-center      {          content: counter(page, lower-alpha) }
+        @bottom-right       {          content:none }
+        @bottom-right-corner{          content:none }
+    }
+    
+    @media oxygen-chemistry {
+        @page index {
+            column-count: 2;
+            column-fill: auto;
+        }
     }
 
     index\.groups index\.group {
@@ -101,6 +124,7 @@
         content: target-counter(attr(href), page) ",";
         link:attr(href);
         -ah-link: attr(href);
+        -oxy-link: attr(href);
     }
 
     index\.groups index-link:last-child {
@@ -157,5 +181,10 @@
     index\.groups see-also-childs > index\.entry:first-child:before {
         content:none;
     }
+}
 
+@media oxygen-chemistry{
+      *[class~="topic/prolog"]{
+        display:none;        
+      }
 }
