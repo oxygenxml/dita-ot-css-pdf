@@ -7,7 +7,7 @@ You can use Oxygen PDF Chemistry, Antenna House, or Prince for the processing en
 The plugin was tested with both DITA Open Toolkit 1.8 and 2.0. To install the plugin in a DITA Open Toolkit:
 
 1. Download the entire project as a ZIP file. 
-1. Unzip and copy the "com.oxygenxml.pdf.prince" folder to the "DITA-OT-DIR\plugins" folder.
+1. Unzip and copy the "com.oxygenxml.pdf.css" folder to the "DITA-OT-DIR\plugins" folder.
 1. Run the DITA OT integrator (http://www.dita-ot.org/1.8/dev_ref/plugins-installing.html)
 
 Note: If you are using Oxygen, you can run the DITA OT Integrator by following this procedure: 
