@@ -309,8 +309,13 @@
         <!-- Take each of the attribute changes (are separated with spaces.) -->
         <xsl:variable name="s1"
             select="replace($attributesPI, '\s*(.*?)=&quot;(.*?)&quot;', '&amp;lt;attribute name=&quot;$1&quot;&amp;gt;$2&amp;lt;/attribute&amp;gt;')"/>
+        <xsl:variable name="toParse" select="concat('&lt;root>', oxy:unescape($s1), '&lt;/root>')"/>
+        <xsl:variable name="parsed">
+            <xsl:copy-of select="saxon:parse($toParse)" use-when="function-available('saxon:parse')"/>
+            <xsl:copy-of select="parse-xml($toParse)" use-when="not(function-available('saxon:parse'))"/>
+        </xsl:variable>
         <xsl:apply-templates
-            select="saxon:parse(concat('&lt;root>', oxy:unescape($s1), '&lt;/root>'))"
+            select="$parsed"
             mode="attributes-changes">
             <!-- In order to access the current attributes values -->
             <xsl:with-param name="ctx" select="$attributesPI/following-sibling::*[1]" tunnel="yes"/>

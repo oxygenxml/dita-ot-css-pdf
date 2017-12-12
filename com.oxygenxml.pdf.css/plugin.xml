@@ -8,10 +8,13 @@
   <transtype name="pdf-css" extends="base" desc="PDF (CSS Formatter - Experimental)">
 
     <param name="css.processor.path.prince" type="file"
-      desc="Path to the Prince executable file (eg: &quot;c:\path\to\prince.exe&quot; on Windows) which should be run to produce the PDF"/>
+      desc="Path to the Prince executable file (eg: &quot;C:\path\to\prince.exe&quot; on Windows) which should be run to generate the PDF."/>
 
     <param name="css.processor.path.antenna-house" type="file"
-      desc="Path to the Antenna House executable file (eg: &quot;c:\path\to\AHFCmd.exe&quot; on Windows) which should be run to produce the PDF"/>
+      desc="Path to the Antenna House executable file (eg: &quot;C:\path\to\AHFCmd.exe&quot; on Windows) which should be run to generate the PDF."/>
+    <param name="css.processor.path.chemistry" type="file"
+      desc="Path to the oXygen PDF Chemistry executable file (eg: &quot;C:\path\to\chemistry.bat&quot; on Windows) which should be run to generate the PDF. 
+      If this parameter is not set, the plugin will use the system's PATH environment variable to find and start oXygen PDF Chemistry."/>
 
     <param name="css.processor.type" type="enum"
       desc="Choose the formatting processor.">

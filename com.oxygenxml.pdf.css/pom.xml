@@ -1,14 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.oxygenxml</groupId>
-		<artifactId>oxygen-superpom-standard</artifactId>
-		<version>19.1-SNAPSHOT</version>
+		<artifactId>oxygen-dita-ot-plugins</artifactId>
+		<version>20.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>oxygen-com.oxygenxml.pdf.css</artifactId>
-
+	
+	<name>oXygen PDF-CSS DITA-OT plugin</name>	
+	<description>Plugins that convert DITA Maps to PDF using CSS 3 stylesheets.</description>
+	
+	<properties>
+		
+	</properties>
+	
 	<dependencies>
 		<dependency>
 			<scope>test</scope>
@@ -25,11 +31,14 @@
 		<dependency>
 			<scope>test</scope>
 			<groupId>net.sourceforge.saxon</groupId>
-			<artifactId>saxon</artifactId>
-			<version>9.1.0.8</version>
+			<artifactId>saxon</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>			
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -45,6 +54,17 @@
 				</executions>
 				<configuration>
 					<descriptor>assembly.xml</descriptor>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>				
+				<configuration>
+					<executable>${javac.path}</executable>
+					<compilerVersion>1.6</compilerVersion>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 		</plugins>

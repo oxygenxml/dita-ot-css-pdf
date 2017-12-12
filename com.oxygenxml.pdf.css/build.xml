@@ -192,9 +192,12 @@ with those set forth herein.
 	          force="true"
 	          classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/java">
 	   	
-		  <!-- Avoid saxon:assign warnings --> 
+		  <!-- 
+		    Avoid saxon:assign warnings. For newer Saxon libraries the next property should be set:
+		    <attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>
+		  --> 
 		  <factory name="net.sf.saxon.TransformerFactoryImpl">
-			  <attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>
+			  <!--<attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>-->
 		  </factory>
 	   	
 	      <param name="args.draft" expression="${args.draft}"/>

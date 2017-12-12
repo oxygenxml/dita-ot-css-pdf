@@ -442,7 +442,7 @@ public class MergedMapFixupXSLTest extends TestCase {
     long delta = t1 - t0;
     
     logger.info("Ending transformation after: " + delta + "ms ");    
-    assertTrue ("Transformation took too long: "  + delta + "ms ", delta < 18000);
+    assertTrue ("Transformation took too long: "  + delta + "ms ", delta < 60000);
     
     String content = IOUtil.readFile(outputFile, "UTF-8");
     assertTrue("There should be highling elements ", content.contains("<oxy:oxy-color-hl"));

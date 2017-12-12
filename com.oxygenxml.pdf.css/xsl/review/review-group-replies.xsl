@@ -11,7 +11,7 @@ Copyright (c) 1998-2017 Syncro Soft SRL, Romania.  All rights reserved.
     xmlns:opentopic="http://www.idiominc.com/opentopic"
     
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:saxon="http://saxon.sf.net/"
-    xmlns:ImageInfo="java:ImageInfo" exclude-result-prefixes="#all ">
+    exclude-result-prefixes="#all ">
 
 
     

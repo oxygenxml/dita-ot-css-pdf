@@ -9,13 +9,13 @@
     padding-top:0.2em;
     padding-bottom:0.2em;
 
-	/* Letter */
-    size: 8.5in 11in;
+	/* Letter 8.5in 11in */
+    size: us-letter;
     margin: 1in;
 }
 
-    /* A4 size */
-/*    size: 8.27in 11.69in;*/
+    /* A4 size 8.27in 11.69in*/
+/*    size: A4;*/
     
 /*
  * ------------------------------------------

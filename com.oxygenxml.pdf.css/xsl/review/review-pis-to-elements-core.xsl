@@ -194,8 +194,13 @@ Copyright (c) 1998-2017 Syncro Soft SRL, Romania.  All rights reserved.
                                             <xsl:with-param name="part" select="'content'"/>
                                         </xsl:call-template>
                                     </xsl:variable>
+                                    <xsl:variable name="toParse" select="concat('&lt;r>', $deleted, '&lt;/r>')"/>
+                                    <xsl:variable name="parsed">
+                                        <xsl:copy-of select="saxon:parse($toParse)" use-when="function-available('saxon:parse')"/>
+                                        <xsl:copy-of select="parse-xml($toParse)" use-when="not(function-available('saxon:parse'))"/>
+                                    </xsl:variable>
                                     <xsl:variable name="deleted-content" 
-                                        select="string(saxon:parse(concat('&lt;r>', $deleted, '&lt;/r>'))//text())"
+                                        select="string($parsed//text())"
                                     />
                                     <!-- Limit to 50 chars.. -->
                                     <xsl:choose>

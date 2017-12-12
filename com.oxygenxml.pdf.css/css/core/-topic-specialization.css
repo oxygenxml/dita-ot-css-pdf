@@ -94,12 +94,12 @@
  */ 
 *[class~="topic/boolean"]{
 }
-*[class~="topic/boolean"]:before{
+*[class~="topic/boolean"]{
     content: "boolean: " ;
 }
 
-*[class~="topic/boolean"][state='no']:before,
-*[class~="topic/boolean"][state='yes']:before{
+*[class~="topic/boolean"][state='no'],
+*[class~="topic/boolean"][state='yes']{
     content: 
              oxy_checkbox(edit, "@state", 
              values, "yes",
@@ -126,9 +126,8 @@
 *[class~="topic/state"] {
     /*See -colors.css */
     visibility:-oxy-collapse-text;
-    -oxy-display-tags:none;
 }
-*[class~="topic/state"]:before {
+*[class~="topic/state"] {
     content: oxy_label(text, "state: ") 
       oxy_textfield(edit, "@name", columns, 10, color, "green") 
       "=" 
