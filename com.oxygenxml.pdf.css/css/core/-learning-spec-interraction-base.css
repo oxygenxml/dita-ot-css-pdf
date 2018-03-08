@@ -82,8 +82,8 @@
  *  
  *     + topic/fig learningInteractionBase-d/lcInteractionBase
  */
-*[class~="learning-d/lcOpenQuestion"]:before {
-  content: "Open question: ";
+*[class~="learning-d/lcOpenQuestion"]:before{
+  /**/	
 }
 /* ====================================
  *
@@ -98,8 +98,8 @@
  *  
  *     + topic/fig learningInteractionBase-d/lcInteractionBase
  */
-*[class~="learning-d/lcTrueFalse"]:before {
-  content: "True or False: ";
+*[class~="learning-d/lcTrueFalse"]:before{
+  /**/
 }
 /* ====================================
  *
@@ -113,8 +113,8 @@
  *  
  *     + topic/fig learningInteractionBase-d/lcInteractionBase 
  */
-*[class~="learning-d/lcSingleSelect"]:before {
-  content: "Single select: ";
+*[class~="learning-d/lcSingleSelect"]:before{
+/**/
 }
 /* ====================================
  *
@@ -129,7 +129,7 @@
  *     + topic/fig learningInteractionBase-d/lcInteractionBase 
  */
 *[class~="learning-d/lcMultipleSelect"]:before {
-  content: "Multiple select: ";
+/**/
 }
 /* ====================================
  *
@@ -144,7 +144,7 @@
  *     + topic/fig learningInteractionBase-d/lcInteractionBase 
  */
 *[class~="learning-d/lcSequencing"]:before {
-  content: "Order sequence: ";
+/**/
 }
 /* ====================================
  *
@@ -160,7 +160,7 @@
  *     + topic/fig learningInteractionBase-d/lcInteractionBase 
  */
 *[class~="learning-d/lcMatching"]:before {
-  content: "Match the choices: ";
+/**/
 }
 /* ====================================
  *
@@ -175,7 +175,7 @@
  *     + topic/fig learningInteractionBase-d/lcInteractionBase 
  */
 *[class~="learning-d/lcHotspot"]:before {
-  content: "Click a region: ";
+  /**/
 }
 /* ====================================
  *

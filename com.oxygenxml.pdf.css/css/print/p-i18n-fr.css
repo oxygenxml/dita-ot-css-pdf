@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* Title in the TOC page */
+toc-title[empty]:lang(fr):before { 
+	content: "Table des matières"; 
+}
+
+/* This string is used in the TOC page header. */
+:root:lang(fr) {
+    string-set: toc-header "Table des matières";
+}
+
+/* Title in the Index page */
+index\.groups:lang(fr):before {
+	content: "Index";
+}
+
+/* Titles in the TOC. */
+*[class ~= "map/topicref"][is-part] > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:lang(fr):before{
+   content:"Partie " counter(toc-part, upper-roman) ". " !important;
+}
+*[class ~= "map/topicref"][is-chapter]:not([is-part]) > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:lang(fr):before{
+   content:"Chapitre " counter(toc-chapter) ". " !important;
+}
+
+/* Titles in the content. */
+*[class ~= "topic/topic"][is-part] > *[class ~= "topic/title"]:lang(fr):before {
+    content: "Partie " counter(part, upper-roman) ". ";
+}
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:lang(fr):before {
+    content: "Chapitre " counter(chapter) ". ";
+}

@@ -18,9 +18,9 @@
 
     <param name="css.processor.type" type="enum"
       desc="Choose the formatting processor.">
-      <val default="true">prince</val>
+      <val default="true">chemistry</val>
+      <val>prince</val>
       <val>antenna-house</val>
-      <val>chemistry</val>
      </param>
     
     <param name="dita.css.list" type="file"

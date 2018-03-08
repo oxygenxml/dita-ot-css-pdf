@@ -143,12 +143,6 @@
   font-weight: bold;
   /* <<< */
 }
-*[class~="topic/searchtitle"]:before {
-    content: "Search Title: ";
-}
-*[class~="topic/navtitle"]:before {
-    content: "Navigation Title: ";
-}
 
 
 /* ==================================================
@@ -165,16 +159,9 @@
 }
 *[class~="topic/shortdesc"]:before {
   display: inline;
-  content: "Short Description: ";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-}
-
-@media print {
-  *[class~="topic/shortdesc"]:before {
-    display:none;
-  }
 }
 
 
@@ -195,15 +182,9 @@
 }
 *[class~="topic/abstract"]:before {
   display: inline;
-  content:"Abstract: ";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-}
-@media print {
-  *[class~="topic/abstract"]:before {
-    display:none;
-  }
 }
 
 
@@ -260,8 +241,8 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-  content: "Related information: ";
 }
+
 /* 
  * Do not show the label if there is a title in the related links list.
  */

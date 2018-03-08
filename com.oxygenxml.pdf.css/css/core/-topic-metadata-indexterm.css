@@ -74,7 +74,6 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-  content: " - see: ";
 }
 /* ===================================================
  *
@@ -88,11 +87,6 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-  content: " - see also: ";
-}
-*[class~="topic/indexterm"] > *[class~="indexing-d/index-see-also"]:after,
-*[class~="topic/indexterm"] > *[class~="indexing-d/index-see"]:after {
-  content: " ";
 }
 /* ===================================================
  *
@@ -105,5 +99,4 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-  content: " - sort as: ";
 }

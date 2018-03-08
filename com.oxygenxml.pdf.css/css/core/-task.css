@@ -78,16 +78,11 @@
   -oxy-foldable: false;
 }
 *[class~="task/prereq"]:before {
-  content: "Before you begin: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
 }
-@media print {
-  *[class~="task/prereq"]:before {
-    content: none;
-  }
-}
+
 /* ====================================
  *
  * <postreq>
@@ -104,15 +99,9 @@
   -oxy-foldable: false;
 }
 *[class~="task/postreq"]:before {
-  content: "What to do next: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
-}
-@media print {
-  *[class~="task/postreq"]:before {
-    content: none;
-  }
 }
 /* ====================================
  *
@@ -131,16 +120,11 @@
   -oxy-foldable: false;
 }
 *[class~="task/context"]:before {
-  content: "About this task: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
 }
-@media print {
-  *[class~="task/context"]:before {
-    content: none;
-  }
-}
+
 /* ====================================
  *
  * <result>
@@ -156,15 +140,9 @@
   -oxy-foldable: false;
 }
 *[class~="task/result"]:before {
-  content: "Results: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
-}
-@media print {
-  *[class~="task/result"]:before {
-    content: none;
-  }
 }
 /* ====================================
  *
@@ -328,12 +306,10 @@
 }
 *[class~="task/tasktroubleshooting"]:before,
 *[class~="task/steptroubleshooting"]:before{
-  content: "Troubleshooting: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
 }
-
 
 /* ====================================
  *
@@ -543,12 +519,12 @@
   /* <<< */
 }
 *[class~="task/choices"]:before {
-  content: "Choose from: ";
   display: block;
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
 }
+
 /* ====================================
  *
  * <choice>
@@ -581,7 +557,6 @@
   /* <<< */
 }
 *[class~="task/stepxmp"]:before {
-  content: "Example: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -606,11 +581,11 @@
   /* <<< */
 }
 *[class~="task/stepresult"]:before {
-  content: "Result: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
 }
+
 /* ====================================
  *
  * <tutorialinfo>
@@ -629,8 +604,8 @@
   /* <<< */
 }
 *[class~="task/tutorialinfo"]:before {
-  content: "Tutorial Info: ";
   /* -task_before- >>> */
   font-weight: bold;
   /* <<< */
 }
+

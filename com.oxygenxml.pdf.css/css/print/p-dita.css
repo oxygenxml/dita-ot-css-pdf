@@ -1,17 +1,28 @@
+@import 'p-accessibility.css';
 @import 'p-fonts.css';
 @import 'p-side-notes.css';
 @import 'p-foot-notes.css';
 @import 'p-front-page.css';
 @import 'p-page-size.css';
 @import 'p-page-breaks.css';
-@import 'p-page-titles-and-numbers.css';
+@import 'p-pages-and-headers.css';
 @import 'p-links.css';
 @import 'p-tables.css';
 @import 'p-toc.css';
 @import 'p-index.css';
 @import 'p-images.css';
-@import 'p-bookmap.css';
+@import 'p-bookmap-frontmatter-backmatter.css';
 @import 'p-bookmarks.css';
 @import 'p-meta.css';
 @import 'p-styling.css';
 @import 'p-dita-flagging.css';
+@import 'p-numbering-shallow.css';
+@import 'p-chapters.css';
+@import 'p-i18n.css';
+
+/* Optional modules: */
+
+/*@import 'p-optional-numbering-deep.css';*/
+/*@import 'p-optional-double-side-pagination.css';*/
+/*@import 'p-optional-auto-rotate-wide-tables.css';*/
+ 

@@ -1,0 +1,541 @@
+@charset "UTF-8";
+/*
+ * ------------------------------------------------
+ * From -domain-hazard-d.css
+ */
+*[class ~= "hazard-d/hazardstatement"]:before {
+    content: url("../img/warning-black30.png") " " "HAZARD";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "note"]:before {
+    content: url("../img/warning-black30.png") " " "NOTE";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "tip"]:before {
+    content: url("../img/warning-black30.png") " " "TIP";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:before {
+    content: url("../img/warning-black30.png") " " "FASTPATH";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:before {
+    content: url("../img/warning-black30.png") " " "RESTRICTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "remember"]:before {
+    content: url("../img/warning-black30.png") " " "REMEMBER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "attention"]:before {
+    content: url("../img/warning-black30.png") " " "ATTENTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "caution"]:before {
+    content: url("../img/warning-black30.png") " " "CAUTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "notice"]:before {
+    content: url("../img/warning-black30.png") " " "NOTICE";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "danger"]:before {
+    content: url("../img/warning-black30.png") " " "DANGER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "warning"]:before {
+    content: url("../img/warning-black30.png") " " "WARNING";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "other"]:before {
+    content: url("../img/warning-black30.png") " " "OTHER TYPE OF HAZARD";
+}
+
+/*
+ * ------------------------------------------------
+ * From -domain-taskreq-d.css
+ */
+*[class ~= "taskreq-d/noconds"]:before {
+    content: "<No Conditions>" !important;
+}
+*[class ~= "taskreq-d/prelreqs"]:before {
+    content: "Preliminary requirements: ";
+}
+*[class ~= "taskreq-d/closereqs"]:before {
+    content: "Closing requirements: ";
+}
+*[class ~= "taskreq-d/reqconds"]:before {
+    content: "Conditions: ";
+}
+*[class ~= "taskreq-d/reqpers"]:before {
+    content: "Personnel: ";
+}
+*[class ~= "taskreq-d/personnel"]:before {
+    content: "Number of workers: " !important;
+}
+*[class ~= "taskreq-d/perscat"]:before {
+    content: "Category: " !important;
+}
+*[class ~= "taskreq-d/perskill"]:before {
+    content: "Skill level: " !important;
+}
+*[class ~= "taskreq-d/esttime"]:before {
+    content: "Time estimate: " !important;
+}
+*[class ~= "taskreq-d/supequip"]:before {
+    content: "Equipment: " !important;
+}
+*[class ~= "taskreq-d/nosupeq"]:before {
+    content: "<No Support Equipment>";
+}
+*[class ~= "taskreq-d/supplies"]:before {
+    content: "Supplies: " !important;
+}
+*[class ~= "taskreq-d/nosupply"]:before {
+    content: "<No Supply>";
+}
+*[class ~= "taskreq-d/spares"]:before {
+    content: "Spares:";
+}
+*[class ~= "taskreq-d/nospares"]:before {
+    content: "<No Spares>";
+}
+*[class ~= "taskreq-d/nosafety"]:before {
+    content: "<No Safety>" !important;
+}
+*[class ~= "taskreq-d/safety"]:before {
+    content: url(../../img/caution.png) " Safety:";
+}
+
+/*
+ * ------------------------------------------------
+ * From -domain-troubleshooting.css
+ */
+*[class ~= 'troubleshooting/condition']:before {
+    content: "Condition ";
+}
+*[class ~= 'troubleshooting/cause']:before {
+    content: "Cause: ";
+}
+*[class ~= 'troubleshooting/remedy']:before {
+    content: "Remedy: ";
+}
+*[class ~= 'troubleshooting/responsibleParty']:before {
+    content: "Responsible party: ";
+}
+
+/*
+ * ------------------------------------------------
+ * From -glossary.css
+ */
+*[class ~= "glossentry/glossPartOfSpeech"]:before {
+    content: "Part of speech: ";
+}
+*[class ~= "glossentry/glossProperty"]:before {
+    content: "Property: ";
+}
+*[class ~= "glossentry/glossStatus"]:before {
+    content: "Status: ";
+}
+*[class ~= "glossentry/glossSurfaceForm"]:before {
+    content: "Surface form: ";
+}
+*[class ~= "glossentry/glossUsage"]:before {
+    content: "Usage: ";
+}
+
+/*
+ * ------------------------------------------------
+ * From -learning-common-interraction.css
+ */
+*[class ~= "learning-d/lcFeedbackIncorrect"]:before {
+    content: "When incorrect: ";
+}
+*[class ~= "learning-d/lcFeedbackCorrect"]:before {
+    content: "When correct: ";
+}
+*[class ~= "learning-d/lcOpenAnswer"]:before {
+    content: "A: ";
+}
+*[class ~= "learning-d/lcQuestion"]:before {
+    content: "Q: ";
+}
+
+/*
+ * -learning-spec-interraction-base.css
+ */
+*[class ~= "learning-d/lcOpenQuestion"]:before {
+    content: "Open question: ";
+}
+*[class ~= "learning-d/lcTrueFalse"]:before {
+    content: "True or False: ";
+}
+*[class ~= "learning-d/lcSingleSelect"]:before {
+    content: "Single select: ";
+}
+*[class ~= "learning-d/lcMultipleSelect"]:before {
+    content: "Multiple select: ";
+}
+
+*[class ~= "learning-d/lcSequencing"]:before {
+    content: "Order sequence: ";
+}
+
+*[class ~= "learning-d/lcMatching"]:before {
+    content: "Match the choices: ";
+}
+*[class ~= "learning-d/lcHotspot"]:before {
+    content: "Click a region: ";
+}
+
+/*
+ * -reference.css
+ */
+*[class ~= "reference/refsyn"]:before {
+    content: "Syntax: ";
+}
+@media print {
+    *[class ~= "reference/refsyn"]:before {
+        content: none;
+    }
+}
+
+/*
+ * -table-html-cals.css
+ */
+
+@media print {
+    *[class ~= "topic/table"] > *[class ~= "topic/title"]:before {
+        content: "Table " counter(tablecount) ": ";
+    }
+}
+
+
+/*
+ * -task.css
+ */
+*[class ~= "task/prereq"]:before {
+    content: "Before you begin: ";
+}
+@media print {
+    *[class ~= "task/prereq"]:before {
+        content: none;
+    }
+}
+*[class ~= "task/postreq"]:before {
+    content: "What to do next: ";
+}
+@media print {
+    *[class ~= "task/postreq"]:before {
+        content: none;
+    }
+}
+*[class ~= "task/context"]:before {
+    content: "About this task: ";
+}
+@media print {
+    *[class ~= "task/context"]:before {
+        content: none;
+    }
+}
+*[class ~= "task/result"]:before {
+    content: "Results: ";
+}
+@media print {
+    *[class ~= "task/result"]:before {
+        content: none;
+    }
+}
+*[class ~= "task/tasktroubleshooting"]:before,
+*[class ~= "task/steptroubleshooting"]:before {
+    content: "Troubleshooting: ";
+}
+@media print {
+    *[class ~= "task/tasktroubleshooting"]:before,
+    *[class ~= "task/steptroubleshooting"]:before {
+        content: none;
+    }
+}
+
+*[class ~= "task/choices"]:before {
+    content: "Choose from: ";
+}
+@media print {
+    *[class ~= "task/choices"]:before {
+        content: none;
+    }
+}
+*[class ~= "task/stepxmp"]:before {
+    content: "Example: ";
+}
+@media print {
+    *[class ~= "task/stepxmp"]:before {
+        display: none;
+    }
+}
+*[class ~= "task/stepresult"]:before {
+    content: "Result: ";
+}
+@media print {
+    *[class ~= "task/stepresult"]:before {
+        content: none;
+    }
+}
+*[class ~= "task/tutorialinfo"]:before {
+    content: "Tutorial Info: ";
+}
+@media print {
+    *[class ~= "task/tutorialinfo"]:before {
+        content: none;
+    }
+}
+
+*[class ~= "topic/searchtitle"]:before {
+    content: "Search Title: ";
+}
+*[class ~= "topic/navtitle"]:before {
+    content: "Navigation Title: ";
+}
+
+@media print {
+    *[class ~= "topic/searchtitle"]:before {
+        content: none;
+    }
+    *[class ~= "topic/navtitle"]:before {
+        content: none;
+    }
+}
+
+*[class ~= "topic/shortdesc"]:before {
+    content: "Short Description: ";
+}
+
+@media print {
+    *[class ~= "topic/shortdesc"]:before {
+        display: none;
+    }
+}
+
+*[class ~= "topic/abstract"]:before {
+    content: "Abstract: ";
+}
+@media print {
+    *[class ~= "topic/abstract"]:before {
+        display: none;
+    }
+}
+
+*[class ~= "topic/related-links"]:before {
+    content: "Related information: ";
+}
+@media print {
+    *[class ~= "topic/related-links"]:before {
+        content: none;
+    }
+}
+
+/*
+ * -topic-body.css
+ */
+*[class ~= "topic/draft-comment"][author]:before {
+    content: "Comment by " attr(author) ": ";
+}
+*[class ~= "topic/draft-comment"]:before {
+    content: "Comment: ";
+}
+
+*[class ~= "topic/example"] > *[class ~= "topic/title"]:before {
+    content: "Example: ";
+}
+
+@media print {
+    *[class ~= "topic/fig"] > *[class ~= "topic/title"]:before {
+        content: "Figure " counter(figcount) ": ";
+    }
+}
+
+
+*[class ~= "topic/note"]:before {
+    content: url('../../img/note.png') " Note: ";
+}
+*[class ~= "topic/note"][type = "attention"]:before {
+    content: url('../../img/important.png') " Attention: ";
+}
+*[class ~= "topic/note"][type = "caution"]:before {
+    content: url('../../img/caution.png') " Caution: ";
+}
+*[class ~= "topic/note"][type = "danger"]:before {
+    content: url('../../img/danger.png') " Danger: ";
+}
+*[class ~= "topic/note"][type = "fastpath"]:before {
+    content: "Fastpath: ";
+}
+*[class ~= "topic/note"][type = "important"]:before {
+    content: url('../../img/important.png') " Important: ";
+}
+*[class ~= "topic/note"][type = "other"]:before {
+    content: "Other: ";
+}
+*[class ~= "topic/note"][type = "remember"]:before {
+    content: url('../../img/remember.png') " Remember: ";
+}
+*[class ~= "topic/note"][type = "restriction"]:before {
+    content: url('../../img/restriction.png') " Restriction: ";
+}
+*[class ~= "topic/note"][type = "tip"]:before {
+    content: url('../../img/tip.png') " Tip: ";
+}
+*[class ~= "topic/note"][type = "notice"]:before {
+    content: url('../../img/important.png') " Notice: ";
+}
+*[class ~= "topic/note"][type = "warning"]:before {
+    content: url('../../img/warning.png') " Warning: ";
+}
+*[class ~= "topic/note"][type = "other"][othertype]:before {
+    content: attr(othertype) ": ";
+}
+*[class ~= "topic/note"][type = "trouble"]:before {
+    content: url('../../img/troubleshooting.png') " Troubleshooting: ";
+}
+/*
+ * -topic-legacy-conversion.css
+ */
+*[class ~= "topic/required-cleanup"]:before {
+    content: "Required-Cleanup: ";
+}
+
+/*
+ * -topic-metadata-indexterms
+ */
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see"]:before {
+    content: " - see: ";
+}
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see-also"]:before {
+    content: " - see also: ";
+}
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see-also"]:after,
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see"]:after {
+    content: " ";
+}
+*[class ~= "indexing-d/index-sort-as"]:before {
+    content: " - sort as: ";
+}
+
+/*
+ * -topic-related-links-xref.css
+ */
+@media print {
+    *[class ~= "topic/xref"][href]:after,
+    *[class ~= "topic/link"][href]:after {
+        content: " (page " target-counter(attr(href), page) ")";
+    }
+}
+
+/*
+ * -topic-specialization
+ */
+*[class ~= "topic/data-about"]:before {
+    content: "Data about:";
+}
+
+/*
+ * -topic-metadata-prolog
+ */
+*[class~="topic/audience"]:before(300) {
+  content: "Audience: ";
+}
+ 
+ *[class~="topic/author"]:before(300) {
+  content: "Author: ";
+}
+*[class~="topic/brand"]:before(300) {
+  content: "Brand: ";
+}
+*[class~="topic/category"]:before(300) {
+  content: "Category: ";
+}
+*[class~="topic/component"]:before(300) {
+  content: "Component: ";
+}
+*[class~="topic/copyright"]:before(300) {
+  content: "Copyright ";
+}
+*[class~="topic/copyryear"]:before(300) {
+  content: "Year: ";
+}
+*[class~="topic/copyrholder"]:before(300) {
+  content: "Holder: ";
+}
+*[class~="topic/critdates"]:before(300) {
+  content: "Critical dates";
+}
+*[class~="topic/created"]:before(300) {
+  content: "Created: ";
+}
+*[class~="topic/revised"]:before(300) {
+  content: "Revised: ";
+}
+*[class~="topic/featnum"]:before(300) {
+  content: "Feature number: ";
+}
+*[class~="topic/keywords"]:before(300) {
+  content: "Keywords: ";
+}
+*[class~="topic/metadata"]:before(300) {
+  content: "Metadata";
+}
+*[class~="topic/othermeta"]:before(300) {
+  content: "Othermeta:";
+}
+*[class~="topic/permissions"]:before(300) {
+  content: "Permissions: ";
+}
+*[class~="topic/platform"]:before(300) {
+  content: "Platform: ";
+}
+*[class~="topic/prodinfo"]:before(300) {
+  content: "Product info ";
+}
+*[class~="topic/prodname"]:before(300) {
+  content: "Product name: ";
+}
+*[class~="topic/prognum"]:before(300) {
+  content: "Program number: ";
+}
+*[class~="topic/publisher"]:before(300) {
+  content: "Publisher: ";
+}
+*[class~="topic/resourceid"]:before(300) {
+  content: "Resource Id: ";
+}
+*[class~="topic/series"]:before(300) {
+  content: "Series: ";
+}
+*[class~="topic/source"]:before(300) {
+  content: "Source: ";
+}
+*[class~="topic/vrmlist"]:before(300) {
+  content: "Versions: ";
+}
+*[class~="relmgmt-d/change-historylist"]:before(300){
+    content: "Change History List: ";
+}
+*[class~="relmgmt-d/change-item"]:before(300) {
+    content:"Change: ";
+}
+*[class~="relmgmt-d/change-person"]:before(300) {
+    content:"Person: ";
+}
+*[class~="relmgmt-d/change-organization"]:before(300) {
+    content:"Organization: ";
+}
+*[class~="relmgmt-d/change-started"]:before(300) {
+    content:"Started: ";
+}
+*[class~="relmgmt-d/change-completed"]:before(300) {
+    content:"Completed: ";
+}
+*[class~="relmgmt-d/change-summary"]:before(300) {
+    content:"Summary: ";
+}
+*[class~="relmgmt-d/change-revisionid"]:before(300) {
+    content:"Revision Id: ";
+}
+*[class~="relmgmt-d/change-request-reference"]:before(300) {
+    content:"Request Reference: ";
+}
+*[class~="relmgmt-d/change-request-system"]:before(300) {
+    content:"System: ";
+}
+*[class~="relmgmt-d/change-request-id"]:before(300) {
+    content:"Request Id: ";
+}

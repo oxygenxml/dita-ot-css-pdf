@@ -17,4 +17,7 @@
       </topicmeta>
     </chapter>
   </opentopic:map>
+  <topic break-before="true" class="- topic/topic" id="unique_5"
+    is-chapter="true"
+    oxy:topicref-class="- map/topicref bookmap/chapter " xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
 </bookmap>

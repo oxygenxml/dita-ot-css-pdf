@@ -75,7 +75,7 @@
  * its type attribute, the intended audience for a topic.
  */
 *[class~="topic/audience"]:before(300) {
-  content: "Audience: ";
+/**/
 }
 *[class~="topic/audience"][type]:before {
   -oxy-append-content: " type: " oxy_textfield(edit, "@type", columns, 10);
@@ -101,7 +101,7 @@
  *  
  */
 *[class~="topic/author"]:before(300) {
-  content: "Author: ";
+/**/
 }
 *[class~="topic/author"][type]:before {
   -oxy-append-content: " " oxy_combobox(edit, "@type", columns, 10);
@@ -118,7 +118,7 @@
   -oxy-foldable: true;
 }
 *[class~="topic/brand"]:before(300) {
-  content: "Brand: ";
+/**/
 }
 /* ==================================================
  * 
@@ -131,7 +131,7 @@
  * can belong to multiple categories.
  */
 *[class~="topic/category"]:before(300) {
-  content: "Category: ";
+/**/
 }
 /* ==================================================
  * 
@@ -141,7 +141,7 @@
  * product that this topic is concerned with.
  */
 *[class~="topic/component"]:before(300) {
-  content: "Component: ";
+/**/
 }
 /* ==================================================
  * 
@@ -150,7 +150,7 @@
  * The copyright element specifies legal ownership of the content.
  */
 *[class~="topic/copyright"]:before(300) {
-  content: "Copyright ";
+/**/
 }
 *[class~="topic/copyright"][type]:before {
   content: oxy_combobox(edit, "@type", columns, 10, editable, true);
@@ -169,14 +169,14 @@
  * in the topic.
  */
 *[class~="topic/copyryear"]:before(300) {
-  content: "Year: ";
+/**/
 }
 *[class~="topic/copyryear"]:before {
   -oxy-append-content: oxy_datePicker(columns, 12, edit, "@year", format, "yyyy", validateInput, false);
 }
 
 *[class~="topic/copyrholder"]:before(300) {
-  content: "Holder:  ";
+/**/
 }
 /* ==================================================
  * 
@@ -190,7 +190,7 @@
   display: block;
 }
 *[class~="topic/critdates"]:before(300) {
-  content: "Critical dates";
+/**/
 }
 /* ==================================================
  * 
@@ -200,7 +200,7 @@
  * date using the date attribute.
  */
 *[class~="topic/created"]:before(300) {
-  content: "Created: ";
+/**/
 }
 *[class~="topic/created"]:before {
   content: oxy_datePicker(columns, 12, edit, "@date", format, "yyyy-MM-dd", validateInput, false) "     ";
@@ -221,7 +221,7 @@
  * the original availability date, and the expiration date.
  */
 *[class~="topic/revised"]:before(300) {
-  content: "Revised: ";
+/**/
 }
 *[class~="topic/revised"]:before {
   content: oxy_datePicker(columns, 12, edit, "@modified", format, "yyyy-MM-dd", validateInput, false) "     ";
@@ -240,7 +240,7 @@
  * of a product in the metadata. 
  */
 *[class~="topic/featnum"]:before(300) {
-  content: "Feature number: ";
+/**/
 }
 /* ==================================================
  * 
@@ -252,7 +252,7 @@
  * The keywords may be used by a search engine. 
  */
 *[class~="topic/keywords"]:before(300) {
-  content: "Keywords: ";
+/**/
 }
 *[class~="topic/keywords"] * {
   display: inline;
@@ -281,7 +281,7 @@
   -oxy-foldable: true;
 }
 *[class~="topic/metadata"]:before(300) {
-  content: "Metadata";
+/**/
 }
 /* ==================================================
  * 
@@ -292,10 +292,10 @@
  * product information.
  */
 *[class~="topic/othermeta"]:before(300) {
-  content: "Othermeta:";
+/**/
 }
 *[class~="topic/othermeta"]:before {
-  content: " name: " oxy_textfield(edit, "@name", columns, 15) " content: " oxy_textfield(edit, "@content", columns, 10);
+  content: " " oxy_textfield(edit, "@name", columns, 15) " " oxy_textfield(edit, "@content", columns, 10);
 }
 /* ==================================================
  * 
@@ -306,7 +306,7 @@
  * the content.
  */
 *[class~="topic/permissions"]:before(300) {
-  content: "Permissions: ";
+/**/
 }
 *[class~="topic/permissions"]:before {
   content: " " 
@@ -325,7 +325,7 @@
  * the product being described by the prodinfo element
  */
 *[class~="topic/platform"]:before(300) {
-  content: "Platform: ";
+/**/
 }
 /* ==================================================
  * 
@@ -336,7 +336,7 @@
  * matter of the current topic. 
  */
 *[class~="topic/prodinfo"]:before(300) {
-  content: "Product info ";
+/**/
 }
 /* ==================================================
  * 
@@ -347,7 +347,7 @@
  * in this topic. 
  */
 *[class~="topic/prodname"]:before(300) {
-  content: "Product name: ";
+/**/
 }
 /* ==================================================
  *
@@ -360,7 +360,7 @@
  * completes development.
  */
 *[class~="topic/prognum"]:before(300) {
-  content: "Program number: ";
+/**/
 }
 /* ==================================================
  *
@@ -372,7 +372,7 @@
  * available.
  */
 *[class~="topic/publisher"]:before(300) {
-  content: "Publisher: ";
+/**/
 }
 /* ==================================================
  *
@@ -385,7 +385,7 @@
  */
 
 *[class~="topic/resourceid"]:before(300) {
-  content: "Resource Id: ";
+/**/
 }
 *[class~="topic/resourceid"][id]:before {
   -oxy-append-content: oxy_textfield(columns, 30, edit, "@id");
@@ -410,7 +410,7 @@
  * about the product series that the topic supports.
  */
 *[class~="topic/series"]:before(300) {
-  content: "Series: ";
+/**/
 }
 /* ==================================================
  *
@@ -421,7 +421,7 @@
  * completely or in part.
  */
 *[class~="topic/source"]:before(300) {
-  content: "Source: ";
+/**/
 }
 *[class~="topic/source"][href]:after {
   /* TODO - dan - make all links look the same.*/
@@ -447,7 +447,7 @@
  * products to which the topic applies.
  */
 *[class~="topic/vrmlist"]:before(300) {
-  content: "Versions: ";
+/**/
 }
 /* ==================================================
  *
@@ -458,7 +458,7 @@
  * which the current topic applies.
  */
 *[class~="topic/vrm"]:before {
-  content: " version: " oxy_textfield(edit, "@version", columns, 10) " release: " oxy_textfield(edit, "@release", columns, 10) " modification: " oxy_textfield(edit, "@modification", columns, 10);
+  content:  oxy_textfield(edit, "@version", columns, 10) " release: " oxy_textfield(edit, "@release", columns, 10) " modification: " oxy_textfield(edit, "@modification", columns, 10);
 }
 
 
@@ -482,7 +482,7 @@
  * - topic/metadata  
  */
 *[class~="relmgmt-d/change-historylist"]:before(300){
-    content: "Change History List: ";
+/**/
 }
 
 /* ==================================================
@@ -500,7 +500,7 @@
     margin-left:1em;
 }
 *[class~="relmgmt-d/change-item"]:before(300) {
-    content:"Change: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-item"]:before {
@@ -523,7 +523,7 @@
     margin-left:1em;
 }
 *[class~="relmgmt-d/change-person"]:before(300) {
-    content:"Person: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-person"]:before {
@@ -543,7 +543,7 @@
  * - topic/data  
  */
 *[class~="relmgmt-d/change-organization"]:before(300) {
-    content:"Organization: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-organization"]:before {
@@ -565,7 +565,7 @@
  * - topic/data  
  */
 *[class~="relmgmt-d/change-started"]:before(300) {
-    content:"Started: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-started"]:before {
@@ -588,7 +588,7 @@
  * - topic/data  
  */
 *[class~="relmgmt-d/change-completed"]:before(300) {
-    content:"Completed: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-completed"]:before {
@@ -607,7 +607,7 @@
  * - topic/data
  */
 *[class~="relmgmt-d/change-summary"]:before(300) {
-    content:"Summary: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-summary"]:before {
@@ -625,7 +625,7 @@
  * - topic/data
  */
 *[class~="relmgmt-d/change-revisionid"]:before(300) {
-    content:"Revision Id: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-revisionid"]:before {
@@ -644,7 +644,7 @@
  * - topic/data
  */
 *[class~="relmgmt-d/change-request-reference"]:before(300) {
-    content:"Request Reference: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-request-reference"]:before {
@@ -664,7 +664,7 @@
  * - topic/data  
  */
 *[class~="relmgmt-d/change-request-system"]:before(300) {
-    content:"System: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-request-system"]:before {
@@ -683,7 +683,7 @@
  * - topic/data  
  */
 *[class~="relmgmt-d/change-request-id"]:before(300) {
-    content:"Request Id: ";
+/**/
 }
 /* Inhibit the topic/data inherited static content */
 *[class~="relmgmt-d/change-request-id"]:before {

@@ -1,0 +1,72 @@
+/*
+ * =====================================================
+ * 
+ * Defines the accesibility properties.
+ * 
+ * =====================================================
+ */
+@media print {
+	
+/* 
+ * Document structure 
+ */
+
+*[is-part] {
+   -oxy-pdf-tag-type: "Part";
+}
+*[class~="topic/section"],
+*[class~="topic/topic"] {
+   -oxy-pdf-tag-type: "Sect";
+}
+*[class ~= "map/map"] > map {
+   -oxy-pdf-tag-type: "TOC";	
+}
+*[class~="topic/topic"] > *[class~="topic/title"] {
+   -oxy-pdf-tag-type: "H1";
+}
+*[class~="topic/topic"] *[class~="topic/topic"] > *[class~="topic/title"] {
+   -oxy-pdf-tag-type: "H2";
+}
+*[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] > *[class~="topic/title"] {
+   -oxy-pdf-tag-type: "H3";
+}
+*[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] > *[class~="topic/title"] {
+   -oxy-pdf-tag-type: "H4";
+}
+*[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] > *[class~="topic/title"] {
+   -oxy-pdf-tag-type: "H5";
+}
+*[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] *[class~="topic/topic"] > *[class~="topic/title"] {
+   -oxy-pdf-tag-type: "H6";
+}
+*[class ~= "topic/q"] {
+   -oxy-pdf-tag-type: "Q";
+}
+*[class ~= "topic/pre"],
+*[class ~= "pr-d/codeph"] {
+   -oxy-pdf-tag-type: "Code";
+}
+*[class ~= "topic/note"] {
+   -oxy-pdf-tag-type: "Note";
+}
+*[class ~= "topic/figure"]{
+   -oxy-pdf-tag-type: "Figure";
+}
+index\.groups{
+   -oxy-pdf-tag-type: "Index";	
+}
+
+/* 
+ * Alternate text for images (and hazard symbols that specialize them) 
+ */
+*[class ~= "topic/image"][alt] {
+  -oxy-alt-text: attr(alt);
+}
+*[class ~= "topic/image"]:has(*[class ~= "topic/alt"]){
+  border:2pt solid red;
+  -oxy-alt-text: oxy_xpath('./*[contains(@class," topic/alt ") ]/text()');  
+}
+
+
+
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title>
+      <booktitle class="- topic/title bookmap/booktitle "
+        xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+          <ph class="- topic/ph ">Oxygen XML Author</ph>
+        </mainbooktitle>
+      </booktitle>
+    </oxy:front-page-title>
+  </oxy:front-page>
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <booktitle class="- topic/title bookmap/booktitle ">
+      <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+        <ph class="- topic/ph ">Oxygen XML Author</ph>
+      </mainbooktitle>
+    </booktitle>
+    <topicref class="- map/topicref " format="pdf" href="some.pdf"
+      is-chapter="true" navtitle="Zumzum" scope="external" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="some.pdf">Zumzum</navtitle>
+      </topicmeta>
+    </topicref>
+  </opentopic:map>
+</bookmap>

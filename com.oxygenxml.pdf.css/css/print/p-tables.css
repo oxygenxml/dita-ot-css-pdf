@@ -102,28 +102,17 @@
         border-right:1pt solid black;
       }
 
-	 /*
-	  * Table orientation.
-	  */
-	 @page table-landscape {
-		size:landscape;
-/* 		@top-left{
-			content:none;
-		}
-		@top-right{
-			content:none;
-		}
- */	 }
 	
-	 @page table-portrait {
+	
+	 @page portrait-page {
 		size:portrait;
 	 }
 
      *[class~="topic/table"][orient='land'] {
-     	 page: table-landscape;
+     	 page: landscape-page;
      }
      *[class~="topic/table"][orient='port'] {
-    	 page: table-portrait;
+    	 page: portrait-page;
      }
 
 }

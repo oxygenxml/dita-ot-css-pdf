@@ -6,6 +6,10 @@
     xmlns:saxon="http://saxon.sf.net/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     xmlns:ImageInfo="java:ImageInfo" exclude-result-prefixes="#all">
+    
+    <!-- This is moved in the root. -->
+    <xsl:template match="opentopic:map/*[contains(@class, ' map/topicmeta ')]"/>
+    
     <!--
 		
         Create a title page
@@ -14,7 +18,11 @@
     <xsl:template match="*[contains(@class, ' map/map ')]" priority="2">
         <xsl:copy>
             <xsl:copy-of select="@*"/>
+
             <oxy:front-page>
+                <!-- Move also metadata, so it can be used in the string-sets starting with the front page. -->
+                <xsl:copy-of select="opentopic:map/*[contains(@class, ' map/topicmeta ')]"/>
+            
                 <oxy:front-page-title>
                     <xsl:choose>
                         <xsl:when test="@title">

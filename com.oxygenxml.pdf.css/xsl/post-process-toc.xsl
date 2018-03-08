@@ -42,7 +42,7 @@
     
     <!-- Exclude references marked as not entering the TOC. -->
     <xsl:template match="opentopic:map//*[contains(@class, ' map/topicref ')][@toc = 'no']" priority="100"/>
-
+    
     <!-- Remove the markup from the <navtitle> children. 
          It causes Prince to break the lines in the TOC before and after each of the 
          inline elements. -->
@@ -70,10 +70,14 @@
                     <xsl:value-of select="$tid"/>
                 </xsl:when>
                 <!-- EXM-32190 Sometimes, when we have chunk=to-content on the root element, the first_topic_id attribute might be missing -->
-                <xsl:otherwise>
+                <xsl:when test="not($closestTopicref/@id = '')">
                     <!-- Do not use the @href attribute, it does not point to the topic from the content.
                     Instead, use the @id, it has the same value as the @id from the content. -->
+                    <!-- The id may be empty if having an external ref to a PDF for example. -->
                     <xsl:value-of select="concat('#', $closestTopicref/@id)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="$closestTopicref/@href"/>
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:attribute>
@@ -96,7 +100,22 @@
         </xsl:copy>
     </xsl:template>
 
-
+    <!-- 
+    	Use the @navtitle from the topicref, in case of topicheads. For 
+    	topicheads, the topicmeta is not updated properly by DITA-OT.
+	-->
+  <xsl:template match="opentopic:map//topicmeta[not(linktext)][not(navtitle)][../@navtitle] |
+  					   opentopic:map//topicmeta[../@locktitle='yes'][../@navtitle]" priority="2">
+        <xsl:copy>
+            <xsl:copy-of select="@*"/>
+            <navtitle class="- topic/navtitle ">
+                <xsl:call-template name="navtitle.href"/>
+                <xsl:value-of select="../@navtitle"/>
+            </navtitle>
+        </xsl:copy>
+    </xsl:template>
+    
+    
     <!-- 
         Processes the opentopic:map element, this gives the main structure of the TOC.
     -->
@@ -121,7 +140,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </oxy:toc-title>
-
+            
             <!-- 
                 Adds the TOC main content.
             -->

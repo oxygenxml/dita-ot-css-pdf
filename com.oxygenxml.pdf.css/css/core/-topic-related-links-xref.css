@@ -93,7 +93,6 @@
     *[class ~= "topic/xref"][href]:after,
     *[class ~= "topic/link"][href]:after {
         font-style:italic;
-        content: " (page " target-counter(attr(href), page) ")";
         link: attr(href);
         -ah-link: attr(href);
   

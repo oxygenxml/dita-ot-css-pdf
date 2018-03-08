@@ -31,6 +31,5 @@
   border-right:thick solid;
 }
 *[class ~= "topic/required-cleanup"]:before{
-    content:"Required-Cleanup: ";
     font-weight:bold;
 }

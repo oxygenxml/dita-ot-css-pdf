@@ -22,6 +22,7 @@
     <xsl:include href="post-process-tables.xsl"/>
     <xsl:include href="post-process-links.xsl"/>
     <xsl:include href="post-process-whitespaces.xsl"/>
+    <xsl:include href="post-process-topics.xsl"/>
     
     <xsl:include href="post-process-flagging.xsl"/>
 </xsl:stylesheet>

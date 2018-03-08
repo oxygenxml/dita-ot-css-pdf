@@ -74,7 +74,7 @@
   font-weight:bold;
 }
 *[class ~= "d4p-formatting-d/b-sc"]:after{
-  content:"[small-caps]";
+  content:"[bold-small-caps]";
 }
 
 /* ====================================

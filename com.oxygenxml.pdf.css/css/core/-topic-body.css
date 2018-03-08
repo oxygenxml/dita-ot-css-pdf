@@ -143,13 +143,11 @@
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-  content: "Comment by " attr(author) ": ";
 }
 *[class~="topic/draft-comment"]:before {
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
-  content: "Comment: ";
 }
 /* ==================================================
  * 
@@ -182,9 +180,7 @@
     -oxy-not-foldable-child: title;
   }
 }
-*[class~="topic/example"] > *[class~="topic/title"]:before {
-  content: "Example: ";
-}
+
 /* ==================================================
  * 
  * <fig>
@@ -216,9 +212,6 @@
   */
   *[class~="topic/fig"] {
     counter-increment: figcount;
-  }
-  *[class~="topic/fig"] > *[class~="topic/title"]:before {
-    content: "Figure " counter(figcount) ": ";
   }
 }
 /* ==================================================
@@ -423,49 +416,9 @@
   padding: 0.5em;
 }
 *[class~="topic/note"]:before {
-  /* TODO - dan - ar merge ca imaginea sa fie aliniata mai jos, acum sta pe baseline. Poate am putea specifica X si Y?*/
-  content: url('../../img/note.png') " Note: ";
   font-weight: bold;
 }
-*[class~="topic/note"][type="attention"]:before {
-  content: url('../../img/important.png') " Attention: ";
-}
-*[class~="topic/note"][type="caution"]:before {
-  content: url('../../img/caution.png') " Caution: ";
-}
-*[class~="topic/note"][type="danger"]:before {
-  content: url('../../img/danger.png') " Danger: ";
-}
-*[class~="topic/note"][type="fastpath"]:before {
-  content: "Fastpath: ";
-}
-*[class~="topic/note"][type="important"]:before {
-  content: url('../../img/important.png') " Important: ";
-}
-*[class~="topic/note"][type="other"]:before {
-  content: "Other: ";
-}
-*[class~="topic/note"][type="remember"]:before {
-  content: url('../../img/remember.png') " Remember: ";
-}
-*[class~="topic/note"][type="restriction"]:before {
-  content: url('../../img/restriction.png') " Restriction: ";
-}
-*[class~="topic/note"][type="tip"]:before {
-  content: url('../../img/tip.png') " Tip: ";
-}
-*[class~="topic/note"][type="notice"]:before {
-  content: url('../../img/important.png') " Notice: ";
-}
-*[class~="topic/note"][type="warning"]:before {
-  content: url('../../img/warning.png') " Warning: ";
-}
-*[class~="topic/note"][type="other"][othertype]:before {
-  content: attr(othertype) ": ";
-}
-*[class~="topic/note"][type="trouble"]:before {
-  content: url('../../img/troubleshooting.png') " Troubleshooting: ";  
-}
+
 /*
  * =========================================================
  * 
@@ -562,16 +515,21 @@
       content: oxy_video(href, oxy_url(oxy_base-uri()), attr(src))
     }
     
-    video > source[value]{
+    video > source[value],
+    video > media-source[value]
+    {
       content: oxy_video(href, oxy_url(oxy_base-uri(), attr(value)))
     }
-    video > source[value*="www.youtube.com"]{
+    video > source[value*="www.youtube.com"],
+    video > media-source[value*="www.youtube.com"]{
       content: oxy_browser(href, oxy_url(oxy_base-uri(), attr(value)))
     }
-    audio > source[value]{
+    audio > source[value],
+    audio > media-source[value]{
       content: oxy_audio(href, oxy_url(oxy_base-uri(), attr(value)))
     }
-    video > source[class]:before, audio > source[class]:before {
+    video > source[class]:before, audio > source[class]:before,
+    video > media-source[class]:before, audio > media-source[class]:before{
       content: "\A Source Value: " oxy_textfield(edit, "@value", columns, 10);
     }
 
@@ -589,8 +547,10 @@
  * The param (parameter) element specifies a set of values that 
  * may be required by an object at runtime. 
  */
-*[class~="topic/param"]:before {
-  content: "\A Param name: " oxy_textfield(edit, "@name", columns, 10) " value: " oxy_textfield(edit, "@value", columns, 10);
+@media oxygen {
+	*[class~="topic/param"]:before {
+	  content: "\A Param name: " oxy_textfield(edit, "@name", columns, 10) " value: " oxy_textfield(edit, "@value", columns, 10);
+	}
 }
 /*
  * ==========================================================

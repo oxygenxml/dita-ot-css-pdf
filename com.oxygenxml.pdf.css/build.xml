@@ -26,7 +26,7 @@ with those set forth herein.
 <project name="com.oxygenxml.pdf.css" basedir=".">
 	
 	
-  <property name="css.processor.type" value="prince"/>
+  <property name="css.processor.type" value="chemistry"/>
 
 	
   <!-- Path to the processor executable. May come as argument -->
@@ -65,24 +65,21 @@ with those set forth herein.
 
         <available file="chemistry.sh"/>
         <available file="chemistry.sh" filepath="${env.PATH}"/>
+      	<!-- the path was already set in the transformation parameters -->
+      	<isset property="css.processor.path.chemistry"/>
       </or>
     </and>
   </condition>
-  <condition property="use.chemistry.windows">
-    <and>
-      <isset property="use.chemistry"/>
-      <os family="windows"/>
-    </and>
-  </condition>
-  <condition property="use.chemistry.unix">
-    <and>
-      <isset property="use.chemistry"/>
-      <not>
-        <os family="windows"/>
-      </not>
-    </and>
-  </condition>
-  <property name="oxygen.installation.dir" value="${dita.dir}/../../.."/>
+	
+  <!-- Installation dir of embedded chemistry -->	
+  <condition property="embedded.chemistry.installation.dir" value="${dita.plugin.com.oxygenxml.pdf.css.dir}/lib/oxygen-pdf-chemistry">
+   <and>
+      	 <isset property="use.chemistry"/>
+         <!-- When the plugin itself contains Chemistry -->
+       	 <available file="${dita.plugin.com.oxygenxml.pdf.css.dir}/lib/oxygen-pdf-chemistry"/>
+	</and>
+  </condition>	
+  <property name="embedded.chemistry.installation.dir" value="${dita.dir}/../../.."/>
 
   <!-- External Chemistry -->
   <condition property="css.processor.path.chemistry" value="chemistry.bat">
@@ -94,14 +91,8 @@ with those set forth herein.
   <condition property="css.processor.path.chemistry" value="chemistry.sh">
     <isset property="use.chemistry.external"/>
   </condition>
-  <!-- Embedded Chemistry -->
-  <condition property="css.processor.path.chemistry" value="${oxygen.installation.dir}/oxygenChemistry.bat">
-    <os family="windows"/>    
-  </condition>
-  <property name="css.processor.path.chemistry" value="${oxygen.installation.dir}/oxygenChemistry.sh"/>
 
-	
-	
+  
   <!-- Control the display of the user comments or change tracking info (encoded in oXygen processing instructions). -->
   <property name="show.changes.and.comments">no</property>
   
@@ -294,10 +285,13 @@ with those set forth herein.
 		var tmp = "";
 		var cssList = project.getProperty('dita.css.list').concat(';').concat(project.getProperty('dita.print.css')).concat(';').concat(project.getProperty('args.css'));
   	    var arr = cssList.split(';'); 
+  		var pis = "";
+  		
   	    for (i = 0; i < arr.length; i++) {
 			if (arr[i].length() > 0) {
 		  		  tmp = tmp.concat("@import '");
-		  		  
+				  pis = pis.concat("<?xml-stylesheet type='text/css' href='");	  		  
+  		
 		  		  var url = arr[i];
 		  		  if (!url.contains(':/') && !url.startsWith('file:')) {
   		  		    // Transforms file paths into URLs.
@@ -315,23 +309,37 @@ with those set forth herein.
   			      url = url.replace(/'/g, '%27');
   		  		
 	  			  tmp = tmp.concat(url);
-	  	    	  tmp = tmp.concat("';\n");  
+	  	    	  tmp = tmp.concat("';\n");
+  		
+  				  pis = pis.concat(url);
+		    	  pis = pis.concat("'?>\n");
+  		
   		   	}
   	    }
   		project.setProperty('main.css.content', tmp);
+  		project.setProperty('associate.css.pis', pis);
+  		  		
   	 ]]>
   	 </script>
     <echo>${main.css.content}</echo>
     <echo file="${main.css.path}">${main.css.content}</echo>
 
-    <!-- Copy the input XML file to the output directory -->
+    <!-- 
+    	 Copy the input XML file to the output directory.
+    	 Add CSS references, so the file can be opened directly in a browser for CSS inspection.
+     -->
     <copy 
       file="${dita.map.merged.post.processed}" 
-      tofile="${dita.map.output.dir}/${dita.map.filename.root}.in.xml" force="true"/>
-
+      tofile="${dita.map.output.dir}/${dita.map.filename.root}.merged.xml" force="true"/>
+  	<replaceregexp file="${dita.map.output.dir}/${dita.map.filename.root}.merged.xml" flags="-s"
+  	               match='^&lt;\?xml version="1.0" encoding="UTF-8"\?>'
+  	               replace='&lt;?xml version="1.0" encoding="UTF-8"?>&#10;${associate.css.pis}'
+  	/>
+  	
   	<antcall target="prince"/>  	
     <antcall target="ahouse"/>
     <antcall target="chemistry"/>
+    <antcall target="chemistry.embedded"/>
   </target>
   
   
@@ -365,20 +373,20 @@ with those set forth herein.
   
 
 
-  <target name="chemistry" if="use.chemistry">	  
+  <target name="chemistry" if="use.chemistry.external">	  
 	  <echo>=============================</echo>
 	  <echo>Oxygen PDF Chemistry script: ${css.processor.path.chemistry}</echo>
 	  <echo>Processing: ${dita.map.merged.post.processed}</echo>
 	  <echo>Output file: ${outputFile}</echo>
 	  <echo>=============================</echo>
 	  	  
-  	
+  	<property name="baseJVMArgLine" value=""/>
     <exec executable="${css.processor.path.chemistry}" failonerror="true" logError="true">
   	  	
   	  	<env key="JAVA_HOME" value="${java.home}" />
   	  	<env key="JAVA_ARG_LINE" value="${baseJVMArgLine}" />
   	  	
-  		  <arg value="-css"/>
+  		<arg value="-css"/>
         <arg value="${main.css.path}" />
         <arg value="-in"/>
   	    <arg value="${dita.map.merged.post.processed}"/>
@@ -391,9 +399,55 @@ with those set forth herein.
         <arg value="-dump-styled-content"/>
 	      <arg value="-dump-fo"/>
 	  </exec>
+   </target>
+
+  <target name="chemistry.embedded" if="use.chemistry" unless="use.chemistry.external">	  
+	  <echo>=============================</echo>
+	  <echo>Oxygen PDF Chemistry</echo>
+      <echo>Installation directory: ${embedded.chemistry.installation.dir}</echo>
+	  <echo>Processing: ${dita.map.merged.post.processed}</echo>
+	  <echo>Output file: ${outputFile}</echo>
+	  <echo>=============================</echo>	  	  
+  	
+  	  <java fork="true" failonerror="true" logerror="true" classname="com.oxygenxml.chemistry.OxygenPDFChemistry">
+  		<jvmarg line="${baseJVMArgLine}"/>
+  		
+  		<classpath>
+  			<fileset dir="${embedded.chemistry.installation.dir}/lib">
+  				<include name="oxygen-pdf-chemistry.jar"/>
+  			</fileset>
+  			
+  			<pathelement path="${embedded.chemistry.installation.dir}/classes"/>  			
+
+  			<fileset dir="${embedded.chemistry.installation.dir}/lib">
+  				<include name="oxygen*.jar"/>
+  			</fileset>  		
+  				
+  			<fileset dir="${embedded.chemistry.installation.dir}/lib">
+  				<include name="*.jar"/>
+  			</fileset>
+
+  		</classpath>
+  		
+  		<arg value="-install-dir"/>
+  		<arg value="${embedded.chemistry.installation.dir}"/>
+  		
+  		<arg value="-css"/>
+        <arg value="${main.css.path}" />
+        <arg value="-in"/>
+  	    <arg value="${dita.map.merged.post.processed}"/>
+        <arg value="-out"/>
+        <arg value="${outputFile}"/>
+        <arg value="-http-proxy-port"/>
+        <arg value="${http.proxyPort}"/>
+        <arg value="-http-proxy-host"/>
+        <arg value="${http.proxyHost}"/>
+        <arg value="-dump-styled-content"/>
+	    <arg value="-dump-fo"/>  		
+  	 </java>
+  	 
+   </target>
 		
-	</target>
-	
 
 
   <target name="prince" if="use.prince">

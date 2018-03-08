@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
     class="- map/map bookmap/bookmap ">
+    
+     <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic">
+        <!-- Has an ID, but is not a target. -->
+       <topicref class="- map/topicref " id="unique_482" />
+     </opentopic:map>
+
+    <topic class="- topic/topic " id="unique_3">
+    </topic>
+    
     <topic class="- topic/topic " id="unique_1">
         <title class="- topic/title ">The reviewed topic.</title>
         <body class="- topic/body ">
-            <p class="- topic/p " >With just <xref class="- topic/xref " href="#unique_2" ohref="topics%5Ccare.dita" type="topic" xtrc="xref:1;8:45" xtrf="D:\projects\eXml-trunk\samples\dita\flowers\topics\introduction.dita"><?ditaot gentext?>Care and Preparation<?ditaot usershortdesc?><desc class="- topic/desc ">"This is a description"</desc></xref>.</p>
-            <p class="- topic/p " >With just <xref class="- topic/xref " href="#unique_2" ohref="topics%5Ccare.dita" type="topic" xtrc="xref:2;9:46" xtrf="D:\projects\eXml-trunk\samples\dita\flowers\topics\introduction.dita"><?ditaot gentext?>Care and Preparation<?ditaot genshortdesc?><desc class="- topic/desc ">When caring for your flower garden you want to feed your plants properly, control pests and weeds.</desc></xref>.</p>
 
+            <!-- Good links. -->
+            <xref class="- topic/xref " href="#unique_1"> Good link </xref>
+            <xref class="- topic/xref " href="#unique_3"> Good link </xref>
+            <xref class="- topic/xref " href="#unique_11"> Good link </xref>
+            <ph class="- topic/ph " id="unique_11">Good Target.</ph> 
+
+            <!-- Broken links. -->            
+            <!-- Broken link. There is an ID attribute with this value, but is placed on the topicref, so is no real target. -->
+            <xref class="- topic/xref " href="#unique_482">Broken link. Points to something from TOC.</xref>
+            <xref class="- topic/xref " href="#unique_2" >Broken link.</xref>
+            <xref class="- topic/xref " href="#unique_2" >Broken link.</xref>
+          
 
 		    <!-- 
 The merged DITA map file may contain cross references to elements from a topic. In this case, the reference looks like:

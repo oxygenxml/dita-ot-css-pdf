@@ -1,11 +1,13 @@
 /**
  * Shows the table column specifications.
  */
- 
-*[class~="topic/colspec"] {
-    display: block !important;    
-}
 
-*[class~="topic/tgroup"]:before {
-    display: none !important;    
+@media oxygen {
+    *[class ~= "topic/colspec"] {
+        display: block !important;
+    }
+
+    *[class ~= "topic/tgroup"]:before {
+        display: none !important;
+    }
 }

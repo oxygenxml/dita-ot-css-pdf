@@ -68,7 +68,6 @@
    -oxy-foldable: false; 
 }
 *[class~='troubleshooting/condition']:before {
-  content: "Condition ";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
@@ -99,7 +98,6 @@
   margin-left:1em;   
 }
 *[class~='troubleshooting/troubleSolution']:before {
-/*  content: "Solution ";*/
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
@@ -132,7 +130,6 @@
 }
 
 *[class~='troubleshooting/cause']:before {
-  content: "Cause: ";
   display:block;
   /* -before_bold- >>> */
   font-weight: bold;
@@ -162,7 +159,6 @@
    padding-left: 1em;
 }
 *[class~='troubleshooting/remedy']:before {
-  content: "Remedy: ";
   display:block;
   /* -before_bold- >>> */
   font-weight: bold;
@@ -186,7 +182,6 @@
  *     + topic/p
  */
 *[class~='troubleshooting/responsibleParty']:before {
-  content: "Responsible party: ";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */

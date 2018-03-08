@@ -8,19 +8,22 @@
     xmlns:oxy="http://www.oxygenxml.com/extensions/author">
     <xsl:include href="review-utils.xsl"/>
     <xsl:param name="show.changes.and.comments" select="'no'"/>
+    <xsl:param name="insert.color" select="'blue'"/>
+    <xsl:param name="delete.color" select="'red'"/>
+    <xsl:param name="comment.bg.color" select="'yellow'"/>
     
 <!-- defining the formatting of modifications  -->
     <xsl:attribute-set name="insert">
-        <xsl:attribute name="color">blue</xsl:attribute>
+        <xsl:attribute name="color" select="$insert.color"/>
     </xsl:attribute-set>
-    <xsl:attribute-set name="change">
-        <xsl:attribute name="background-color">yellow</xsl:attribute>
+    <xsl:attribute-set name="comment-hl">
+        <xsl:attribute name="background-color" select="$comment.bg.color"/>
     </xsl:attribute-set>
     <xsl:attribute-set name="delete">
-        <xsl:attribute name="color">red</xsl:attribute>
+        <xsl:attribute name="color" select="$delete.color"/>
         <xsl:attribute name="text-decoration">line-through</xsl:attribute>
     </xsl:attribute-set>
-    <xsl:attribute-set name="comment">
+    <xsl:attribute-set name="commentContent">
     </xsl:attribute-set>
     <xsl:attribute-set name="footnote_font_size">
         <xsl:attribute name="font-size">75%</xsl:attribute>
@@ -109,7 +112,7 @@
     
     <!-- COMMENT CHANGE -->
     <xsl:template match="oxy:oxy-comment-hl">
-        <fo:inline xsl:use-attribute-sets="change">
+        <fo:inline xsl:use-attribute-sets="comment-hl">
             <xsl:apply-templates/>
         </fo:inline>
     </xsl:template>
@@ -143,7 +146,7 @@
     <xsl:template mode="getCommentContent" match="*">
         <xsl:param name="number"/>
         <xsl:param name="indent" select="0"/>
-        <fo:block xsl:use-attribute-sets="comment">
+        <fo:block xsl:use-attribute-sets="commentContent">
             <xsl:choose>
                 <!-- Nested replies, indent to the left so that they appear like a conversation..-->
                 <xsl:when test="$indent = 1">

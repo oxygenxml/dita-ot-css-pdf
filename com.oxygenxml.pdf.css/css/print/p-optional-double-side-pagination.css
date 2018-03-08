@@ -1,0 +1,15 @@
+/*
+ * ================================================
+ * 
+ * Makes the chapters and TOC start on an odd page number
+ * 
+ * ================================================
+ */ 
+@page table-of-contents{
+    -oxy-initial-page-number: auto-odd;
+}
+
+@page chapter {
+    -oxy-initial-page-number:auto-odd;
+} 
+

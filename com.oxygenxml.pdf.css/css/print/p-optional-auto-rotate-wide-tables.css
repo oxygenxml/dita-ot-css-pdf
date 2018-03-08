@@ -1,0 +1,55 @@
+/*
+ * ======================================================
+ * 
+ * CSS rules for automatically rotating the wide tables (cols greater than 5).
+ * 
+ * ======================================================
+ */
+
+/* 
+---------------------------------------------------------------
+	Rotate only the table.
+---------------------------------------------------------------	 
+*/   
+
+ *[class~="topic/table"] > *[class~="topic/tgroup"][cols='5'],
+ *[class~="topic/table"] > *[class~="topic/tgroup"][cols='6'],
+ *[class~="topic/table"] > *[class~="topic/tgroup"][cols='7'],
+ *[class~="topic/table"] > *[class~="topic/tgroup"][cols='8'] {
+ 	page: landscape-page;
+     max-width: 100%;
+     max-height: 100%;
+     width: 100%;
+     page-break-before: avoid;
+ }
+ 
+/* 
+---------------------------------------------------------------
+	Or to rotate the entire topic that contains the wide table, 
+	comment the above rules and uncomment the below ones:
+---------------------------------------------------------------	 
+*/  
+/*
+*[class~="topic/table"] > *[class~="topic/tgroup"][cols='5'],
+*[class~="topic/table"] > *[class~="topic/tgroup"][cols='6'],
+*[class~="topic/table"] > *[class~="topic/tgroup"][cols='7'],
+*[class~="topic/table"] > *[class~="topic/tgroup"][cols='8'] {
+    max-width: 100%;
+    table-layout:auto;
+}
+
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='5']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='6']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='7']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='8']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='5']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='6']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='7']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='8']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='5']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='6']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='7']),
+*[class~="topic/topic"]:has(*:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *:not([class~="topic/topic"]) > *[class~="topic/table"] > *[class~="topic/tgroup"][cols='8']){
+      page: landscape-page;
+}
+*/    

@@ -54,6 +54,8 @@
 @import "-colors.css";
 @import "-page.css";
 
+@import "-i18n.css";
+
 @namespace oxy "http://www.oxygenxml.com/extensions/author";
 
 /* ====================================

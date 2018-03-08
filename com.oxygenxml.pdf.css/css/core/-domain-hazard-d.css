@@ -54,7 +54,6 @@
 }
 
 *[class~="hazard-d/hazardstatement"]:before{
-    content: url("../img/warning-black30.png") " " "HAZARD";
     display:block;
     background-color:#f57222;
     border-bottom: 2pt solid;
@@ -69,39 +68,7 @@
 *[class~="hazard-d/hazardstatement"][type]:before {
     content: url("../img/warning-black30.png") " " attr(type);
 }
-*[class~="hazard-d/hazardstatement"][type="note"]:before {
-    content: url("../img/warning-black30.png") " " "NOTE";
-}
-*[class~="hazard-d/hazardstatement"][type="tip"]:before {
-    content: url("../img/warning-black30.png") " " "TIP";
-}
-*[class~="hazard-d/hazardstatement"][type="fastpath"]:before {
-    content: url("../img/warning-black30.png") " " "FASTPATH";
-}
-*[class~="hazard-d/hazardstatement"][type="restriction"]:before {
-    content: url("../img/warning-black30.png") " " "RESTRICTION";
-}
-*[class~="hazard-d/hazardstatement"][type="remember"]:before {
-    content: url("../img/warning-black30.png") " " "REMEMBER";
-}
-*[class~="hazard-d/hazardstatement"][type="attention"]:before {
-    content: url("../img/warning-black30.png") " " "ATTENTION";
-}
-*[class~="hazard-d/hazardstatement"][type="caution"]:before {
-    content: url("../img/warning-black30.png") " " "CAUTION";
-}
-*[class~="hazard-d/hazardstatement"][type="notice"]:before {
-    content: url("../img/warning-black30.png") " " "NOTICE";
-}
-*[class~="hazard-d/hazardstatement"][type="danger"]:before {
-    content: url("../img/warning-black30.png") " " "DANGER";
-}
-*[class~="hazard-d/hazardstatement"][type="warning"]:before {
-    content: url("../img/warning-black30.png") " " "WARNING";
-}
-*[class~="hazard-d/hazardstatement"][type="other"]:before {
-    content: url("../img/warning-black30.png") " " "OTHER TYPE OF HAZARD";
-}
+
 
 
 /*

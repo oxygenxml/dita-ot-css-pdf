@@ -61,7 +61,6 @@
   display:block;
 }
 *[class~="topic/data-about"]:before{
-  content: "Data about:";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
@@ -94,9 +93,6 @@
  */ 
 *[class~="topic/boolean"]{
 }
-*[class~="topic/boolean"]{
-    content: "boolean: " ;
-}
 
 *[class~="topic/boolean"][state='no'],
 *[class~="topic/boolean"][state='yes']{
@@ -106,11 +102,6 @@
              uncheckedValues, "no",
              labels, oxy_name(),
              color, "green");
-}
-@media print {
-  *[class~="topic/boolean"]:before{
-    content: "boolean: " attr(state);
-  }
 }
 
 
@@ -135,7 +126,7 @@
 }
 @media print {
   *[class~="topic/state"]:before {
-      content: "state: " attr(name) "=" attr(value);
+      content: attr(name) "=" attr(value);
   }
 }
 

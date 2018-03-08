@@ -164,9 +164,6 @@
 *[class~="glossentry/glossPartOfSpeech"] {
   /**/
 }
-*[class~="glossentry/glossPartOfSpeech"]:before {
-  content: "Part of speech: ";
-}
 /* ====================================
  *
  * <glossProperty>
@@ -184,9 +181,6 @@
  */
 *[class~="glossentry/glossProperty"] {
   /**/
-}
-*[class~="glossentry/glossProperty"]:before {
-  content: "Property: ";
 }
 /* ====================================
  *
@@ -233,9 +227,7 @@
 *[class~="glossentry/glossStatus"] {
   /**/
 }
-*[class~="glossentry/glossStatus"]:before {
-  content: "Status: ";
-}
+
 /* ====================================
  *
  * <glossSurfaceForm>
@@ -253,7 +245,6 @@
   /**/
 }
 *[class~="glossentry/glossSurfaceForm"]:before {
-  content: "Surface form: ";
   /* -before_bold- >>> */
   font-weight: bold;
   /* <<< */
@@ -301,6 +292,4 @@
 *[class~="glossentry/glossUsage"] {
   margin: 0.5em;
 }
-*[class~="glossentry/glossUsage"]:before {
-  content: "Usage: ";
-}
+

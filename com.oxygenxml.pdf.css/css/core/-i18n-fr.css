@@ -1,0 +1,541 @@
+@charset "UTF-8";
+/*
+ * ------------------------------------------------
+ * From -domain-hazard-d.css
+ */
+*[class ~= "hazard-d/hazardstatement"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "DANGER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "note"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "NOTE";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "tip"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "CONSEIL";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "FASTPATH";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "RESTRICTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "remember"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "RAPPELLES TOI";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "attention"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "ATTENTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "caution"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "PRÉCAUTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "notice"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "REMARQUER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "danger"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "DANGER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "warning"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "AVERTISSEMENT";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "other"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "AUTRE TYPE DE DANGER";
+}
+
+/*
+ * ------------------------------------------------
+ * From -domain-taskreq-d.css
+ */
+*[class ~= "taskreq-d/noconds"]:lang(fr):before {
+    content: "<Aucune condition>" !important;
+}
+*[class ~= "taskreq-d/prelreqs"]:lang(fr):before {
+    content: "Exigences préliminaires: ";
+}
+*[class ~= "taskreq-d/closereqs"]:lang(fr):before {
+    content: "Exigences de clôture: ";
+}
+*[class ~= "taskreq-d/reqconds"]:lang(fr):before {
+    content: "Conditions: ";
+}
+*[class ~= "taskreq-d/reqpers"]:lang(fr):before {
+    content: "Personnel: ";
+}
+*[class ~= "taskreq-d/personnel"]:lang(fr):before {
+    content: "Nombre de travailleurs: " !important;
+}
+*[class ~= "taskreq-d/perscat"]:lang(fr):before {
+    content: "Catégorie: " !important;
+}
+*[class ~= "taskreq-d/perskill"]:lang(fr):before {
+    content: "Niveau de compétence: " !important;
+}
+*[class ~= "taskreq-d/esttime"]:lang(fr):before {
+    content: "Estimation du temps: " !important;
+}
+*[class ~= "taskreq-d/supequip"]:lang(fr):before {
+    content: "Équipement: " !important;
+}
+*[class ~= "taskreq-d/nosupeq"]:lang(fr):before {
+    content: "<Aucun équipement de soutien>";
+}
+*[class ~= "taskreq-d/supplies"]:lang(fr):before {
+    content: "Provisions: " !important;
+}
+*[class ~= "taskreq-d/nosupply"]:lang(fr):before {
+    content: "<Pas de provision>";
+}
+*[class ~= "taskreq-d/spares"]:lang(fr):before {
+    content: "Pièces:";
+}
+*[class ~= "taskreq-d/nospares"]:lang(fr):before {
+    content: "<Pas de pièces>";
+}
+*[class ~= "taskreq-d/nosafety"]:lang(fr):before {
+    content: "<Pas de sécurité>" !important;
+}
+*[class ~= "taskreq-d/safety"]:lang(fr):before {
+    content: url(../../img/caution.png) " Sécurité:";
+}
+
+/*
+ * ------------------------------------------------
+ * From -domain-troubleshooting.css
+ */
+*[class ~= 'troubleshooting/condition']:lang(fr):before {
+    content: "Condition ";
+}
+*[class ~= 'troubleshooting/cause']:lang(fr):before {
+    content: "Cause: ";
+}
+*[class ~= 'troubleshooting/remedy']:lang(fr):before {
+    content: "Remède: ";
+}
+*[class ~= 'troubleshooting/responsibleParty']:lang(fr):before {
+    content: "Partie responsable: ";
+}
+
+/*
+ * ------------------------------------------------
+ * From -glossary.css
+ */
+*[class ~= "glossentry/glossPartOfSpeech"]:lang(fr):before {
+    content: "Partie du discours: ";
+}
+*[class ~= "glossentry/glossProperty"]:lang(fr):before {
+    content: "Propriété: ";
+}
+*[class ~= "glossentry/glossStatus"]:lang(fr):before {
+    content: "Situation: ";
+}
+*[class ~= "glossentry/glossSurfaceForm"]:lang(fr):before {
+    content: "Forme de surface: ";
+}
+*[class ~= "glossentry/glossUsage"]:lang(fr):before {
+    content: "Usage: ";
+}
+
+/*
+ * ------------------------------------------------
+ * From -learning-common-interraction.css
+ */
+*[class ~= "learning-d/lcFeedbackIncorrect"]:lang(fr):before {
+    content: "Quand incorrect: ";
+}
+*[class ~= "learning-d/lcFeedbackCorrect"]:lang(fr):before {
+    content: "Quand c'est correct: ";
+}
+*[class ~= "learning-d/lcOpenAnswer"]:lang(fr):before {
+    content: "Réponse: ";
+}
+*[class ~= "learning-d/lcQuestion"]:lang(fr):before {
+    content: "Question: ";
+}
+
+/*
+ * -learning-spec-interraction-base.css
+ */
+*[class ~= "learning-d/lcOpenQuestion"]:lang(fr):before {
+    content: "Question ouverte: ";
+}
+*[class ~= "learning-d/lcTrueFalse"]:lang(fr):before {
+    content: "Vrai ou faux: ";
+}
+*[class ~= "learning-d/lcSingleSelect"]:lang(fr):before {
+    content: "Sélection unique: ";
+}
+*[class ~= "learning-d/lcMultipleSelect"]:lang(fr):before {
+    content: "Sélection multiple: ";
+}
+
+*[class ~= "learning-d/lcSequencing"]:lang(fr):before {
+    content: "Ordonner la séquence: ";
+}
+
+*[class ~= "learning-d/lcMatching"]:lang(fr):before {
+    content: "Faites correspondre les choix: ";
+}
+*[class ~= "learning-d/lcHotspot"]:lang(fr):before {
+    content: "Cliquez sur une région: ";
+}
+
+/*
+ * -reference.css
+ */
+*[class ~= "reference/refsyn"]:lang(fr):before {
+    content: "Syntaxe: ";
+}
+@media print {
+    *[class ~= "reference/refsyn"]:lang(fr):before {
+        content: none;
+    }
+}
+
+/*
+ * -table-html-cals.css
+ */
+
+@media print {
+    *[class ~= "topic/table"] > *[class ~= "topic/title"]:lang(fr):before {
+        content: "Table " counter(tablecount) ": ";
+    }
+}
+
+
+/*
+ * -task.css
+ */
+*[class ~= "task/prereq"]:lang(fr):before {
+    content: "Avant que tu commences: ";
+}
+@media print {
+    *[class ~= "task/prereq"]:lang(fr):before {
+        content: none;
+    }
+}
+*[class ~= "task/postreq"]:lang(fr):before {
+    content: "Que faire ensuite: ";
+}
+@media print {
+    *[class ~= "task/postreq"]:lang(fr):before {
+        content: none;
+    }
+}
+*[class ~= "task/context"]:lang(fr):before {
+    content: "À propos de cette tâche: ";
+}
+@media print {
+    *[class ~= "task/context"]:lang(fr):before {
+        content: none;
+    }
+}
+*[class ~= "task/result"]:lang(fr):before {
+    content: "Résultats: ";
+}
+@media print {
+    *[class ~= "task/result"]:lang(fr):before {
+        content: none;
+    }
+}
+*[class ~= "task/tasktroubleshooting"]:lang(fr):before,
+*[class ~= "task/steptroubleshooting"]:lang(fr):before {
+    content: "Dépannage: ";
+}
+@media print {
+    *[class ~= "task/tasktroubleshooting"]:lang(fr):before,
+    *[class ~= "task/steptroubleshooting"]:lang(fr):before {
+        content: none;
+    }
+}
+
+*[class ~= "task/choices"]:lang(fr):before {
+    content: "Choisissez parmi: ";
+}
+@media print {
+    *[class ~= "task/choices"]:lang(fr):before {
+        content: none;
+    }
+}
+*[class ~= "task/stepxmp"]:lang(fr):before {
+    content: "Exemple: ";
+}
+@media print {
+    *[class ~= "task/stepxmp"]:lang(fr):before {
+        display: none;
+    }
+}
+*[class ~= "task/stepresult"]:lang(fr):before {
+    content: "Résultat: ";
+}
+@media print {
+    *[class ~= "task/stepresult"]:lang(fr):before {
+        content: none;
+    }
+}
+*[class ~= "task/tutorialinfo"]:lang(fr):before {
+    content: "Informations sur le didacticiel: ";
+}
+@media print {
+    *[class ~= "task/tutorialinfo"]:lang(fr):before {
+        content: none;
+    }
+}
+
+*[class ~= "topic/searchtitle"]:lang(fr):before {
+    content: "Titre pour la recherche: ";
+}
+*[class ~= "topic/navtitle"]:lang(fr):before {
+    content: "Titre pour la navigation: ";
+}
+
+@media print {
+    *[class ~= "topic/searchtitle"]:lang(fr):before {
+        content: none;
+    }
+    *[class ~= "topic/navtitle"]:lang(fr):before {
+        content: none;
+    }
+}
+
+*[class ~= "topic/shortdesc"]:lang(fr):before {
+    content: "Brève description: ";
+}
+
+@media print {
+    *[class ~= "topic/shortdesc"]:lang(fr):before {
+        display: none;
+    }
+}
+
+*[class ~= "topic/abstract"]:lang(fr):before {
+    content: "Abstrait: ";
+}
+@media print {
+    *[class ~= "topic/abstract"]:lang(fr):before {
+        display: none;
+    }
+}
+
+*[class ~= "topic/related-links"]:lang(fr):before {
+    content: "Informations connexes: ";
+}
+@media print {
+    *[class ~= "topic/related-links"]:lang(fr):before {
+        content: none;
+    }
+}
+
+/*
+ * -topic-body.css
+ */
+*[class ~= "topic/draft-comment"][author]:lang(fr):before {
+    content: "Commentaire par " attr(author) ": ";
+}
+*[class ~= "topic/draft-comment"]:lang(fr):before {
+    content: "Commentaire: ";
+}
+
+*[class ~= "topic/example"] > *[class ~= "topic/title"]:lang(fr):before {
+    content: "Exemple: ";
+}
+
+@media print {
+    *[class ~= "topic/fig"] > *[class ~= "topic/title"]:lang(fr):before {
+        content: "Figure " counter(figcount) ": ";
+    }
+}
+
+
+*[class ~= "topic/note"]:lang(fr):before {
+    content: url('../../img/note.png') " Note: ";
+}
+*[class ~= "topic/note"][type = "attention"]:lang(fr):before {
+    content: url('../../img/important.png') " Attention: ";
+}
+*[class ~= "topic/note"][type = "caution"]:lang(fr):before {
+    content: url('../../img/caution.png') " Mise en garde: ";
+}
+*[class ~= "topic/note"][type = "danger"]:lang(fr):before {
+    content: url('../../img/danger.png') " Danger: ";
+}
+*[class ~= "topic/note"][type = "fastpath"]:lang(fr):before {
+    content: "Fastpath: ";
+}
+*[class ~= "topic/note"][type = "important"]:lang(fr):before {
+    content: url('../../img/important.png') " Important: ";
+}
+*[class ~= "topic/note"][type = "other"]:lang(fr):before {
+    content: "Other: ";
+}
+*[class ~= "topic/note"][type = "remember"]:lang(fr):before {
+    content: url('../../img/remember.png') " Rappelles toi: ";
+}
+*[class ~= "topic/note"][type = "restriction"]:lang(fr):before {
+    content: url('../../img/restriction.png') " Restriction: ";
+}
+*[class ~= "topic/note"][type = "tip"]:lang(fr):before {
+    content: url('../../img/tip.png') " Conseil: ";
+}
+*[class ~= "topic/note"][type = "notice"]:lang(fr):before {
+    content: url('../../img/important.png') " Remarque: ";
+}
+*[class ~= "topic/note"][type = "warning"]:lang(fr):before {
+    content: url('../../img/warning.png') " Attention: ";
+}
+*[class ~= "topic/note"][type = "other"][othertype]:lang(fr):before {
+    content: attr(othertype) ": ";
+}
+*[class ~= "topic/note"][type = "trouble"]:lang(fr):before {
+    content: url('../../img/troubleshooting.png') " Dépannage: ";
+}
+/*
+ * -topic-legacy-conversion.css
+ */
+*[class ~= "topic/required-cleanup"]:lang(fr):before {
+    content: "Nettoyage Requis: ";
+}
+
+/*
+ * -topic-metadata-indexterms
+ */
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see"]:lang(fr):before {
+    content: " - voir: ";
+}
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see-also"]:lang(fr):before {
+    content: " - voir également: ";
+}
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see-also"]:after,
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see"]:after {
+    content: " ";
+}
+*[class ~= "indexing-d/index-sort-as"]:lang(fr):before {
+    content: " - trier comme: ";
+}
+
+/*
+ * -topic-related-links-xref.css
+ */
+@media print {
+    *[class ~= "topic/xref"][href]:after,
+    *[class ~= "topic/link"][href]:after {
+        content: " (page " target-counter(attr(href), page) ")";
+    }
+}
+
+/*
+ * -topic-specialization
+ */
+*[class ~= "topic/data-about"]:lang(fr):before {
+    content: "Données sur:";
+}
+
+/*
+ * -topic-metadata-prolog
+ */
+*[class~="topic/audience"]:lang(fr):before(300) {
+  content: "Public: ";
+}
+ 
+ *[class~="topic/author"]:lang(fr):before(300) {
+  content: "Auteur: ";
+}
+*[class~="topic/brand"]:lang(fr):before(300) {
+  content: "Marque: ";
+}
+*[class~="topic/category"]:lang(fr):before(300) {
+  content: "Catégorie: ";
+}
+*[class~="topic/component"]:lang(fr):before(300) {
+  content: "Composant: ";
+}
+*[class~="topic/copyright"]:lang(fr):before(300) {
+  content: "Droits d'auteur ";
+}
+*[class~="topic/copyryear"]:lang(fr):before(300) {
+  content: "An: ";
+}
+*[class~="topic/copyrholder"]:lang(fr):before(300) {
+  content: "Titulaire: ";
+}
+*[class~="topic/critdates"]:lang(fr):before(300) {
+  content: "Dates critiques";
+}
+*[class~="topic/created"]:lang(fr):before(300) {
+  content: "Créé: ";
+}
+*[class~="topic/revised"]:lang(fr):before(300) {
+  content: "Modifié: ";
+}
+*[class~="topic/featnum"]:lang(fr):before(300) {
+  content: "Numéro de fonctionnalité: ";
+}
+*[class~="topic/keywords"]:lang(fr):before(300) {
+  content: "Mots clés: ";
+}
+*[class~="topic/metadata"]:lang(fr):before(300) {
+  content: "Métadonnées";
+}
+*[class~="topic/othermeta"]:lang(fr):before(300) {
+  content: "Autres métadonnées:";
+}
+*[class~="topic/permissions"]:lang(fr):before(300) {
+  content: "Autorisations: ";
+}
+*[class~="topic/platform"]:lang(fr):before(300) {
+  content: "Plate-forme: ";
+}
+*[class~="topic/prodinfo"]:lang(fr):before(300) {
+  content: "Information sur le produit ";
+}
+*[class~="topic/prodname"]:lang(fr):before(300) {
+  content: "Nom du produit: ";
+}
+*[class~="topic/prognum"]:lang(fr):before(300) {
+  content: "Numéro de programme: ";
+}
+*[class~="topic/publisher"]:lang(fr):before(300) {
+  content: "Éditeur: ";
+}
+*[class~="topic/resourceid"]:lang(fr):before(300) {
+  content: "Identifiant de ressource: ";
+}
+*[class~="topic/series"]:lang(fr):before(300) {
+  content: "Séries: ";
+}
+*[class~="topic/source"]:lang(fr):before(300) {
+  content: "Source: ";
+}
+*[class~="topic/vrmlist"]:lang(fr):before(300) {
+  content: "Versions: ";
+}
+*[class~="relmgmt-d/change-historylist"]:lang(fr):before(300){
+    content: "Liste de Modifications: ";
+}
+*[class~="relmgmt-d/change-item"]:lang(fr):before(300) {
+    content:"Changement: ";
+}
+*[class~="relmgmt-d/change-person"]:lang(fr):before(300) {
+    content:"Personne: ";
+}
+*[class~="relmgmt-d/change-organization"]:lang(fr):before(300) {
+    content:"Organisation: ";
+}
+*[class~="relmgmt-d/change-started"]:lang(fr):before(300) {
+    content:"Commencé: ";
+}
+*[class~="relmgmt-d/change-completed"]:lang(fr):before(300) {
+    content:"Terminé: ";
+}
+*[class~="relmgmt-d/change-summary"]:lang(fr):before(300) {
+    content:"Résumé: ";
+}
+*[class~="relmgmt-d/change-revisionid"]:lang(fr):before(300) {
+    content:"ID de révision: ";
+}
+*[class~="relmgmt-d/change-request-reference"]:lang(fr):before(300) {
+    content:"Référence pour la demande de changement: ";
+}
+*[class~="relmgmt-d/change-request-system"]:lang(fr):before(300) {
+    content:"System: ";
+}
+*[class~="relmgmt-d/change-request-id"]:lang(fr):before(300) {
+    content:"ID de la demande: ";
+}

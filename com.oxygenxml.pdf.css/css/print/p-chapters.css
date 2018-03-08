@@ -1,0 +1,13 @@
+/*
+ * =====================================================
+ * 
+ * Links the chapter elemements to the chapter pages.
+ * 
+ * =====================================================
+ */
+*[class ~= "topic/topic"][is-chapter] {
+	/* Each chapter starts a new page sequence, so the :first selector applies to each of them. */
+     -oxy-page-group:start; 
+     page: chapter; 
+}
+ 

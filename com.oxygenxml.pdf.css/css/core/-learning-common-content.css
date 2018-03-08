@@ -29,12 +29,18 @@
 *[class *= " learningPlan/lc"]:before,
 *[class *= " learningBase/lc"]:before{
   /* TODO - all the befores - from other files should have the content as constants, not using the local name, so they can be translated.*/
-
-  content:oxy_substring(oxy_local-name(), 2) ": ";
+  content:" ";
   width:7em;
   /* TODO - make all befores look the same*/
   font-weight:bold;
   font-style:normal;
+}
+
+@media oxygen {
+	*[class *= " learningPlan/lc"]:before,
+	*[class *= " learningBase/lc"]:before{
+ 		content:oxy_substring(oxy_local-name(), 2) ": ";
+	} 	
 }
 
 /*
@@ -1107,9 +1113,11 @@
  *  
  *    + topic/data
  */
-*[class ~= "learningBase/lcTime"][name]:before{
-  content: oxy_substring(oxy_local-name(), 2)  " " 
-           oxy_textfield(edit , "@value" , columns , 8) " ";
+ @media oxygen {
+	*[class ~= "learningBase/lcTime"][name]:before{
+	  content: oxy_substring(oxy_local-name(), 2)  " " 
+	           oxy_textfield(edit , "@value" , columns , 8) " ";
+	}
 }
 
 /* ====================================

@@ -23,14 +23,14 @@ The content will we present on the conreffed element.*/
 /*EXM-20282 Remove static text, no margins*/
 *[conref]:not([conaction]):before,
 *[conkeyref]:not([conaction]):before{
-    content:"";
+    content:"" !important;
     display:inline;
     margin:0px;
 }
 /*EXM-33149 We might also have an after content.*/
 *[conref]:not([conaction]):after,
 *[conkeyref]:not([conaction]):after{
-    content:"";
+    content:"" !important;
     display:inline;
     margin:0px;
 }

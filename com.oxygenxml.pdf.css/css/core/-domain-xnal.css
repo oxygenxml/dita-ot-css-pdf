@@ -50,7 +50,6 @@
  *     + topic/ph
  */
 *[class~="xnal-d/addressdetails"]:before{
-  content:"Details ";
 }
 *[class~="xnal-d/addressdetails"] *{
   display:inline;

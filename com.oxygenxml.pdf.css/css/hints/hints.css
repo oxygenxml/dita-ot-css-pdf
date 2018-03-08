@@ -21,2509 +21,2650 @@
 }
 /* define mixins */
 /* Hints and placeholders */
-/* Topic types */
-topic {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-topic:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
-}
-topic:before(201) {
-  background-color: rgba(255, 211, 78, 0.6) !important;
-}
-topic:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter topic content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+/* EXM-41121: don't let the hints go to PDF. */
+@media oxygen {
+  /* Topic types */
+  topic {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  topic:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
+  }
+  topic:before(201) {
+    background-color: rgba(255, 211, 78, 0.6) !important;
+  }
   topic:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter topic content";
   }
-}
-concept {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-concept:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
-}
-concept:before(201) {
-  background-color: rgba(255, 211, 78, 0.6) !important;
-}
-concept:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter concept content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  concept {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  concept:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
+  }
+  concept:before(201) {
+    background-color: rgba(255, 211, 78, 0.6) !important;
+  }
   concept:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter concept content";
   }
-}
-task {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-task:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-task:before(201) {
-  background-color: rgba(255, 211, 78, 0.6) !important;
-}
-task:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter task content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  task {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  task:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  task:before(201) {
+    background-color: rgba(255, 211, 78, 0.6) !important;
+  }
   task:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter task content";
   }
-}
-reference {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-reference:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-reference:before(201) {
-  background-color: rgba(255, 211, 78, 0.6) !important;
-}
-reference:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter reference content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  reference {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  reference:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
+  reference:before(201) {
+    background-color: rgba(255, 211, 78, 0.6) !important;
+  }
   reference:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter reference content";
   }
-}
-glossgroup {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossgroup:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
-}
-glossgroup:before(201) {
-  background-color: rgba(255, 211, 78, 0.6) !important;
-}
-glossgroup:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter glossary entries";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossgroup {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  glossgroup:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
+  }
+  glossgroup:before(201) {
+    background-color: rgba(255, 211, 78, 0.6) !important;
+  }
   glossgroup:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter glossary entries";
   }
-}
-/* Main body elements */
-body {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-body:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter main topic content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* Main body elements */
+  body {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   body:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter main topic content";
   }
-}
-taskbody {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-taskbody:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter main task content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  taskbody {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   taskbody:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter main task content";
   }
-}
-refbody {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-refbody:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter main reference content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  refbody {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   refbody:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter main reference content";
   }
-}
-conbody {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-conbody:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter main concept content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  conbody {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   conbody:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter main concept content";
   }
-}
-glossBody {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossBody:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter glossary body content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossBody {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossBody:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter glossary body content";
   }
-}
-/* titles */
-title {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-title:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* titles */
+  title {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   title:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter title";
   }
-}
-section > title {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-section > title:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter section title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  section > title {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   section > title:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter section title";
   }
-}
-topic > title {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-topic > title:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
-}
-topic > title:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter topic title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  topic > title {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  topic > title:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
+  }
   topic > title:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter topic title";
   }
-}
-reference > title {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-reference > title:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-reference > title:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter reference title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  reference > title {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  reference > title:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
   reference > title:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter reference title";
   }
-}
-task > title {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-task > title:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-task > title:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter task title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  task > title {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  task > title:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   task > title:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter task title";
   }
-}
-concept > title {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-concept > title:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
-}
-concept > title:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter concept title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  concept > title {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  concept > title:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
+  }
   concept > title:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter concept title";
   }
-}
-glossterm {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossterm:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter term";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossterm {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossterm:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter term";
   }
-}
-titlealts {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-titlealts:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-titlealts:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter alternative navigation and search title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  titlealts {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  titlealts:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   titlealts:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter alternative navigation and search title";
   }
-}
-navtitle {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-navtitle:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter navigation title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  navtitle {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   navtitle:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter navigation title";
   }
-}
-searchtitle {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-searchtitle:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter search title";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  searchtitle {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   searchtitle:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter search title";
   }
-}
-/* abstract and short descriptions */
-abstract {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-abstract:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-abstract:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter abstract information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* abstract and short descriptions */
+  abstract {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  abstract:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   abstract:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter abstract information";
   }
-}
-shortdesc {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-shortdesc:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter short description";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  shortdesc {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   shortdesc:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter short description";
   }
-}
-topic > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
-}
-topic > abstract > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
-}
-task > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-task > abstract > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-concept > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
-}
-concept > abstract > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
-}
-reference > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-reference > abstract > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-/* lists */
-sl {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-sl:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-sl:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter simple list items";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  topic > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
+  }
+  topic > abstract > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
+  }
+  task > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  task > abstract > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  concept > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
+  }
+  concept > abstract > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
+  }
+  reference > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
+  reference > abstract > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
+  /* lists */
+  sl {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  sl:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   sl:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter simple list items";
   }
-}
-sli {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-sli:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter simple list item";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  sli {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   sli:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter simple list item";
   }
-}
-ul {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-ul:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter unordered list items";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  ul {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   ul:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter unordered list items";
   }
-}
-ol {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-ol:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter ordered list items";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  ol {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   ol:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter ordered list items";
   }
-}
-li {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-li:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter list item";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  li {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   li:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter list item";
   }
-}
-dl {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-dl:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-dl:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition list entries";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  dl {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  dl:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   dl:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition list entries";
   }
-}
-dlhead {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-dlhead:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition list head information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  dlhead {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   dlhead:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition list head information";
   }
-}
-dthd {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-dthd:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition term heading";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  dthd {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   dthd:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition term heading";
   }
-}
-ddhd {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-ddhd:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition description heading";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  ddhd {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   ddhd:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition description heading";
   }
-}
-dlentry {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-dlentry:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition list entry";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  dlentry {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   dlentry:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition list entry";
   }
-}
-dt {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-dt:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition term";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  dt {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   dt:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition term";
   }
-}
-dd {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-dd:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition description";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  dd {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   dd:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition description";
   }
-}
-parml:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-plentry {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-plentry:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter parameter list entry";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  parml:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
+  plentry {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   plentry:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter parameter list entry";
   }
-}
-pt {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-pt:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter parameter name";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  pt {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   pt:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter parameter name";
   }
-}
-pd {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-pd:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter parameter definition";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  pd {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   pd:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter parameter definition";
   }
-}
-/* task steps */
-steps {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-steps:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-steps:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter ordered steps information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* task steps */
+  steps {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  steps:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   steps:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter ordered steps information";
   }
-}
-steps-unordered {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-steps-unordered:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-steps-unordered:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter unordered steps information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  steps-unordered {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  steps-unordered:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   steps-unordered:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter unordered steps information";
   }
-}
-steps-informal {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-steps-informal:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-steps-informal:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter informal steps information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  steps-informal {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  steps-informal:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   steps-informal:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter informal steps information";
   }
-}
-step {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-step:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "You need to enter a command for this step!";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  step {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   step:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "You need to enter a command for this step!";
   }
-}
-cmd {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-cmd:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter step action";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  cmd {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   cmd:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter step action";
   }
-}
-/* hints and placeholders */
-p {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-p:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter paragraph content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* hints and placeholders */
+  p {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   p:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter paragraph content";
   }
-}
-pre {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-pre:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter preformated content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  pre {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   pre:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter preformated content";
   }
-}
-codeblock {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-codeblock:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-codeblock:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter code fragments";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  codeblock {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  codeblock:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   codeblock:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter code fragments";
   }
-}
-screen {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-screen:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-screen:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter screen content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  screen {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  screen:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   screen:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter screen content";
   }
-}
-lines {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-lines:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-lines:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter lines";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  lines {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  lines:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   lines:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter lines";
   }
-}
-bodydiv {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-bodydiv:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
-}
-bodydiv:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter body div content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  bodydiv {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  bodydiv:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
+  }
   bodydiv:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter body div content";
   }
-}
-sectiondiv {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-sectiondiv:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
-}
-sectiondiv:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter section div content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  sectiondiv {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  sectiondiv:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('topic-hints', '-', oxy_local-name()), width, 100%);
+  }
   sectiondiv:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter section div content";
   }
-}
-conbodydiv {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-conbodydiv:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
-}
-conbodydiv:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter concept body div content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  conbodydiv {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  conbodydiv:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('concept-hints', '-', oxy_local-name()), width, 100%);
+  }
   conbodydiv:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter concept body div content";
   }
-}
-refbodydiv {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-refbodydiv:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-refbodydiv:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter reference body div content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  refbodydiv {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  refbodydiv:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
   refbodydiv:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter reference body div content";
   }
-}
-prolog {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-prolog:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-prolog:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter prolog information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  prolog {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  prolog:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   prolog:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter prolog information";
   }
-}
-author {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-author:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter author name";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  author {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   author:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter author name";
   }
-}
-source {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-source:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter a reference to a resource";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  source {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   source:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter a reference to a resource";
   }
-}
-publisher {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-publisher:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter publisher name";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  publisher {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   publisher:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter publisher name";
   }
-}
-copyrholder {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-copyrholder:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter copyright holder";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  copyrholder {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   copyrholder:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter copyright holder";
   }
-}
-critdates {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-critdates:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter creation and revision dates";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  critdates {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   critdates:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter creation and revision dates";
   }
-}
-metadata {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-metadata:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-metadata:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter metadata information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  metadata {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  metadata:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   metadata:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter metadata information";
   }
-}
-audience {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-audience:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter audience";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  audience {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   audience:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter audience";
   }
-}
-category {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-category:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter category";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  category {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   category:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter category";
   }
-}
-keywords {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-keywords:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter keywords";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  keywords {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   keywords:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter keywords";
   }
-}
-prodinfo {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-prodinfo:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter product information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  prodinfo {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   prodinfo:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter product information";
   }
-}
-prodname {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-prodname:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter product name";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  prodname {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   prodname:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter product name";
   }
-}
-vrmlist {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-vrmlist:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter product version information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  vrmlist {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   vrmlist:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter product version information";
   }
-}
-section {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-section:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-section:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter section content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  section {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  section:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   section:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter section content";
   }
-}
-syntaxdiagram {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-syntaxdiagram:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-syntaxdiagram:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter syntax diagram content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  syntaxdiagram {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  syntaxdiagram:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   syntaxdiagram:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter syntax diagram content";
   }
-}
-lq {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-lq:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-lq:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter long quote";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  lq {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  lq:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   lq:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter long quote";
   }
-}
-msgblock {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-msgblock:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-msgblock:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter message block content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  msgblock {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  msgblock:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   msgblock:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter message block content";
   }
-}
-note {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-note:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-note:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter note content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  note {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  note:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   note:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter note content";
   }
-}
-fig {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-fig:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-fig:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter figure content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  fig {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  fig:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   fig:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter figure content";
   }
-}
-example {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-example:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-example:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter example";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  example {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  example:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   example:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter example";
   }
-}
-desc {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-desc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-desc:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter description";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  desc {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  desc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   desc:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter description";
   }
-}
-draft-comment {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-draft-comment:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-draft-comment:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter commment";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  draft-comment {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  draft-comment:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   draft-comment:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter commment";
   }
-}
-related-links:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-linklist {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-linklist:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-linklist:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter link list content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  related-links:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
+  linklist {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  linklist:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   linklist:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter link list content";
   }
-}
-linkinfo {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-linkinfo:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-linkinfo:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter link information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  linkinfo {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  linkinfo:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   linkinfo:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter link information";
   }
-}
-linkpool {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-linkpool:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-linkpool:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter link pool content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  linkpool {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  linkpool:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   linkpool:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter link pool content";
   }
-}
-hazardstatement {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-hazardstatement:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-hazardstatement:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter hazard information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  hazardstatement {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  hazardstatement:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
   hazardstatement:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter hazard information";
   }
-}
-typeofhazard {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-typeofhazard:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Specify the hazard type";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  typeofhazard {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   typeofhazard:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Specify the hazard type";
   }
-}
-consequence {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-consequence:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter the consequences of not avoiding the hazard";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  consequence {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   consequence:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter the consequences of not avoiding the hazard";
   }
-}
-howtoavoid {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-howtoavoid:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Specify how to avoid the hazard";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  howtoavoid {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   howtoavoid:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Specify how to avoid the hazard";
   }
-}
-hazardsymbol:not([href]):not([keyref]) {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-hazardsymbol:not([href]):not([keyref]):empty {
-  color: #ef2800 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Set href or keyref for this hazard symbol!";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  hazardsymbol:not([href]):not([keyref]) {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   hazardsymbol:not([href]):not([keyref]):empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Set href or keyref for this hazard symbol!";
   }
-}
-imagemap:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-coords {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-coords:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter coordinates";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  imagemap:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
+  coords {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   coords:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter coordinates";
   }
-}
-taskbody > prereq {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-taskbody > prereq:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-taskbody > prereq:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter pre-requisites";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  taskbody > prereq {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  taskbody > prereq:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   taskbody > prereq:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter pre-requisites";
   }
-}
-taskbody > context {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-taskbody > context:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-taskbody > context:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter context information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  taskbody > context {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  taskbody > context:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   taskbody > context:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter context information";
   }
-}
-step > stepresult:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-substep > stepresult:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-stepresult {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-stepresult:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter the result of this step";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  step > stepresult:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  substep > stepresult:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  stepresult {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   stepresult:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter the result of this step";
   }
-}
-choices:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-choice {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-choice:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Provide an option";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  choices:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  choice {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   choice:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Provide an option";
   }
-}
-step > info {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-step > info:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-step > info:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter step information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  step > info {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  step > info:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   step > info:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter step information";
   }
-}
-substep > info {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-substep > info:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-substep > info:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter substep information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  substep > info {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  substep > info:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   substep > info:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter substep information";
   }
-}
-step > tutorialinfo {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-step > tutorialinfo:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-step > tutorialinfo:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter tutorial information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  step > tutorialinfo {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  step > tutorialinfo:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   step > tutorialinfo:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter tutorial information";
   }
-}
-substep > tutorialinfo {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-substep > tutorialinfo:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-substep > tutorialinfo:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter tutorial information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  substep > tutorialinfo {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  substep > tutorialinfo:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   substep > tutorialinfo:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter tutorial information";
   }
-}
-step > stepxmp {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-step > stepxmp:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-step > stepxmp:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Provide a step example";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  step > stepxmp {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  step > stepxmp:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   step > stepxmp:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Provide a step example";
   }
-}
-substep > stepxmp {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-substep > stepxmp:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-substep > stepxmp:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Provide a step example";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  substep > stepxmp {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  substep > stepxmp:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   substep > stepxmp:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Provide a step example";
   }
-}
-step > substeps:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-taskbody > result {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-taskbody > result:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-taskbody > result:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter the result of the task";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  step > substeps:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
+  taskbody > result {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  taskbody > result:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   taskbody > result:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter the result of the task";
   }
-}
-taskbody > postreq {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-taskbody > postreq:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-taskbody > postreq:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter post-requisites";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  taskbody > postreq {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  taskbody > postreq:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   taskbody > postreq:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter post-requisites";
   }
-}
-stepsection {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-stepsection:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
-}
-stepsection:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter step section information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  stepsection {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  stepsection:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('task-hints', '-', oxy_local-name()), width, 100%);
+  }
   stepsection:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter step section information";
   }
-}
-refsyn {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-refsyn:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-refsyn:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter reference syntax content";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  refsyn {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  refsyn:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
   refsyn:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter reference syntax content";
   }
-}
-properties:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
-}
-/* links */
-xref:not([href]):not([keyref]) {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-xref:not([href]):not([keyref]):empty {
-  color: #ef2800 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Set href or keyref for this cross reference!";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  properties:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('reference-hints', '-', oxy_local-name()), width, 100%);
+  }
+  /* links */
+  xref:not([href]):not([keyref]) {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   xref:not([href]):not([keyref]):empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Set href or keyref for this cross reference!";
   }
-}
-/* references to long quote and long description */
-longquoteref:not([href]):not([keyref]) {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-longquoteref:not([href]):not([keyref]):empty {
-  color: #ef2800 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Set href or keyref on this long quote";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* references to long quote and long description */
+  longquoteref:not([href]):not([keyref]) {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   longquoteref:not([href]):not([keyref]):empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Set href or keyref on this long quote";
   }
-}
-longdescref:not([href]):not([keyref]) {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-longdescref:not([href]):not([keyref]):empty {
-  color: #ef2800 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Set href or keyref on this long description";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  longdescref:not([href]):not([keyref]) {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   longdescref:not([href]):not([keyref]):empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Set href or keyref on this long description";
   }
-}
-table:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
-}
-/* glossary */
-glossentry {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossentry:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
-}
-glossentry:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter glossary entry";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  table:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('hints', '-', oxy_local-name()), width, 100%);
+  }
+  /* glossary */
+  glossentry {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  glossentry:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
+  }
   glossentry:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter glossary entry";
   }
-}
-glossdef {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossdef:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter definition";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossdef {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossdef:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter definition";
   }
-}
-glossAlt {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossAlt:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
-}
-glossAlt:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Alternative term";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossAlt {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  glossAlt:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
+  }
   glossAlt:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Alternative term";
   }
-}
-glossAbbreviation {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossAbbreviation:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter abbreviated form of the term";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossAbbreviation {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossAbbreviation:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter abbreviated form of the term";
   }
-}
-glossAcronym {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossAcronym:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter acronym";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossAcronym {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossAcronym:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter acronym";
   }
-}
-glossShortForm {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossShortForm:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter short form alternative";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossShortForm {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossShortForm:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter short form alternative";
   }
-}
-glossSynonym {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossSynonym:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter synonym";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossSynonym {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossSynonym:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter synonym";
   }
-}
-glossUsage {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossUsage:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter usage information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossUsage {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossUsage:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter usage information";
   }
-}
-glossStatus {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossStatus:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter usage status";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossStatus {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossStatus:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter usage status";
   }
-}
-glossProperty {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossProperty:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter additional details";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossProperty {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossProperty:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter additional details";
   }
-}
-glossPartOfSpeech {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossPartOfSpeech:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter part of speech information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossPartOfSpeech {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossPartOfSpeech:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter part of speech information";
   }
-}
-glossSurfaceForm {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossSurfaceForm:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter surface form information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossSurfaceForm {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   glossSurfaceForm:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter surface form information";
   }
-}
-glossScopeNote {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-glossScopeNote:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
-}
-glossScopeNote:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter scope note";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  glossScopeNote {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  glossScopeNote:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('glossary-hints', '-', oxy_local-name()), width, 100%);
+  }
   glossScopeNote:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter scope note";
   }
-}
-/* machine industry */
-prelreqs {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-prelreqs:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-prelreqs:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter preliminary requirements";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* machine industry */
+  prelreqs {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  prelreqs:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   prelreqs:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter preliminary requirements";
   }
-}
-closereqs {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-closereqs:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-closereqs:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter closing requirements";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  closereqs {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  closereqs:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   closereqs:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter closing requirements";
   }
-}
-reqconds {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-reqconds:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-reqconds:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter required conditions";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  reqconds {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  reqconds:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   reqconds:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter required conditions";
   }
-}
-reqcond {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-reqcond:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter required condition";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  reqcond {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   reqcond:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter required condition";
   }
-}
-reqcontp {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-reqcontp:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter a technical publication";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  reqcontp {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   reqcontp:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter a technical publication";
   }
-}
-reqpers {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-reqpers:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-reqpers:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter required personnel";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  reqpers {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  reqpers:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   reqpers:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter required personnel";
   }
-}
-personnel {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-personnel:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter the number of personnel";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  personnel {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   personnel:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter the number of personnel";
   }
-}
-perscat {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-perscat:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter required category level";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  perscat {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   perscat:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter required category level";
   }
-}
-perskill {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-perskill:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter required skill level";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  perskill {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   perskill:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter required skill level";
   }
-}
-esttime {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-esttime:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter time estimate";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  esttime {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   esttime:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter time estimate";
   }
-}
-supequip {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-supequip:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-supequip:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter support equipment";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  supequip {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  supequip:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   supequip:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter support equipment";
   }
-}
-supeqli {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-supeqli:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter support equipment items";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  supeqli {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   supeqli:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter support equipment items";
   }
-}
-supequi {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-supequi:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter support equipment item";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  supequi {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   supequi:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter support equipment item";
   }
-}
-supplies {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-supplies:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-supplies:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter supplies";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  supplies {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  supplies:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   supplies:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter supplies";
   }
-}
-supplyli {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-supplyli:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter supply items";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  supplyli {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   supplyli:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter supply items";
   }
-}
-supply {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-supply:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter supply description";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  supply {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   supply:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter supply description";
   }
-}
-spares {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-spares:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-spares:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter spare parts";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  spares {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  spares:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   spares:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter spare parts";
   }
-}
-sparesli {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-sparesli:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter spare parts items";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  sparesli {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   sparesli:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter spare parts items";
   }
-}
-spare {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-spare:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter spare part description";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  spare {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   spare:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter spare part description";
   }
-}
-safety {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-safety:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
-}
-safety:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter safety information";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  safety {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  safety:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('mi-hints', '-', oxy_local-name()), width, 100%);
+  }
   safety:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter safety information";
   }
-}
-safecond {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-safecond:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Enter safety condition";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  safecond {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
   safecond:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Enter safety condition";
   }
-}
-/* troubleshooting */
-troubleshooting:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
-}
-troubleshooting:before(201) {
-  background-color: rgba(255, 211, 78, 0.6) !important;
-}
-condition {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-condition:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
-}
-condition:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Describe the condition to be corrected";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  /* troubleshooting */
+  troubleshooting:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
+  troubleshooting:before(201) {
+    background-color: rgba(255, 211, 78, 0.6) !important;
+  }
+  condition {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  condition:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
   condition:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Describe the condition to be corrected";
   }
-}
-troubleSolution {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-troubleSolution:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
-}
-troubleSolution:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Describe a possible solution";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  troubleSolution {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  troubleSolution:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
   troubleSolution:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Describe a possible solution";
   }
-}
-cause {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-cause:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
-}
-cause:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Describe a possible cause";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  cause {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  cause:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
   cause:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Describe a possible cause";
   }
-}
-remedy {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-remedy:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
-}
-remedy:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Describe a possible remedy";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  remedy {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  remedy:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
   remedy:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Describe a possible remedy";
   }
-}
-responsibleParty {
-  /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
-}
-responsibleParty:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
-}
-responsibleParty:empty {
-  color: #bd4932 !important;
-  -oxy-show-placeholder: always;
-  -oxy-placeholder-content: "Who should perform the remedy procedure?";
-}
-@media oxygen-high-contrast-black, oxygen-dark-theme {
+  responsibleParty {
+    /* EXM-41121: don't let the hints go to PDF. */
+    /*@media oxygen-high-contrast-black, oxygen-dark-theme {
+        &:empty {
+            color:white!important;
+        }
+    }*/
+    /*&:empty:focus   {color:@focusedPlaceholderColor!important;}*/
+  }
+  responsibleParty:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
   responsibleParty:empty {
-    color: white!important;
+    color: #ff3b00 !important;
+    -oxy-show-placeholder: always;
+    -oxy-placeholder-content: "Who should perform the remedy procedure?";
   }
-}
-troubleshooting > shortdesc:before(201) {
-  display: block;
-  font-family: arial, helvetica, sans-serif;
-  line-height: 1rem;
-  margin-top: 0.4em;
-  margin-bottom: 0.2em;
-  content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  troubleshooting > shortdesc:before(201) {
+    display: block;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1rem;
+    margin-top: 0.4em;
+    margin-bottom: 0.2em;
+    content: oxy_htmlContent(href, 'hints.html', id, oxy_concat('tr-hints', '-', oxy_local-name()), width, 100%);
+  }
 }
 /* Specific rules by platform */
 @media oxygen and (platform: standalone), oxygen and (platform: eclipse) {

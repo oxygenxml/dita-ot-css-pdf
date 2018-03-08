@@ -104,7 +104,7 @@
  *     + topic/data  
  */
 *[class~="bookmap/bookeventtype"]:before{
-  content: "Type ";
+/**/
 } 
 
 
@@ -282,7 +282,7 @@
  *     + topic/ph   
  */
 *[class~="bookmap/completed"]:before{
-  content: "Completed ";
+/**/
 }
 
 

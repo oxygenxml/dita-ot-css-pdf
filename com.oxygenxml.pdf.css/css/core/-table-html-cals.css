@@ -161,11 +161,23 @@ informaltable[align='left']{
 }
 
 
-/*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
-it's silly to align the colspec element*/
-*[class~="topic/colspec"][align], *[class~="topic/col"][align]{
-   text-align:left;
+@media oxygen {
+	/*EXM-9928 The @align on a colspec is actually for the entire column determined by it,
+	it's silly to align the colspec element*/
+	*[class~="topic/colspec"][align], 
+	*[class~="topic/col"][align]{
+	   text-align:left;
+	}
 }
+@media print {
+    /* CH-284 Is important for the @media print, because the property is taken into accound 
+       when aligning the text from cells - the colspec elements are not visible. */
+    *[class~="topic/colspec"][align], 
+    *[class~="topic/col"][align]{
+       text-align:attr(align);
+    }    
+}
+
 /*
   A wrapper for the main content of a table, or part of a table
  */
@@ -829,7 +841,7 @@ td[bgcolor]{
 
 
 *[class~="topic/colspec"], col, spanspec{
-    text-align:left;
+    text-align:attr(align);
     background-color:inherit;
     font-family:sansserif, verdana, helvetica;
 	font-size:0.75em;

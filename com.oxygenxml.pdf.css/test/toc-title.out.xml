@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bookmap class="- map/map bookmap/bookmap " collection-type="sequence" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
   <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
     <oxy:front-page-title>
-      <booktitle class="- topic/title bookmap/booktitle " xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+      <booktitle class="- topic/title bookmap/booktitle "
+        xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
         <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
           <ph class="- topic/ph ">Oxygen XML Author</ph>
         </mainbooktitle>
@@ -17,11 +19,42 @@
         <ph class="- topic/ph ">Oxygen XML Author</ph>
       </mainbooktitle>
     </booktitle>
-    <chapter class="- map/topicref bookmap/chapter " href="#unique_5" is-chapter="true" navtitle="Installation Options" type="concept">
+    <chapter broken-link="true" class="- map/topicref bookmap/chapter "
+      href="#unique_5" is-chapter="true" navtitle="Installation Options" type="concept">
       <topicmeta class="- map/topicmeta ">
-        <navtitle class="- topic/navtitle " href="#unique_5">Installation Options for Oxygen XML
-                    Author</navtitle>
+        <navtitle class="- topic/navtitle " href="#unique_5">Installation Options</navtitle>
       </topicmeta>
     </chapter>
+    <!-- The navtitle attribute should be used as the link text in TOC. It should also migrate to the topic title, for PDF bookmarks. -->
+    <topicref class="- map/topicref " href="#unique_6" is-chapter="true"
+      navtitle="Getting Started Nav Title Attribute" type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_6">Getting Started Nav Title Attribute</navtitle>
+      </topicmeta>
+    </topicref>
+    <!-- The navtitle element should be used as the link text. It should also migrate to the topic title. -->
+    <topicref class="- map/topicref " href="#unique_7" is-chapter="true" type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_7">Getting Started Nav Title Element</navtitle>
+      </topicmeta>
+    </topicref>
+    <!-- This navtitle should not migrate to the topic title, since it is not marked as locktitle. -->
+    <topicref class="- map/topicref " href="#unique_8" is-chapter="true" type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_8">Getting Started Nav Title Element</navtitle>
+      </topicmeta>
+    </topicref>
   </opentopic:map>
+  <topic break-before="true" class="- topic/topic " id="unique_6"
+    is-chapter="true" oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title " navtitle="Getting Started Nav Title Attribute">Getting Started</title>
+  </topic>
+  <topic break-before="true" class="- topic/topic " id="unique_7"
+    is-chapter="true" oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title " navtitle="Getting Started Nav Title Element">Getting Started</title>
+  </topic>
+  <topic break-before="true" class="- topic/topic " id="unique_8"
+    is-chapter="true" oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title ">Getting Started</title>
+  </topic>
 </bookmap>

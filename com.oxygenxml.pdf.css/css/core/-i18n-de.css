@@ -1,0 +1,547 @@
+@charset "UTF-8";
+
+/*
+ * ------------------------------------------------
+ * From -domain-hazard-d.css
+ */
+*[class ~= "hazard-d/hazardstatement"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "GEFAHR";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "note"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "BEACHTEN";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "tip"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "ANMERKUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "FASTPATH";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "BESCHRNKUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "remember"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "BEDENKEN";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "attention"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "ACHTUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "caution"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "VORSICHT";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "notice"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "HINWEIS";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "danger"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "GEFAHR";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "warning"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "WARNUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "other"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "ANDERE ART VON GEFAHREN";
+}
+
+/*
+ * ------------------------------------------------
+ * From -domain-taskreq-d.css
+ */
+*[class ~= "taskreq-d/noconds"]:lang(de):before {
+    content: "<Keine Bedingungen>" !important;
+}
+*[class ~= "taskreq-d/prelreqs"]:lang(de):before {
+    content: "Vorlufige Anforderungen: ";
+}
+*[class ~= "taskreq-d/closereqs"]:lang(de):before {
+    content: "Abschlussanforderungen: ";
+}
+*[class ~= "taskreq-d/reqconds"]:lang(de):before {
+    content: "Verhltnisse: ";
+}
+*[class ~= "taskreq-d/reqpers"]:lang(de):before {
+    content: "Personal: ";
+}
+*[class ~= "taskreq-d/personnel"]:lang(de):before {
+    content: "Anzahl der Arbeiter: " !important;
+}
+*[class ~= "taskreq-d/perscat"]:lang(de):before {
+    content: "Klasse: " !important;
+}
+*[class ~= "taskreq-d/perskill"]:lang(de):before {
+    content: "Fhigkeitslevell: " !important;
+}
+*[class ~= "taskreq-d/esttime"]:lang(de):before {
+    content: "Zeitschtzung: " !important;
+}
+*[class ~= "taskreq-d/supequip"]:lang(de):before {
+    content: "Ausrstung: " !important;
+}
+*[class ~= "taskreq-d/nosupeq"]:lang(de):before {
+    content: "<Keine Ausrstung>";
+}
+*[class ~= "taskreq-d/supplies"]:lang(de):before {
+    content: "Vorrte: " !important;
+}
+*[class ~= "taskreq-d/nosupply"]:lang(de):before {
+    content: "<Keine Ersatzteile>";
+}
+*[class ~= "taskreq-d/spares"]:lang(de):before {
+    content: "Ersatzteile:";
+}
+*[class ~= "taskreq-d/nospares"]:lang(de):before {
+    content: "<Keine Spares>";
+}
+*[class ~= "taskreq-d/nosafety"]:lang(de):before {
+    content: "<Keine Sicherheitshinweis>" !important;
+}
+*[class ~= "taskreq-d/safety"]:lang(de):before {
+    content: url(../../img/caution.png) " Sicherheitshinweis:";
+}
+
+/*
+ * ------------------------------------------------
+ * From -domain-troubleshooting.css
+ */
+*[class ~= 'troubleshooting/condition']:lang(de):before {
+    content: "Bedingung ";
+}
+*[class ~= 'troubleshooting/cause']:lang(de):before {
+    content: "Ursache: ";
+}
+*[class ~= 'troubleshooting/remedy']:lang(de):before {
+    content: "Abhilfe : ";
+}
+*[class ~= 'troubleshooting/responsibleParty']:lang(de):before {
+    content: "Verantwortliche Partei: ";
+}
+
+/*
+ * ------------------------------------------------
+ * From -glossary.css
+ */
+*[class ~= "glossentry/glossPartOfSpeech"]:lang(de):before {
+    content: "Wortart: ";
+}
+*[class ~= "glossentry/glossProperty"]:lang(de):before {
+    content: "Eigenschaft: ";
+}
+*[class ~= "glossentry/glossStatus"]:lang(de):before {
+    content: "Status: ";
+}
+*[class ~= "glossentry/glossSurfaceForm"]:lang(de):before {
+    content: "Oberflchenform: ";
+}
+*[class ~= "glossentry/glossUsage"]:lang(de):before {
+    content: "Verwendung: ";
+}
+
+/*
+ * ------------------------------------------------
+ * From -learning-common-interraction.css
+ */
+*[class ~= "learning-d/lcFeedbackIncorrect"]:lang(de):before {
+    content: "Wenn nicht korrekt: ";
+}
+*[class ~= "learning-d/lcFeedbackCorrect"]:lang(de):before {
+    content: "Wenn richtig: ";
+}
+*[class ~= "learning-d/lcOpenAnswer"]:lang(de):before {
+    content: "Antwort: ";
+}
+*[class ~= "learning-d/lcQuestion"]:lang(de):before {
+    content: "Frage: ";
+}
+
+/*
+ * -learning-spec-interraction-base.css
+ */
+*[class ~= "learning-d/lcOpenQuestion"]:lang(de):before {
+    content: "Offene Frage: ";
+}
+*[class ~= "learning-d/lcTrueFalse"]:lang(de):before {
+    content: "Richtig oder falsch: ";
+}
+*[class ~= "learning-d/lcSingleSelect"]:lang(de):before {
+    content: "Einzelauswahl: ";
+}
+*[class ~= "learning-d/lcMultipleSelect"]:lang(de):before {
+    content: "Mehrfachauswahl: ";
+}
+
+*[class ~= "learning-d/lcSequencing"]:lang(de):before {
+    content: "Reihenfolge: ";
+}
+
+*[class ~= "learning-d/lcMatching"]:lang(de):before {
+    content: "Stimmen Sie die Auswahl ab: ";
+}
+*[class ~= "learning-d/lcHotspot"]:lang(de):before {
+    content: "Klicken Sie auf eine Region: ";
+}
+
+/*
+ * -reference.css
+ */
+*[class ~= "reference/refsyn"]:lang(de):before {
+    content: "Syntax: ";
+}
+@media print {
+    *[class ~= "reference/refsyn"]:lang(de):before {
+        content: none;
+    }
+}
+
+/*
+ * -table-html-cals.css
+ */
+
+@media print {
+    *[class ~= "topic/table"] > *[class ~= "topic/title"]:lang(de):before {
+        content: "Tabelle " counter(tablecount) ": ";
+    }
+}
+
+
+/*
+ * -task.css
+ */
+*[class ~= "task/prereq"]:lang(de):before {
+    content: "Bevor Sie beginnen: ";
+}
+@media print {
+    *[class ~= "task/prereq"]:lang(de):before {
+        content: none;
+    }
+}
+*[class ~= "task/postreq"]:lang(de):before {
+    content: "Nchster: ";
+}
+@media print {
+    *[class ~= "task/postreq"]:lang(de):before {
+        content: none;
+    }
+}
+*[class ~= "task/context"]:lang(de):before {
+    content: "ber diese Aufgabe: ";
+}
+@media print {
+    *[class ~= "task/context"]:lang(de):before {
+        content: none;
+    }
+}
+*[class ~= "task/result"]:lang(de):before {
+    content: "Befund: ";
+}
+@media print {
+    *[class ~= "task/result"]:lang(de):before {
+        content: none;
+    }
+}
+*[class ~= "task/tasktroubleshooting"]:lang(de):before,
+*[class ~= "task/steptroubleshooting"]:lang(de):before {
+    content: "Fehlerbehebung: ";
+}
+@media print {
+    *[class ~= "task/tasktroubleshooting"]:lang(de):before,
+    *[class ~= "task/steptroubleshooting"]:lang(de):before {
+        content: none;
+    }
+}
+
+*[class ~= "task/choices"]:lang(de):before {
+    content: "Whlen: ";
+}
+@media print {
+    *[class ~= "task/choices"]:lang(de):before {
+        content: none;
+    }
+}
+*[class ~= "task/stepxmp"]:lang(de):before {
+    content: "Beispiel: ";
+}
+@media print {
+    *[class ~= "task/stepxmp"]:lang(de):before {
+        display: none;
+    }
+}
+*[class ~= "task/stepresult"]:lang(de):before {
+    content: "Resultat: ";
+}
+@media print {
+    *[class ~= "task/stepresult"]:lang(de):before {
+        content: none;
+    }
+}
+*[class ~= "task/tutorialinfo"]:lang(de):before {
+    content: "Tutorial Informationen: ";
+}
+@media print {
+    *[class ~= "task/tutorialinfo"]:lang(de):before {
+        content: none;
+    }
+}
+
+*[class ~= "topic/searchtitle"]:lang(de):before {
+    content: "Suchtitel: ";
+}
+*[class ~= "topic/navtitle"]:lang(de):before {
+    content: "Navigationstitel: ";
+}
+
+@media print {
+    *[class ~= "topic/searchtitle"]:lang(de):before {
+        content: none;
+    }
+    *[class ~= "topic/navtitle"]:lang(de):before {
+        content: none;
+    }
+}
+
+*[class ~= "topic/shortdesc"]:lang(de):before {
+    content: "Kurze Beschreibung: ";
+}
+
+@media print {
+    *[class ~= "topic/shortdesc"]:lang(de):before {
+        display: none;
+    }
+}
+
+*[class ~= "topic/abstract"]:lang(de):before {
+    content: "Abstrakt: ";
+}
+@media print {
+    *[class ~= "topic/abstract"]:lang(de):before {
+        display: none;
+    }
+}
+
+*[class ~= "topic/related-links"]:lang(de):before {
+    content: "Zugehrige Verweise: ";
+}
+@media print {
+    *[class ~= "topic/related-links"]:lang(de):before {
+        content: none;
+    }
+}
+
+/*
+ * -topic-body.css
+ */
+*[class ~= "topic/draft-comment"][author]:lang(de):before {
+    content: "Kommentar von " attr(author) ": ";
+}
+*[class ~= "topic/draft-comment"]:lang(de):before {
+    content: "Kommentar: ";
+}
+
+*[class ~= "topic/example"] > *[class ~= "topic/title"]:lang(de):before {
+    content: "Beispiel: ";
+}
+
+@media print {
+    *[class ~= "topic/fig"] > *[class ~= "topic/title"]:lang(de):before {
+        content: "Abbildung " counter(figcount) ": ";
+    }
+}
+
+
+*[class ~= "topic/note"]:lang(de):before {
+    content: url('../../img/note.png') " Anmerkung: ";
+}
+*[class ~= "topic/note"][type = "attention"]:lang(de):before {
+    content: url('../../img/important.png') " Beachtung: ";
+}
+*[class ~= "topic/note"][type = "caution"]:lang(de):before {
+    content: url('../../img/caution.png') " Vorsicht: ";
+}
+*[class ~= "topic/note"][type = "danger"]:lang(de):before {
+    content: url('../../img/danger.png') " Gefahr: ";
+}
+*[class ~= "topic/note"][type = "fastpath"]:lang(de):before {
+    content: "Fastpath: ";
+}
+*[class ~= "topic/note"][type = "important"]:lang(de):before {
+    content: url('../../img/important.png') " Wichtig: ";
+}
+*[class ~= "topic/note"][type = "other"]:lang(de):before {
+    content: "Other: ";
+}
+*[class ~= "topic/note"][type = "remember"]:lang(de):before {
+    content: url('../../img/remember.png') " Bedenken: ";
+}
+*[class ~= "topic/note"][type = "restriction"]:lang(de):before {
+    content: url('../../img/restriction.png') " Beschrnkung: ";
+}
+*[class ~= "topic/note"][type = "tip"]:lang(de):before {
+    content: url('../../img/tip.png') " Tip: ";
+}
+*[class ~= "topic/note"][type = "notice"]:lang(de):before {
+    content: url('../../img/important.png') " Beachten: ";
+}
+*[class ~= "topic/note"][type = "warning"]:lang(de):before {
+    content: url('../../img/warning.png') " Warnung: ";
+}
+*[class ~= "topic/note"][type = "other"][othertype]:lang(de):before {
+    content: attr(othertype) ": ";
+}
+*[class ~= "topic/note"][type = "trouble"]:lang(de):before {
+    content: url('../../img/troubleshooting.png') " Fehlerbehebung: ";
+}
+/*
+ * -topic-legacy-conversion.css
+ */
+*[class ~= "topic/required-cleanup"]:lang(de):before {
+    content: "Erforderliche Bereinigung: ";
+}
+
+/*
+ * -topic-metadata-indexterms
+ */
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see"]:lang(de):before {
+    content: " - Siehe: ";
+}
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see-also"]:lang(de):before {
+    content: " - Siehe auch: ";
+}
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see-also"]:after,
+*[class ~= "topic/indexterm"] > *[class ~= "indexing-d/index-see"]:after {
+    content: " ";
+}
+*[class ~= "indexing-d/index-sort-as"]:lang(de):before {
+    content: " - sort as: ";
+}
+@media print {	
+	*[class ~= "indexing-d/index-sort-as"]:lang(de):before {
+	    content: none;
+	}
+}
+
+/*
+ * -topic-related-links-xref.css
+ */
+@media print {
+    *[class ~= "topic/xref"][href]:after,
+    *[class ~= "topic/link"][href]:after {
+        content: " (auf Seite " target-counter(attr(href), page) ")";
+    }
+}
+
+/*
+ * -topic-specialization
+ */
+*[class ~= "topic/data-about"]:lang(de):before {
+    content: "Daten ber:";
+}
+
+
+/*
+ * -topic-metadata-prolog
+ */
+*[class~="topic/audience"]:lang(de):before(300) {
+  content: "Audienze: ";
+} 
+*[class~="topic/author"]:lang(de):before(300) {
+  content: "Autor: ";
+}
+*[class~="topic/brand"]:lang(de):before(300) {
+  content: "Marke: ";
+}
+*[class~="topic/category"]:lang(de):before(300) {
+  content: "Kategorie: ";
+}
+*[class~="topic/component"]:lang(de):before(300) {
+  content: "Komponente: ";
+}
+*[class~="topic/copyright"]:lang(de):before(300) {
+  content: "Urheberrechte ";
+}
+*[class~="topic/copyryear"]:lang(de):before(300) {
+  content: "Jahr: ";
+}
+*[class~="topic/copyrholder"]:lang(de):before(300) {
+  content: "Inhaber: ";
+}
+*[class~="topic/critdates"]:lang(de):before(300) {
+  content: "Kritische Daten";
+}
+*[class~="topic/created"]:lang(de):before(300) {
+  content: "Erstellt: ";
+}
+*[class~="topic/revised"]:lang(de):before(300) {
+  content: "Überarbeitet: ";
+}
+*[class~="topic/featnum"]:lang(de):before(300) {
+  content: "Feature-Nummer: ";
+}
+*[class~="topic/keywords"]:lang(de):before(300) {
+  content: "Schlüsselwörter: ";
+}
+*[class~="topic/metadata"]:lang(de):before(300) {
+  content: "Metadaten";
+}
+*[class~="topic/othermeta"]:lang(de):before(300) {
+  content: "Andere Metadaten:";
+}
+*[class~="topic/permissions"]:lang(de):before(300) {
+  content: "Berechtigungen: ";
+}
+*[class~="topic/platform"]:lang(de):before(300) {
+  content: "Plattform: ";
+}
+*[class~="topic/prodinfo"]:lang(de):before(300) {
+  content: "Produktinformation ";
+}
+*[class~="topic/prodname"]:lang(de):before(300) {
+  content: "Produktname: ";
+}
+*[class~="topic/prognum"]:lang(de):before(300) {
+  content: "Programmnummer: ";
+}
+*[class~="topic/publisher"]:lang(de):before(300) {
+  content: "Herausgeber: ";
+}
+*[class~="topic/resourceid"]:lang(de):before(300) {
+  content: "Ressourcen-ID: ";
+}
+*[class~="topic/series"]:lang(de):before(300) {
+  content: "Serie: ";
+}
+*[class~="topic/source"]:lang(de):before(300) {
+  content: "Quelle: ";
+}
+*[class~="topic/vrmlist"]:lang(de):before(300) {
+  content: "Versionen: ";
+}
+*[class~="relmgmt-d/change-historylist"]:lang(de):before(300){
+    content: "Änderungsverlaufsliste: ";
+}
+*[class~="relmgmt-d/change-item"]:lang(de):before(300) {
+    content:"Änderung: ";
+}
+*[class~="relmgmt-d/change-person"]:lang(de):before(300) {
+    content:"Person: ";
+}
+*[class~="relmgmt-d/change-organization"]:lang(de):before(300) {
+    content:"Organisation: ";
+}
+*[class~="relmgmt-d/change-started"]:lang(de):before(300) {
+    content:"Begann: ";
+}
+*[class~="relmgmt-d/change-completed"]:lang(de):before(300) {
+    content:"Abgeschlossen: ";
+}
+*[class~="relmgmt-d/change-summary"]:lang(de):before(300) {
+    content:"Überblick: ";
+}
+*[class~="relmgmt-d/change-revisionid"]:lang(de):before(300) {
+    content:"Änderungs-ID: ";
+}
+*[class~="relmgmt-d/change-request-reference"]:lang(de):before(300) {
+    content:"Referenz der Änderungsanforderung: ";
+}
+*[class~="relmgmt-d/change-request-system"]:lang(de):before(300) {
+    content:"System: ";
+}
+*[class~="relmgmt-d/change-request-id"]:lang(de):before(300) {
+    content:"Änderungsanforderung ID: ";
+}

@@ -1,0 +1,162 @@
+/*
+ * ======================================================
+ * 
+ * Page, Chapter and Sections numbering, both in TOC and
+ * in the content.
+ * 
+ * ======================================================
+ */
+
+/* 
+ * Reset the counters on the root element.
+ */
+*[class ~= "map/map"] {
+    counter-reset: page 1
+                     toc-chapter 0
+                     chapter 0
+                     figcount 0
+                     tablecount 0;
+}
+
+
+/*
+ * ======================================= 
+ *  Pages
+ */
+ 
+/* 
+    Reset the page counter on the first topic that follows the TOC placeholder:
+    <ot-placeholder:toc xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" /> 
+    The page counter was used in the p-toc generating numbers for the TOC pages.
+*/
+*[class ~= "map/map"] > toc + *[class ~= "topic/topic"]{
+    counter-reset: page 1;
+}
+
+
+/*
+ * ======================================= 
+ *  TOC
+ */
+
+
+/* 
+ * Increment the counters.
+ */
+*[class ~= "map/topicref"][is-chapter]:not([is-part]) {
+	counter-increment:toc-chapter;
+}
+
+/* 
+  All the parts get a part number.
+  Each chapter gets a chapter number.
+  All other topicrefs following a part do not have a number.  
+*/ 
+*[class ~= "map/topicref"][is-part] {
+   counter-reset:toc-chapter !important;
+   counter-increment:toc-part;
+} 
+ 
+/* All other topicrefs that follow a part should not have a number (i.e appendices)  */
+*[class ~= "map/topicref"][is-part] ~ *[class ~= "map/topicref"]:not([is-part]) > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before{
+   content: none !important;
+   counter-increment:none;
+}
+
+/*
+ * Showing the counters before the titles from TOC.
+ */
+/* The "Chapter" and  "Part" labels are overriden in p-18n-*.css */
+*[class ~= "map/topicref"][is-part] > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before{
+   content:"Part " counter(toc-part, upper-roman) ". " !important;
+   color:inherit;
+}    
+*[class ~= "map/topicref"][is-chapter]:not([is-part]) > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before{
+    content:"Chapter " counter(toc-chapter) ". " !important;
+    color:inherit;
+}
+
+
+/*
+ * ======================================= 
+ *  Content.
+ */
+ 
+/* 
+ * Increment the counters.
+ */
+*[class ~= "topic/topic"][is-part]{
+    counter-increment:part;
+    counter-reset:chapter;
+}
+*[class ~= "topic/topic"][is-chapter]:not([is-part]){
+    counter-increment:chapter;
+}
+
+
+/* 
+	Front Matter and Back Matter and
+	all other topics that follow a part 
+	should not define string sets, counters, etc.. 
+*/
+
+*[class ~= "bookmap/frontmatter"],
+*[class ~= "bookmap/frontmatter"] *[class ~= "topic/topic"],
+*[class ~= "bookmap/backmatter"],
+*[class ~= "bookmap/backmatter"] *[class ~= "topic/topic"],
+*[class ~= "topic/topic"][is-part] ~ *[class ~= "topic/topic"]:not([is-part]) {
+   counter-increment:none !important;
+   counter-reset: chapter part;
+}
+
+
+
+/* 
+ * Alter the string sets that are shown in the header of the page.
+ */
+*[class ~= "topic/topic"][is-part] > *[class ~= "topic/title"] {
+    string-set: parttitle " | " counter(part, upper-roman) " - " content(), chaptertitle  ""; /* Avoid propagating a past chapter title on a new part */
+}
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"] {
+    string-set: chaptertitle " | " counter(chapter) " - " content();
+}
+
+/* 
+	Topics from Front Matter and Back Matter and
+	all other topics that follow a part 
+	should not define string sets, counters, etc.. 
+*/
+*[class ~= "bookmap/frontmatter"] > *[class ~= "topic/title"],
+*[class ~= "bookmap/frontmatter"] *[class ~= "topic/topic"] > *[class ~= "topic/title"],
+*[class ~= "bookmap/backmatter"] > *[class ~= "topic/title"],
+*[class ~= "bookmap/backmatter"] *[class ~= "topic/topic"] > *[class ~= "topic/title"],
+*[class ~= "topic/topic"][is-part] ~ *[class ~= "topic/topic"]:not([is-part]) > *[class ~= "topic/title"],
+*[class ~= "topic/topic"][is-part] ~ *[class ~= "topic/topic"]:not([is-part]) *[class ~= "topic/topic"] > *[class ~= "topic/title"]{
+   string-set: parttitle "", chaptertitle "";
+}
+
+
+/* 
+ * Use the numbers in front of titles in the content.
+ */
+*[class ~= "topic/topic"][is-part] > *[class ~= "topic/title"]:before {
+    content: "Part " counter(part, upper-roman) ". ";
+}
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
+    content: "Chapter " counter(chapter) ". ";
+}
+
+/* 
+	Topics from Front Matter and Back Matter and
+	all other topics that follow a part 
+	should not define string sets, counters, etc.. 
+*/
+*[class ~= "bookmap/frontmatter"] > *[class ~= "topic/title"]:before,
+*[class ~= "bookmap/frontmatter"] *[class ~= "topic/topic"] > *[class ~= "topic/title"]:before,
+*[class ~= "bookmap/backmatter"] > *[class ~= "topic/title"]:before,
+*[class ~= "bookmap/backmatter"] *[class ~= "topic/topic"] > *[class ~= "topic/title"]:before,
+*[class ~= "topic/topic"][is-part] ~ *[class ~= "topic/topic"]:not([is-part]) > *[class ~= "topic/title"]:before,
+*[class ~= "topic/topic"][is-part] ~ *[class ~= "topic/topic"]:not([is-part]) *[class ~= "topic/topic"] > *[class ~= "topic/title"]:before{
+		content:none !important;
+}
+ 

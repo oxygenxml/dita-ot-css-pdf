@@ -110,13 +110,15 @@
  *  
  *    + topic/keyword learningInteractionBase-d/keyword
  */
-*[class~="learning-d/lcAreaShape"]:before {
-  content: "Area: " oxy_combobox(edit, "#text", columns, 6);
-}
 *[class~="learning-d/lcAreaShape"] {
   padding-right: 0.5em;
   visibility: -oxy-collapse-text;
   -oxy-display-tags: none;
+}
+@media oxygen {
+	*[class~="learning-d/lcAreaShape"]:before {
+	  content: "Area: " oxy_combobox(edit, "#text", columns, 6);
+	}
 }
 /* ====================================
  *
@@ -161,11 +163,13 @@
  *  
  *   + topic/data learningInteractionBase-d/data
  */
-*[class~="learning-d/lcCorrectResponse"][name]:before {
-  content: oxy_substring(oxy_local-name(), 2);
-}
-*[class~="learning-d/lcCorrectResponse"][name]:not([value = 'lcCorrectResponse']):before {
-  content: oxy_substring(oxy_local-name(), 2) " " oxy_textfield(edit, "@value", columns, 10) " ";
+@media oxygen {
+	*[class~="learning-d/lcCorrectResponse"][name]:before {
+	  content: oxy_substring(oxy_local-name(), 2);
+	}
+	*[class~="learning-d/lcCorrectResponse"][name]:not([value = 'lcCorrectResponse']):before {
+	  content: oxy_substring(oxy_local-name(), 2) " " oxy_textfield(edit, "@value", columns, 10) " ";
+	}
 }
 /* ====================================
  *
@@ -198,7 +202,6 @@
   /**/
 }
 *[class~="learning-d/lcFeedbackIncorrect"]:before {
-  content: "When incorrect: ";
   /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
@@ -217,7 +220,6 @@
  *   + topic/p learningInteractionBase-d/p
  */
 *[class~="learning-d/lcFeedbackCorrect"]:before {
-  content: "When correct: ";
   /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
@@ -326,7 +328,6 @@
  *   + topic/simpletable learningInteractionBase-d/simpletable
  */
 *[class~="learning-d/lcOpenAnswer"]:before {
-  content: "A: ";
   /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
@@ -344,7 +345,6 @@
  *   + topic/simpletable learningInteractionBase-d/simpletable
  */
 *[class~="learning-d/lcQuestion"]:before {
-  content: "Q: ";
   /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
@@ -366,8 +366,10 @@
   padding-right: 5em;
   border-bottom: 1px dashed;
 }
-*[class~="learning-d/lcSequence"][name]:before {
-  content: oxy_substring(oxy_local-name(), 2) " " oxy_textfield(edit, "@value", columns, 10) " ";
+@media oxygen {
+	*[class~="learning-d/lcSequence"][name]:before {
+	  content: oxy_substring(oxy_local-name(), 2) " " oxy_textfield(edit, "@value", columns, 10) " ";
+	}
 }
 /* ====================================
  *

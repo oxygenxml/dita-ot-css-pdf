@@ -11,4 +11,7 @@
             <topicmeta class="- map/topicmeta " resourceid="installing"><navtitle class="- topic/navtitle ">Installing</navtitle></topicmeta>
         </chapter>
     </opentopic:map>
+    
+    <topic class="- topic/topic" id="unique_5">
+    </topic>
 </bookmap>

@@ -30,9 +30,6 @@
 *[class~="taskreq-d/prelreqs"] > * {
   margin-left: 2em;
 }
-*[class~="taskreq-d/prelreqs"]:before {
-  content: "Preliminary requirements: ";
-}
 /* ====================================
  *
  * <closereqs>
@@ -50,9 +47,6 @@
 *[class~="taskreq-d/closereqs"] > * {
   margin-left: 2em;
 }
-*[class~="taskreq-d/closereqs"]:before {
-  content: "Closing requirements: ";
-}
 /* ====================================
  *
  * <reqconds>
@@ -69,7 +63,6 @@
   /**/
 }
 *[class~="taskreq-d/reqconds"]:before {
-  content: "Conditions: ";
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -147,7 +140,6 @@
  *     + topic/ol task/ol 
  */
 *[class~="taskreq-d/reqpers"]:before {
-  content: "Personnel: ";
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -165,26 +157,6 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/personnel"]:before {
-  content: "Number of workers: " !important;
-  /* -taskreq_personnel_before- >>> */
-  font-weight: bold;
-  width: 10em;
-  /* <<< */
-}
-/* ====================================
- *
- * <personnel>
- * 
- * The <personnel> element specifies the 
- * minimum number of workers who are 
- * required to perform a task. 
- *  
- * Inherits styles from parent class:
- *  
- *     + topic/li task/li 
- */
-*[class~="taskreq-d/personnel"]:before {
-  content: "Number of workers: " !important;
   /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
@@ -203,7 +175,6 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/perscat"]:before {
-  content: "Category: " !important;
   /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
@@ -222,7 +193,6 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/perskill"]:before {
-  content: "Skill level: " !important;
   /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
@@ -241,7 +211,6 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/esttime"]:before {
-  content: "Time estimate: " !important;
   /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
@@ -292,7 +261,6 @@
  *     + topic/p task/p 
  */
 *[class~="taskreq-d/supequip"]:before {
-  content: "Equipment: " !important;
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -308,8 +276,8 @@
  *  
  *     + topic/data  task/data  
  */
+
 *[class~="taskreq-d/nosupeq"]:before {
-  content: "<No Support Equipment>";
   /* -taskreq_no- >>> */
   font-style: italic;
   /* <<< */
@@ -334,7 +302,6 @@
  *     + topic/p task/p 
  */
 *[class~="taskreq-d/supplies"]:before {
-  content: "Supplies: " !important;
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -380,7 +347,6 @@
  *     + topic/data task/data 
  */
 *[class~="taskreq-d/nosupply"]:before {
-  content: "<No Supply>";
   /* -taskreq_no- >>> */
   font-style: italic;
   /* <<< */
@@ -418,7 +384,6 @@
  *     + topic/p task/p 
  */
 *[class~="taskreq-d/spares"]:before {
-  content: "Spares:";
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */
@@ -435,7 +400,6 @@
  *     + topic/data task/data 
  */
 *[class~="taskreq-d/nospares"]:before {
-  content: "<No Spares>";
   /* -taskreq_no- >>> */
   font-style: italic;
   /* <<< */
@@ -459,7 +423,6 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/nosafety"]:before {
-  content: "<No Safety>" !important;
   /* -taskreq_no- >>> */
   font-style: italic;
   /* <<< */
@@ -497,7 +460,6 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/safety"]:before {
-  content: url(../../img/caution.png) " Safety:";
   /* -taskreq_before- >>> */
   font-weight: bold;
   /* <<< */

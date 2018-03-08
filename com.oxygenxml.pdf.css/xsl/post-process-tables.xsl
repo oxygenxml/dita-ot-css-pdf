@@ -70,7 +70,7 @@
 						<xsl:apply-templates select="*[contains(@class, ' topic/sthead ')]"/>
 					</oxy:table-header-group>
 					<oxy:table-row-group>
-						<xsl:apply-templates select="*[not(contains(@class, ' topic/sthead '))]"/>
+						<xsl:apply-templates select="*[not(contains(@class, ' topic/sthead '))] | processing-instruction()"/>
 					</oxy:table-row-group>
 				</xsl:when>
 				<xsl:otherwise>

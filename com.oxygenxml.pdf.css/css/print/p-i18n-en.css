@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* Title in the TOC page */
+toc-title[empty]:before {
+	content: "Contents";
+}
+
+/* This string is used in the TOC page header. */
+:root {
+	string-set: toc-header "Contents";
+}
+
+/* Title in the Index page */
+index\.groups:before {
+	content: "Index";
+}
+
+/* Titles in the TOC. */
+*[class ~= "map/topicref"][is-part] > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before{
+   content:"Part " counter(toc-part, upper-roman) ". " !important;
+}
+*[class ~= "map/topicref"][is-chapter]:not([is-part]) > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:before{
+   content:"Chapter " counter(toc-chapter) ". " !important;
+}
+
+/* Titles in the content. */
+*[class ~= "topic/topic"][is-part] > *[class ~= "topic/title"]:before {
+    content: "Part " counter(part, upper-roman) ". ";
+}
+*[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
+    content: "Chapter " counter(chapter) ". ";
+}

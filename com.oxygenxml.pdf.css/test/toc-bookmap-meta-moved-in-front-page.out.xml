@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Test for a bookmap that has only chapters, no parts. -->
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <bookmeta class="- map/topicmeta bookmap/bookmeta "
+      xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+      xmlns:opentopic="http://www.idiominc.com/opentopic"
+      xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" xtrc="bookmeta:1;11:15">
+      <author class="- topic/author " xtrc="author:1;12:17">Howe Tuduit</author>
+      <critdates class="- topic/critdates " xtrc="critdates:1;13:20">
+        <created class="- topic/created " date="1/1/2015" xtrc="created:1;14:39"/>
+        <revised class="- topic/revised " modified="3/4/2016" xtrc="revised:1;15:43"/>
+        <revised class="- topic/revised " modified="3/5/2016" xtrc="revised:2;16:43"/>
+      </critdates>
+      <audience class="- topic/audience " type="services" xtrc="audience:1;18:36"/>
+      <keywords class="- topic/keywords " xtrc="keywords:1;19:19">
+        <keyword class="- topic/keyword " xtrc="keyword:1;20:22">web server</keyword>
+        <keyword class="- topic/keyword " xtrc="keyword:2;21:22">hard disk</keyword>
+      </keywords>
+      <bookid class="- topic/data bookmap/bookid " xtrc="bookid:1;23:17">
+        <isbn class="- topic/data bookmap/isbn " xtrc="isbn:1;24:19">071271271X</isbn>
+        <booknumber class="- topic/data bookmap/booknumber " xtrc="booknumber:1;25:25">SG99-9999-00</booknumber>
+        <maintainer class="- topic/data bookmap/maintainer " xtrc="maintainer:1;26:25">
+          <organization class="- topic/data bookmap/organization " xtrc="organization:1;27:31">Retro
+            Tools</organization>
+          <person class="- topic/data bookmap/person " xtrc="person:1;28:26"/>
+        </maintainer>
+      </bookid>
+      <bookrights class="- topic/data bookmap/bookrights " xtrc="bookrights:1;31:21">
+        <copyrfirst class="- topic/data bookmap/copyrfirst " xtrc="copyrfirst:1;32:25">
+          <year class="- topic/ph bookmap/year " xtrc="year:1;33:23">2004</year>
+        </copyrfirst>
+        <copyrlast class="- topic/data bookmap/copyrlast " xtrc="copyrlast:1;35:24">
+          <year class="- topic/ph bookmap/year " xtrc="year:2;36:23">2007</year>
+        </copyrlast>
+        <bookowner class="- topic/data bookmap/bookowner " xtrc="bookowner:1;38:24">
+          <organization class="- topic/data bookmap/organization " xtrc="organization:2;39:31">Retro Tools,
+            Inc.</organization>
+        </bookowner>
+      </bookrights>
+    </bookmeta>
+    <oxy:front-page-title>
+      <booktitle class="- topic/title bookmap/booktitle "
+        xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+        xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <booklibrary class="- topic/ph bookmap/booklibrary ">Retro Tools</booklibrary>
+        <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">Product
+        tasks</mainbooktitle>
+        <booktitlealt class="- topic/ph bookmap/booktitlealt ">Tasks and what they can
+        do</booktitlealt>
+      </booktitle>
+    </oxy:front-page-title>
+  </oxy:front-page>
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <booktitle class="- topic/title bookmap/booktitle " xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+      <booklibrary class="- topic/ph bookmap/booklibrary ">Retro Tools</booklibrary>
+      <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">Product
+        tasks</mainbooktitle>
+      <booktitlealt class="- topic/ph bookmap/booktitlealt ">Tasks and what they can
+        do</booktitlealt>
+    </booktitle>
+    <chapter broken-link="true" class="- map/topicref bookmap/chapter "
+      href="#unique_4" is-chapter="true" type="topic">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_4">Uninstalling</navtitle>
+      </topicmeta>
+    </chapter>
+  </opentopic:map>
+</bookmap>

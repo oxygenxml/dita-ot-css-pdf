@@ -17,3 +17,24 @@
 *[class ~= "topic/xref"] > *[class ~= "topic/desc"] {
     display:none;
 }
+
+/*
+ * There might be cases when there are links to sections 
+ * marked as resource-only. For these links impose a normal formatting
+ *  
+ */
+*[class~="topic/xref"][broken-link],
+*[class~="topic/link"][broken-link]{
+    link: none;
+    font-style:inherit;
+    font-weight:inherit;
+    text-decoration:none;
+    color:inherit;
+}
+*[class~="topic/xref"][broken-link]:after,
+*[class~="topic/link"][broken-link]:after{
+    content:none;
+}   
+
+
+

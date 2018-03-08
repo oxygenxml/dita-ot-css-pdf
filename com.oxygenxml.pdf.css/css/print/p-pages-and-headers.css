@@ -1,0 +1,208 @@
+/*
+ * ================================================
+ * 
+ * Pages layout and headers.
+ * 
+ * ================================================
+ */
+    
+@media print {
+
+	
+/* 
+ * Collect the title of the map, so it can be used as a string (variable) in the headers 
+ * Other strings are collected int the CSS file p-numbering-*.css
+ */
+*[class ~= "map/map"][title] {
+    string-set: maptitle attr(title);
+}
+/* The title has migrated into the front page */
+front-page-title > *[class ~= "topic/title"]{
+    string-set: maptitle content();
+}
+front-page-title> *[class ~= "bookmap/mainbooktitle"] {
+    string-set: maptitle content();
+}
+		
+
+	
+	
+/*-------------------------------
+ * The TOC page layout.
+ *-------------------------------*/
+ 
+	/* Clear the default headers */
+	@page table-of-contents {
+	    @top-left      { content: none; }
+	    @top-center    { content: none; }
+	    @top-right     { content: none; }
+	    @bottom-left   { content: none; }
+	    @bottom-center { content: none; }
+	    @bottom-right  { content: none; }
+	}
+	@page table-of-contents:left {
+	    @top-left {
+	        content: string(toc-header) " | " counter(page, lower-roman);
+	        font-size: 8pt; 
+	    }
+	}
+	@page table-of-contents:right {
+	     @top-right {
+	         content: string(toc-header) " | " counter(page, lower-roman);
+	         font-size: 8pt; 
+	     }
+	}
+	/*Do not put a header on the first page of the TOC*/
+	@page table-of-contents:first:left {
+	    @top-left {
+	        content: none; 
+	    }
+	}
+	@page table-of-contents:first:right {
+	     @top-right {
+	         content: none;
+	     }
+	}
+		
+	
+/*-------------------------------
+ * The default page layout.
+ *-------------------------------*/	
+
+    @page :left {
+        @top-left {
+            content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+            font-size:8pt;
+        }
+    }
+
+    @page :right{
+        @top-right {
+            content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+            font-size:8pt;
+        }
+    }
+
+/*-------------------------------
+ * The index page.
+ *-------------------------------*/	
+
+ @page index {
+        @top-left-corner    {          content:none }
+        @top-left           {          content:none }
+        @top-center         {          content:none }
+        @top-right          {          content:none }
+        @top-right-corner   {          content:none }
+        @bottom-left-corner {          content:none }
+        @bottom-left        {          content:none }
+        @bottom-center      {          content: counter(page, lower-alpha) }
+        @bottom-right       {          content:none }
+        @bottom-right-corner{          content:none }
+}
+
+@media oxygen-chemistry {
+        @page index {
+            column-count: 2;
+            column-fill: auto;
+        }
+}    
+
+	
+/*-------------------------------
+ * The chapter page layout.
+ *-------------------------------*/	
+
+    @page chapter{
+    	/* Currently inherit from the default page.*/
+    }
+    
+    /* No headers on the chapter first page. */
+    @page chapter:first:left{
+    	@top-left {
+    		content: none;
+    	}
+    }
+    @page chapter:first:right{
+    	@top-right {
+    		content: none;
+    	}
+    }
+
+/*-------------------------------
+ * The blank pages. 
+ *-------------------------------*/
+ 
+    /* No headers for the blank pages. */
+ 	@page :blank{
+    	@top-left {
+    		content: none;
+    	}
+    	@top-right {
+    		content: none;
+    	}
+    }
+
+/*-------------------------------
+ * The front and back-matter page. 
+ *-------------------------------*/
+    @page matter-page {
+        @top-left-corner    {          content:none }
+        @top-left           {          content:none }
+        @top-center         {          content:none }
+        @top-right          {          content:none }
+        @top-right-corner   {          content:none }
+        @bottom-left-corner {          content:none }
+        @bottom-left        {          content:none }
+        @bottom-center      {          content:none }
+        @bottom-right       {          content:none }
+        @bottom-right-corner{          content:none }
+    }
+    
+/*-------------------------------
+ * The page layout for large tables.
+ *-------------------------------*/	
+    
+	@page landscape-page:right {
+	    size: landscape;
+	
+	    @top-left {
+	        content: none
+	    }
+	    @top-center {
+	        content: none
+	    }
+	    @top-right {
+	        content: none
+	    }
+	
+	    @right-bottom {
+	        content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+	        font-size: 8pt;
+	        transform: rotate(90);
+	        vertical-align: middle;
+	        text-align: right;
+	    }
+	}
+	
+	@page landscape-page:left {
+	    size: landscape;
+	
+	    @top-left {
+	        content: none
+	    }
+	    @top-center {
+	        content: none
+	    }
+	    @top-right {
+	        content: none
+	    }
+	
+	    @right-top {
+	        content: string(maptitle) string(parttitle) string(chaptertitle) string(sectiontitle) " | " counter(page);
+	        font-size: 8pt;
+	        transform: rotate(90);
+	        vertical-align: middle;
+	        text-align: left;
+	    }
+	}
+}

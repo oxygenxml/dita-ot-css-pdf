@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskbody class="- topic/body task/taskbody " xmlns:dita-ot="ns">
+    <prereq class="- topic/section task/prereq ">
+        <table class="- topic/table " colsep="1" frame="all"
+            id="unique_6_Connect_42_table_e4z_lsl_gcb" rowsep="1">
+            <title class="- topic/title ">Normal table.</title>
+            <tgroup class="- topic/tgroup " cols="2">
+                <colspec class="- topic/colspec " colname="col1" colnum="1" colwidth="1*" rowheader="headers"/>
+                <colspec class="- topic/colspec " colname="col2" colnum="2" colwidth="1*" rowheader="headers"/>
+                <thead class="- topic/thead ">
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="1">fasf</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="1"/>
+                    </row>
+                </thead>
+                <tbody class="- topic/tbody ">
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="2">fasf</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="2">324</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="3">fasd</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="3">5ter</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="4">fas</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="4">85</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="5">fasd</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="5">twert</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="6">fas</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="6">786</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="7">fas</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="7">856</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="8">fas</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="8">85586</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="9">fas</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="9">856</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="10">fas</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="10">856</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="11">fdasf</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="11">33</entry>
+                    </row>
+                    <?oxy_insert_start author="dan" timestamp="20171220T150905+0200"?>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="12">XXXX</entry>
+                        <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="12">YYYY</entry>
+                    </row>
+                    <?oxy_insert_end?>
+                </tbody>
+            </tgroup>
+        </table>
+        <simpletable class="- topic/simpletable " frame="none" id="unique_6_Connect_42_simpletable_rvk_zrl_gcb"
+            relcolwidth="1* 1*">
+            <sthead class="- topic/sthead ">
+                <stentry class="- topic/stentry ">fasdf</stentry>
+                <stentry class="- topic/stentry "/>
+            </sthead>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasd</stentry>
+                <stentry class="- topic/stentry ">23141234</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasd</stentry>
+                <stentry class="- topic/stentry ">634</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasdffa</stentry>
+                <stentry class="- topic/stentry ">6</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasd</stentry>
+                <stentry class="- topic/stentry ">412341234</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasd</stentry>
+                <stentry class="- topic/stentry ">634</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">ffasd</stentry>
+                <stentry class="- topic/stentry ">41234</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasdf</stentry>
+                <stentry class="- topic/stentry ">4123</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasd</stentry>
+                <stentry class="- topic/stentry ">4</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fasd</stentry>
+                <stentry class="- topic/stentry ">34</stentry>
+            </strow>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">fas</stentry>
+                <stentry class="- topic/stentry ">634</stentry>
+            </strow>
+            <?oxy_insert_start author="dan" timestamp="20171220T150513+0200"?>
+            <strow class="- topic/strow ">
+                <stentry class="- topic/stentry ">AAA</stentry>
+                <stentry class="- topic/stentry ">BBB</stentry>
+            </strow>
+            <?oxy_insert_end?>
+        </simpletable></prereq>
+</taskbody>

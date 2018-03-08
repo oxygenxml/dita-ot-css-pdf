@@ -24,5 +24,42 @@
             </topicmeta>
         </chapter>
 
+        <!-- The navtitle attribute should be used as the link text in TOC. It should also migrate to the topic title, for PDF bookmarks. -->
+        <topicref class="- map/topicref " href="#unique_6" id="unique_6" locktitle="yes"
+            navtitle="Getting Started Nav Title Attribute" type="concept">
+            <topicmeta class="- map/topicmeta ">
+                <linktext class="- map/linktext ">Some other value.</linktext>
+            </topicmeta>
+        </topicref>
+
+        <!-- The navtitle element should be used as the link text. It should also migrate to the topic title. -->
+        <topicref class="- map/topicref " href="#unique_7" id="unique_7" locktitle="yes" type="concept">
+            <topicmeta class="- map/topicmeta ">
+                <navtitle class="- topic/navtitle ">Getting Started Nav Title Element</navtitle>
+                <linktext class="- map/linktext ">Some other value.</linktext>
+            </topicmeta>
+        </topicref>
+
+        <!-- This navtitle should not migrate to the topic title, since it is not marked as locktitle. -->
+        <topicref class="- map/topicref " href="#unique_8" id="unique_8"  type="concept">
+            <topicmeta class="- map/topicmeta ">
+                <navtitle class="- topic/navtitle ">Getting Started Nav Title Element</navtitle>
+                <linktext class="- map/linktext ">Some other value.</linktext>
+            </topicmeta>
+        </topicref>
+
     </opentopic:map>
+    
+    <topic class="- topic/topic " id="unique_6" >
+      <title class="- topic/title ">Getting Started</title>
+    </topic>
+
+    <topic class="- topic/topic " id="unique_7" >
+      <title class="- topic/title ">Getting Started</title>
+    </topic>
+
+    <topic class="- topic/topic " id="unique_8" >
+      <title class="- topic/title ">Getting Started</title>
+    </topic>
+    
 </bookmap>
