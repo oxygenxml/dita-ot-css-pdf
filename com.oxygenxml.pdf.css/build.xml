@@ -230,7 +230,7 @@ with those set forth herein.
   		This property may be overriden from the oXygen transformation scenario, 
   	    based on the user selection of the stylesheet. 
   	-->
-  	<property name="dita.css.list"  value="file:${default.css.dir.abs.path}/edit/style-basic.css"/>
+  	<property name="dita.css.list"  value="${default.css.dir.abs.path}/edit/style-basic.css"/>
 	<!-- 
 		This has the semantic similar to the args.css from the XHTML transtype, of additional CSSs that contain the most important rules.
 	-->
