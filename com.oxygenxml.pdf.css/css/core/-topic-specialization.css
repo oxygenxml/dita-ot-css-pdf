@@ -27,14 +27,15 @@
 *[class~="topic/data"]{
   display:block;
 }
+*[class~="topic/p"] *[class~="topic/data"]{
+  display:inline;
+}
 *[class~="topic/data"] *[class~="topic/data"]{
   margin-left: 2em;
 }
 *[class~="topic/data"]:before {
   content: oxy_capitalize(oxy_name()) " ";
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 *[class~="topic/data"][name]:before {
     -oxy-append-content: oxy_textfield(edit, '@name', columns, 10);
@@ -61,9 +62,7 @@
   display:block;
 }
 *[class~="topic/data-about"]:before{
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* TODO - dan - is the same as xref, has scope, 
@@ -73,13 +72,16 @@
 * */
 *[class~="topic/data-about"][href]:before{
   link:attr(href);
-  -ah-link: attr(href);
   
   -oxy-append-content: url("../../img/link.png");
 }
 @media print {  
   *[class~="topic/data-about"]{
     display:none;
+  }
+  
+  *[class~="topic/data-about"][href]:before{
+	  -ah-link: attr(href);
   }
 }
 

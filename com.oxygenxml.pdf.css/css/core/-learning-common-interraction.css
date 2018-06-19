@@ -202,10 +202,8 @@
   /**/
 }
 *[class~="learning-d/lcFeedbackIncorrect"]:before {
-  /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
 }
 /* ====================================
  *
@@ -220,10 +218,8 @@
  *   + topic/p learningInteractionBase-d/p
  */
 *[class~="learning-d/lcFeedbackCorrect"]:before {
-  /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
 }
 /* ====================================
  *
@@ -328,10 +324,8 @@
  *   + topic/simpletable learningInteractionBase-d/simpletable
  */
 *[class~="learning-d/lcOpenAnswer"]:before {
-  /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
 }
 /* ====================================
  *
@@ -345,10 +339,8 @@
  *   + topic/simpletable learningInteractionBase-d/simpletable
  */
 *[class~="learning-d/lcQuestion"]:before {
-  /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
 }
 /* ====================================
  *

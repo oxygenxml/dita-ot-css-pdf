@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+	xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap "
+	collection-type="sequence">
+
+	<topic>
+		<colspec colname="col1" colnum="1" colwidth="1*" rowheader="headers"
+			class="- topic/colspec " />
+		<colspec colname="col2" colnum="3" colwidth="1*" rowheader="headers"
+			class="- topic/colspec " />
+		<colspec colname="col3" colnum="2" colwidth="2*" rowheader="headers"
+			class="- topic/colspec " />
+		<colspec colname="col4" colnum="4" colwidth=" *" rowheader="headers"
+			class="- topic/colspec " />
+	</topic>
+</bookmap>

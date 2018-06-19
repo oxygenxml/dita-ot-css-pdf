@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        
+        <!-- The outputclass attribute should also migrate to the topic. In this way you can style the topic, indirectly by using the topicref. -->
+        <topicref class="- map/topicref " href="#unique_6" id="unique_6" locktitle="yes"
+            navtitle="Getting Started Nav Title Attribute" type="concept" outputclass=" page-break-before page-break-after ">
+        </topicref>
+
+        <topicref class="- map/topicref " href="#unique_7" id="unique_7" locktitle="yes" type="concept" outputclass="red">
+            <topicmeta class="- map/topicmeta ">
+                <navtitle class="- topic/navtitle ">Title 7</navtitle>
+            </topicmeta>
+        </topicref>
+
+        <topicref class="- map/topicref " href="#unique_8" id="unique_8" locktitle="yes" type="concept" >
+            <topicmeta class="- map/topicmeta ">
+                <navtitle class="- topic/navtitle ">Title 8</navtitle>
+            </topicmeta>
+        </topicref>
+
+    </opentopic:map>
+    
+    <topic class="- topic/topic " id="unique_6" >
+      <title class="- topic/title ">This should have page-break output class values.</title>
+    </topic>
+
+    <topic class="- topic/topic " id="unique_7" >
+      <title class="- topic/title ">This should have red output class value.</title>
+    </topic>
+
+    <topic class="- topic/topic " id="unique_8" >
+      <title class="- topic/title ">Should have no outputclass.</title>
+    </topic>
+    
+</bookmap>

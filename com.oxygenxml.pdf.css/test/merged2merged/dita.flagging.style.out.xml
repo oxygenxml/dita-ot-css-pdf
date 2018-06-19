@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic break-before="true" class="- topic/topic " id="unique_1"
+    is-chapter="true" oid="prop_flaggin_properties"
+    oxy:topicref-class="- map/topicref "
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <section class="- topic/section " id="unique_1_Connect_42_section_lqn_pdk_rz">
+      <title class="- topic/title ">Style flagging attribute</title>
+      <p class="- topic/p ">The following tokens SHOULD be processed by all DITAVAL
+                    processors:</p>
+      <p class="- topic/p " data-ditaval-action="flag"
+        data-ditaval-att="audience" data-ditaval-style="italics" data-ditaval-val="a-style-italics">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="font-style:italic;">
+          <prop action="flag" att="audience" style="italics" val="a-style-italics"/>
+        </ditaval-startprop>italics<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" style="italics" val="a-style-italics"/>
+        </ditaval-endprop>
+      </p>
+      <p class="- topic/p " data-ditaval-action="flag"
+        data-ditaval-att="audience" data-ditaval-style="overline" data-ditaval-val="a-style-overline">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="text-decoration:overline;">
+          <prop action="flag" att="audience" style="overline" val="a-style-overline"/>
+        </ditaval-startprop>overline<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" style="overline" val="a-style-overline"/>
+        </ditaval-endprop>
+      </p>
+      <p class="- topic/p " data-ditaval-action="flag"
+        data-ditaval-att="audience" data-ditaval-style="bold" data-ditaval-val="a-style-bold">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="font-weight:bold;">
+          <prop action="flag" att="audience" style="bold" val="a-style-bold"/>
+        </ditaval-startprop>bold<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" style="bold" val="a-style-bold"/>
+        </ditaval-endprop>
+      </p>
+      <p class="- topic/p " data-ditaval-action="flag"
+        data-ditaval-att="audience" data-ditaval-style="underline" data-ditaval-val="a-style-underline">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="text-decoration:underline;">
+          <prop action="flag" att="audience" style="underline" val="a-style-underline"/>
+        </ditaval-startprop>underline<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" style="underline" val="a-style-underline"/>
+        </ditaval-endprop>
+      </p>
+      <p class="- topic/p " data-ditaval-action="flag"
+        data-ditaval-att="audience"
+        data-ditaval-style="double-underline" data-ditaval-val="a-style-double-underline">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="text-decoration:underline;">
+          <prop action="flag" att="audience" style="double-underline" val="a-style-double-underline"/>
+        </ditaval-startprop>double-underline<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" style="double-underline" val="a-style-double-underline"/>
+        </ditaval-endprop>
+      </p>
+    </section>
+  </topic>
+</bookmap>

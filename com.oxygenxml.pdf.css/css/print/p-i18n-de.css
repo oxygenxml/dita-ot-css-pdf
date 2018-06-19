@@ -1,19 +1,24 @@
 @charset "UTF-8";
 
 /* Title in the TOC page */
-toc-title[empty]:lang(de):before { 
+*[class ~= "toc/title"][empty]:lang(de):before { 
 	content: "Inhaltsverzeichnis"; 
 }
 
 /* This string is used in the TOC page header. */
-:root:lang(de) {
+*[class ~= "map/map"]:lang(de) {
     string-set: toc-header "Inhaltsverzeichnis";
 }
 
 /* Title in the Index page */
-index\.groups:lang(de):before {
+*[class ~= "index/groups"]:lang(de):before {
 	content: "Stichwortverzeichnis";
 }
+*[class ~= "index/groups"]:lang(de) {
+  	bookmark-label:"Stichwortverzeichnis";  
+  	-ah-bookmark-label:"Stichwortverzeichnis";	
+}
+
 
 /* Titles in the TOC. */
 *[class ~= "map/topicref"][is-part] > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:lang(de):before{
@@ -29,4 +34,11 @@ index\.groups:lang(de):before {
 }
 *[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:lang(de):before {
     content: "Kapitel " counter(chapter) ". ";
+}
+
+
+/* Links. */
+*[class ~= "topic/xref"][href]:lang(de):after,
+*[class ~= "topic/link"][href]:lang(de):after {
+    content: " (auf Seite " target-counter(attr(href), page) ")";
 }

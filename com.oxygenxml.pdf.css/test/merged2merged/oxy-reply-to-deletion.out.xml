@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_1">
+    <title class="- topic/title ">Replies.</title>
+    <body class="- topic/body ">
+      <p>
+        <oxy:oxy-range-start hr_id="1" id="sc_3" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+        <oxy:oxy-delete-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"> and seasons are intimately bound to each</oxy:oxy-delete-hl>
+        <oxy:oxy-range-end hr_id="1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+        <oxy:oxy-delete hr_id="1" href="#sc_3" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-comment-text>No need.</oxy:oxy-comment-text>
+          <oxy:oxy-comment-id>e21_wzc_v5</oxy:oxy-comment-id>
+          <oxy:oxy-content> and seasons are intimately bound to each</oxy:oxy-content>
+          <oxy:oxy-date>2016/01/29</oxy:oxy-date>
+          <oxy:oxy-hour>09:03:10</oxy:oxy-hour>
+          <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          <oxy:oxy-comment hr_id="1" href="#sc_1">
+            <oxy:oxy-author>dan</oxy:oxy-author>
+            <oxy:oxy-comment-text>But we need it. </oxy:oxy-comment-text>
+            <oxy:oxy-comment-parent-id>e21_wzc_v5</oxy:oxy-comment-parent-id>
+            <oxy:oxy-date>2016/01/29</oxy:oxy-date>
+            <oxy:oxy-hour>09:03:28</oxy:oxy-hour>
+            <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          </oxy:oxy-comment>
+          <oxy:oxy-comment hr_id="2" href="#sc_2">
+            <oxy:oxy-author>dan</oxy:oxy-author>
+            <oxy:oxy-comment-text>But no...</oxy:oxy-comment-text>
+            <oxy:oxy-comment-id>7</oxy:oxy-comment-id>
+            <oxy:oxy-comment-parent-id>e21_wzc_v5</oxy:oxy-comment-parent-id>
+            <oxy:oxy-mid>7</oxy:oxy-mid>
+            <oxy:oxy-date>2016/01/29</oxy:oxy-date>
+            <oxy:oxy-hour>09:03:37</oxy:oxy-hour>
+            <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          </oxy:oxy-comment>
+        </oxy:oxy-delete>
+      </p>
+    </body>
+  </topic>
+</bookmap>

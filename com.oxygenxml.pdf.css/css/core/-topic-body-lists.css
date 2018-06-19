@@ -24,6 +24,14 @@
     display: list-item;
     margin-left: 1em;
     margin-bottom: 0.2em;
+
+    /* WA-2037: Deal with RTL margins on WebAuthor.
+       Should have the same values as the normal margins .*/
+    margin-inline-start: 1em;
+    -webkit-margin-start: 1em;
+    margin-inline-end: 0em;
+    -webkit-margin-end: 0em;
+
 }
 
 
@@ -44,6 +52,15 @@
     the UL reserves a zone for the marker. So we push a bit the
     UL so it gets its markers aligned with the OL counters */
     margin-left: 2em;
+    
+
+    /* WA-2037: Deal with RTL margins on WebAuthor.
+       Should have the same values as the normal margins .*/
+    margin-inline-start: 2em;
+    -webkit-margin-start: 2em;
+    margin-inline-end: 0em; 
+    -webkit-margin-end: 0em;
+
 } 
 
 *[class~="topic/ul"],

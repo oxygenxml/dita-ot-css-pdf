@@ -1,45 +1,5 @@
 @charset "UTF-8";
 
-/*
- * ------------------------------------------------
- * From -domain-hazard-d.css
- */
-*[class ~= "hazard-d/hazardstatement"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "GEFAHR";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "note"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "BEACHTEN";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "tip"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "ANMERKUNG";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "FASTPATH";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "BESCHRNKUNG";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "remember"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "BEDENKEN";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "attention"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "ACHTUNG";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "caution"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "VORSICHT";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "notice"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "HINWEIS";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "danger"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "GEFAHR";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "warning"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "WARNUNG";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "other"]:lang(de):before {
-    content: url("../img/warning-black30.png") " " "ANDERE ART VON GEFAHREN";
-}
 
 /*
  * ------------------------------------------------
@@ -49,13 +9,13 @@
     content: "<Keine Bedingungen>" !important;
 }
 *[class ~= "taskreq-d/prelreqs"]:lang(de):before {
-    content: "Vorlufige Anforderungen: ";
+    content: "Vorläufige Anforderungen: ";
 }
 *[class ~= "taskreq-d/closereqs"]:lang(de):before {
     content: "Abschlussanforderungen: ";
 }
 *[class ~= "taskreq-d/reqconds"]:lang(de):before {
-    content: "Verhltnisse: ";
+    content: "Verhältnisse: ";
 }
 *[class ~= "taskreq-d/reqpers"]:lang(de):before {
     content: "Personal: ";
@@ -67,28 +27,28 @@
     content: "Klasse: " !important;
 }
 *[class ~= "taskreq-d/perskill"]:lang(de):before {
-    content: "Fhigkeitslevell: " !important;
+    content: "Fähigkeitslevell: " !important;
 }
 *[class ~= "taskreq-d/esttime"]:lang(de):before {
-    content: "Zeitschtzung: " !important;
+    content: "Zeitschätzung: " !important;
 }
 *[class ~= "taskreq-d/supequip"]:lang(de):before {
-    content: "Ausrstung: " !important;
+    content: "Ausrüstung: " !important;
 }
 *[class ~= "taskreq-d/nosupeq"]:lang(de):before {
-    content: "<Keine Ausrstung>";
+    content: "<Keine Ausrüstung>";
 }
 *[class ~= "taskreq-d/supplies"]:lang(de):before {
-    content: "Vorrte: " !important;
+    content: "Vorräte: " !important;
 }
 *[class ~= "taskreq-d/nosupply"]:lang(de):before {
-    content: "<Keine Ersatzteile>";
+    content: "<Keine Vorräte>";
 }
 *[class ~= "taskreq-d/spares"]:lang(de):before {
     content: "Ersatzteile:";
 }
 *[class ~= "taskreq-d/nospares"]:lang(de):before {
-    content: "<Keine Spares>";
+    content: "<Keine Ersatzteile>";
 }
 *[class ~= "taskreq-d/nosafety"]:lang(de):before {
     content: "<Keine Sicherheitshinweis>" !important;
@@ -101,17 +61,19 @@
  * ------------------------------------------------
  * From -domain-troubleshooting.css
  */
-*[class ~= 'troubleshooting/condition']:lang(de):before {
-    content: "Bedingung ";
-}
-*[class ~= 'troubleshooting/cause']:lang(de):before {
-    content: "Ursache: ";
-}
-*[class ~= 'troubleshooting/remedy']:lang(de):before {
-    content: "Abhilfe : ";
-}
-*[class ~= 'troubleshooting/responsibleParty']:lang(de):before {
-    content: "Verantwortliche Partei: ";
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+   *[class ~= 'troubleshooting/condition']:lang(de):before {
+       content: "Bedingung ";
+   }
+   *[class ~= 'troubleshooting/cause']:lang(de):before {
+       content: "Ursache: ";
+   }
+   *[class ~= 'troubleshooting/remedy']:lang(de):before {
+       content: "Abhilfe : ";
+   }
+   *[class ~= 'troubleshooting/responsibleParty']:lang(de):before {
+       content: "Verantwortliche Partei: ";
+   }
 }
 
 /*
@@ -128,7 +90,7 @@
     content: "Status: ";
 }
 *[class ~= "glossentry/glossSurfaceForm"]:lang(de):before {
-    content: "Oberflchenform: ";
+    content: "Oberflächenform: ";
 }
 *[class ~= "glossentry/glossUsage"]:lang(de):before {
     content: "Verwendung: ";
@@ -142,7 +104,7 @@
     content: "Wenn nicht korrekt: ";
 }
 *[class ~= "learning-d/lcFeedbackCorrect"]:lang(de):before {
-    content: "Wenn richtig: ";
+    content: "Wenn korrekt: ";
 }
 *[class ~= "learning-d/lcOpenAnswer"]:lang(de):before {
     content: "Antwort: ";
@@ -213,7 +175,7 @@
     }
 }
 *[class ~= "task/postreq"]:lang(de):before {
-    content: "Nchster: ";
+    content: "Nächster: ";
 }
 @media print {
     *[class ~= "task/postreq"]:lang(de):before {
@@ -221,7 +183,7 @@
     }
 }
 *[class ~= "task/context"]:lang(de):before {
-    content: "ber diese Aufgabe: ";
+    content: "Über diese Aufgabe: ";
 }
 @media print {
     *[class ~= "task/context"]:lang(de):before {
@@ -248,7 +210,7 @@
 }
 
 *[class ~= "task/choices"]:lang(de):before {
-    content: "Whlen: ";
+    content: "Wählen: ";
 }
 @media print {
     *[class ~= "task/choices"]:lang(de):before {
@@ -272,7 +234,7 @@
     }
 }
 *[class ~= "task/tutorialinfo"]:lang(de):before {
-    content: "Tutorial Informationen: ";
+    content: "Tutorial-Information: ";
 }
 @media print {
     *[class ~= "task/tutorialinfo"]:lang(de):before {
@@ -297,7 +259,7 @@
 }
 
 *[class ~= "topic/shortdesc"]:lang(de):before {
-    content: "Kurze Beschreibung: ";
+    content: "Kurzbeschreibung: ";
 }
 
 @media print {
@@ -307,7 +269,7 @@
 }
 
 *[class ~= "topic/abstract"]:lang(de):before {
-    content: "Abstrakt: ";
+    content: "Zusammenfassung: ";
 }
 @media print {
     *[class ~= "topic/abstract"]:lang(de):before {
@@ -316,7 +278,7 @@
 }
 
 *[class ~= "topic/related-links"]:lang(de):before {
-    content: "Zugehrige Verweise: ";
+    content: "Zugehörige Verweise: ";
 }
 @media print {
     *[class ~= "topic/related-links"]:lang(de):before {
@@ -349,7 +311,7 @@
     content: url('../../img/note.png') " Anmerkung: ";
 }
 *[class ~= "topic/note"][type = "attention"]:lang(de):before {
-    content: url('../../img/important.png') " Beachtung: ";
+    content: url('../../img/important.png') " Achtung: ";
 }
 *[class ~= "topic/note"][type = "caution"]:lang(de):before {
     content: url('../../img/caution.png') " Vorsicht: ";
@@ -358,22 +320,22 @@
     content: url('../../img/danger.png') " Gefahr: ";
 }
 *[class ~= "topic/note"][type = "fastpath"]:lang(de):before {
-    content: "Fastpath: ";
+    content: "Schnellweg: ";
 }
 *[class ~= "topic/note"][type = "important"]:lang(de):before {
     content: url('../../img/important.png') " Wichtig: ";
 }
 *[class ~= "topic/note"][type = "other"]:lang(de):before {
-    content: "Other: ";
+    content: "Anderes: ";
 }
 *[class ~= "topic/note"][type = "remember"]:lang(de):before {
-    content: url('../../img/remember.png') " Bedenken: ";
+    content: url('../../img/remember.png') " Erinnerung: ";
 }
 *[class ~= "topic/note"][type = "restriction"]:lang(de):before {
-    content: url('../../img/restriction.png') " Beschrnkung: ";
+    content: url('../../img/restriction.png') " Beschränkung: ";
 }
 *[class ~= "topic/note"][type = "tip"]:lang(de):before {
-    content: url('../../img/tip.png') " Tip: ";
+    content: url('../../img/tip.png') " Hinweis: ";
 }
 *[class ~= "topic/note"][type = "notice"]:lang(de):before {
     content: url('../../img/important.png') " Beachten: ";
@@ -387,6 +349,48 @@
 *[class ~= "topic/note"][type = "trouble"]:lang(de):before {
     content: url('../../img/troubleshooting.png') " Fehlerbehebung: ";
 }
+
+/*
+ * ------------------------------------------------
+ * From -domain-hazard-d.css
+ */
+*[class ~= "hazard-d/hazardstatement"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "GEFAHR";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "note"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "BEACHTEN";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "tip"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "ANMERKUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "FASTPATH";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "BESCHRÄNKUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "remember"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "BEDENKEN";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "attention"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "ACHTUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "caution"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "VORSICHT";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "notice"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "HINWEIS";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "danger"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "GEFAHR";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "warning"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "WARNUNG";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "other"]:lang(de):before {
+    content: url("../img/warning-black30.png") " " "ANDERE ART VON GEFAHREN";
+}
+
 /*
  * -topic-legacy-conversion.css
  */
@@ -408,7 +412,7 @@
     content: " ";
 }
 *[class ~= "indexing-d/index-sort-as"]:lang(de):before {
-    content: " - sort as: ";
+    content: " - sortieren als: ";
 }
 @media print {	
 	*[class ~= "indexing-d/index-sort-as"]:lang(de):before {
@@ -417,20 +421,10 @@
 }
 
 /*
- * -topic-related-links-xref.css
- */
-@media print {
-    *[class ~= "topic/xref"][href]:after,
-    *[class ~= "topic/link"][href]:after {
-        content: " (auf Seite " target-counter(attr(href), page) ")";
-    }
-}
-
-/*
  * -topic-specialization
  */
 *[class ~= "topic/data-about"]:lang(de):before {
-    content: "Daten ber:";
+    content: "Daten über:";
 }
 
 
@@ -438,7 +432,7 @@
  * -topic-metadata-prolog
  */
 *[class~="topic/audience"]:lang(de):before(300) {
-  content: "Audienze: ";
+  content: "Zielgruppe: ";
 } 
 *[class~="topic/author"]:lang(de):before(300) {
   content: "Autor: ";
@@ -453,7 +447,7 @@
   content: "Komponente: ";
 }
 *[class~="topic/copyright"]:lang(de):before(300) {
-  content: "Urheberrechte ";
+  content: "Urheberrecht ";
 }
 *[class~="topic/copyryear"]:lang(de):before(300) {
   content: "Jahr: ";

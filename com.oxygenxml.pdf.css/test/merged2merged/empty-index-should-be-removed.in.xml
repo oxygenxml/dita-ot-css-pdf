@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <topicref chunk="select-branch to-content by-content"
+            class="- map/topicref bookmap/chapter " collection-type="unordered" href="#unique_2"
+            id="unique_2" type="topic">
+            <topicmeta class="- map/topicmeta ">
+                <navtitle class="- topic/navtitle ">Introduction</navtitle>
+            </topicmeta>
+        </topicref>
+        <!-- Should NOT generate here a link to the index.groups element, because it is empty (i.e. not useful) -->        
+    </opentopic:map>
+    <topic class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Introduction</title>
+    </topic>
+    
+    <!-- Should remove this element, bacause it is empty and would create an empty page. -->
+    <opentopic-index:index.groups>
+    </opentopic-index:index.groups>
+</bookmap>

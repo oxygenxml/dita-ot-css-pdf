@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <opentopic:map class=" toc/toc " xmlns:opentopic="http://www.idiominc.com/opentopic">
+    <oxy:toc-title class=" toc/title" empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <!-- 
+        The ID attribute from the topicref, including the specializations 
+        should be removed, otherwise it will create a link to itself. 
+        The href must be copied also to the topicmeta, this is styled to create 
+        a line in the TOC 
+        -->
+    <chapter class="- map/topicref bookmap/chapter " href="#unique_5" is-chapter="true">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_5">Installing</navtitle>
+      </topicmeta>
+    </chapter>
+  </opentopic:map>
+  <topic break-before="true" class="- topic/topic" id="unique_5"
+    is-chapter="true"
+    oxy:topicref-class="- map/topicref bookmap/chapter " xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+</bookmap>

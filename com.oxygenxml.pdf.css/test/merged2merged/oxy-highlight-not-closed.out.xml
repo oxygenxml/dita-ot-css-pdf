@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <title>The unclosed highlights should not cross the border of the topics and should disable all highlights in that topic.</title>
+  <topic class="- topic/topic " id="unique_1">
+    <title class="- topic/title ">First</title>
+    <body class="- topic/body ">
+      <p class="- topic/p ">A good one, closing .</p>
+      <p class="- topic/p ">A highlight starting in the first topic, not closing.</p>
+    </body>
+  </topic>
+  <topic class="- topic/topic " id="unique_2">
+    <title class="- topic/title ">Second.</title>
+    <body class="- topic/body ">
+      <p class="- topic/p ">A highlight starting <oxy:oxy-color-hl
+          color="rgba(100,0,0,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">in the second topic</oxy:oxy-color-hl>, closing.</p>
+    </body>
+  </topic>
+</bookmap>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <opentopic:map class=" toc/toc "
+    xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title class=" toc/title" empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <topicref class="- map/topicref bookmap/chapter " href="#unique_2"
+      is-chapter="true" type="topic">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_2">Introduction</navtitle>
+      </topicmeta>
+    </topicref>
+    <!-- Should NOT generate here a link to the index.groups element, because it is empty (i.e. not useful) -->
+  </opentopic:map>
+  <topic break-before="true" class="- topic/topic " id="unique_2"
+    is-chapter="true"
+    oxy:topicref-class="- map/topicref bookmap/chapter " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title ">Introduction</title>
+  </topic>
+  <!-- Should remove this element, bacause it is empty and would create an empty page. -->
+</bookmap>

@@ -17,10 +17,10 @@
     string-set: maptitle attr(title);
 }
 /* The title has migrated into the front page */
-front-page-title > *[class ~= "topic/title"]{
+*[class ~= "front-page/front-page-title"] > *[class ~= "topic/title"]{
     string-set: maptitle content();
 }
-front-page-title> *[class ~= "bookmap/mainbooktitle"] {
+*[class ~= "front-page/front-page-title"] > *[class ~= "bookmap/mainbooktitle"] {
     string-set: maptitle content();
 }
 		

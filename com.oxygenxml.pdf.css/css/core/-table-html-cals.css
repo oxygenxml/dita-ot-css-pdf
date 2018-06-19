@@ -22,12 +22,10 @@
     Put a number before the table title.
     The counter is reset in p-page-titles-and-numbers.css
   */
-*[class~="topic/table"] > caption,
 *[class~="topic/table"] > info > *[class~="topic/title"],
 *[class~="topic/table"] > *[class~="topic/title"]{ 
     counter-increment: tablecount;
 }
-*[class~="topic/table"] > caption:before,
 *[class~="topic/table"] > info > *[class~="topic/title"]:before,
 *[class~="topic/table"] > *[class~="topic/title"]:before{ 
     content: "Table " counter(tablecount) ": ";
@@ -272,6 +270,12 @@ th {
 	  padding-left:5px;
 	  padding-right:5px;
 	}	
+}
+
+@media oxygen and (platform:webapp) {
+  *[class~="topic/table"] tr > th, td {
+    -oxy-show-placeholder:no;
+  }
 }
 
 /* 
@@ -859,6 +863,9 @@ td[bgcolor]{
     		oxy_checkbox(edit, "@rowsep", values, "1", labels, "rowsep", fontInherit, true);
 	white-space: pre;
 	padding-bottom: 5px;
+  
+  unicode-bidi:embed;
+  direction:ltr;
 }
 
 col:after{
@@ -869,6 +876,9 @@ col:after{
     		"  align " oxy_combobox(edit, "@align", editable, false, canRemoveValue, true, columns, 10);
     white-space: pre;
     padding-bottom: 5px;
+    
+    unicode-bidi:embed;
+    direction:ltr;
 }
 
 spanspec:before{
@@ -880,6 +890,9 @@ spanspec:after{
     		" start column " oxy_textfield(edit, "@namest", columns, 7) 
     		" end column " oxy_textfield(edit, "@nameend", columns, 7);    
 	white-space: pre;
+  
+  unicode-bidi:embed;
+  direction:ltr;
 }
 
 } 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_2">
+    <title class="- topic/title ">Introduction</title>
+    <simpletable class="- topic/simpletable ">
+      <strow class="- topic/strow "/>
+    </simpletable>
+    <simpletable class="- topic/simpletable " frame="all" relcolwidth="2.0* 1.0*">
+      <colspec class=" topic/colspec " style="width:66.6667%;"/>
+      <colspec class=" topic/colspec " style="width:33.3333%;"/>
+      <oxy:table-header-group class=" simpletable/table-header-group " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <sthead class="- topic/sthead ">
+          <stentry class="- topic/stentry ">H1</stentry>
+          <stentry class="- topic/stentry ">H2</stentry>
+        </sthead>
+      </oxy:table-header-group>
+      <oxy:table-row-group class=" simpletable/table-row-group " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">1</stentry>
+          <stentry class="- topic/stentry ">2</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">1</stentry>
+          <stentry class="- topic/stentry ">2</stentry>
+        </strow>
+      </oxy:table-row-group>
+    </simpletable>
+  </topic>
+</bookmap>

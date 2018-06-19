@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <opentopic:map class=" toc/toc "
+    xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title class=" toc/title" empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <!-- The outputclass attribute should also migrate to the topic. In this way you can style the topic, indirectly by using the topicref. -->
+    <topicref class="- map/topicref " href="#unique_6" is-chapter="true"
+      navtitle="Getting Started Nav Title Attribute"
+      outputclass=" page-break-before page-break-after " type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_6">Getting Started Nav Title Attribute</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref class="- map/topicref " href="#unique_7" is-chapter="true"
+      outputclass="red" type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_7">Title 7</navtitle>
+      </topicmeta>
+    </topicref>
+    <topicref class="- map/topicref " href="#unique_8" is-chapter="true" type="concept">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#unique_8">Title 8</navtitle>
+      </topicmeta>
+    </topicref>
+  </opentopic:map>
+  <topic break-before="true" class="- topic/topic " id="unique_6"
+    is-chapter="true" outputclass=" page-break-before page-break-after "
+    oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title " navtitle="Getting Started Nav Title Attribute">This should have page-break output class values.</title>
+  </topic>
+  <topic break-before="true" class="- topic/topic " id="unique_7"
+    is-chapter="true" outputclass="red"
+    oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title " navtitle="Title 7">This should have red output class value.</title>
+  </topic>
+  <topic break-before="true" class="- topic/topic " id="unique_8"
+    is-chapter="true" oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title " navtitle="Title 8">Should have no outputclass.</title>
+  </topic>
+</bookmap>

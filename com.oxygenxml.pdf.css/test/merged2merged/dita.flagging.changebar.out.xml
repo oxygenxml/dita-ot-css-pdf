@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic break-before="true" class="- topic/topic " id="unique_1"
+    is-chapter="true" oid="prop_flaggin_properties"
+    oxy:topicref-class="- map/topicref "
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <p class="- topic/p " data-ditaval-action="flag"
+      data-ditaval-change-bar-color="red"
+      data-ditaval-change-bar-offset="1.25mm"
+      data-ditaval-change-bar-placement="start"
+      data-ditaval-change-bar-style="solid"
+      data-ditaval-change-bar-width="2pt" data-ditaval-color="blue"
+      data-ditaval-val="16" rev="16">
+      <ditaval-startprop
+        class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="color:blue;">
+        <revprop action="flag"
+          changebar="color:red;style:solid;width:2pt;offset:1.25mm;placement:start"
+          color="blue" val="16"/>
+
+      </ditaval-startprop>Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Morbi ac aliquet diam. Donec sit amet libero elit.
+                Proin non ex id metus mollis vulputate vitae at felis. Donec faucibus, justo sed
+                sagittis gravida, dolor risus congue mi, eu tempus lacus nunc nec arcu. Aliquam
+                aliquam eu dui ac luctus. In tristique tristique consequat. Sed non dignissim arcu.
+                Integer aliquam, diam a pharetra tincidunt, lorem turpis sodales dolor, at accumsan
+                lacus nulla eget nibh. Morbi commodo diam vel justo tincidunt aliquet. Quisque
+                congue convallis erat ut sodales. Etiam ac ex magna. Donec quis pulvinar dui, et
+                egestas sem.<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+        <revprop action="flag"
+          changebar="color:red;style:solid;width:2pt;offset:1.25mm;placement:start"
+          color="blue" val="16"/>
+      </ditaval-endprop>
+    </p>
+    <p
+        class="- topic/p ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac
+                aliquet diam. Donec sit amet libero elit. Proin non ex id metus mollis vulputate
+                vitae at felis. Donec faucibus, justo sed sagittis gravida, dolor risus congue mi,
+                eu tempus lacus nunc nec arcu. Aliquam aliquam eu dui ac luctus. <ph
+        class="- topic/ph " data-ditaval-action="flag"
+        data-ditaval-change-bar-color="red"
+        data-ditaval-change-bar-offset="1.25mm"
+        data-ditaval-change-bar-placement="end"
+        data-ditaval-change-bar-style="solid"
+        data-ditaval-change-bar-width="2pt" data-ditaval-color="blue"
+        data-ditaval-val="17" rev="17">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="color:blue;">
+          <revprop action="flag"
+            changebar="color:red;style:solid;width:2pt;offset:1.25mm;placement:end"
+            color="blue" val="17"/>
+
+        </ditaval-startprop>In tristique tristique
+                        consequat.<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <revprop action="flag"
+            changebar="color:red;style:solid;width:2pt;offset:1.25mm;placement:end"
+            color="blue" val="17"/>
+        </ditaval-endprop>
+      </ph> Sed non dignissim arcu.
+                Integer aliquam, diam a pharetra tincidunt, lorem turpis sodales dolor, at accumsan
+                lacus nulla eget nibh. Morbi commodo diam vel justo tincidunt aliquet. Quisque
+                congue convallis erat ut sodales. Etiam ac ex magna. Donec quis pulvinar dui, et
+                egestas sem.</p>
+  </topic>
+</bookmap>

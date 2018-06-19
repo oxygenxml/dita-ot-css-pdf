@@ -34,10 +34,10 @@
      * The rest of the rows are wrapped in an element with "table-row-group".
      *  
      */
-     table-header-group{
+     *[class~="simpletable/table-header-group"]{
          display:table-header-group;
      }
-     table-row-group{
+     *[class~="simpletable/table-row-group"]{
          display:table-row-group;
      }
 
@@ -51,17 +51,28 @@
      *[class~="topic/table"] {
          display:block ;
      }
+     /* Since we are using the same class names in the HTML based transformation, make sure the HTML tables have the display:table */
+     html *[class~="topic/table"] {
+         display:table;
+     }
+     
      *[class~="topic/table"] > *[class~="topic/tgroup"] {
          display:table;
          
-         /* Fixed, in order to be conformant to the DITA specification, if a column does not have a width, it should be considered 1* 
-            Prince ignores it. Chemsitry can deal with it. */
+         /* Fixed, in order to be respect the DITA specification, if a column does not have a width, it should be considered 1* 
+            Prince ignores it. Chemistry can deal with it. */
          table-layout: fixed;
          
      }
      *[class~="topic/table"] > *[class~="topic/title"] {
          display:block;
      }
+
+    /* Since we are using the same class names in the HTML based transformation, make sure the HTML tables captions have the display:table-caption */
+    html *[class~="topic/table"] > *[class~="topic/title"] {
+         display:table-caption;
+     }
+     
      
      /*
       * Prince uses the width set on the colspec "style" attribute, added by a post processing step in the DITA-CSS plugin.

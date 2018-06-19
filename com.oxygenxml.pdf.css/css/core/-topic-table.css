@@ -53,3 +53,9 @@
 *[class~="topic/table"][frame='all'] > *[class~="topic/tgroup"] {
   border-style:solid;
 }
+
+@media oxygen and (platform:webapp) {
+  *[class~="topic/entry"] {
+    -oxy-show-placeholder:no;
+  }
+}

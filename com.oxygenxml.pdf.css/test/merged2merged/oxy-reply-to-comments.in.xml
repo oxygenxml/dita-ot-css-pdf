@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    class="- map/map bookmap/bookmap ">
+    <topic class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">Replies.</title>
+        <body class="- topic/body ">
+            <?oxy_comment_start 
+                
+                author="dan" 
+                timestamp="20160125T093152+0200" 
+                comment="A" 
+                id="75fd3556-7284-41b1-97f0-d5ae4014de91"?><?oxy_comment_start 
+                
+                author="dan" 
+                timestamp="20160125T093529+0200" 
+                comment="AB" 
+                parentID="75fd3556-7284-41b1-97f0-d5ae4014de91" 
+                id="a2a1f462-6518-467c-aae9-e02eac1fae08" 
+                mid="1"?><?oxy_comment_start 
+                
+                author="dan" 
+                timestamp="20160125T170946+0200" 
+                comment="X1" 
+                parentID="9e0c8f32-af85-4acf-8e1a-e34bba062e54" 
+                mid="2"?><?oxy_comment_start 
+                
+                author="dan" 
+                timestamp="20160125T171111+0200" 
+                comment="X2" 
+                parentID="9e0c8f32-af85-4acf-8e1a-e34bba062e54" 
+                mid="3"?><?oxy_comment_start 
+                
+                author="dan" 
+                timestamp="20160125T093545+0200" 
+                comment="AC" 
+                parentID="75fd3556-7284-41b1-97f0-d5ae4014de91"
+                mid="4"?><?oxy_comment_start 
+                
+                author="dan" 
+                timestamp="20160125T093227+0200" 
+                comment="X" 
+                parentID="75fd3556-7284-41b1-97f0-d5ae4014de91" 
+                id="9e0c8f32-af85-4acf-8e1a-e34bba062e54" mid="5"?>selected<?oxy_comment_end
+            ?><?oxy_comment_end mid="1"
+            ?><?oxy_comment_end mid="2"
+            ?><?oxy_comment_end mid="3"
+            ?><?oxy_comment_end mid="4"
+            ?><?oxy_comment_end mid="5"?>
+
+  			<?oxy_comment_start                 
+                author="dan" 
+                timestamp="20160125T093152+0200" 
+                comment="Other" 
+                id="75fd3556-7284-41b1-97f0-d5ae4014de883"?>
+                This comment should be numbered as "hr_id=2", since it is the second main comment. The other ones are replies.
+            <?oxy_comment_end?>            
+        </body>
+    </topic>
+</bookmap>

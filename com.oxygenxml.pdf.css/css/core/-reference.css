@@ -85,10 +85,8 @@
   padding-bottom: 0.5em;
 }
 *[class~="reference/refsyn"]:before {
-  /* -reference_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
   display: block;
 }
 

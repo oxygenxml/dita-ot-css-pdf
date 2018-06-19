@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+
+Applies the XSL transformation to get html5 from the merged map.
+
+--><project basedir=".">
+
+
+	<!-- XSLT Pipe: Generic postprocessing of the merged file -->
+	<target name="pdf-css.xslt-pipeline-post-process">
+
+		<fail message="[OXY-PDFCSS02E][ERROR] The merged DITA map file is missing. Make sure you are transforming a DITA map, not a single topic.">
+			<condition>
+				<not>
+					<available file="${dita.map.merged}"/>
+				</not>
+			</condition>
+		</fail>
+
+		<makeurl property="user.input.dir.url" file="${user.input.dir}"/>
+		<echo>Using catalog: ${xsl.extensions.xml.catalog.file.path}</echo>
+		
+  	    <!-- Figure title placement. May come as argument. -->	
+        <property name="figure.title.placement" value="top"/>
+
+		
+		<xslt in="${dita.map.merged}" out="${dita.map.merged.post.processed}" style="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/merged2merged/merged.xsl" force="true" classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/merged2merged/java">
+		      <xmlcatalog>
+		    	  <catalogpath path="${xsl.extensions.xml.catalog.file.path}"/>
+		      </xmlcatalog>	
+				   
+
+			<factory name="net.sf.saxon.TransformerFactoryImpl">
+			  <!-- 
+		        Avoid saxon:assign warnings. For newer Saxon libraries the next property should be set:
+		        <attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>
+		      -->
+			</factory>
+
+			<param name="args.draft" expression="${args.draft}"/>
+			<param name="input.dir.url" expression="${user.input.dir.url}"/>
+			<param name="show.changes.and.comments" expression="${show.changes.and.comments}"/>
+			<param name="transtype" expression="${transtype}"/>
+			<param name="figure.title.placement" expression="${figure.title.placement}"/>
+
+			<!-- Extension parameters -->
+			
+
+		</xslt>
+	</target>
+
+</project>

@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  src: url("../fonts/candidates/Merriweather/Merriweather-Regular.ttf");
+}
+
+:root {
+  line-height:1.35;
+  font-size:1em;
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  font-family: Merriweather, serif;
+}
+
+*[class~="topic/title"] {
+  font-family: Merriweather, serif;
+}
+
+*[class~='topic/pre'] {
+  line-height:1;
+}
+
+*[class~='topic/ul'] {
+  line-height:1.2;
+}

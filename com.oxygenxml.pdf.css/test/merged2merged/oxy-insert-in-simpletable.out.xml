@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskbody class="- topic/body task/taskbody " xmlns:dita-ot="ns">
+  <prereq class="- topic/section task/prereq ">
+    <table class="- topic/table " colsep="1" frame="all"
+      id="unique_6_Connect_42_table_e4z_lsl_gcb" rowsep="1">
+      <title class="- topic/title ">Normal table.</title>
+      <tgroup class="- topic/tgroup " cols="2">
+        <colspec class="- topic/colspec " colname="col1" colnum="1"
+          colwidth="1*" rowheader="headers" style="width:50%;"/>
+        <colspec class="- topic/colspec " colname="col2" colnum="2"
+          colwidth="1*" rowheader="headers" style="width:50%;"/>
+        <thead class="- topic/thead ">
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="1">fasf</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="1"/>
+          </row>
+        </thead>
+        <tbody class="- topic/tbody ">
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="2">fasf</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="2">324</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="3">fasd</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="3">5ter</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="4">fas</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="4">85</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="5">fasd</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="5">twert</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="6">fas</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="6">786</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="7">fas</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="7">856</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="8">fas</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="8">85586</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="9">fas</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="9">856</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="10">fas</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="10">856</entry>
+          </row>
+          <row class="- topic/row ">
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="11">fdasf</entry>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="11">33</entry>
+          </row>
+          <oxy:oxy-range-start hr_id="1" id="sc_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+          <oxy:oxy-insert hr_id="1" href="#sc_1" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+            <oxy:oxy-author>dan</oxy:oxy-author>
+            <oxy:oxy-content>insert</oxy:oxy-content>
+            <oxy:oxy-date>2017/12/20</oxy:oxy-date>
+            <oxy:oxy-hour>15:09:05</oxy:oxy-hour>
+            <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+          </oxy:oxy-insert>
+          <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+          <row class="- topic/row ">
+            <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+            <entry class="- topic/entry " colname="col1" dita-ot:x="1" dita-ot:y="12">
+              <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">XXXX</oxy:oxy-insert-hl>
+            </entry>
+            <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+            <entry class="- topic/entry " colname="col2" dita-ot:x="2" dita-ot:y="12">
+              <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author">YYYY</oxy:oxy-insert-hl>
+            </entry>
+            <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+          </row>
+          <oxy:oxy-insert-hl xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+          <oxy:oxy-range-end hr_id="1" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+        </tbody>
+      </tgroup>
+    </table>
+    <simpletable class="- topic/simpletable " frame="none"
+      id="unique_6_Connect_42_simpletable_rvk_zrl_gcb" relcolwidth="1* 1*">
+      <colspec class=" topic/colspec " style="width:50%;"/>
+      <colspec class=" topic/colspec " style="width:50%;"/>
+      <oxy:table-header-group class=" simpletable/table-header-group " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <sthead class="- topic/sthead ">
+          <stentry class="- topic/stentry ">fasdf</stentry>
+          <stentry class="- topic/stentry "/>
+        </sthead>
+      </oxy:table-header-group>
+      <oxy:table-row-group class=" simpletable/table-row-group " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasd</stentry>
+          <stentry class="- topic/stentry ">23141234</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasd</stentry>
+          <stentry class="- topic/stentry ">634</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasdffa</stentry>
+          <stentry class="- topic/stentry ">6</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasd</stentry>
+          <stentry class="- topic/stentry ">412341234</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasd</stentry>
+          <stentry class="- topic/stentry ">634</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">ffasd</stentry>
+          <stentry class="- topic/stentry ">41234</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasdf</stentry>
+          <stentry class="- topic/stentry ">4123</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasd</stentry>
+          <stentry class="- topic/stentry ">4</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fasd</stentry>
+          <stentry class="- topic/stentry ">34</stentry>
+        </strow>
+        <strow class="- topic/strow ">
+          <stentry class="- topic/stentry ">fas</stentry>
+          <stentry class="- topic/stentry ">634</stentry>
+        </strow>
+        <oxy:oxy-range-start hr_id="2" id="sc_2"/>
+        <oxy:oxy-insert hr_id="2" href="#sc_2">
+          <oxy:oxy-author>dan</oxy:oxy-author>
+          <oxy:oxy-content>insert</oxy:oxy-content>
+          <oxy:oxy-date>2017/12/20</oxy:oxy-date>
+          <oxy:oxy-hour>15:05:13</oxy:oxy-hour>
+          <oxy:oxy-tz>+02:00</oxy:oxy-tz>
+        </oxy:oxy-insert>
+        <strow class="- topic/strow ">
+          <oxy:oxy-insert-hl/>
+          <stentry class="- topic/stentry ">
+            <oxy:oxy-insert-hl>AAA</oxy:oxy-insert-hl>
+          </stentry>
+          <oxy:oxy-insert-hl/>
+          <stentry class="- topic/stentry ">
+            <oxy:oxy-insert-hl>BBB</oxy:oxy-insert-hl>
+          </stentry>
+          <oxy:oxy-insert-hl/>
+        </strow>
+        <oxy:oxy-range-end hr_id="2"/>
+      </oxy:table-row-group>
+    </simpletable>
+  </prereq>
+</taskbody>

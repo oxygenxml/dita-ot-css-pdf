@@ -39,33 +39,21 @@
 }
 
 /*
- * All metainformation is block.
- * All the metainformation elements are labeled 
+ * All direct elements from the metainformation tree are block, indented and labeled. 
  */
-*[class~="topic/prolog"] *,
-*[class~="map/topicmeta"] * {
-  display: block;
-  margin: 0.2em;
-}
-
-
 *[class~="topic/prolog"] > *,
-*[class~="map/topicmeta"] > * {
+*[class~="map/topicmeta"] > *,
+*[class~="topic/metadata"] > *{
+  display: block;
   margin: 0.1em;
   padding-top: 0.3em;
-}
-*[class~="topic/prolog"] > * > *,
-*[class~="map/topicmeta"] > * > * {
-  margin-left: 2em;
 }
 
 *:before(300)
 {
   width: 6em;
   display: inline;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ==================================================
  * 
@@ -78,13 +66,13 @@
 /**/
 }
 *[class~="topic/audience"][type]:before {
-  -oxy-append-content: " type: " oxy_textfield(edit, "@type", columns, 10);
+  -oxy-append-content: " type: " oxy_combobox(edit, "@type", editable, true);
 }
 *[class~="topic/audience"][job]:before {
-  -oxy-append-content: " job: " oxy_textfield(edit, "@job", columns, 10);
+  -oxy-append-content: " job: " oxy_combobox(edit, "@job", editable, true);
 }
 *[class~="topic/audience"][experiencelevel]:before {
-  -oxy-append-content: " experience: " oxy_textfield(edit, "@experiencelevel", columns, 10);
+  -oxy-append-content: " experience: " oxy_combobox(edit, "@experiencelevel", editable, true);
 }
 *[class~="topic/audience"][name]:before {
   -oxy-append-content: " name: " oxy_textfield(edit, "@name", columns, 10);
@@ -192,6 +180,10 @@
 *[class~="topic/critdates"]:before(300) {
 /**/
 }
+*[class~="topic/critdates"] > * {
+  display: block;
+}
+
 /* ==================================================
  * 
  * <created>
@@ -426,7 +418,6 @@
 *[class~="topic/source"][href]:after {
   /* TODO - dan - make all links look the same.*/
   link: attr(href);
-  -ah-link: attr(href);  
   content: url("../../img/link.png") attr(href);
   /*See -colors.css */
   text-decoration: underline;
@@ -434,6 +425,7 @@
 @media print {
   *[class~="topic/source"][href]:after {
     text-decoration: none;
+    -ah-link: attr(href);
   }
 }
 

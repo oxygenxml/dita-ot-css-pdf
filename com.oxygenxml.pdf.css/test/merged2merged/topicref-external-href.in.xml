@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence">
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <booktitle class="- topic/title bookmap/booktitle ">
+      <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+        <ph class="- topic/ph " keyref="product" product="author">Oxygen XML Author</ph>
+      </mainbooktitle>
+    </booktitle>
+
+    <topicref xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" 
+      class="- map/topicref " format="pdf" href="some.pdf" id="" navtitle="Zumzum" scope="external">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle ">Zumzum</navtitle>
+        <?ditaot gentext?>
+        <linktext class="- map/linktext ">Zumzum</linktext>
+      </topicmeta>
+    </topicref>
+
+  </opentopic:map>
+</bookmap>

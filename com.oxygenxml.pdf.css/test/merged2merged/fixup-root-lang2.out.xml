@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The xml:lang=en attribute should be added to root if it is missing -->
+<map title="Growing Flowers" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <topic class="- topic/topic " id="unique_1" oid="index"
+    outputclass="top-of-page" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+    <title class="- topic/title ">Flowers by Season
+            Settings</title>
+    <shortdesc class="- topic/shortdesc " xml:lang="fr">Flowers and
+            seasons are intimately bound to each other. Most of the flowers are
+            season-specific.</shortdesc>
+  </topic>
+</map>

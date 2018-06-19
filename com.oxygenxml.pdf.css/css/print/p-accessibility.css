@@ -52,7 +52,7 @@
 *[class ~= "topic/figure"]{
    -oxy-pdf-tag-type: "Figure";
 }
-index\.groups{
+*[class ~= "index/groups"]{
    -oxy-pdf-tag-type: "Index";	
 }
 
@@ -63,7 +63,6 @@ index\.groups{
   -oxy-alt-text: attr(alt);
 }
 *[class ~= "topic/image"]:has(*[class ~= "topic/alt"]){
-  border:2pt solid red;
   -oxy-alt-text: oxy_xpath('./*[contains(@class," topic/alt ") ]/text()');  
 }
 

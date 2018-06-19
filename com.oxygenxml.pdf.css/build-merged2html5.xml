@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+
+Applies the XSL transformation to get html5 from the merged map.
+
+--><project basedir=".">
+
+  <target name="pdf-css.merged-to-html5">    
+	
+  	<echo>Using catalog: ${xsl.extensions.xml.catalog.file.path}</echo>
+
+  	<!-- Figure title placement. May come as argument. -->	
+    <property name="figure.title.placement" value="top"/>
+
+    <xslt in="${mh5.dita.file}" out="${mh5.html.file}" style="${mh5.xsl.file}">
+        <xmlcatalog>
+	       <catalogpath path="${xsl.extensions.xml.catalog.file.path}"/>
+	    </xmlcatalog>	
+        <xmlcatalog refid="dita.catalog"/>
+        <param name="html5.css.links" expression="${html5.css.links}"/>
+        <param name="figure.title.placement" expression="${figure.title.placement}"/>
+        
+    </xslt>     
+    
+    <copy xmlns:dita="http://dita-ot.sourceforge.net" file="${mh5.html.file}" tofile="${dita.map.output.dir}/${dita.map.filename.root}.merged.html" force="true"/>    
+  </target>
+  	
+</project>

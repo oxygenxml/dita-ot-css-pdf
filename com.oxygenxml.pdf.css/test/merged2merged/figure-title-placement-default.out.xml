@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_2">
+    <title class="- topic/title ">Figure</title>
+    <fig class="- topic/fig ">
+      <title class="- topic/title ">This is the figure title, it should be left at the top of the image.</title>
+      <image class="- topic/image " id="image_ah5_x55_vdb" scale="75"/>
+    </fig>
+  </topic>
+</bookmap>

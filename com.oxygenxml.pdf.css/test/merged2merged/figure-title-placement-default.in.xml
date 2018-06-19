@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <topic class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Figure</title>
+        
+        <fig class="- topic/fig ">
+          <title class="- topic/title ">This is the figure title, it should be left at the top of the image.</title>
+          <image scale="75" id="image_ah5_x55_vdb" class="- topic/image "/>
+        </fig>
+        
+    </topic>
+</bookmap>

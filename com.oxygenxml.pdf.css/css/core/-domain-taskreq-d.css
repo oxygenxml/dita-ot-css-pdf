@@ -63,9 +63,7 @@
   /**/
 }
 *[class~="taskreq-d/reqconds"]:before {
-  /* -taskreq_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -117,9 +115,7 @@
  */
 *[class~="taskreq-d/noconds"]:before {
   content: "<No Conditions>" !important;
-  /* -taskreq_no- >>> */
   font-style: italic;
-  /* <<< */
 }
 
 @media oxygen AND (platform:"eclipse") {
@@ -140,9 +136,7 @@
  *     + topic/ol task/ol 
  */
 *[class~="taskreq-d/reqpers"]:before {
-  /* -taskreq_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -157,10 +151,8 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/personnel"]:before {
-  /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -175,10 +167,8 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/perscat"]:before {
-  /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -193,10 +183,8 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/perskill"]:before {
-  /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -211,10 +199,8 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/esttime"]:before {
-  /* -taskreq_personnel_before- >>> */
   font-weight: bold;
   width: 10em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -261,9 +247,7 @@
  *     + topic/p task/p 
  */
 *[class~="taskreq-d/supequip"]:before {
-  /* -taskreq_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -278,9 +262,7 @@
  */
 
 *[class~="taskreq-d/nosupeq"]:before {
-  /* -taskreq_no- >>> */
   font-style: italic;
-  /* <<< */
 }
 
 @media oxygen AND (platform:"eclipse") {
@@ -302,9 +284,7 @@
  *     + topic/p task/p 
  */
 *[class~="taskreq-d/supplies"]:before {
-  /* -taskreq_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -347,9 +327,7 @@
  *     + topic/data task/data 
  */
 *[class~="taskreq-d/nosupply"]:before {
-  /* -taskreq_no- >>> */
   font-style: italic;
-  /* <<< */
 }
 
 @media oxygen AND (platform:"eclipse") {
@@ -384,9 +362,7 @@
  *     + topic/p task/p 
  */
 *[class~="taskreq-d/spares"]:before {
-  /* -taskreq_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -400,9 +376,7 @@
  *     + topic/data task/data 
  */
 *[class~="taskreq-d/nospares"]:before {
-  /* -taskreq_no- >>> */
   font-style: italic;
-  /* <<< */
 }
 
 @media oxygen AND (platform:"eclipse") {
@@ -423,9 +397,7 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/nosafety"]:before {
-  /* -taskreq_no- >>> */
   font-style: italic;
-  /* <<< */
 }
 
 @media oxygen AND (platform:"eclipse") {
@@ -460,7 +432,5 @@
  *     + topic/li task/li 
  */
 *[class~="taskreq-d/safety"]:before {
-  /* -taskreq_before- >>> */
   font-weight: bold;
-  /* <<< */
 }

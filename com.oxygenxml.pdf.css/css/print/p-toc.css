@@ -14,13 +14,13 @@
 /*
 	Associates the opentopic:map to the TOC page.
 */
-*[class ~= "map/map"] > map {
+*[class ~= "map/map"] > *[class ~= "toc/toc"] {
     display: block;
     page: table-of-contents;
 }
 
 /* TODO The opentopic-placeholder:toc should be treated in XSLT, by moving the TOC to the indicated position.*/
-toc {
+*[class ~= "placeholder/toc"]{
 	display:none;
 }
 
@@ -28,12 +28,12 @@ toc {
      One can use the oxy:toc-title title element to give a title to the TOC.
      If is marked as empty, use the static text: "Contents"         
  */
-toc-title {
+*[class ~= "toc/title"] {
     display: block;
     font-size: 3em;
     margin-bottom: 1em;
 }
-toc-title[empty]:before {
+*[class ~= "toc/title"][empty]:before {
 	/* p-i18n.css */
 }
 
@@ -42,12 +42,14 @@ toc-title[empty]:before {
     The bookmap title migrates into the opentopic:map element. Since it is already on the 
     front page, it should be hidden. 
 */
-*[class ~= "map/map"] > map > *[class ~= "topic/title"] {
+*[class ~= "map/map"] > *[class ~= "toc/toc"] > *[class ~= "topic/title"] {
     display: none;
 }
 
 *[class ~= "map/topicref"] {
     display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 *[class ~= "map/topicref"] *[class ~= "map/topicref"] {
     margin-left: 2em;
@@ -98,8 +100,9 @@ toc-title[empty]:before {
     -oxy-link: attr(href);
 }
 
-/* A dotted line between the topic name and the page number. */
-*[class ~= "map/topicref"] *[class ~= "topic/navtitle"]:after {
+/* A dotted line between the topic name and the page number. 
+   Not the case for external references. */
+*[class ~= "map/topicref"]:not([scope = "external"]) *[class ~= "topic/navtitle"]:after {
     content: leader('.') target-counter(attr(href), page);
 }
 

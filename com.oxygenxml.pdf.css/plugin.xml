@@ -1,42 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
 <plugin id="com.oxygenxml.pdf.css">
-  <!-- extensions -->
-  <feature extension="dita.conductor.transtype.check" value="pdf-css" type="text"/>
-  <feature extension="dita.conductor.target.relative" value="integrator.xml" type="file"/>
-  <feature extension="dita.transtype.print" value="pdf-css"/>  
-  <transtype name="pdf-css" extends="base" desc="PDF (CSS Formatter - Experimental)">
 
+  <require plugin="org.dita.pdf2"/>
+  <feature extension="package.version" value="21.0"/>
+  <feature extension="dita.conductor.transtype.check" value="pdf-css" type="text"/>
+  <feature extension="dita.conductor.transtype.check" value="pdf-css-html5" type="text"/>
+  <feature extension="dita.transtype.print" value="pdf-css"/>
+  <feature extension="dita.transtype.print" value="pdf-css-html5"/>
+  <feature extension="dita.conductor.target.relative" value="integrator.xml" type="file"/>
+
+  <extension-point id="com.oxygenxml.pdf.css.xsl.merged2html5.parameters" name="Extension point to pass parameters to the XSLT transformation that creates the HTML from the merged map"/>
+  <extension-point id="com.oxygenxml.pdf.css.xsl.merged2html5" name="XSLT extension point for the post-processed merged DITA map to HTML5 transformation"/>
+
+  <extension-point id="com.oxygenxml.pdf.css.xsl.merged2merged.parameters" name="Extension point to pass parameters for the XSLT post-processing of the merged DITA map before other stages."/>
+  <extension-point id="com.oxygenxml.pdf.css.xsl.merged2merged" name="XSLT extension point for post-processing the merged DITA map before other stages."/>
+ 
+  <template file="xsl/merged2html5/html5_template.xsl"/>
+  <template file="xsl/merged2merged/merged_template.xsl"/>
+  
+  <template file="build-merged2html5_template.xml"/>
+  <template file="build-merged2merged_template.xml"/>
+  
+  <!-- The set of common parameters. -->
+  <transtype name="pdf-css-base" extends="base" desc="PDF (CSS Formatter)" abstract="true">
+
+	<param name="figure.title.placement" type="enum"
+		desc="Controls the placement of the figure title relative to the image.">
+	  <val default="true">top</val>
+      <val>bottom</val>
+	</param>
+	
     <param name="css.processor.path.prince" type="file"
       desc="Path to the Prince executable file (eg: &quot;C:\path\to\prince.exe&quot; on Windows) which should be run to generate the PDF."/>
-
     <param name="css.processor.path.antenna-house" type="file"
       desc="Path to the Antenna House executable file (eg: &quot;C:\path\to\AHFCmd.exe&quot; on Windows) which should be run to generate the PDF."/>
     <param name="css.processor.path.chemistry" type="file"
       desc="Path to the oXygen PDF Chemistry executable file (eg: &quot;C:\path\to\chemistry.bat&quot; on Windows) which should be run to generate the PDF. 
-      If this parameter is not set, the plugin will use the system's PATH environment variable to find and start oXygen PDF Chemistry."/>
-
-    <param name="css.processor.type" type="enum"
-      desc="Choose the formatting processor.">
+      		  If this parameter is not set, the plugin will use the system's PATH environment variable to find and start oXygen PDF Chemistry."/>
+    <param name="css.processor.type" type="enum" desc="Choose the formatting processor.">
       <val default="true">chemistry</val>
       <val>prince</val>
       <val>antenna-house</val>
-     </param>
-    
-    <param name="dita.css.list" type="file"
-      desc="You can use this to specify a list of CSS URLs to be used by the PDF processor. The files must have URL syntax and be separated using semicolons. If the value is empty, then the DITA topics/maps CSS files (currently selected from the oXygen [Styles] dropdown) are used."
-    /> 
-
-    <param name="args.css" type="file"
-      desc="You can use this to specify a list of CSS URLs to be used in addition to the dita.css.list parameter. The files must have URL syntax and be separated using semicolons."
-    /> 
-    
-    <param name="show.changes.and.comments" 
-      type="enum"
+    </param>
+    <param name="show.changes.and.comments" type="enum"
       desc="When set on 'yes', the user comments, colored highlights and trackchanges are shown in the output.">
       <val default="true">no</val>
       <val>yes</val>
     </param>
+  </transtype>
 
+  <!-- The old transtype, used by the WYSIWYG transformation scenario. --> 
+  <transtype name="pdf-css" extends="pdf-css-base" desc="PDF (CSS Formatter - Deprecated)">
+    <param name="dita.css.list" type="file"
+      desc="You can use this to specify a list of CSS URLs to be used by the PDF processor. The files must have URL syntax and be separated using semicolons. If the value is empty, then the DITA topics/maps CSS files (currently selected from the oXygen [Styles] dropdown) are used."/>
+    <param name="args.css" type="file"
+      desc="You can use this to specify a list of CSS URLs to be used in addition to the dita.css.list parameter. The files must have URL syntax and be separated using semicolons."
+    />
+  </transtype>
+
+  <!-- The recommended transtype, based on HTML5 intermediate format. --> 
+  <transtype name="pdf-css-html5" extends="pdf-css-base" desc="PDF (CSS Formatter - HTML5)">
+    <param name="pdf.publishing.template" desc="Specifies the path to the folder containing the custom PDF template."
+      type="file"/>
+    <param name="pdf.publishing.template.descriptor"
+      desc="Specifies the name of the descriptor to be loaded from the PDF template package. 
+        If it is not specified, the first encountered descriptor will be automatically loaded."
+      type="string"/>
+    <param name="args.css" type="file"
+      desc="You can use this to specify a list of CSS URLs to be used in addition to the default CSS list from the publishing template. The files must have URL syntax and be separated using semicolons."
+    />
   </transtype>
 </plugin>

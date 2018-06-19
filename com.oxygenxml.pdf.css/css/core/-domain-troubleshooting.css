@@ -68,13 +68,15 @@
    -oxy-foldable: false; 
 }
 *[class~='troubleshooting/condition']:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
-/* If there is a title, do not show static content before it... */
-*[class~='troubleshooting/condition']:before! > *[class~="topic/title"] {
-  display:none;
+
+/* The Web Author does not support the subject selector */
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+   /* If there is a title, do not show static content before it... */
+   *[class~='troubleshooting/condition']:before! > *[class~="topic/title"] {
+     display:none;
+   }
 }
 
 /* ====================================
@@ -98,14 +100,14 @@
   margin-left:1em;   
 }
 *[class~='troubleshooting/troubleSolution']:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
-
-/* If there is a title, do not show static content before it... */
-*[class~='troubleshooting/troubleSolution']:before! > *[class~="topic/title"] {
-  display:none;
+/* The Web Author does not support the subject selector */
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+    /* If there is a title, do not show static content before it... */
+    *[class~='troubleshooting/troubleSolution']:before! > *[class~="topic/title"] {
+      display:none;
+    }
 }
 
 /* ====================================
@@ -131,14 +133,15 @@
 
 *[class~='troubleshooting/cause']:before {
   display:block;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
-/* If there is a title, do not show static content before it... */
-*[class~='troubleshooting/cause']:before! > *[class~="topic/title"] {
-  display:none;
+/* The Web Author does not support the subject selector */
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+    /* If there is a title, do not show static content before it... */
+    *[class~='troubleshooting/cause']:before! > *[class~="topic/title"] {
+      display:none;
+    }
 }
 
 /* ====================================
@@ -160,14 +163,15 @@
 }
 *[class~='troubleshooting/remedy']:before {
   display:block;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
-/* If there is a title, do not show static content before it... */
-*[class~='troubleshooting/remedy']:before! > *[class~="topic/title"] {
-  display:none;
+/* The Web Author does not support the subject selector */
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+   /* If there is a title, do not show static content before it... */
+   *[class~='troubleshooting/remedy']:before! > *[class~="topic/title"] {
+     display:none;
+   }
 }
 
 /* ====================================
@@ -182,12 +186,13 @@
  *     + topic/p
  */
 *[class~='troubleshooting/responsibleParty']:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
-/* If there is a title, do not show static content before it... */
-*[class~='troubleshooting/responsibleParty']:before! > *[class~="topic/title"] {
-  display:none;
+/* The Web Author does not support the subject selector */
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+   /* If there is a title, do not show static content before it... */
+   *[class~='troubleshooting/responsibleParty']:before! > *[class~="topic/title"] {
+     display:none;
+   }
 }

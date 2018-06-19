@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>com.oxygenxml</groupId>
 		<artifactId>oxygen-dita-ot-plugins</artifactId>
-		<version>20.0-SNAPSHOT</version>
+		<version>21.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>oxygen-com.oxygenxml.pdf.css</artifactId>
@@ -12,7 +12,10 @@
 	<description>Plugins that convert DITA Maps to PDF using CSS 3 stylesheets.</description>
 	
 	<properties>
-		
+		<!-- 
+			Directory used to run distribution test 
+		-->
+		<distribution.test.dir>distribution-test</distribution.test.dir>
 	</properties>
 	
 	<dependencies>
@@ -20,13 +23,29 @@
 			<scope>test</scope>
 			<groupId>com.oxygenxml</groupId>
 			<artifactId>oxygen-basic-utilities</artifactId>
-			<version>${project.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>Saxon-HE</artifactId>
 					<groupId>net.sf.saxon</groupId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<artifactId>oxygen-publishing-template</artifactId>
+			<groupId>com.oxygenxml</groupId>
+		</dependency>
+        <dependency>
+          <artifactId>oxygen-publishing-template</artifactId>
+          <groupId>com.oxygenxml</groupId>
+        </dependency>
+        <dependency>
+          <artifactId>oxygen-webhelp-license</artifactId>
+          <groupId>com.oxygenxml</groupId>
+        </dependency>
+    	<dependency>
+			<scope>test</scope>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>			
 		</dependency>
 		<dependency>
 			<scope>test</scope>
@@ -38,6 +57,15 @@
 			<artifactId>junit</artifactId>			
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>                  
+        </dependency>
+        <dependency>
+            <groupId>xml-resolver</groupId>
+            <artifactId>xml-resolver</artifactId>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -67,6 +95,76 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					
+					<!-- unzip artifact for distribution tests -->
+					<execution>
+						<id>unzip-for-distribution-test</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								 <unzip 
+								 src="target/${project.artifactId}-${project.version}-package.zip" 
+								 dest="${project.build.directory}/${distribution.test.dir}" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<!-- Run a set of TCs over the distribution  -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+		          <execution>
+		            <goals>
+		              <goal>integration-test</goal>
+		              <goal>verify</goal>
+		            </goals>
+		          </execution>
+		        </executions>		        		
+				<configuration>
+				  <includes>
+				  	<include>com/oxygenxml/pdf/distribution/test/**/*.java</include>
+				  </includes>
+		        </configuration>
+			</plugin>
+			
+			<!--
+				 Unit test cases.
+			 -->
+			<plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-surefire-plugin</artifactId>
+	          <configuration>
+		          <includes>
+		            <include>com/oxygenxml/pdf/css/**/*.java</include>
+		          </includes>
+		        </configuration>
+	        </plugin>
+			
+		  <!-- Parses the project version number. -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+			<artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>parse-version</id>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>parse-version</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin> 
 		</plugins>
 	</build>
 </project>

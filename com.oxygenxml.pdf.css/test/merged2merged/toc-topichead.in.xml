@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The first level topics and topicrefs in a normal map should be marked as chapters. -->
+<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map " collection-type="sequence">
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+
+
+        <topichead xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" is-chapter="true"
+            class="+ map/topicref mapgroup-d/topichead " href="#d7e155" navtitle="Glossary">
+            <topicmeta class="- map/topicmeta "/>
+            <topicref class="- map/topicref " href="#unique_9" keys="genus" navtitle="Genus" print="yes"
+                type="glossentry">
+                <topicmeta class="- map/topicmeta " data-topic-id="flowers.genus">
+                    <resourceid appid="flowers.genus" class="- topic/resourceid " oxy-source="topic"/>
+                    <navtitle href="#unique_9" class="- topic/navtitle ">Genus</navtitle>
+                </topicmeta>
+            </topicref>
+        </topichead>
+    </opentopic:map>
+</map>

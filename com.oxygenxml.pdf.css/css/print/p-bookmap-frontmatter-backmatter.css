@@ -10,14 +10,14 @@
 
 @media print {
 
-    front-matter,
-    back-matter {
+    *[class ~= "bookmap/frontmatter"],
+    *[class ~= "bookmap/backmatter"] {
         page: matter-page;
     }
     
     /* Put the sections on a separate page. */
-    front-matter > *[class ~= "topic/topic"], 
-    back-matter > *[class ~= "topic/topic"]{
+    *[class ~= "bookmap/frontmatter"] > *[class ~= "topic/topic"], 
+    *[class ~= "bookmap/backmatter"] > *[class ~= "topic/topic"]{
       page-break-before: always;
     }
 

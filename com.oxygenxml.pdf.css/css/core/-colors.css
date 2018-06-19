@@ -15,19 +15,6 @@
 @media oxygen-high-contrast-black, oxygen-dark-theme {
   /* ====================================
      *
-     * built-in oXygen elements
-     * 
-     */
-  oxy|comment {
-    color: #3DB39B !important;
-    background-color: transparent !important;
-  }
-  oxy|reference,
-  oxy|entity {
-    background-color: rgb(100, 100, 100) !important;
-  }
-  /* ====================================
-     *
      * Reset all the elements colors. 
      */
   *:before,
@@ -164,7 +151,8 @@
  */
 *[class~="topic/prolog"],
 *[class~="map/topicmeta"] {
-background-color: #FFFFD9;
+    background-color: #fffff0;
+    border-color: #b3b3a1;
 }
 *[class~="topic/prolog"] > *,
 *[class~="map/topicmeta"] > * {
@@ -217,9 +205,7 @@ border-top-color: #e5e500;
 *[class~="topic/xref"],
 *[class~="topic/longquoteref"][href]:before,
 *[class~="topic/source"][href]:after {
-  /* -link-color >>> */
   color: navy;
-  /* <<< */
 }
 
 *[class~="topic/desc"],
@@ -266,9 +252,7 @@ border-top-color: #e5e500;
   *[class~="topic/xref"],
   *[class~="topic/longquoteref"][href]:before,
   *[class~="topic/source"][href]:after {
-    /* -link-color >>> */
     color: #AAAAFF !important;
-    /* <<< */
   }
   
   *:before(1010) {
@@ -304,13 +288,13 @@ border-top-color: #e5e500;
  * Image map shapes.
  */
 *[class~="ut-d/shape"]:before(2){    
-    background-color:blue;
-    color:white;
+    background-color:#d9e8fe;
+    color:#1a2b46;
 }
 @media oxygen-high-contrast-black, oxygen-dark-theme {
 	*[class~="ut-d/shape"]:before(2){    
-	    background-color:yellow;
-	    color:black;
+	    background-color:#606060;
+	    color:#e5e5e5;
 	}
 }
 	

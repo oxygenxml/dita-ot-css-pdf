@@ -140,14 +140,10 @@
   border-right: thick solid;
 }
 *[class~="topic/draft-comment"][author]:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 *[class~="topic/draft-comment"]:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ==================================================
  * 
@@ -239,9 +235,7 @@
     font-style: italic;
   }
   *[class~="topic/fn"]:before {
-    /* -before_bold- >>> */
     font-weight: bold;
-    /* <<< */
     font-style: normal;
     content: " fn: ";
   }
@@ -365,7 +359,6 @@
   content: "[" attr(href) "]";
   /*See -colors.css */
   link: attr(href);
-  -ah-link: attr(href);
   
   text-decoration: underline;
   font-style: italic;
@@ -381,6 +374,7 @@
   *[class~="topic/longdescref"][href]:before,
   *[class~="topic/longquoteref"][href]:before {
     text-decoration: none;
+    -ah-link: attr(href);
   }
 }
 /* ==================================================
@@ -412,8 +406,7 @@
  */
 *[class~="topic/note"] {
   display: block;
-  margin: 0em 1em;
-  padding: 0.5em;
+  padding: 0.5em 0 0.5em 15px;
 }
 *[class~="topic/note"]:before {
   font-weight: bold;
@@ -592,10 +585,8 @@
   margin: 0.5em 0;
   margin-right: 0.5em;
   padding: 0.5em;
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
 @media print {
   *[class~="topic/pre"] {

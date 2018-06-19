@@ -62,3 +62,8 @@
   font-weight:bold;
 } 
 
+@media oxygen and (platform:webapp) {
+  *[class~="topic/stentry"] {
+    -oxy-show-placeholder:no;
+  }
+}

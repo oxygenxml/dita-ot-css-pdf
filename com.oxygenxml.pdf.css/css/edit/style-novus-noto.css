@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "noto";
+  font-style: normal;
+  src: url("../fonts/candidates/Noto_Serif/NotoSerif-Regular.ttf");
+}
+
+:root {
+  line-height:1.25;
+  font-size:1em;
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  font-family: noto, serif;
+}
+
+*[class~="topic/title"] {
+  font-family: noto, serif;
+}
+
+*[class~='topic/pre'] {
+  line-height:1;
+}
+
+*[class~='topic/ul'] {
+  line-height:1.2;
+}

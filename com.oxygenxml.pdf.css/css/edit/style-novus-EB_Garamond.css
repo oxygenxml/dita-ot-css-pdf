@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "eb-garamond";
+  font-style: normal;
+  src: url("../fonts/candidates/EB_Garamond/EBGaramond-Regular.ttf");
+}
+
+:root {
+  line-height:1.25;
+  font-size:1.1em;
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  font-family: eb-garamond, serif;
+}
+
+*[class~="topic/title"] {
+  font-family: eb-garamond, serif;
+}
+
+*[class~='topic/pre'] {
+  line-height:1;
+}
+
+*[class~='topic/ul'] {
+  line-height:1.2;
+}

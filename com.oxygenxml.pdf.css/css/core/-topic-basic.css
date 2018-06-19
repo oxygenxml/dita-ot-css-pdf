@@ -139,9 +139,7 @@
 *[class~="topic/searchtitle"]:before,
 *[class~="topic/navtitle"]:before {
   display:inline;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 
@@ -155,13 +153,11 @@
  */
 *[class~="topic/shortdesc"] {
     display: block;
-    margin: 0.5em 0;
+    margin: 0.5em 0 0.5em 3px;
 }
 *[class~="topic/shortdesc"]:before {
   display: inline;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 
@@ -182,9 +178,7 @@
 }
 *[class~="topic/abstract"]:before {
   display: inline;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 
@@ -198,13 +192,7 @@
  */
 *[class~="topic/body"] {
     display: block;
-    /* Put an indent of the body when in page layout. The short 
-    description and related links are indented to the right.*/
-    margin-left:1em;
-
-    margin-bottom:2em;
-    margin-top:1em;
-    margin-right:1em;
+    margin: 1em 1em 2em 3px;
 }
 
 
@@ -238,9 +226,7 @@
 }
 *[class~="topic/related-links"]:before {
   display: block;
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* 

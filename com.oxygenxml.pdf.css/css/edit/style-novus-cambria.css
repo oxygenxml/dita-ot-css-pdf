@@ -1,0 +1,21 @@
+:root {
+  line-height:1.25;
+  font-size:1.15em;
+
+  padding-left: 60px;
+  padding-right: 60px;
+
+  font-family: Cambria, Caladea, "Times new Roman", serif;
+}
+
+*[class~="topic/title"] {
+  font-family: Cambria, Caladea, "Times new Roman", serif;
+}
+
+*[class~='topic/pre'] {
+  line-height:1;
+}
+
+*[class~='topic/ul'] {
+  line-height:1.2;
+}

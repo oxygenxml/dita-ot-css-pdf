@@ -25,21 +25,25 @@ with those set forth herein.
 -->
 <project name="com.oxygenxml.pdf.css" basedir=".">
 	
-	
+  <import file="build-merged.xml"/>
+  <import file="build-merged2html5.xml"/>
+  <import file="build-merged2merged.xml"/>
+
+
+   <!-- The processor executable. May come as argument. -->
   <property name="css.processor.type" value="chemistry"/>
 
 	
-  <!-- Path to the processor executable. May come as argument -->
   <condition property="css.processor.path.prince" value="prince.exe">
      <os family="windows"/>
   </condition>  
   <property name="css.processor.path.prince" value="prince"/>	
+  
   <condition property="css.processor.path.antenna-house" value="AHFCmd.exe">
     <os family="windows"/>
   </condition>  
   <property name="css.processor.path.antenna-house" value="AHFCmd"/>
 	
-
 
   <condition property="use.antenna-house">
   	<equals arg1="${css.processor.type}" arg2="antenna-house" casesensitive="false"/>
@@ -96,27 +100,119 @@ with those set forth herein.
   <!-- Control the display of the user comments or change tracking info (encoded in oXygen processing instructions). -->
   <property name="show.changes.and.comments">no</property>
   
+	
   <!--
     
-    Depends on the PDF2 pipe
-    
-   -->
-  <import file="build_pdf2.xml"/>
-
-  <!--
-    
-    The main target.
+    The main target (deprecated)
     
     1. Merges the map in a file together with metainformation about the TOC and index
       (similar to what the "org.dita.pdf2" plugin would do before converting it to FO.)
     2. Converts the merged map to PDF using Prince.
     
-  -->
+  -->	
   <target name="dita2pdf-css" depends="
-  		check.exec.prince, 
-  	    check.exec.antenna-house, 
-  		css.dita2pdf2, 
-  	    merged2pdf"/>
+  	pdf-css.init-template,
+  	pdf-css.dita2pdf2,
+  	pdf-css.prepare-merged,
+  	pdf-css.publish-pdf"/>
+
+  <!--
+	    
+	The main target (HTML5)
+	    
+	1. Merges the map in a file together with metainformation about the TOC and index
+	  (similar to what the "org.dita.pdf2" plugin would do before converting it to FO.)
+	2. Transforms the merged map to HTML
+	3. Converts the HTML to PDF using Prince.
+  -->
+  <target name="dita2pdf-css-html5" depends="
+  	pdf-css.html5-init,
+  	pdf-css.init-template,
+  	pdf-css.dita2pdf2,
+  	pdf-css.prepare-merged,
+  	pdf-css.merged-to-html5-init,
+  	pdf-css.merged-to-html5,
+  	pdf-css.publish-pdf">
+  </target>
+
+	
+  <!-- 
+  	Sets the input, output and XSL for the HTML transformation.
+  -->	
+  <target name="pdf-css.merged-to-html5-init">
+  	 <move 
+  	      file="${dita.map.merged.post.processed}" 
+  	      tofile="${dita.map.merged.post.processed}_tmp" force="true"/>
+    
+    <property name="mh5.dita.file" value="${dita.map.merged.post.processed}_tmp"/>
+    <property name="mh5.html.file" value="${dita.map.merged.post.processed}"/>   
+    <property name="mh5.xsl.file" value="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/merged2html5/html5.xsl"/>
+  </target>
+
+	
+  <!--
+	    Load the PDF custom template.
+   -->
+  <target name="pdf-css.init-template" depends="dita2pdf2.init, build-init">    
+  	
+  	<path id="pt_classpath">
+  	    <pathelement location="target/classes"/>
+  	    <fileset dir="${dita.plugin.com.oxygenxml.common.dir}/lib">
+  	        <include name="*.jar"/>
+  	     </fileset>
+  	</path>
+  	
+  	
+    <!-- Task used to load properties for a custom template. -->
+    <taskdef name="templatetask" 
+      classname="com.oxygenxml.publishing.template.PublishingTemplateTask" 
+      classpathref="pt_classpath"/>
+  	
+    <!-- Deal with empty template parameters -->    
+    <condition property="publishing.template" value="${pdf.publishing.template}" else="">
+      <isset property="pdf.publishing.template"/>
+    </condition>
+    
+    <condition property="publishing.template.descriptor" value="${pdf.publishing.template.descriptor}" else="">
+      <isset property="pdf.publishing.template.descriptor"/>
+    </condition>
+    
+	<!-- Use default XML catalog -->    
+    <makeurl 
+      property="pdf.default.xml.catalog.url" 
+      file="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/template_catalog.xml"/>
+  	    
+  	<echo>Publishing template root path: ${publishing.template}</echo>
+  	<echo>Publishing template descriptor: ${publishing.template.descriptor}</echo>
+  		
+    <templatetask 
+      outputDir="${dita.map.output.dir}"
+      tempDir="${dita.temp.dir}"
+      pluginDir="${dita.plugin.com.oxygenxml.pdf.css.dir}"
+      templateDescriptor="${publishing.template.descriptor}"
+      templateRootPath="${publishing.template}"
+      defaultXMLCatalog="${pdf.default.xml.catalog.url}"
+      transtype="pdf-css"/>
+  	
+    <!-- Catalog for the XSLT extension points. Can be generated from the publishing template. -->
+  	<property 
+          name="xsl.extensions.xml.catalog.file.path" 
+          value="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/template_catalog.xml"/>
+  	    
+  	    
+   </target>
+
+  
+	
+  <!--
+  
+    Sets some properties specific to the pdf-css-html5 transtype.
+    
+  -->
+  <target name="pdf-css.html5-init">    
+    <property name="html5-transtype" value="1"/>
+  	<property name="transtype" value="pdf-css-html5"/>  	
+  </target>
 
 	
    <!--
@@ -124,12 +220,11 @@ with those set forth herein.
       Checks the existence of the Prince formatter executable.
    
    -->	
-  <target name="check.exec.prince" if="use.prince">
+  <target name="pdf-css.check.exec.prince" if="use.prince">
   	<property environment="env" />
   	<condition property="commandname.present">
 	  	<or>
 	  	<available file="${css.processor.path.prince}" />
-	  	<available file="${css.processor.path.prince}" filepath="${env.PATH}" />
 	  	<!-- special case for Windows, may be PATH or Path -->
 	  	<available file="${css.processor.path.prince}" filepath="${env.Path}" />
 	  	<available file="${css.processor.path.prince}" filepath="${env.PATH}" />
@@ -146,12 +241,11 @@ with those set forth herein.
       Checks the existence of the Antenna-House formatter executable.
    
    -->	
-  <target name="check.exec.antenna-house" if="use.antenna-house">
+  <target name="pdf-css.check.exec.antenna-house" if="use.antenna-house">
   	<property environment="env" />
   	<condition property="commandname.present">
       <or>
       <available file="${css.processor.path.antenna-house}" />
-      <available file="${css.processor.path.antenna-house}" filepath="${env.PATH}" />
       <!-- special case for Windows, may be PATH or Path -->
       <available file="${css.processor.path.antenna-house}" filepath="${env.Path}" />
       <available file="${css.processor.path.antenna-house}" filepath="${env.PATH}" />
@@ -165,40 +259,8 @@ with those set forth herein.
 
 	
   	
-   <!-- XSLT Pipe: Generic postprocessing of the merged file -->
-   <target name="xslt.pipeline.generic.processing">
-	   
-   	  <fail message="[OXY-PDFCSS02E][ERROR] The merged DITA map file is missing. Make sure you are transforming a DITA map, not a single topic.">
-	        <condition>
-	            <not>
-	                 <available file="${dita.map.merged}" />
-	            </not>
-	        </condition>
-	   </fail> 
-   	
-   	   <makeurl property="user.input.dir.url" file="${user.input.dir}"/>
-	   <xslt in="${dita.map.merged}"
-	          out="${dita.map.merged.post.processed}"
-	          style="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/post-process.xsl" 
-	          force="true"
-	          classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/java">
-	   	
-		  <!-- 
-		    Avoid saxon:assign warnings. For newer Saxon libraries the next property should be set:
-		    <attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>
-		  --> 
-		  <factory name="net.sf.saxon.TransformerFactoryImpl">
-			  <!--<attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>-->
-		  </factory>
-	   	
-	      <param name="args.draft" expression="${args.draft}"/>
-	      <param name="input.dir.url" expression="${user.input.dir.url}"/>
-	      <param name="show.changes.and.comments" expression="${show.changes.and.comments}"/>
-	  </xslt>
-   </target>
-	
    <!-- XSLT Pipe: Postprocess the merged file, aggregating the replies into threads associated to changes/comments.-->
-   <target name="xslt.pipeline.aggregate.comments.replies" if="${show.changes.and.comments}">
+   <target name="pdf-css.xslt-pipeline-aggregate-comments-replies" if="${show.changes.and.comments}">
 		<move file="${dita.map.merged.post.processed}" tofile="${dita.map.merged.post.processed}.1"/>
 		
 	    <xslt in="${dita.map.merged.post.processed}.1"
@@ -211,7 +273,8 @@ with those set forth herein.
 
 	
 	
-  <target name="merged2pdf" >
+  <target name="pdf-css.prepare-merged" depends="pdf-css.check.exec.prince, pdf-css.check.exec.antenna-house">
+  	
   	<echo>Type: ${css.processor.type}</echo>
   	<!-- 
   	     Use the CSSs from the oXygen frameworks/dita directory, if available.
@@ -235,7 +298,8 @@ with those set forth herein.
 		This has the semantic similar to the args.css from the XHTML transtype, of additional CSSs that contain the most important rules.
 	-->
     <property name="args.css"  value=""/>
-    <property name="dita.print.css" value="${default.css.dir.abs.path}/print/p-dita.css"/>
+    <property name="dita.print.css"      value="${default.css.dir.abs.path}/print/p-dita.css"/>
+    <property name="webhelp.topic.css"      value="${dita.plugin.com.oxygenxml.webhelp.responsive.dir}/oxygen-webhelp/app/topic-page.css"/>
   	
     <dirname property="dita.temp.dir.fullpath" file="${dita.temp.dir}${file.separator}dummy.file"/>
     <property name="dita.map.merged" value="${dita.temp.dir.fullpath}${file.separator}stage1.xml"/>
@@ -250,11 +314,10 @@ with those set forth herein.
   	-->
   	
     <!-- 1. Generic postprocessing of the merged file -->
-  	<antcall target="xslt.pipeline.generic.processing"/>
+  	<antcall target="pdf-css.xslt-pipeline-post-process"/>
 
     <!-- 2. Aggregate the replies into threads associated to changes/comments.-->  	
-  	<antcall target="xslt.pipeline.aggregate.comments.replies"/>
-  	
+  	<antcall target="pdf-css.xslt-pipeline-aggregate-comments-replies"/>
   	
 
     <condition property="outputFile" value="${dita.map.output.dir}/${dita.map.filename.root}.pdf">
@@ -280,17 +343,42 @@ with those set forth herein.
   	  we cannot dynamically alter the number of -style arguments.
   	  -->
   	<property name="main.css.path" value="${dita.temp.dir.fullpath}/main.css"/>
+    
+           	
   	<script language="javascript">
   	 <![CDATA[
 		var tmp = "";
-		var cssList = project.getProperty('dita.css.list').concat(';').concat(project.getProperty('dita.print.css')).concat(';').concat(project.getProperty('args.css'));
+		var cssList = "";
+  		
+  		if (project.getProperty('html5-transtype') != null) {
+  			// HTML transformation
+  			cssList = 	""
+						.concat(project.getProperty('webhelp.topic.css')).concat(';')
+						.concat(project.getProperty('dita.print.css')).concat(';');
+  			if (project.getProperty('template.css.list')) {
+  				// If the template parameters are present, add the template CSS list 
+				cssList = cssList.concat(project.getProperty('template.css.list')).concat(';');
+  			}
+			cssList = cssList.concat(project.getProperty('args.css'));
+  		} else {
+  			// Direct transformation
+  			cssList = 	""
+  					    .concat(project.getProperty('dita.css.list')).concat(';')
+						.concat(project.getProperty('dita.print.css')).concat(';')
+						.concat(project.getProperty('args.css'));
+
+  		}
+  		
+  		
   	    var arr = cssList.split(';'); 
   		var pis = "";
+  		var links = "";
   		
   	    for (i = 0; i < arr.length; i++) {
 			if (arr[i].length() > 0) {
 		  		  tmp = tmp.concat("@import '");
-				  pis = pis.concat("<?xml-stylesheet type='text/css' href='");	  		  
+				  pis = pis.concat("<?xml-stylesheet type='text/css' href='");
+  				  links = links.concat("<link rel='stylesheet' type='text/css' href='");
   		
 		  		  var url = arr[i];
 		  		  if (!url.contains(':/') && !url.startsWith('file:')) {
@@ -313,16 +401,22 @@ with those set forth herein.
   		
   				  pis = pis.concat(url);
 		    	  pis = pis.concat("'?>\n");
-  		
+
+				  links = links.concat(url);
+  	  			  links = links.concat("' />\n");
   		   	}
   	    }
   		project.setProperty('main.css.content', tmp);
   		project.setProperty('associate.css.pis', pis);
+  		project.setProperty('html5.css.links', links);
   		  		
   	 ]]>
   	 </script>
     <echo>${main.css.content}</echo>
-    <echo file="${main.css.path}">${main.css.content}</echo>
+  	<echo>${html5.css.links}</echo>
+  	
+  	<antcall target="pdf-css.write-main-css-file-for-direct-transformation"/>
+  	<antcall target="pdf-css.write-main-css-file-for-html-transformation"/>
 
     <!-- 
     	 Copy the input XML file to the output directory.
@@ -336,15 +430,26 @@ with those set forth herein.
   	               replace='&lt;?xml version="1.0" encoding="UTF-8"?>&#10;${associate.css.pis}'
   	/>
   	
-  	<antcall target="prince"/>  	
-    <antcall target="ahouse"/>
-    <antcall target="chemistry"/>
-    <antcall target="chemistry.embedded"/>
   </target>
   
+  <target name="pdf-css.write-main-css-file-for-direct-transformation" unless="html5-transtype">
+    <echo file="${main.css.path}">${main.css.content}</echo>
+  </target>
+  <target name="pdf-css.write-main-css-file-for-html-transformation" if="html5-transtype">
+  	<!-- This should be empty. The CSS links are written in the HTML file. -->
+    <echo file="${main.css.path}"></echo>
+  </target>
+	
+  <target name="pdf-css.publish-pdf">
+	 <antcall target="pdf-css.prince"/>  	
+	 <antcall target="pdf-css.ahouse"/>
+	 <antcall target="pdf-css.chemistry"/>
+	 <antcall target="pdf-css.chemistry.embedded"/>
+  </target>
   
+	
   
-  <target name="ahouse" if="use.antenna-house">
+  <target name="pdf-css.ahouse" if="use.antenna-house">
     
     <echo>=============================</echo>
     <echo>Antenna House executable: ${css.processor.path.antenna-house}</echo>
@@ -367,13 +472,12 @@ with those set forth herein.
       <arg value="${dita.map.merged.post.processed}"/>
       <arg value="-o"/>
       <arg value="${outputFile}"/>
-    </exec>
-    
+    </exec>    
   </target>
   
 
 
-  <target name="chemistry" if="use.chemistry.external">	  
+  <target name="pdf-css.chemistry" if="use.chemistry.external">	  
 	  <echo>=============================</echo>
 	  <echo>Oxygen PDF Chemistry script: ${css.processor.path.chemistry}</echo>
 	  <echo>Processing: ${dita.map.merged.post.processed}</echo>
@@ -396,12 +500,15 @@ with those set forth herein.
         <arg value="${http.proxyPort}"/>
         <arg value="-http-proxy-host"/>
         <arg value="${http.proxyHost}"/>
+  	  	<arg value="-no-rtl-mirroring"/>
         <arg value="-dump-styled-content"/>
-	      <arg value="-dump-fo"/>
+	    <arg value="-dump-fo"/>
+
 	  </exec>
    </target>
 
-  <target name="chemistry.embedded" if="use.chemistry" unless="use.chemistry.external">	  
+	
+  <target name="pdf-css.chemistry.embedded" if="use.chemistry" unless="use.chemistry.external">	  
 	  <echo>=============================</echo>
 	  <echo>Oxygen PDF Chemistry</echo>
       <echo>Installation directory: ${embedded.chemistry.installation.dir}</echo>
@@ -409,6 +516,7 @@ with those set forth herein.
 	  <echo>Output file: ${outputFile}</echo>
 	  <echo>=============================</echo>	  	  
   	
+	  <property name="baseJVMArgLine" value=""/>
   	  <java fork="true" failonerror="true" logerror="true" classname="com.oxygenxml.chemistry.OxygenPDFChemistry">
   		<jvmarg line="${baseJVMArgLine}"/>
   		
@@ -433,7 +541,7 @@ with those set forth herein.
   		<arg value="${embedded.chemistry.installation.dir}"/>
   		
   		<arg value="-css"/>
-        <arg value="${main.css.path}" />
+        <arg value="${main.css.path}"/>
         <arg value="-in"/>
   	    <arg value="${dita.map.merged.post.processed}"/>
         <arg value="-out"/>
@@ -442,15 +550,15 @@ with those set forth herein.
         <arg value="${http.proxyPort}"/>
         <arg value="-http-proxy-host"/>
         <arg value="${http.proxyHost}"/>
+  	  	<arg value="-no-rtl-mirroring"/>
         <arg value="-dump-styled-content"/>
-	    <arg value="-dump-fo"/>  		
+	    <arg value="-dump-fo"/>
   	 </java>
-  	 
-   </target>
-		
+  </target>
+	
+	
 
-
-  <target name="prince" if="use.prince">
+  <target name="pdf-css.prince" if="use.prince">
     
     <echo>=============================</echo>
     <echo>Prince executable: ${css.processor.path.prince}</echo>
@@ -472,7 +580,7 @@ with those set forth herein.
       <arg value="--style"/>
       <arg value="${main.css.path}"/>
       <arg value="--style"/>
-      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass1.css"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/js/index-pass1.css"/>
       
       <!-- Please remove the comment wrapping the following two arguments if you are behind a proxy and your
       documentation refers remote resources, for example images. 
@@ -486,7 +594,7 @@ with those set forth herein.
       
       <arg value="--javascript"/>
       <arg value="--script"/>
-      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass1.js"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/js/index-pass1.js"/>
 
       <arg value="${dita.map.merged.post.processed}"/>
       <arg value="-o"/>
@@ -517,7 +625,7 @@ with those set forth herein.
       
       <arg value="--javascript"/>
       <arg value="--script"/>
-      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/index-pass2.js"/>
+      <arg value="${dita.plugin.com.oxygenxml.pdf.css.dir}/js/index-pass2.js"/>
       <arg value="--script"/>
       <arg value="${dita.temp.dir.fullpath}${file.separator}index-id-to-page.js"/>
       

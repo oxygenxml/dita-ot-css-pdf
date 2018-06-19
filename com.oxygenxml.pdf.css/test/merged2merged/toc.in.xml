@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+        <booktitle class="- topic/title bookmap/booktitle ">
+            <mainbooktitle class="- topic/ph bookmap/mainbooktitle ">
+                <ph class="- topic/ph " keyref="product" product="author">Oxygen XML Author</ph>
+                <ph class="- topic/ph " keyref="minorVersion"
+                    product="editor editorEclipse author authorEclipse developer developerEclipse "
+                    >17.0</ph>
+            </mainbooktitle>
+        </booktitle>
+
+        <part class="- map/topicref bookmap/part " collection-type="sequence" id="d2e80" navtitle="Sequence">
+            <topicref chunk="select-branch to-content by-content"
+                class="- map/topicref bookmap/chapter " collection-type="unordered" href="#unique_2"
+                id="unique_2" type="topic">
+                <topicmeta class="- map/topicmeta ">
+                    <navtitle class="- topic/navtitle ">Introduction<tm class="- topic/tm " tmtype="reg" /></navtitle>
+                    <!-- Linktext is elimnated. -->
+                    <linktext class="- map/linktext ">Introduction</linktext>
+                </topicmeta>
+                <topicref class="- map/topicref " href="#unique_3" id="unique_3"
+                    product="author developer editor" toc="no" type="reference">
+                    <topicmeta class="- map/topicmeta ">
+                        <!-- Some markup inside the navtitle. Should be eliminated, keeping the text. -->
+                        <navtitle class="- topic/navtitle ">Key Features and Benefits of <ph
+                                class="- topic/ph " keyref="product" product="author">Oxygen XML
+                                Author</ph>
+                        </navtitle>
+                        <?ditaot gentext?>
+                        <!-- Linktext is elimnated. -->
+                        <linktext class="- map/linktext ">Key Features and Benefits of Oxygen XML
+                            Author</linktext>
+                    </topicmeta>
+                </topicref>
+            </topicref>
+            <!-- The ID is eliminated, the referred topic has the same ID so the links do not work. -->
+            <topicref class="- map/topicref bookmap/chapter " href="#unique_4" id="unique_4"
+                type="topic">
+                <topicmeta class="- map/topicmeta ">
+                    <!-- Move the href from the parent topicref to the navtitle. -->
+                    <navtitle class="- topic/navtitle ">Installation</navtitle>
+                    <?ditaot gentext?>
+                    <!-- Linktext is elimnated. -->
+                    <linktext class="- map/linktext ">Installation</linktext>
+                    <?ditaot genshortdesc?>
+                    <!-- Shortdesc is not elimnated. -->
+                    <shortdesc class="- map/shortdesc ">The platform requirements and installation
+                        instructions are presented in this chapter.</shortdesc>
+                </topicmeta>
+                <topicref class="- map/topicref " href="#unique_5" id="unique_5" locktitle="yes"
+                    navtitle="Installation Options" type="concept">
+                    <topicmeta class="- map/topicmeta ">
+                        <?ditaot gentext?>
+                        <!-- No navtitle. Should generate one. -->
+                        <linktext class="- map/linktext ">Installation Options for Oxygen XML
+                            Author</linktext>
+                    </topicmeta>
+                </topicref>
+            </topicref>
+            <!-- Remove the topicref with the @toc="no" -->
+            <topicref class="- map/topicref " href="#unique_5" id="unique_5" locktitle="yes"
+                navtitle="Installation Options" type="concept" toc="no">
+                <topicmeta class="- map/topicmeta ">
+                    <?ditaot gentext?>
+                    <linktext class="- map/linktext ">Installation Options for Oxygen XML
+                        Author</linktext>
+                </topicmeta>
+            </topicref>
+        </part>
+        
+        <!-- Reltables are filtered out from the TOC. -->
+        <reltable title="Reltable " class="- map/reltable ">
+            <relrow  class="- map/relrow ">
+                <relcell class="- map/relcell ">
+                    <topicref href="topics/index.dita"/>
+                </relcell>
+            </relrow>
+        </reltable>
+
+    </opentopic:map>
+</bookmap>

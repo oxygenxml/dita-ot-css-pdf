@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map cascade="merge" class="- map/map " id="glossary"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title ">
+      <title class="- topic/title "
+        xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+        xmlns:opentopic="http://www.idiominc.com/opentopic"
+          xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">A
+      Glossary of Terms used in <ph class="- topic/ph "/>
+      </title>
+    </oxy:front-page-title>
+  </oxy:front-page>
+  <opentopic:map class=" toc/toc "
+    xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title class=" toc/title" empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <title class="- topic/title "
+        xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">A
+      Glossary of Terms used in <ph class="- topic/ph "/>
+    </title>
+    <topicref class="- map/topicref " href="#unique_1" is-chapter="true"
+      type="topic" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+      <topicmeta class="- map/topicmeta " data-topic-id="dcpp_a_chapter">
+        <resourceid appid="dcpp_a_chapter" class="- topic/resourceid " oxy-source="topic"/>
+        <navtitle class="- topic/navtitle " href="#unique_1">A chapter</navtitle>
+      </topicmeta>
+    </topicref>
+    <glossref class="+ map/topicref glossref-d/glossref "
+      href="#unique_3" keys="glossentry-audit-levels" linking="none"
+      print="yes" search="no" toc="yes" type="glossentry" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+      <topicmeta class="- map/topicmeta " data-topic-id="audit-levels">
+        <resourceid appid="audit-levels" class="- topic/resourceid " oxy-source="topic"/>
+        <navtitle class="- topic/navtitle " href="#unique_3">Audit level</navtitle>
+      </topicmeta>
+    </glossref>
+  </opentopic:map>
+  <topic break-before="true" class="- topic/topic " id="unique_1"
+    is-chapter="true" oid="dcpp_a_chapter"
+    oxy:topicref-class="- map/topicref "
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title ">A chapter</title>
+    <body class="- topic/body ">
+      <p class="- topic/p "/>
+    </body>
+  </topic>
+  <glossentry
+    class="- topic/topic concept/concept glossentry/glossentry "
+    id="unique_2" oid="alert" outputclass="no-counters" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+    <glossterm class="- topic/title concept/title glossentry/glossterm ">Alert</glossterm>
+    <glossdef
+      class="- topic/abstract concept/abstract glossentry/glossdef " outputclass="page-break-avoid">An event that has triggered a scenario to create a case and
+      requires human review. Multiple alerts can be generated for the same event.</glossdef>
+  </glossentry>
+  <glossentry
+    class="- topic/topic concept/concept glossentry/glossentry "
+    id="unique_3" oid="audit-levels" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+    <glossterm class="- topic/title concept/title glossentry/glossterm ">Audit level</glossterm>
+    <glossdef
+        class="- topic/abstract concept/abstract glossentry/glossdef ">The set of permissions
+      and access rights, assigned to a user. Default levels are L1 (with typical role of compliance
+      analyst), L2 (with typical role of compliance officer), and L3 (with typical role of chief
+      compliance officer). Audit levels are configurable and form the hierarchy for escalating <xref class="- topic/xref ">
+        <term class="- topic/term ">cases</term>
+      </xref>.</glossdef>
+  </glossentry>
+</map>

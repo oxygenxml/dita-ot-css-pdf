@@ -37,4 +37,26 @@
 }   
 
 
+ *[class ~= "topic/xref"][href]:after,
+ *[class ~= "topic/link"][href]:after {
+     font-style:italic;
+     link: attr(href);
+     -ah-link: attr(href);
+
+ }
+ /* For external links, do not show the page annotation */
+ *[class ~= "topic/xref"][href][scope='external']:after,
+ *[class ~= "topic/link"][href][scope='external']:after,
+ *[class ~= "topic/xref"][href][format]:not([format='dita']):after,
+ *[class ~= "topic/link"][href][format]:not([format='dita']):after,
+ *[class ~= "topic/xref"][href^='http://' ]:after,
+ *[class ~= "topic/link"][href^='http://' ]:after,
+ *[class ~= "topic/xref"][href^='https://' ]:after,
+ *[class ~= "topic/link"][href^='https://' ]:after,
+ *[class ~= "topic/xref"][href^='ftp://' ]:after,
+ *[class ~= "topic/link"][href^='ftp://' ]:after {     
+     content:none !important;        
+ }    
+
+
 

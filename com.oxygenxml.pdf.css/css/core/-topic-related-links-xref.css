@@ -45,7 +45,6 @@
 *[class~="topic/link"][href]:before,
 *[class~="topic/xref"][href]:before {
     link: attr(href);
-    -ah-link: attr(href);  
 }
 
 @media oxygen {
@@ -64,7 +63,12 @@
   *[class~="topic/link"],
   *[class~="topic/xref"] {
       text-decoration:none;    
-  }  
+  }
+  
+  *[class~="topic/link"][href]:before,
+  *[class~="topic/xref"][href]:before {
+    -ah-link: attr(href);  
+  }
 }
 
 *[class~="topic/link"][href]:empty,
@@ -83,30 +87,6 @@
     content: oxy_label(text, oxy_getSomeText(attr(href), 150, true));
 }
 
-
-/* 
- *
- * Add (on page NNN) annotation in PDF. 
- * 
- */
-@media print {  
-    *[class ~= "topic/xref"][href]:after,
-    *[class ~= "topic/link"][href]:after {
-        font-style:italic;
-        link: attr(href);
-        -ah-link: attr(href);
-  
-    }
-    /* For external links, do not show the page annotation */
-    *[class ~= "topic/xref"][href^='http://' ]:after,
-    *[class ~= "topic/link"][href^='http://' ]:after,
-    *[class ~= "topic/xref"][href^='https://' ]:after,
-    *[class ~= "topic/link"][href^='https://' ]:after,
-    *[class ~= "topic/xref"][href^='ftp://' ]:after,
-    *[class ~= "topic/link"][href^='ftp://' ]:after {     
-        content:none !important;        
-    }    
-}
 
 
 
@@ -228,9 +208,7 @@
     margin-bottom: 0.5em;
 }
 *[class~="topic/linkpool"][collection-type]:before{
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
   content:oxy_capitalize(attr(collection-type)) ": ";
 }
 *[class~="topic/linkpool"] > *[class~="topic/link"] {

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Test for a bookmap that has a series of chapters and parts. --><bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" class="- map/map bookmap/bookmap " collection-type="sequence"><oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author" class=" front-page/front-page "><oxy:front-page-title class=" front-page/front-page-title "/></oxy:front-page>
+	<opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" class=" toc/toc "><oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" class=" toc/title" empty="true"/>
+
+
+
+		<part is-chapter="true" is-part="true" class="- map/topicref bookmap/part " navtitle="Software driver"><topicmeta class="- map/topicmeta "><navtitle class="- topic/navtitle " href="#synth_1">Software driver</navtitle></topicmeta><!-- A part without topicmeta should get a synthetic one. -->
+			<chapter is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_1" type="topic">
+				<topicmeta class="- map/topicmeta "><navtitle class="- topic/navtitle " href="#unique_1">Installing</navtitle></topicmeta>
+				<topicref class="- map/topicref " href="#unique_2" type="topic">
+					<topicmeta class="- map/topicmeta "><navtitle class="- topic/navtitle " href="#unique_2">Installing on Windows</navtitle></topicmeta>
+				</topicref>
+				<topicref class="- map/topicref " href="#unique_3" type="topic">
+					<topicmeta class="- map/topicmeta "><navtitle class="- topic/navtitle " href="#unique_3">Installing on Mac</navtitle></topicmeta>
+				</topicref>
+			</chapter>
+			<chapter is-chapter="true" class="- map/topicref bookmap/chapter " href="#unique_4" type="topic">
+				<topicmeta class="- map/topicmeta "><navtitle class="- topic/navtitle " href="#unique_4">Uninstalling</navtitle></topicmeta>
+			</chapter>
+		</part>
+
+
+		<part is-chapter="true" is-part="true" class="- map/topicref bookmap/part " href="#p_1" type="topic"><!-- A part that references a file. -->
+			<topicmeta class="- map/topicmeta " data-topic-id="topic_mcs_cnx_ny">
+				<resourceid appid="topic_mcs_cnx_ny" class="- topic/resourceid " oxy-source="topic"/>
+				<navtitle href="#p1" class="- topic/navtitle ">Hardware Part</navtitle>
+				
+			</topicmeta>
+
+			<topicref is-chapter="true" class="- map/topicref " href="#unique_5" type="topic">
+				<topicmeta class="- map/topicmeta "><navtitle class="- topic/navtitle " href="#unique_5">Power requirements</navtitle></topicmeta>
+			</topicref>
+		</part>
+		
+		<appendix is-chapter="true" class="- map/topicref bookmap/appendix " href="#unique_appendix" type="appendix"><!-- This should not be marked as a chapter, it comes after a part. -->
+      		<topicmeta class="- map/topicmeta ">
+        		<navtitle href="#unique_appendix" class="- topic/navtitle ">Sample appendix</navtitle>
+      		</topicmeta>
+    	</appendix>
+		
+
+	</opentopic:map>
+
+	<topic xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" xmlns:oxy="http://www.oxygenxml.com/extensions/author" break-before="true" is-chapter="true" is-part="true" oxy:topicref-class="- map/topicref bookmap/part " class="- topic/topic " id="synth_1"><!-- Should be marked as chapter and part -->
+
+		<title class=" topic/title ">Software Driver Part</title>
+		<topic break-before="true" is-chapter="true" oxy:topicref-class="- map/topicref bookmap/chapter " class="- topic/topic " id="unique_1">
+			<title class="- topic/title "><!-- Should be marked as chapter -->
+				Installing
+			</title>
+			<topic class="- topic/topic " id="unique_2">
+				<title class="- topic/title ">Installing on Windows</title>
+			</topic>
+			<topic class="- topic/topic " id="unique_3">
+				<title class="- topic/title ">Installing on Mac</title>
+			</topic>
+		</topic>
+		<topic break-before="true" is-chapter="true" oxy:topicref-class="- map/topicref bookmap/chapter " class="- topic/topic " id="unique_4">
+			<title class="- topic/title "><!-- Should be marked as chapter -->
+				Uninstalling
+			</title>
+		</topic>
+	</topic>
+
+	<topic xmlns:oxy="http://www.oxygenxml.com/extensions/author" break-before="true" is-chapter="true" is-part="true" oxy:topicref-class="- map/topicref bookmap/part " class="- topic/topic " id="p_1">
+		<title class="- topic/title "><!-- Should be marked as chapter and a part -->
+			Hardware Part
+		</title>
+		<topic break-before="true" is-chapter="true" oxy:topicref-class="- map/topicref " class="- topic/topic " id="unique_5">
+			<title class="- topic/title "><!-- Should be marked as chapter -->
+				Power requirements
+			</title>
+		</topic>
+		<topic class="- topic/topic " id="unique_not_in_toc">
+			<title class="- topic/title "><!-- Should NOT be marked as chapter, its ID has no 
+					pair in a chapter from the TOC -->
+				Additional Info
+			</title>
+		</topic>
+	</topic>
+	
+	<topic xmlns:oxy="http://www.oxygenxml.com/extensions/author" break-before="true" is-chapter="true" oxy:topicref-class="- map/topicref bookmap/appendix " class="- topic/topic " id="unique_appendix">
+			<title class="- topic/title ">
+				Sample Appendix
+			</title>
+	</topic>
+
+</bookmap>

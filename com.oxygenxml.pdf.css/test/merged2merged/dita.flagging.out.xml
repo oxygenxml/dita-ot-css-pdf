@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic break-before="true" class="- topic/topic " id="unique_1"
+    is-chapter="true" oid="prop_flaggin_properties"
+    oxy:topicref-class="- map/topicref "
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <p class="- topic/p " data-ditaval-action="flag"
+      data-ditaval-att="audience" data-ditaval-color="red" data-ditaval-val="a-color-red">
+      <ditaval-startprop
+        class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="color:red;">
+        <prop action="flag" att="audience" color="red" val="a-color-red"/>
+      </ditaval-startprop>
+			Lorem ipsum dolor sit amet,
+			<ph
+        class="- topic/ph " data-ditaval-action="flag"
+        data-ditaval-att="audience" data-ditaval-backcolor="blue" data-ditaval-val="a-bg-blue">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="background-color:blue;">
+          <prop action="flag" att="audience" backcolor="blue" val="a-bg-blue"/>
+
+        </ditaval-startprop>
+				consectetur adipiscing
+				<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" backcolor="blue" val="a-bg-blue"/>
+        </ditaval-endprop>
+      </ph>
+			elit.
+			Curabitur congue nibh
+			<ph class="- topic/ph "
+        data-ditaval-action="flag" data-ditaval-att="audience"
+        data-ditaval-backcolor="orange" data-ditaval-val="a-bg-orange">
+        <ditaval-startprop
+          class="+ topic/foreign ditaot-d/ditaval-startprop " outputclass="background-color:orange;">
+          <prop action="flag" att="audience" backcolor="orange" val="a-bg-orange"/>
+
+        </ditaval-startprop>
+				sit amet vestibulum consequat
+				<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+          <prop action="flag" att="audience" backcolor="orange" val="a-bg-orange"/>
+        </ditaval-endprop>
+
+      </ph>
+			. Morbi ante enim, egestas ut
+			congue hendrerit, pharetra gravida odio.
+			<ditaval-endprop class="+ topic/foreign ditaot-d/ditaval-endprop ">
+        <prop action="flag" att="audience" color="red" val="a-color-red"/>
+      </ditaval-endprop>
+    </p>
+  </topic>
+</bookmap>

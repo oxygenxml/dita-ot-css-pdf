@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+  xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" cascade="merge" class="- map/map "
+  id="glossary">
+  <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+    xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <title xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" class="- topic/title ">A
+      Glossary of Terms used in <ph class="- topic/ph " keyref="product"/></title>
+    <topicref xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+      class="- map/topicref " first_topic_id="#unique_1" href="#unique_1" id="unique_1" type="topic">
+      <topicmeta class="- map/topicmeta " data-topic-id="dcpp_a_chapter">
+        <resourceid appid="dcpp_a_chapter" class="- topic/resourceid " oxy-source="topic"/>
+        <navtitle class="- topic/navtitle ">A chapter</navtitle>
+        <?ditaot gentext?>
+        <linktext class="- map/linktext ">A chapter</linktext>
+      </topicmeta>
+    </topicref>
+    <glossref xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+      class="+ map/topicref glossref-d/glossref " first_topic_id="#unique_2" href="#unique_2"
+      id="unique_2" keys="glossentry-alert" linking="none" outputclass="no-counters" print="yes"
+      product="platform" search="no" toc="no" type="glossentry">
+      <topicmeta class="- map/topicmeta " data-topic-id="alert">
+        <resourceid appid="alert" class="- topic/resourceid " oxy-source="topic"/>
+        <navtitle class="- topic/navtitle ">Alert</navtitle>
+        <?ditaot gentext?>
+        <linktext class="- map/linktext ">Alert</linktext>
+      </topicmeta>
+    </glossref>
+    <glossref xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+      class="+ map/topicref glossref-d/glossref " first_topic_id="#unique_3" href="#unique_3"
+      id="unique_3" keys="glossentry-audit-levels" linking="none" print="yes" product="platform"
+      search="no" toc="yes" type="glossentry">
+      <topicmeta class="- map/topicmeta " data-topic-id="audit-levels">
+        <resourceid appid="audit-levels" class="- topic/resourceid " oxy-source="topic"/>
+        <navtitle class="- topic/navtitle ">Audit level</navtitle>
+        <?ditaot gentext?>
+        <linktext class="- map/linktext ">Audit level</linktext>
+      </topicmeta>
+    </glossref>
+  </opentopic:map>
+  <topic xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" class="- topic/topic "
+    id="unique_1" oid="dcpp_a_chapter">
+    <title class="- topic/title ">A chapter</title>
+    <body class="- topic/body ">
+      <p class="- topic/p "/>
+    </body>
+  </topic>
+  <glossentry xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+    class="- topic/topic concept/concept glossentry/glossentry " id="unique_2" oid="alert">
+    <glossterm class="- topic/title concept/title glossentry/glossterm ">Alert</glossterm>
+    <glossdef class="- topic/abstract concept/abstract glossentry/glossdef "
+      outputclass="page-break-avoid">An event that has triggered a scenario to create a case and
+      requires human review. Multiple alerts can be generated for the same event.</glossdef>
+  </glossentry>
+  <glossentry xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+    class="- topic/topic concept/concept glossentry/glossentry " id="unique_3" oid="audit-levels">
+    <glossterm class="- topic/title concept/title glossentry/glossterm ">Audit level</glossterm>
+    <glossdef class="- topic/abstract concept/abstract glossentry/glossdef ">The set of permissions
+      and access rights, assigned to a user. Default levels are L1 (with typical role of compliance
+      analyst), L2 (with typical role of compliance officer), and L3 (with typical role of chief
+      compliance officer). Audit levels are configurable and form the hierarchy for escalating <xref
+        class="- topic/xref " keyref="glossentry-case"><?ditaot usertext?><term
+          class="- topic/term ">cases</term></xref>.</glossdef>
+  </glossentry>
+  <opentopic-index:index.groups/>
+</map>

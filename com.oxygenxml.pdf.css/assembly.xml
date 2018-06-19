@@ -6,6 +6,30 @@
     <format>zip</format>
   </formats>
   <includeBaseDirectory>false</includeBaseDirectory>
+ 
+  
+  <!-- Copy dependencies to the lib directory. -->
+  <dependencySets>
+    <dependencySet>
+      <includes>
+        <include>*:*</include>
+      </includes>
+      <excludes>
+        <exclude>com.oxygenxml:*</exclude>
+      </excludes>			
+      <outputDirectory>com.oxygenxml.pdf.css/lib</outputDirectory>
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+    <dependencySet>
+      <includes>
+        <include>com.oxygenxml:*</include>
+      </includes>
+      <outputDirectory>com.oxygenxml.pdf.css/lib</outputDirectory>
+      <outputFileNameMapping>${artifact.artifactId}-${parsedVersion.majorVersion}.${parsedVersion.minorVersion}.${artifact.extension}</outputFileNameMapping>      
+      <useProjectArtifact>false</useProjectArtifact>
+    </dependencySet>
+  </dependencySets>
+  
   <fileSets>
     <fileSet>
       <directory>${project.basedir}</directory>
@@ -13,6 +37,9 @@
       <excludes>
       	<exclude>pom.xml</exclude>
       	<exclude>assembly.xml</exclude>
+        <exclude>**/test/**</exclude>
+        <exclude>src/**</exclude>
+        <exclude>settings/**</exclude>
       	<exclude>.*</exclude>
       	<exclude>.settings/**</exclude>
       	<exclude>target/**</exclude>

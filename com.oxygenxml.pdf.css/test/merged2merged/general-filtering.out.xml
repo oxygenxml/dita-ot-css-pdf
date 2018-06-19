@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <part class="- map/topicref bookmap/part " id="remapped_id_1">
+    <topicref class="- map/topicref bookmap/chapter " href="#unique_2"
+      id="unique_2" type="topic">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle ">Introduction</navtitle>
+        <linktext class="- map/linktext ">Introduction</linktext>
+      </topicmeta>
+      <topicref class="- map/topicref " href="#unique_3" id="unique_3"
+        toc="no" type="reference">
+        <topicmeta class="- map/topicmeta ">
+          <navtitle
+              class="- topic/navtitle ">Key Features and Benefits of <ph class="- topic/ph ">Oxygen XML Author</ph>
+          </navtitle>
+        </topicmeta>
+      </topicref>
+    </topicref>
+  </part>
+</bookmap>

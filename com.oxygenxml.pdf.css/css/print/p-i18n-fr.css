@@ -1,19 +1,24 @@
 @charset "UTF-8";
 
 /* Title in the TOC page */
-toc-title[empty]:lang(fr):before { 
+*[class ~= "toc/title"][empty]:lang(fr):before { 
 	content: "Table des matières"; 
 }
 
 /* This string is used in the TOC page header. */
-:root:lang(fr) {
+*[class ~= "map/map"]:lang(fr) {
     string-set: toc-header "Table des matières";
 }
 
 /* Title in the Index page */
-index\.groups:lang(fr):before {
+*[class ~= "index/groups"]:lang(fr):before {
 	content: "Index";
 }
+*[class ~= "index/groups"]:lang(fr) {
+  	bookmark-label:"Index";  
+  	-ah-bookmark-label:"Index";	
+}
+
 
 /* Titles in the TOC. */
 *[class ~= "map/topicref"][is-part] > *[class ~= "map/topicmeta"] > *[class ~= "topic/navtitle"]:lang(fr):before{
@@ -30,3 +35,10 @@ index\.groups:lang(fr):before {
 *[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:lang(fr):before {
     content: "Chapitre " counter(chapter) ". ";
 }
+
+/* Links. */
+*[class ~= "topic/xref"][href]:lang(fr):after,
+*[class ~= "topic/link"][href]:lang(fr):after {
+    content: " (page " target-counter(attr(href), page) ")";
+}
+

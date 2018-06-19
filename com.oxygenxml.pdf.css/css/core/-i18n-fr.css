@@ -1,44 +1,5 @@
 @charset "UTF-8";
-/*
- * ------------------------------------------------
- * From -domain-hazard-d.css
- */
-*[class ~= "hazard-d/hazardstatement"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "DANGER";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "note"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "NOTE";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "tip"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "CONSEIL";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "FASTPATH";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "RESTRICTION";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "remember"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "RAPPELLES TOI";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "attention"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "ATTENTION";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "caution"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "PRÉCAUTION";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "notice"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "REMARQUER";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "danger"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "DANGER";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "warning"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "AVERTISSEMENT";
-}
-*[class ~= "hazard-d/hazardstatement"][type = "other"]:lang(fr):before {
-    content: url("../img/warning-black30.png") " " "AUTRE TYPE DE DANGER";
-}
+
 
 /*
  * ------------------------------------------------
@@ -100,17 +61,19 @@
  * ------------------------------------------------
  * From -domain-troubleshooting.css
  */
-*[class ~= 'troubleshooting/condition']:lang(fr):before {
-    content: "Condition ";
-}
-*[class ~= 'troubleshooting/cause']:lang(fr):before {
-    content: "Cause: ";
-}
-*[class ~= 'troubleshooting/remedy']:lang(fr):before {
-    content: "Remède: ";
-}
-*[class ~= 'troubleshooting/responsibleParty']:lang(fr):before {
-    content: "Partie responsable: ";
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+   *[class ~= 'troubleshooting/condition']:lang(fr):before {
+       content: "Condition ";
+   }
+   *[class ~= 'troubleshooting/cause']:lang(fr):before {
+       content: "Cause: ";
+   }
+   *[class ~= 'troubleshooting/remedy']:lang(fr):before {
+       content: "Remède: ";
+   }
+   *[class ~= 'troubleshooting/responsibleParty']:lang(fr):before {
+       content: "Partie responsable: ";
+   }
 }
 
 /*
@@ -386,6 +349,48 @@
 *[class ~= "topic/note"][type = "trouble"]:lang(fr):before {
     content: url('../../img/troubleshooting.png') " Dépannage: ";
 }
+
+/*
+ * ------------------------------------------------
+ * From -domain-hazard-d.css
+ */
+*[class ~= "hazard-d/hazardstatement"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "DANGER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "note"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "NOTE";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "tip"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "CONSEIL";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "fastpath"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "FASTPATH";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "restriction"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "RESTRICTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "remember"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "RAPPELLES TOI";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "attention"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "ATTENTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "caution"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "PRÉCAUTION";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "notice"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "REMARQUER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "danger"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "DANGER";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "warning"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "AVERTISSEMENT";
+}
+*[class ~= "hazard-d/hazardstatement"][type = "other"]:lang(fr):before {
+    content: url("../img/warning-black30.png") " " "AUTRE TYPE DE DANGER";
+}
+
 /*
  * -topic-legacy-conversion.css
  */
@@ -408,16 +413,6 @@
 }
 *[class ~= "indexing-d/index-sort-as"]:lang(fr):before {
     content: " - trier comme: ";
-}
-
-/*
- * -topic-related-links-xref.css
- */
-@media print {
-    *[class ~= "topic/xref"][href]:after,
-    *[class ~= "topic/link"][href]:after {
-        content: " (page " target-counter(attr(href), page) ")";
-    }
 }
 
 /*

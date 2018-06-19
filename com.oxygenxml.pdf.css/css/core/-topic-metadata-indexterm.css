@@ -10,10 +10,8 @@
 *[class~="topic/indexterm"] {
   display: inline;
   font-style: italic;
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
   /*EXM-27204 Always show place holder content for indexterms*/
   -oxy-show-placeholder: always;
 }
@@ -71,9 +69,7 @@
  * the reader should reference instead of the current one.
  */
 *[class~="topic/indexterm"] > *[class~="indexing-d/index-see"]:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ===================================================
  *
@@ -84,9 +80,7 @@
  * reference in addition to the current one.
  */
 *[class~="topic/indexterm"] > *[class~="indexing-d/index-see-also"]:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ===================================================
  *
@@ -96,7 +90,5 @@
  * which an index entry would be sorted. 
  */
 *[class~="indexing-d/index-sort-as"]:before {
-  /* -before_bold- >>> */
   font-weight: bold;
-  /* <<< */
 }

@@ -35,10 +35,8 @@
   /**/
 }
 *[class~="learningInteractionBase-d/lcQuestionBase"] > *[class~="topic/title"]:before {
-  /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
 }
 /* ====================================
  *
@@ -60,10 +58,8 @@
   border-top: 1px solid;
 }
 *[class~="learningInteractionBase-d/lcInteractionBase"]:before {
-  /* -learning_before- >>> */
   font-weight: bold;
   font-style: normal;
-  /* <<< */
 }
 *[class~="learningInteractionBase-d/lcInteractionBase"] > *[class~="topic/title"] {
   display: inline;

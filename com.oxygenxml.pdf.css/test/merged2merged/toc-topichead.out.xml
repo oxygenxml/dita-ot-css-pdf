@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The first level topics and topicrefs in a normal map should be marked as chapters. -->
+<map class="- map/map " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <opentopic:map class=" toc/toc "
+    xmlns:opentopic="http://www.idiominc.com/opentopic" xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder">
+    <oxy:toc-title class=" toc/title" empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <topichead broken-link="true"
+      class="+ map/topicref mapgroup-d/topichead " href="#remapped_id_1"
+      is-chapter="true" navtitle="Glossary" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#">Glossary</navtitle>
+      </topicmeta>
+      <topicref broken-link="true" class="- map/topicref "
+        href="#unique_9" keys="genus" navtitle="Genus" print="yes" type="glossentry">
+        <topicmeta class="- map/topicmeta " data-topic-id="flowers.genus">
+          <resourceid appid="flowers.genus" class="- topic/resourceid " oxy-source="topic"/>
+          <navtitle broken-link="true" class="- topic/navtitle " href="#unique_9">Genus</navtitle>
+        </topicmeta>
+      </topicref>
+    </topichead>
+  </opentopic:map>
+</map>

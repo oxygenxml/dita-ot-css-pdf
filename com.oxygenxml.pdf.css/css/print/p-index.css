@@ -27,16 +27,16 @@
     *[class ~= "topic/prolog"] *:before {
         content: none !important;
     }
-
-	@media oxygen-chemistry {
+}
+@media oxygen-chemistry {
 		/* In Chemistry we can hide it entirely. */
 	    *[class ~= "topic/prolog"] {
 	        display: none;
 	    }
-	}
-	
+}
+@media print { 	
     /* Make invisible the indexterms in the content */
-    *[class ~= "topic/topic"] index\.entry {
+    *[class ~= "topic/topic"] *[class ~= "index/entry"] {
         max-width: 2px;
         background-color: transparent;
         color: transparent;
@@ -49,7 +49,7 @@
      * Bind the index group to the index page.
      *
      */
-    index\.groups {
+    *[class ~= "index/groups"] {
         display: block;
         page: index;
         counter-reset: page 1;
@@ -62,7 +62,7 @@
     /**
 	* Static label before the index section.
 	*/
-    index\.groups:before {
+    *[class ~= "index/groups"]:before {
     	/*p-i18n.css*/
         display: block;
         margin-bottom: 0.5em;
@@ -73,32 +73,33 @@
 
 
     /* A section (group) in the index, under a letter  */
-    index\.groups index\.group {
+    *[class ~= "index/groups"] *[class ~= "index/group"] {
         display: block;
     }
-    index\.groups index\.group label {
+    *[class ~= "index/groups"] *[class ~= "index/group"] *[class ~= "index/label"] {
         display: block;
         font-size: larger;
         font-weight: bold;
     }
 
     /* The index entry and its label */
-    index\.groups index\.entry {
+    *[class ~= "index/groups"] *[class ~= "index/entry"] {
         display: block;
         margin-left: 1em;
     }
 
     /* The index entry link */
-    index\.groups index-link:first-child:before {
+    *[class ~= "index/groups"] *[class ~= "index/link"]:first-child:before {
         content: "\A0";
     }
-    index\.groups index-link {
-        content: target-counter(attr(href), page) ",";
+    *[class ~= "index/groups"] *[class ~= "index/link"] {
+    	display:inline;
+        content: target-counter(attr(href), page) ", ";
         link: attr(href);
         -ah-link: attr(href);
         -oxy-link: attr(href);
     }
-    index\.groups index-link:last-child {
+    *[class ~= "index/groups"] *[class ~= "index/link"]:last-child {
         content: target-counter(attr(href), page);
     }
 
@@ -113,43 +114,43 @@
         The page numbers must be shown. 
 
     */
-    index\.groups see-childs {
+    *[class ~= "index/groups"] *[class ~= "index/see-childs"] {
         display: inline;
     }
-    index\.groups see-childs:before {
+    *[class ~= "index/groups"] *[class ~= "index/see-childs"]:before {
         content: " see ";
         font-style: italic;
     }
-
-    index\.groups see-also-childs {
+	
+    *[class ~= "index/groups"] *[class ~= "index/see-also-childs"] {
         display: block;
         padding-left: 1em;
     }
-    index\.groups see-also-childs:before {
+    *[class ~= "index/groups"] *[class ~= "index/see-also-childs"]:before {
         content: "see also ";
         font-style: italic;
     }
 
     /* All "see" terms are on a line. */
-    index\.groups see-childs *,
-    index\.groups see-also-childs * {
+    *[class ~= "index/groups"] *[class ~= "index/see-childs"] *,
+    *[class ~= "index/groups"] *[class ~= "index/see-also-childs"] * {
         display: inline;
         margin: 0;
     }
 
     /* There may be multiple formatted value under the same indexterm. We need to separated them. */
-    index\.groups see-childs formatted-value:after,
-    index\.groups see-also-childs formatted-value:after {
+    *[class ~= "index/groups"] *[class ~= "index/see-childs"] *[class ~= "index/formatted-value"]:after,
+    *[class ~= "index/groups"] *[class ~= "index/see-also-childs"] *[class ~= "index/formatted-value"]:after {
         content: " ";
     }
 
     /* Separator in the list of terms*/
-    index\.groups see-childs > index\.entry:before,
-    index\.groups see-also-childs > index\.entry:before {
+    *[class ~= "index/groups"] *[class ~= "index/see-childs"] > *[class ~= "index/entry"]:before,
+    *[class ~= "index/groups"] *[class ~= "index/see-also-childs"] > *[class ~= "index/entry"]:before {
         content: ", ";
     }
-    index\.groups see-childs > index\.entry:first-child:before,
-    index\.groups see-also-childs > index\.entry:first-child:before {
+    *[class ~= "index/groups"] *[class ~= "index/see-childs"] > *[class ~= "index/entry"]:first-child:before,
+    *[class ~= "index/groups"] *[class ~= "index/see-also-childs"] > *[class ~= "index/entry"]:first-child:before {
         content: none;
     }
 }

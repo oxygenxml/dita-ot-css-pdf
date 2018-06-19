@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+    class="- map/map bookmap/bookmap " collection-type="sequence">
+    <topic class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Introduction</title>
+        <table class="- topic/table "
+                colsep="1"
+                frame="all"
+                id="unique_1_Connect_42_table_bcr_44p_zt"
+                rowsep="1">
+            <title class="- topic/title ">The test table</title>
+            <tgroup class="- topic/tgroup " cols="3">
+                <colspec class="- topic/colspec "
+                        colname="col1"
+                        colnum="1"
+                        colwidth="1*"
+                        align="right"
+                        rowheader="headers"/>
+                <colspec class="- topic/colspec "
+                        colname="col2"
+                        colnum="2"
+                        colwidth="2.51*"
+                        rowheader="headers"/>
+                <colspec class="- topic/colspec "
+                        colname="col3"
+                        colnum="3"
+                        colwidth="1.87*"
+                        rowheader="headers"/>
+                <thead class="- topic/thead ">
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry "
+                            colname="col1"
+                            dita-ot:x="1"
+                            dita-ot:y="1">Place</entry>
+                        <entry class="- topic/entry "
+                            colname="col2"
+                            dita-ot:x="2"
+                            dita-ot:y="1">Wind</entry>
+                        <entry class="- topic/entry "
+                            colname="col3"
+                            dita-ot:x="3"
+                            dita-ot:y="1">Temperature</entry>
+                    </row>
+                </thead>
+                <tbody class="- topic/tbody ">
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry "
+                            colname="col1"
+                            dita-ot:x="1"
+                            dita-ot:y="2">Bucharest</entry>
+                        <entry class="- topic/entry "
+                            colname="col2"
+                            dita-ot:x="2"
+                            dita-ot:y="2"
+                            morerows="1">Moderate</entry>
+                        <entry class="- topic/entry "
+                            colname="col3"
+                            dita-ot:x="3"
+                            dita-ot:y="2">High</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry "
+                            colname="col1"
+                            dita-ot:x="1"
+                            dita-ot:y="3">Brasov</entry>
+                        <entry class="- topic/entry "
+                            colname="col3"
+                            dita-ot:x="3"
+                            dita-ot:y="3">Moderate</entry>
+                    </row>
+                    <row class="- topic/row ">
+                        <entry class="- topic/entry "
+                            colname="col1"
+                            dita-ot:x="1"
+                            dita-ot:y="4">&lt;here&gt;</entry>
+                        <entry class="- topic/entry "
+                            colname="col2"
+                            dita-ot:morecols="1"
+                            dita-ot:x="2"
+                            dita-ot:y="4"
+                            nameend="col3"
+                            namest="col2">Does not apply</entry>
+                    </row>
+                </tbody>
+            </tgroup>
+        </table>
+    </topic>
+</bookmap>

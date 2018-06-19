@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     This is a catalog stub. If the publishing template file refers XSLT 
+     extension points, a new catalog will be generated and used instead this one. 
+-->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    
+    <uri name="template:xsl/com.oxygenxml.pdf.css.xsl.merged2html5" 
+        uri="extensions/empty.xsl"/>
+        
+    <uri name="template:xsl/com.oxygenxml.pdf.css.xsl.merged2merged" 
+        uri="extensions/empty.xsl"/>
+    
+    
+</catalog>

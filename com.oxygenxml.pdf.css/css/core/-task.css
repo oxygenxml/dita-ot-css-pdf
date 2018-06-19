@@ -78,9 +78,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/prereq"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* ====================================
@@ -99,9 +97,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/postreq"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -120,9 +116,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/context"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* ====================================
@@ -140,9 +134,7 @@
   -oxy-foldable: false;
 }
 *[class~="task/result"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -306,9 +298,7 @@
 }
 *[class~="task/tasktroubleshooting"]:before,
 *[class~="task/steptroubleshooting"]:before{
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* ====================================
@@ -323,14 +313,10 @@
  *     + topic/itemgroup
  */
 *[class~="task/info"] {
-  /* -task_step_child- >>> */
   margin: 0.5em 0.5em 0.5em 1em;
-  /* <<< */
 }
 *[class~="task/info"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -348,9 +334,7 @@
  *     + topic/ol
  */
 *[class~="task/substeps"] {
-  /* -task_step_child- >>> */
     margin: 0.5em 0.5em 0.5em 1em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -381,9 +365,7 @@
  *     + topic/simpletable 
  */
 *[class~="task/choicetable"] {
-  /* -task_step_child- >>> */
   margin: 0.5em 0.5em 0.5em 4em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -514,15 +496,11 @@
  *     + topic/ul 
  */
 *[class~="task/choices"] {
-  /* -task_step_child- >>> */
   margin: 0.5em 0.5em 0.5em 4em;
-  /* <<< */
 }
 *[class~="task/choices"]:before {
   display: block;
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* ====================================
@@ -552,14 +530,10 @@
  *     + topic/itemgroup 
  */
 *[class~="task/stepxmp"] {
-  /* -task_step_child- >>> */
   margin: 0.5em 0.5em 0.5em 4em;
-  /* <<< */
 }
 *[class~="task/stepxmp"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 /* ====================================
  *
@@ -576,14 +550,10 @@
  *     + topic/itemgroup 
  */
 *[class~="task/stepresult"] {
-  /* -task_step_child- >>> */
   margin: 0.5em 0.5em 0.5em 1em;
-  /* <<< */
 }
 *[class~="task/stepresult"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 
 /* ====================================
@@ -599,13 +569,9 @@
  *     + topic/itemgroup 
  */
 *[class~="task/tutorialinfo"] {
-  /* -task_step_child- >>> */
   margin: 0.5em 0.5em 0.5em 4em;
-  /* <<< */
 }
 *[class~="task/tutorialinfo"]:before {
-  /* -task_before- >>> */
   font-weight: bold;
-  /* <<< */
 }
 

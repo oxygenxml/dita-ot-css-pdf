@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " collection-type="sequence">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <oxy:front-matter class="- map/topicref bookmap/frontmatter " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <topic class="- topic/topic " id="fm1">
+      <title class="- topic/title">FM1</title>
+    </topic>
+    <topic class="- topic/topic " id="fm2">
+      <title class="- topic/title">FM2</title>
+      <topic class="- topic/topic " id="fm3">
+        <title class="- topic/title">FM3</title>
+      </topic>
+    </topic>
+    <topic class="- topic/topic " id="fm3">
+      <title class="- topic/title">FM3</title>
+    </topic>
+    <topic class="- topic/topic " id="fm4">
+      <title class="- topic/title">FM4</title>
+    </topic>
+  </oxy:front-matter>
+  <opentopic:map class=" toc/toc " xmlns:opentopic="http://www.idiominc.com/opentopic">
+    <oxy:toc-title class=" toc/title" empty="true" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+    <part class="- map/topicref bookmap/part " is-chapter="true"
+      is-part="true" navtitle="A Part">
+      <topicmeta class="- map/topicmeta ">
+        <navtitle class="- topic/navtitle " href="#p1">A Part</navtitle>
+      </topicmeta>
+      <topicref class="- map/topicref " href="#remaining1" is-chapter="true"/>
+      <topicref class="- map/topicref " href="#remaining2" is-chapter="true"/>
+    </part>
+  </opentopic:map>
+  <!--  CONTENT  -->
+  <!-- This should be moved in the frontmatter -->
+  <topic class="- topic/topic " id="fm1">
+    <title class="- topic/title">FM1</title>
+  </topic>
+  <topic class="- topic/topic " id="fm2">
+    <title class="- topic/title">FM2</title>
+    <topic class="- topic/topic " id="fm3">
+      <title class="- topic/title">FM3</title>
+    </topic>
+  </topic>
+  <topic class="- topic/topic " id="fm4">
+    <title class="- topic/title">FM4</title>
+  </topic>
+  <!-- This should remain in the content. -->
+  <topic break-before="true" class="- topic/topic " id="remaining1"
+    is-chapter="true" oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title">REMAINING 1</title>
+  </topic>
+  <!-- This should be moved in the backmatter -->
+  <topic class="- topic/topic " id="bm1">
+    <title class="- topic/title">BM1</title>
+  </topic>
+  <topic class="- topic/topic " id="bm2">
+    <title class="- topic/title">BM2</title>
+    <topic class="- topic/topic " id="bm3">
+      <title class="- topic/title">BM3</title>
+    </topic>
+  </topic>
+  <topic class="- topic/topic " id="bm4">
+    <title class="- topic/title">BM4</title>
+  </topic>
+  <!-- This should remain in the content. -->
+  <topic break-before="true" class="- topic/topic " id="remaining2"
+    is-chapter="true" oxy:topicref-class="- map/topicref " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <title class="- topic/title">REMAINING 2</title>
+  </topic>
+  <oxy:back-matter class="- map/topicref bookmap/backmatter " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <topic class="- topic/topic " id="bm1">
+      <title class="- topic/title">BM1</title>
+    </topic>
+    <topic class="- topic/topic " id="bm2">
+      <title class="- topic/title">BM2</title>
+      <topic class="- topic/topic " id="bm3">
+        <title class="- topic/title">BM3</title>
+      </topic>
+    </topic>
+    <topic class="- topic/topic " id="bm3">
+      <title class="- topic/title">BM3</title>
+    </topic>
+    <topic class="- topic/topic " id="bm4">
+      <title class="- topic/title">BM4</title>
+    </topic>
+  </oxy:back-matter>
+</bookmap>

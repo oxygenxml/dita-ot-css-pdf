@@ -1,18 +1,22 @@
 @charset "UTF-8";
 
 /* Title in the TOC page */
-toc-title[empty]:before {
+*[class ~= "toc/title"][empty]:before {
 	content: "Contents";
 }
 
 /* This string is used in the TOC page header. */
-:root {
+*[class ~= "map/map"] {
 	string-set: toc-header "Contents";
 }
 
 /* Title in the Index page */
-index\.groups:before {
-	content: "Index";
+*[class ~= "index/groups"]:before{
+	content:"Index";
+}
+*[class ~= "index/groups"]{
+	bookmark-label:"Index";	 
+  	-ah-bookmark-label:"Index";	
 }
 
 /* Titles in the TOC. */
@@ -29,4 +33,11 @@ index\.groups:before {
 }
 *[class ~= "topic/topic"][is-chapter]:not([is-part]) > *[class ~= "topic/title"]:before {
     content: "Chapter " counter(chapter) ". ";
+}
+
+
+/*  Links. */
+*[class ~= "topic/xref"][href]:after,
+*[class ~= "topic/link"][href]:after {
+    content: " (page " target-counter(attr(href), page) ")";
 }

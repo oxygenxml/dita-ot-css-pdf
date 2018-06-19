@@ -37,7 +37,7 @@
     <ot-placeholder:toc xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" /> 
     The page counter was used in the p-toc generating numbers for the TOC pages.
 */
-*[class ~= "map/map"] > toc + *[class ~= "topic/topic"]{
+*[class ~= "map/map"] > *[class ~= "placeholder/toc"] + *[class ~= "topic/topic"]{
     counter-reset: page 1;
 }
 

@@ -9,7 +9,7 @@
 
 @media print {
   /**
-   * Remove topic bofy margins from media print. 
+   * Remove topic body margins from media print. 
    * Margins will be controlled by the page margins. 
    */
   *[class~="topic/body"] {

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap class="- map/map bookmap/bookmap " xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_1">
+    <title class="- topic/title ">The reviewed topic.</title>
+    <body class="- topic/body ">
+      <p class="- topic/p ">=====================================.</p>
+      <p class="- topic/p ">A highlight starting <oxy:oxy-color-hl
+          color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">from the first paragraph to the third one.</oxy:oxy-color-hl>
+      </p>
+      <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <p class="- topic/p ">
+        <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">A highlight starting from the first paragraph to the third one.</oxy:oxy-color-hl>
+      </p>
+      <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <p class="- topic/p ">
+        <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">A highlight starting from the </oxy:oxy-color-hl>first paragraph to the third one.</p>
+      <p class="- topic/p ">=====================================.</p>
+      <p class="- topic/p ">A highlight starting <oxy:oxy-color-hl
+          color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">from the first paragraph to the fourth one.</oxy:oxy-color-hl>
+      </p>
+      <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <p class="- topic/p ">
+        <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">An other highlight starting </oxy:oxy-color-hl>
+        <oxy:oxy-color-hl color="rgba(20,10,10,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">from the second paragraph to the third one.</oxy:oxy-color-hl>
+      </p>
+      <oxy:oxy-color-hl color="rgba(20,10,10,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <p class="- topic/p ">
+        <oxy:oxy-color-hl color="rgba(20,10,10,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">A highlight starting from the </oxy:oxy-color-hl>
+        <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">second paragraph to the third one.</oxy:oxy-color-hl>
+      </p>
+      <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author"/>
+      <p class="- topic/p ">
+        <oxy:oxy-color-hl color="rgba(153,255,255,50)" xmlns:oxy="http://www.oxygenxml.com/extensions/author">A highlight starting from the </oxy:oxy-color-hl>first paragraph to the fourth one.</p>
+    </body>
+  </topic>
+</bookmap>

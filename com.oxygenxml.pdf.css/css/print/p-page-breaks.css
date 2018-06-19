@@ -19,16 +19,26 @@
 *[class ~= "topic/fig"] {
     page-break-inside:avoid;
 }
+*[class ~= "topic/related-links"] {
+    page-break-inside:avoid;
+}
 
 /*
  * Forced page breaks.
+ *
+ * The page-brek values can be set either on an element from the content: topic, section, etc, or
+ * on a topicref.
+ *
+ * The outputclass from the topicrefs is copied to 
+ * the topics, it would be meaningless to apply the page 
+ * break in the toc.
  */
-*[outputclass ~= "page-break-before"] {
+*:not([class ~= "map/topicref"])[outputclass ~= "page-break-before"] {
     page-break-before:always;    
 }
-*[outputclass ~= "page-break-after"] {
+*:not([class ~= "map/topicref"])[outputclass ~= "page-break-after"] {
     page-break-after:always;
 }
-*[outputclass ~= "page-break-avoid"] {
+*:not([class ~= "map/topicref"])[outputclass ~= "page-break-avoid"] {
     page-break-inside:avoid;
 }

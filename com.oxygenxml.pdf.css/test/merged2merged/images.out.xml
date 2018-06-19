@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map class="- map/map  " collection-type="sequence"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:opentopic-index="http://www.idiominc.com/opentopic/index">
+  <oxy:front-page class=" front-page/front-page " xmlns:oxy="http://www.oxygenxml.com/extensions/author">
+    <oxy:front-page-title class=" front-page/front-page-title "/>
+  </oxy:front-page>
+  <topic class="- topic/topic " id="unique_2">
+    <title class="- topic/title ">Introduction</title>
+    <p class="- topic/p ">
+      <!-- The width and height should take into account the scaling attribute. -->
+      <!-- The relative image should be changed to absolute. -->
+      <image class="- topic/image "
+        href="MAP_DIR_URI/images/Gerbera.jpg" placement="inline" scale="33"/>
+      <image class="- topic/image "
+        href="MAP_DIR_URI/images/Gerbera.jpg" placement="inline" scale="100"/>
+      <!-- This one has width specified, do not touch it. -->
+      <image class="- topic/image "
+        href="MAP_DIR_URI/images/Gerbera.jpg" placement="inline"
+        scale="50" width="10"/>
+      <!-- This one has height specified, do not touch it. -->
+      <image class="- topic/image " height="10"
+        href="MAP_DIR_URI/images/Gerbera.jpg" placement="inline" scale="50"/>
+      <!-- This does not exist, should not generate width and height for it. -->
+      <image class="- topic/image "
+        href="MAP_DIR_URI/images/NotExisting.jpg" placement="inline" scale="33"/>
+    </p>
+  </topic>
+</map>

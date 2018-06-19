@@ -40,14 +40,38 @@ informaltable{
     *[class~="topic/tgroup"]:-oxy-visible-colspecs spanspec{
         display:block;
     }
-    *[class~="topic/tgroup"]:before! > *[class~="topic/colspec"]{ 
-        display:block;
-        content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
-        text-align:left;
-        font-family: sansserif, verdana, helvetica;
-        font-size: 0.75em;
-        padding-bottom: 0.2em;
-    }
+}
+
+/* The Web Author does not support the subject selector */
+@media oxygen and (platform:standalone), oxygen and (platform:eclipse) {
+   *[class~="topic/tgroup"]:before! > *[class~="topic/colspec"]{ 
+       display:block;
+       content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
+       text-align:left;
+       font-family: sansserif, verdana, helvetica;
+       font-size: 0.75em;
+       padding-bottom: 0.2em;
+       
+       unicode-bidi:embed;
+       direction:ltr;
+   }
+}
+/* Recreate behavior similar with the one above for the WebAuthor */
+@media oxygen and (platform:webapp) {
+   *[class~="topic/tgroup"]:before {
+       display:block;
+       content:oxy_button(actionID, 'table.expand.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);
+       text-align:start;
+       font-family: sansserif, verdana, helvetica;
+       font-size: 0.75em;
+       padding-bottom: 0.2em;
+       
+       unicode-bidi:embed;
+       direction:ltr;
+   }
+}
+
+ @media oxygen {
     *[class~="topic/tgroup"]:-oxy-visible-colspecs:before{
         content:oxy_button(actionID, 'table.collapse.colspec', transparent, true, color, navy, fontInherit, true, showText, true, enableInReadOnlyContext, true);		
     }
@@ -144,4 +168,10 @@ informaltable[frame = 'lhs'] > *[class~="topic/tgroup"] {
 *[class~="topic/table"][frame = 'all'] > *[class~="topic/tgroup"] {
     border-style:solid;
     border-width:1px;
+}
+
+@media oxygen and (platform:webapp) {
+  *[class~="topic/row"] > *[class~="topic/entry"] {
+    -oxy-show-placeholder:no;
+  }
 }

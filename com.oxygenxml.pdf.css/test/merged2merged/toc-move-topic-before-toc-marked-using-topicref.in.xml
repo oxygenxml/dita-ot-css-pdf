@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/css' href='file:/D:/projects/oxygen-dita-publishing/oxygen-dita-publishing-integration-tests/oxygen-pdf-css-html5-tests/oxygen-publishing-engine/plugins/com.oxygenxml.webhelp.responsive/oxygen-webhelp/app/topic-page.css'?>
+<?xml-stylesheet type='text/css' href='file:/D:/projects/oxygen-dita-publishing/oxygen-dita-publishing-integration-tests/oxygen-pdf-css-html5-tests/oxygen-publishing-engine/plugins/com.oxygenxml.pdf.css/css/print/p-dita.css'?>
+<?xml-stylesheet type='text/css' href='file:/D:/projects/oxygen-dita-publishing/oxygen-dita-publishing-integration-tests/oxygen-pdf-css-html5-tests/oxygen-publishing-engine/plugins/com.oxygenxml.webhelp.responsive/templates/oxygen/oxygen.css'?>
+<?xml-stylesheet type='text/css' href='file:/D:/projects/oxygen-dita-publishing/oxygen-dita-publishing-integration-tests/oxygen-pdf-css-html5-tests/oxygen-publishing-engine/plugins/com.oxygenxml.webhelp.responsive/templates/oxygen/oxygen-print.css'?>
+<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index" cascade="merge" class="- map/map "
+    ditaarch:DITAArchVersion="1.3"
+    domains="(map mapgroup-d)                            (topic abbrev-d)                            (topic delay-d)                            a(props deliveryTarget)                            (map ditavalref-d)                            (map glossref-d)                            (topic hazard-d)                            (topic hi-d)                            (topic indexing-d)                            (topic markup-d)                            (topic pr-d)                            (topic relmgmt-d)                            (topic sw-d)                            (topic ui-d)                            (topic ut-d)                            (topic markup-d xml-d)   "    
+   >
+    <oxy:front-page xmlns:oxy="http://www.oxygenxml.com/extensions/author" class=" front-page/front-page ">
+        <oxy:front-page-title class=" front-page/front-page-title ">
+            <title xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+                xmlns:opentopic="http://www.idiominc.com/opentopic"
+                xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" is-chapter="true"
+                class="- topic/title "/>
+        </oxy:front-page-title>
+    </oxy:front-page>
+    <opentopic:map xmlns:opentopic="http://www.idiominc.com/opentopic"
+        xmlns:ot-placeholder="http://suite-sol.com/namespaces/ot-placeholder" class=" toc/toc ">
+        <oxy:toc-title xmlns:oxy="http://www.oxygenxml.com/extensions/author" class=" toc/title" empty="true"/>
+        <title xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" is-chapter="true" class="- topic/title "/>
+        <topicref xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" is-chapter="true"
+            outputclass="before-toc"
+            class="- map/topicref " href="#unique_1" type="topic">
+            <topicmeta class="- map/topicmeta " data-topic-id="dcpp_topic1">
+                <resourceid appid="dcpp_topic1" class="- topic/resourceid " oxy-source="topic"/>
+                <navtitle href="#unique_1" class="- topic/navtitle ">Topic1</navtitle>
+            </topicmeta>
+        </topicref>
+        <topicref xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" is-chapter="true"
+            class="- map/topicref " href="#unique_2" type="topic">
+            <topicmeta class="- map/topicmeta " data-topic-id="dcpp_topic2">
+                <resourceid appid="dcpp_topic2" class="- topic/resourceid " oxy-source="topic"/>
+                <navtitle href="#unique_2" class="- topic/navtitle ">Topic2</navtitle>
+            </topicmeta>
+        </topicref>
+    </opentopic:map>
+    <topic 
+        xmlns:oxy="http://www.oxygenxml.com/extensions/author" break-before="true" is-chapter="true"
+        oxy:topicref-class="- map/topicref " class="- topic/topic " id="unique_1" oid="dcpp_topic1">
+        <title class="- topic/title ">Topic1</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">This should be moved before the TOC.</p>
+        </body>
+    </topic>
+    <topic 
+        xmlns:oxy="http://www.oxygenxml.com/extensions/author" break-before="true" is-chapter="true"
+        oxy:topicref-class="- map/topicref " class="- topic/topic " id="unique_2" oid="dcpp_topic2">
+        <title class="- topic/title ">Topic2</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">This should remain after the TOC.</p>
+        </body>
+    </topic>
+</map>

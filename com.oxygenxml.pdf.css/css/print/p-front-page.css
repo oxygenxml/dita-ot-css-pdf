@@ -8,13 +8,14 @@
  * =====================================================
  */
 
+
 @media print {
 
-    front-page {
+    *[class~="front-page/front-page"] {
         page: front-page;
     }
 
-    front-page-title {
+    *[class~="front-page/front-page-title"] {
         display:block;
         text-align:center;
         margin-top:3in;

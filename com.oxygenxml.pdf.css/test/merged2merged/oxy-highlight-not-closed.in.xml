@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmap xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    class="- map/map bookmap/bookmap ">
+    <title>The unclosed highlights should not cross the border of the topics and should disable all highlights in that topic.</title>
+    <topic class="- topic/topic " id="unique_1">
+        <title class="- topic/title ">First</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">A <?oxy_custom_start type="oxy_content_highlight" color="100,0,0"?>good one, closing <?oxy_custom_end?>.</p>                      
+        
+            <p class="- topic/p ">A highlight starting <?oxy_custom_start type="oxy_content_highlight" color="153,255,255"?>in the first topic, not closing.</p>                      
+        </body>
+    </topic>
+    <topic class="- topic/topic " id="unique_2">
+        <title class="- topic/title ">Second.</title>
+        <body class="- topic/body ">
+            <p class="- topic/p ">A highlight starting <?oxy_custom_start type="oxy_content_highlight" color="100,0,0"?>in the second topic<?oxy_custom_end?>, closing.</p>                      
+        </body>
+    </topic>
+</bookmap>

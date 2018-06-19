@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    xmlns:opentopic-index="http://www.idiominc.com/opentopic/index"
+    class="- map/map " collection-type="sequence">
+    
+    <topic class="- topic/topic " id="unique_2">
+        <!-- The "packages" leaf indexterm -->
+        <opentopic-index:index.entry value="packages">
+            <opentopic-index:formatted-value>packages</opentopic-index:formatted-value>
+            <opentopic-index:refID value="packages:"/>
+        </opentopic-index:index.entry>
+        
+        <!-- The "packages" branch indexterm -->
+        <opentopic-index:index.entry value="packages">
+            <opentopic-index:formatted-value>packages</opentopic-index:formatted-value>
+            <opentopic-index:refID value="packages:"/>
+            <opentopic-index:index.entry value="adding automanually">
+                <opentopic-index:formatted-value>adding automanually</opentopic-index:formatted-value>
+                <opentopic-index:refID value="packages:adding automanually:"/>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.entry>
+        
+        <!-- The "deployment" branch indexterm -->
+        <opentopic-index:index.entry value="deployment">
+            <opentopic-index:formatted-value>deployment</opentopic-index:formatted-value>
+            <opentopic-index:refID value="deployment:"/>
+            <opentopic-index:index.entry value="http">
+                <opentopic-index:formatted-value>HTTP</opentopic-index:formatted-value>
+                <opentopic-index:refID value="deployment:http:"/>
+            </opentopic-index:index.entry>
+            <opentopic-index:index.entry value="https">
+                <opentopic-index:formatted-value>HTTPS</opentopic-index:formatted-value>
+                <opentopic-index:refID value="deployment:https:"/>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.entry>
+        
+    </topic>
+    
+    <opentopic-index:index.groups>
+        
+        
+        <opentopic-index:index.group>
+            <opentopic-index:label>P</opentopic-index:label>
+            <opentopic-index:index.entry value="packages">
+                <opentopic-index:formatted-value>packages</opentopic-index:formatted-value>
+                <!-- Should generate a link this element, bacause of the leaf "packages" indexterm. -->
+                <opentopic-index:refID value="packages:"/>
+                <opentopic-index:index.entry value="adding automanually">
+                    <opentopic-index:formatted-value>adding automanually</opentopic-index:formatted-value>
+                    <opentopic-index:refID value="packages:adding automanually:"/>
+                </opentopic-index:index.entry>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.group>
+        
+        <opentopic-index:index.group>
+            <opentopic-index:label>D</opentopic-index:label>
+            <opentopic-index:index.entry value="deployment">
+                <opentopic-index:formatted-value>deployment</opentopic-index:formatted-value>
+                <!-- Should NOT generate a link this element, bacause there is no leaf "deployment" indexterm. -->
+                <opentopic-index:refID value="deployment:"/>
+                <opentopic-index:index.entry value="http">
+                    <opentopic-index:formatted-value>HTTP</opentopic-index:formatted-value>
+                    <opentopic-index:refID value="deployment:http:"/>
+                </opentopic-index:index.entry>
+                <opentopic-index:index.entry value="https">
+                    <opentopic-index:formatted-value>HTTPS</opentopic-index:formatted-value>
+                    <opentopic-index:refID value="deployment:https:"/>
+                </opentopic-index:index.entry>
+            </opentopic-index:index.entry>
+        </opentopic-index:index.group>
+        
+    </opentopic-index:index.groups>
+</map>

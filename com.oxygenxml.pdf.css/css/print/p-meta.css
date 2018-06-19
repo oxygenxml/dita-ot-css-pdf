@@ -21,14 +21,14 @@
 /* 
  * Titles (bookmaps).
  */
-front-page *[class ~= "bookmap/booktitle"] > *[class ~= "bookmap/mainbooktitle"] {
+*[class ~= "front-page/front-page"] *[class ~= "bookmap/booktitle"] > *[class ~= "bookmap/mainbooktitle"] {
     -oxy-pdf-meta-title: content();
 }
 
 /* 
  * Subject (bookmaps), using the alternate title.
  */
-front-page *[class ~= "bookmap/booktitle"] > *[class ~= "bookmap/booktitlealt"] {
+*[class ~= "front-page/front-page"] *[class ~= "bookmap/booktitle"] > *[class ~= "bookmap/booktitlealt"] {
     -oxy-pdf-meta-description: content();
 }
 
@@ -38,49 +38,49 @@ front-page *[class ~= "bookmap/booktitle"] > *[class ~= "bookmap/booktitlealt"] 
  *  
  * Bookmeta is a specialization of topicmeta.
  */
-front-page *[class ~= "map/topicmeta"] > *[class ~= "topic/author"] {
+*[class ~= "front-page/front-page"] *[class ~= "map/topicmeta"] > *[class ~= "topic/author"] {
     -oxy-pdf-meta-author: content();
 }
 
 /* 
  * Created (maps and bookmaps)
  */
-front-page  *[class ~= "map/topicmeta"] > *[class ~= "topic/critdates"] > *[class ~= "topic/created"] {
+*[class ~= "front-page/front-page"]  *[class ~= "map/topicmeta"] > *[class ~= "topic/critdates"] > *[class ~= "topic/created"] {
     -oxy-pdf-meta-custom: "Created" attr(date);
 }
 
 /* 
  * Revised (maps and bookmaps) - can have multiple occurences, so we aggregate them.
  */
-front-page *[class ~= "map/topicmeta"] > *[class ~= "topic/critdates"]:has(*[class ~= "topic/revised"]) {
+*[class ~= "front-page/front-page"] *[class ~= "map/topicmeta"] > *[class ~= "topic/critdates"]:has(*[class ~= "topic/revised"]) {
     -oxy-pdf-meta-custom: "Revised" oxy_xpath('string-join(*[contains(@class, " topic/revised ")]/@modified, ", " )');
 }
 
 /* 
  * Keywords (maps and bookmaps).
  */
-front-page *[class ~= "map/topicmeta"] > *[class ~= "topic/keywords"] > *[class ~= "topic/keyword"] {
+*[class ~= "front-page/front-page"] *[class ~= "map/topicmeta"] > *[class ~= "topic/keywords"] > *[class ~= "topic/keyword"] {
     -oxy-pdf-meta-keyword: content(); 
 }
 
 /* 
  * Organizaton holding the  book rights. (bookmaps)
  */
-front-page *[class ~= "bookmap/bookmeta"] > *[class ~= "bookmap/bookrights"] > *[class ~= "bookmap/bookowner"] {
+*[class ~= "front-page/front-page"] *[class ~= "bookmap/bookmeta"] > *[class ~= "bookmap/bookrights"] > *[class ~= "bookmap/bookowner"] {
     -oxy-pdf-meta-custom: "Book rights owner" content();
 }
 
 /* 
  * ISBN (bookmaps)
  */
-front-page *[class ~= "bookmap/bookmeta"] > *[class ~= "bookmap/bookid"] > *[class ~= "bookmap/isbn"] {
+*[class ~= "front-page/front-page"] *[class ~= "bookmap/bookmeta"] > *[class ~= "bookmap/bookid"] > *[class ~= "bookmap/isbn"] {
     -oxy-pdf-meta-custom: "ISBN" content();
 }
 
 /* 
  * Maintainer (bookmaps)
  */
-front-page *[class ~= "bookmap/bookmeta"] > *[class ~= "bookmap/bookid"] > *[class ~= "bookmap/maintainer"] {
+*[class ~= "front-page/front-page"] *[class ~= "bookmap/bookmeta"] > *[class ~= "bookmap/bookid"] > *[class ~= "bookmap/maintainer"] {
     -oxy-pdf-meta-custom: "Maintainer" content();
 }
 

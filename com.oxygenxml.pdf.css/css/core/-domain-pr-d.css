@@ -320,9 +320,14 @@
  */
 *[class~="pr-d/fragref"][href] {
   link: attr(href);
-  -ah-link: attr(href);
   
 }
+@media print {
+	*[class~="pr-d/fragref"][href] {
+  		-ah-link: attr(href);
+	}
+}
+
 /* ====================================
  *
  * <synblk>

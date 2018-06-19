@@ -25,10 +25,8 @@
  *     + topic/ph  
  */
 *[class~="sw-d/msgph"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -43,10 +41,8 @@
  *     + topic/pre   
  */
 *[class~="sw-d/msgblock"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -76,10 +72,8 @@
  *     + topic/keyword    
  */
 *[class~="sw-d/cmdname"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -94,10 +88,8 @@
  *     + topic/keyword    
  */
 *[class~="sw-d/varname"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
   font-style: italic;
 }
 /* ====================================
@@ -115,10 +107,8 @@
  *     + topic/ph
  */
 *[class~="sw-d/filepath"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -133,10 +123,8 @@
  *     + topic/ph
  */
 *[class~="sw-d/userinput"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
 /* ====================================
  *
@@ -151,8 +139,6 @@
  *     + topic/ph
  */
 *[class~="sw-d/systemoutput"] {
-  /* -monospace- >>> */
   font-family: monospace;
   font-size: 0.9em;
-  /* <<< */
 }
