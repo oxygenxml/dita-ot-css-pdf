@@ -100,6 +100,13 @@ with those set forth herein.
   <!-- Control the display of the user comments or change tracking info (encoded in oXygen processing instructions). -->
   <property name="show.changes.and.comments">no</property>
   
+  
+  <!-- Checks if the oXygen publishing template framework is available. If not, it uses a default empty catalog to solve XSLT extension points -->  	
+  <condition property="can.use.oxygen.publishing.templates">
+	  <available file="${dita.plugin.com.oxygenxml.common.dir}"/>
+  </condition>
+  	
+  
 	
   <!--
     
@@ -112,6 +119,7 @@ with those set forth herein.
   -->	
   <target name="dita2pdf-css" depends="
   	pdf-css.init-template,
+	pdf-css.init-template-fallback,
   	pdf-css.dita2pdf2,
   	pdf-css.prepare-merged,
   	pdf-css.publish-pdf"/>
@@ -128,6 +136,7 @@ with those set forth herein.
   <target name="dita2pdf-css-html5" depends="
   	pdf-css.html5-init,
   	pdf-css.init-template,
+	pdf-css.init-template-fallback,
   	pdf-css.dita2pdf2,
   	pdf-css.prepare-merged,
   	pdf-css.merged-to-html5-init,
@@ -153,7 +162,7 @@ with those set forth herein.
   <!--
 	    Load the PDF custom template.
    -->
-  <target name="pdf-css.init-template" depends="dita2pdf2.init, build-init">    
+  <target name="pdf-css.init-template" depends="dita2pdf2.init, build-init"  if="${can.use.oxygen.publishing.templates}">    
   	
   	<path id="pt_classpath">
   	    <pathelement location="target/classes"/>
@@ -202,7 +211,13 @@ with those set forth herein.
   	    
    </target>
 
-  
+  	<target name="pdf-css.init-template-fallback" depends="dita2pdf2.init, build-init" unless="${can.use.oxygen.publishing.templates}">
+		<echo>FALLBACK</echo>
+	    <!-- Catalog for the XSLT extension points. Can be generated from the publishing template. -->
+	  	<property 
+	          name="xsl.extensions.xml.catalog.file.path" 
+	          value="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/template_catalog.xml"/>
+	</target>
 	
   <!--
   
