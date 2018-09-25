@@ -12,3 +12,9 @@ The plugin was tested with both DITA Open Toolkit 1.8 and 2.0. To install the pl
 
 Note: If you are using Oxygen, you can run the DITA OT Integrator by following this procedure: 
 [https://www.oxygenxml.com/doc/versions/topics/dita-ot-install-plugin.html](https://www.oxygenxml.com/doc/versions/topics/dita-ot-install-plugin.html)
+
+Copyright and License
+---------------------
+Copyright 2018 Syncro Soft SRL.
+
+This project is licensed under [Apache License 2.0](https://github.com/oxygenxml/dita-ot-css-pdf/blob/master/LICENSE)
