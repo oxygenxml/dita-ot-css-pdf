@@ -4,7 +4,7 @@ dita-css
 A DITA-OT plugin that converts DITA Maps to PDF (and possibly other formats) using CSS stylesheets.
 You can use Oxygen PDF Chemistry, Antenna House or Prince XML for the processing engine.
 
-Important:
+Important
 -----------
 Starting with version 21.0 Oxygen bundles DITA-OT 3.x, whith a modified version of this plugin. This project is compatible with older DITA-OT versions and is not actively maintained by the Oxygen team. 
 
