@@ -2,7 +2,7 @@
 <!--
     
 Oxygen WebHelp Plugin
-Copyright (c) 1998-2018 Syncro Soft SRL, Romania.  All rights reserved.
+Copyright (c) 1998-2019 Syncro Soft SRL, Romania.  All rights reserved.
 
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
@@ -28,6 +28,8 @@ Copyright (c) 1998-2018 Syncro Soft SRL, Romania.  All rights reserved.
  	-->
     <xsl:template match="/*">
         <xsl:copy>
+            <xsl:call-template name="add-namespace-declarations"/>
+
             <xsl:apply-templates select="@*"/>
             
             <xsl:call-template name="add-review-pis-for-root"/>
@@ -44,6 +46,12 @@ Copyright (c) 1998-2018 Syncro Soft SRL, Romania.  All rights reserved.
     <xsl:template name="add-review-pis-for-root">    
         <xsl:apply-templates select="preceding-sibling::processing-instruction('oxy_attributes')" mode="processOxygenPIs"/>
     </xsl:template>
+    
+    <!-- 
+        Give a chance to the importing stylesheets to add prefix - namespace 
+        mappings on the root of the document. 
+    -->
+    <xsl:template name="add-namespace-declarations"/>
     
     
 </xsl:stylesheet>

@@ -22,19 +22,12 @@ Applies the XSL transformation to get html5 from the merged map.
   	    <!-- Figure title placement. May come as argument. -->	
         <property name="figure.title.placement" value="top"/>
 
-		
-		<xslt in="${dita.map.merged}" out="${dita.map.merged.post.processed}" style="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/merged2merged/merged.xsl" force="true" classpath="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/merged2merged/java">
+		<pipeline message="Process the merged map" taskname="m2m">
+		<xslt in="${dita.map.merged}" out="${dita.map.merged.post.processed}" style="${dita.plugin.com.oxygenxml.pdf.css.dir}/xsl/merged2merged/merged.xsl">
 		      <xmlcatalog>
 		    	  <catalogpath path="${xsl.extensions.xml.catalog.file.path}"/>
 		      </xmlcatalog>	
 				   
-
-			<factory name="net.sf.saxon.TransformerFactoryImpl">
-			  <!-- 
-		        Avoid saxon:assign warnings. For newer Saxon libraries the next property should be set:
-		        <attribute name="http://saxon.sf.net/feature/allow-multithreading" value="false"/>
-		      -->
-			</factory>
 
 			<param name="args.draft" expression="${args.draft}"/>
 			<param name="input.dir.url" expression="${user.input.dir.url}"/>
@@ -46,6 +39,7 @@ Applies the XSL transformation to get html5 from the merged map.
 			
 
 		</xslt>
+		</pipeline>
 	</target>
 
 </project>

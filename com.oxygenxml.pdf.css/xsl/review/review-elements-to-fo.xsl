@@ -258,15 +258,40 @@
             <xsl:apply-templates select="node()[not(namespace-uri() = 'http://www.oxygenxml.com/extensions/author')] | @*"/>
         </xsl:copy>        
     </xsl:template>
+    
+    <xsl:function name="oxy:getFoElemIndex" as="xs:integer">
+        <xsl:param name="currentElem"/>
+        <xsl:value-of select="$currentElem/count(preceding-sibling::fo:*)"/>
+    </xsl:function>
 
-    <xsl:template match="*:cell">
+    <xsl:template match="*:table-cell">
         <xsl:copy>
             <xsl:apply-templates select="@*"/>
             <!-- Copy also change tracking information located before the cell. -->
-            <xsl:apply-templates select="preceding-sibling::node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author']"/>    
+            <xsl:variable name="thisCellIndex" select="oxy:getFoElemIndex(.)"/>
+            <xsl:variable name="ctBefore">
+                <xsl:apply-templates 
+                    select="preceding-sibling::*[not(local-name() = 'oxy-range-end')]
+                    [namespace-uri() = 'http://www.oxygenxml.com/extensions/author']
+                    [oxy:getFoElemIndex((following-sibling::fo:*)[1]) = $thisCellIndex]"/>
+            </xsl:variable>
+            <xsl:if test="not(empty($ctBefore)) and not($ctBefore = '')">
+                <fo:block>
+                    <xsl:copy-of select="$ctBefore"/>
+                </fo:block>
+            </xsl:if>
             <xsl:apply-templates select="node()"/>
             <!-- Copy also change tracking information located after the cell. -->
-            <xsl:apply-templates select="following-sibling::node()[namespace-uri() = 'http://www.oxygenxml.com/extensions/author']"/>
+            <xsl:variable name="ctAfter">
+                <xsl:apply-templates select="following-sibling::*[local-name() = 'oxy-range-end']
+                    [namespace-uri() = 'http://www.oxygenxml.com/extensions/author']
+                    [oxy:getFoElemIndex((preceding-sibling::fo:*)[last()]) = $thisCellIndex]"/>
+            </xsl:variable>
+            <xsl:if test="not(empty($ctAfter)) and not($ctAfter = '')">
+                <fo:block>
+                    <xsl:copy-of select="$ctAfter"/>
+                </fo:block>
+            </xsl:if>
         </xsl:copy>        
     </xsl:template>
     

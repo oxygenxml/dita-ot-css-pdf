@@ -5,7 +5,7 @@
     xmlns:oxy="http://www.oxygenxml.com/extensions/author"
     xmlns:saxon="http://saxon.sf.net/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns:ImageInfo="java:ImageInfo" exclude-result-prefixes="#all">
+    xmlns:ImageInfo="java:com.oxygenxml.dita.xsltextensions.ImageInfo" exclude-result-prefixes="#all">
     <!-- Hides or shows the draft comments depending on the DITA-OT args.draft parameter. -->
     <xsl:template match="*[contains(@class, ' topic/draft-comment ')] | *[contains(@class, ' topic/required-cleanup ')] ">
         <xsl:if test="$args.draft = 'yes'">

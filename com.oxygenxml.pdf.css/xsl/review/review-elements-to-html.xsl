@@ -2,7 +2,7 @@
 <!--
     
 Oxygen WebHelp Plugin
-Copyright (c) 1998-2018 Syncro Soft SRL, Romania.  All rights reserved.
+Copyright (c) 1998-2019 Syncro Soft SRL, Romania.  All rights reserved.
 
 -->
 <!--
@@ -44,8 +44,7 @@ Copyright (c) 1998-2018 Syncro Soft SRL, Romania.  All rights reserved.
         </span>
     </xsl:template>
     
-    
-    <xsl:template match="oxy:*" >
+    <xsl:template match="oxy:oxy-comment|oxy:oxy-delete|oxy:oxy-insert|oxy:oxy-attributes">
         <span>
             <xsl:call-template name="attributes"/>
             
@@ -68,7 +67,7 @@ Copyright (c) 1998-2018 Syncro Soft SRL, Romania.  All rights reserved.
     </xsl:template>
     
     
-    <xsl:template match="oxy:*/oxy:*" >
+    <xsl:template match="oxy:oxy-comment//oxy:*|oxy:oxy-delete//oxy:*|oxy:oxy-insert//oxy:*|oxy:oxy-attributes//oxy:*">
         <!-- Reply to comment. Avoid generating links. -->
         <span>
             <xsl:attribute name="class" select="local-name()"/>

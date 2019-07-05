@@ -13,15 +13,17 @@ Applies the XSL transformation to get html5 from the merged map.
   	<!-- Figure title placement. May come as argument. -->	
     <property name="figure.title.placement" value="top"/>
 
+    <pipeline message="Process the merged map to html5" taskname="m2h">
     <xslt in="${mh5.dita.file}" out="${mh5.html.file}" style="${mh5.xsl.file}">
-        <xmlcatalog>
-	       <catalogpath path="${xsl.extensions.xml.catalog.file.path}"/>
-	    </xmlcatalog>	
-        <xmlcatalog refid="dita.catalog"/>
+      <xmlcatalog>
+        <catalogpath path="${xsl.extensions.xml.catalog.file.path}" />
+        <catalogpath path="${dita.plugin.org.dita.base.dir}/catalog-dita.xml"/>
+      </xmlcatalog>
         <param name="html5.css.links" expression="${html5.css.links}"/>
         <param name="figure.title.placement" expression="${figure.title.placement}"/>
         <dita:extension id="com.oxygenxml.pdf.css.xsl.merged2html5.parameters" behavior="org.dita.dost.platform.InsertAction" xmlns:dita="http://dita-ot.sourceforge.net"/>
     </xslt>     
+    </pipeline>
     
     <copy 
       file="${mh5.html.file}" 

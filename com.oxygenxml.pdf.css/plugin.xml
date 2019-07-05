@@ -15,6 +15,7 @@
 
   <extension-point id="com.oxygenxml.pdf.css.xsl.merged2merged.parameters" name="Extension point to pass parameters for the XSLT post-processing of the merged DITA map before other stages."/>
   <extension-point id="com.oxygenxml.pdf.css.xsl.merged2merged" name="XSLT extension point for post-processing the merged DITA map before other stages."/>
+  <feature extension="dita.conductor.lib.import" file="lib/oxygen-dita-publishing-xslt-extensions.jar" xml:base="."/>
  
   <template file="xsl/merged2html5/html5_template.xsl"/>
   <template file="xsl/merged2merged/merged_template.xsl"/>
